@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduConnect — Das Bildungs-OS für Jugendliche in Deutschland</title>
+  <meta name="description" content="EduConnect verbindet Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Berufsorientierung, Notenprofil, Förderungen und Nachhilfe auf einer Plattform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#0B1F3A; --teal:#0D9488; --teall:#5EEAD4;
+      --gold:#F59E0B; --coral:#F43F5E; --green:#10B981;
+      --purp:#8B5CF6; --white:#FFFFFF; --off:#F8FAFC;
+      --slate:#64748B; --dark:#1E293B; --card:#112030; --border:#E2E8F0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--off); color: var(--dark); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:999;
+      height:64px; padding:0 2rem;
+      background:rgba(11,31,58,0.97); backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,0.07);
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .nav-logo { font-family:'DM Serif Display',serif; font-size:1.5rem; color:var(--white); text-decoration:none; }
+    .nav-logo span { color:var(--teall); }
+    .nav-links { display:flex; gap:2rem; align-items:center; }
+    .nav-links a { color:#94A3B8; text-decoration:none; font-size:.875rem; font-weight:500; transition:color .2s; }
+    .nav-links a:hover { color:var(--white); }
+    .btn-nav { background:var(--teal)!important; color:var(--white)!important; padding:.5rem 1.25rem; border-radius:6px; font-weight:600!important; }
+    .btn-nav:hover { background:#0B7A70!important; }
+
+    /* HERO */
+    .hero {
+      min-height:100vh; padding:80px 2rem 4rem;
+      background:var(--navy);
+      display:flex; align-items:center;
+      position:relative; overflow:hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background: radial-gradient(ellipse 70% 60% at 80% 20%, rgba(13,148,136,.18) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 40% at 20% 80%, rgba(245,158,11,.08) 0%, transparent 60%);
+    }
+    .hero-inner {
+      max-width:1200px; margin:0 auto; width:100%;
+      display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; position:relative; z-index:1;
+    }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:rgba(13,148,136,.15); border:1px solid rgba(13,148,136,.3);
+      color:var(--teall); padding:.375rem .875rem; border-radius:100px;
+      font-size:.78rem; font-weight:600; margin-bottom:1.5rem;
+      animation:up .6s ease both;
+    }
+    .hero-badge-dot { width:6px; height:6px; background:var(--teall); border-radius:50%; }
+    .hero-title {
+      font-family:'DM Serif Display',serif;
+      font-size:clamp(2.4rem,5vw,3.75rem);
+      color:var(--white); line-height:1.1; letter-spacing:-.03em;
+      margin-bottom:1.5rem; animation:up .6s .1s ease both;
+    }
+    .hero-title em { font-style:italic; color:var(--teall); }
+    .hero-sub { color:#94A3B8; font-size:1.0625rem; line-height:1.75; font-weight:300; margin-bottom:2.5rem; animation:up .6s .2s ease both; }
+    .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; animation:up .6s .3s ease both; }
+    .btn-primary {
+      background:var(--teal); color:var(--white);
+      padding:.875rem 2rem; border-radius:8px; font-weight:600; font-size:1rem;
+      text-decoration:none; border:none; cursor:pointer;
+      transition:all .2s; display:inline-flex; align-items:center; gap:.5rem;
+    }
+    .btn-primary:hover { background:#0B7A70; transform:translateY(-2px); box-shadow:0 10px 28px rgba(13,148,136,.35); }
+    .btn-ghost {
+      background:transparent; color:var(--white);
+      padding:.875rem 2rem; border-radius:8px; font-weight:500; font-size:1rem;
+      text-decoration:none; border:1px solid rgba(255,255,255,.2); transition:all .2s;
+      display:inline-flex; align-items:center; gap:.5rem;
+    }
+    .btn-ghost:hover { border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.06); }
+    .hero-stats { display:flex; gap:2.5rem; margin-top:3rem; flex-wrap:wrap; animation:up .6s .4s ease both; }
+    .hero-stat strong { display:block; font-size:1.75rem; font-weight:700; color:var(--gold); line-height:1; }
+    .hero-stat span { font-size:.78rem; color:var(--slate); margin-top:.25rem; display:block; }
+
+    /* Phone */
+    .hero-phone { display:flex; justify-content:center; animation:up .8s .2s ease both; }
+    .phone-wrap { position:relative; width:270px; filter:drop-shadow(0 40px 80px rgba(0,0,0,.55)); }
+    .phone-frame { background:#1C1C1E; border:2px solid #3A3A3C; border-radius:44px; padding:12px 10px 18px; }
+    .phone-notch { width:80px; height:18px; background:#1C1C1E; border-radius:10px; margin:0 auto 8px; }
+    .phone-screen { background:var(--navy); border-radius:32px; overflow:hidden; }
+    .ps-bar { background:#0D2440; padding:5px 12px; display:flex; justify-content:space-between; }
+    .ps-bar span { color:var(--white); font-size:9px; font-weight:700; }
+    .ps-hdr { background:var(--teal); padding:10px 12px; }
+    .ps-hdr-name { color:var(--white); font-size:12px; font-weight:700; }
+    .ps-hdr-sub { color:rgba(255,255,255,.7); font-size:9px; }
+    .ps-body { padding:8px; display:flex; flex-direction:column; gap:7px; }
+    .ps-card { background:#0D2440; border-radius:8px; padding:8px 10px; border:1px solid rgba(255,255,255,.07); }
+    .ps-label { color:var(--gold); font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+    .ps-val { color:var(--white); font-size:12px; font-weight:700; margin-top:2px; }
+    .ps-sub { color:var(--teall); font-size:8px; margin-top:1px; }
+    .ps-bar2 { height:4px; background:rgba(255,255,255,.1); border-radius:2px; margin-top:6px; }
+    .ps-fill { height:100%; border-radius:2px; background:var(--teal); width:68%; }
+    .ps-sec { color:var(--white); font-size:9px; font-weight:600; }
+    .ps-step { border-radius:6px; padding:6px 8px; border-left:3px solid; }
+    .ps-step span { color:var(--white); font-size:9px; }
+    .ps-nav { background:#0D2440; padding:7px 0 4px; display:flex; justify-content:space-around; }
+    .ps-nav span { color:#475569; font-size:8px; }
+    .ps-nav .act { color:var(--teall); }
+    .phone-badge {
+      position:absolute; background:var(--white); border-radius:10px;
+      padding:6px 10px; font-size:11px; font-weight:600;
+      box-shadow:0 8px 24px rgba(0,0,0,.3); white-space:nowrap; color:var(--dark);
+      display:flex; align-items:center; gap:6px;
+    }
+    .pb-dot { width:8px; height:8px; border-radius:50%; }
+    .pb1 { top:80px; right:-90px; animation:float 4s ease-in-out infinite; }
+    .pb2 { top:210px; left:-100px; animation:float 4s 1.2s ease-in-out infinite; }
+    .pb3 { bottom:100px; right:-80px; animation:float 4s 2.2s ease-in-out infinite; }
+
+    /* Sections */
+    section { padding:5rem 2rem; }
+    .container { max-width:1200px; margin:0 auto; }
+    .sec-label { color:var(--teal); font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.6rem; }
+    .sec-title { font-family:'DM Serif Display',serif; font-size:clamp(1.75rem,3vw,2.5rem); line-height:1.15; letter-spacing:-.02em; margin-bottom:.75rem; }
+    .sec-sub { color:var(--slate); font-size:1rem; line-height:1.7; font-weight:300; max-width:580px; }
+    .sec-title.lt { color:var(--white); }
+    .sec-sub.lt { color:#94A3B8; }
+
+    /* Problem */
+    #problem { background:var(--white); }
+    .prob-row1 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:3rem; }
+    .prob-row2 { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:1.25rem; max-width:800px; margin-left:auto; margin-right:auto; }
+    .prob-card {
+      border:1px solid var(--border); border-radius:14px; padding:1.75rem;
+      position:relative; overflow:hidden; background:var(--white);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .prob-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,.08); }
+    .prob-bar { position:absolute; left:0; top:0; bottom:0; width:4px; }
+    .prob-icon { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin-bottom:1rem; }
+    .prob-card h3 { font-size:.9375rem; font-weight:600; color:var(--dark); margin-bottom:.375rem; }
+    .prob-card p { font-size:.8125rem; color:var(--slate); line-height:1.6; }
+
+    /* Zielgruppen */
+    #ziele { background:var(--navy); }
+    .ziel-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:3rem; }
+    .ziel-card {
+      background:var(--card); border-radius:14px; padding:2rem;
+      border:1px solid rgba(255,255,255,.07); transition:all .2s;
+    }
+    .ziel-card:hover { border-color:rgba(13,148,136,.4); transform:translateY(-2px); }
+    .ziel-icon { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.35rem; margin-bottom:1.25rem; }
+    .ziel-card h3 { color:var(--white); font-size:1rem; font-weight:600; margin-bottom:.75rem; }
+    .ziel-card ul { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+    .ziel-card li { color:#94A3B8; font-size:.8125rem; display:flex; gap:.5rem; align-items:flex-start; }
+    .ziel-card li::before { content:'→'; color:var(--teal); flex-shrink:0; }
+
+    /* Features */
+    #features { background:var(--off); }
+    .feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:3rem; }
+    .feat-card {
+      background:var(--white); border-radius:12px; padding:1.75rem;
+      border:1px solid var(--border); transition:all .2s;
+    }
+    .feat-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,.08); border-color:var(--teal); }
+    .feat-emoji { font-size:1.75rem; margin-bottom:1rem; }
+    .feat-card h3 { font-size:.9375rem; font-weight:600; color:var(--dark); margin-bottom:.4rem; }
+    .feat-card p { font-size:.8125rem; color:var(--slate); line-height:1.6; }
+
+    /* Bildungswege */
+    #wege { background:var(--white); }
+    .wege-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; margin-top:3rem; }
+    .wege-card { border-radius:12px; overflow:hidden; border:1px solid var(--border); transition:all .2s; }
+    .wege-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,.1); }
+    .wege-hdr { padding:1rem; text-align:center; font-size:.78rem; font-weight:700; color:var(--white); }
+    .wege-body { padding:1.25rem; background:var(--white); }
+    .wege-step { display:flex; align-items:flex-start; gap:.625rem; margin-bottom:.625rem; }
+    .wege-num { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.68rem; font-weight:700; flex-shrink:0; color:var(--white); }
+    .wege-txt { font-size:.8rem; color:var(--dark); line-height:1.4; padding-top:2px; }
+    .wege-sal { margin-top:1rem; padding:.625rem; border-radius:8px; text-align:center; font-size:.78rem; font-weight:700; }
+
+    /* Netzwerk */
+    #netzwerk { background:var(--navy); }
+    .fly-wrap { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:0; margin-top:3.5rem; }
+    .fly-step { display:flex; flex-direction:column; align-items:center; text-align:center; width:150px; }
+    .fly-circle {
+      width:76px; height:76px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.4rem; border:2px solid; margin-bottom:.75rem; transition:transform .2s;
+    }
+    .fly-step:hover .fly-circle { transform:scale(1.1); }
+    .fly-step p { color:#94A3B8; font-size:.78rem; line-height:1.4; font-weight:500; }
+    .fly-arrow { color:var(--teal); font-size:1.4rem; opacity:.5; padding-bottom:2.5rem; margin:0 -.25rem; }
+    .fly-insight {
+      margin-top:3rem; padding:1.25rem 2rem;
+      background:rgba(13,148,136,.1); border:1px solid rgba(13,148,136,.25);
+      border-radius:10px; color:var(--teall); font-size:.9rem; line-height:1.6; text-align:center;
+    }
+
+    /* Förderung */
+    #foerderung { background:var(--off); }
+    .foerd-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:3rem; }
+    .foerd-card { background:var(--white); border-radius:12px; padding:1.75rem; border:1px solid var(--border); }
+    .foerd-amount { font-size:1.5rem; font-weight:700; margin-bottom:.2rem; }
+    .foerd-card h3 { font-size:.9375rem; font-weight:600; color:var(--dark); margin-bottom:.4rem; }
+    .foerd-card p { font-size:.8125rem; color:var(--slate); line-height:1.6; }
+    .foerd-tag { display:inline-block; padding:.25rem .625rem; border-radius:100px; font-size:.72rem; font-weight:600; margin-top:.75rem; }
+
+    /* Vergütung */
+    #verguetung { background:var(--navy); }
+    .price-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; align-items:start; }
+    .price-card { background:var(--card); border-radius:16px; padding:2rem; border:1px solid rgba(255,255,255,.08); transition:transform .2s; }
+    .price-card:hover { transform:translateY(-3px); }
+    .price-card.feat { border-color:var(--gold); background:linear-gradient(135deg,#1a2f45,var(--card)); position:relative; }
+    .price-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--dark); font-size:.72rem; font-weight:700; padding:3px 14px; border-radius:100px; white-space:nowrap; }
+    .price-tier { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.75rem; }
+    .price-val { font-size:2rem; font-weight:700; color:var(--white); }
+    .price-period { color:var(--slate); font-size:.875rem; margin-bottom:1.5rem; }
+    .price-list { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+    .price-list li { color:#94A3B8; font-size:.8125rem; display:flex; gap:.5rem; align-items:flex-start; }
+    .price-list li::before { content:'✓'; color:var(--teal); font-weight:700; flex-shrink:0; }
+    .price-school {
+      margin-top:2rem; padding:1.25rem;
+      background:rgba(13,148,136,.1); border:1px solid rgba(13,148,136,.25);
+      border-radius:10px; color:var(--teall); font-size:.875rem; line-height:1.6; text-align:center;
+    }
+    .price-school strong { display:block; font-size:1rem; margin-bottom:.25rem; }
+
+    /* Waitlist */
+    #waitlist { background:linear-gradient(135deg, #0B7A70, var(--teal)); padding:5rem 2rem; }
+    .wl-inner { max-width:700px; margin:0 auto; text-align:center; }
+    .wl-inner .sec-title { color:var(--white); font-size:clamp(2rem,3.5vw,2.75rem); }
+    .wl-sub { color:rgba(255,255,255,.82); font-size:1rem; line-height:1.7; max-width:560px; margin:.75rem auto 2.5rem; font-weight:300; }
+    .wl-tabs { display:flex; justify-content:center; gap:.5rem; margin-bottom:2rem; flex-wrap:wrap; }
+    .wl-tab {
+      padding:.5rem 1.25rem; border-radius:100px; cursor:pointer;
+      font-size:.875rem; font-weight:500; transition:all .2s;
+      border:2px solid rgba(255,255,255,.3); color:rgba(255,255,255,.7); background:transparent;
+    }
+    .wl-tab.active { background:var(--white); color:var(--teal); border-color:var(--white); font-weight:700; }
+    .wl-form { display:flex; flex-direction:column; gap:1rem; max-width:480px; margin:0 auto; }
+    .wl-form input, .wl-form select {
+      width:100%; padding:1rem 1.25rem; border-radius:10px;
+      border:2px solid rgba(255,255,255,.2); background:rgba(255,255,255,.12);
+      color:var(--white); font-size:.9375rem; font-family:'DM Sans',sans-serif;
+      outline:none; transition:border-color .2s;
+    }
+    .wl-form input::placeholder { color:rgba(255,255,255,.5); }
+    .wl-form select option { background:var(--navy); color:var(--white); }
+    .wl-form input:focus, .wl-form select:focus { border-color:rgba(255,255,255,.7); }
+    .wl-form .btn-submit {
+      background:var(--white); color:var(--teal);
+      padding:1rem; border-radius:10px; font-weight:700; font-size:1rem;
+      border:none; cursor:pointer; transition:all .2s;
+    }
+    .wl-form .btn-submit:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(0,0,0,.2); }
+    .wl-note { color:rgba(255,255,255,.55); font-size:.78rem; margin-top:1rem; }
+    .wl-count {
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:rgba(255,255,255,.15); border-radius:100px;
+      padding:.375rem 1rem; font-size:.8rem; color:var(--white); font-weight:500; margin-bottom:1.5rem;
+    }
+    .wl-count-dot { width:6px; height:6px; background:var(--teall); border-radius:50%; animation:pulse 2s infinite; }
+    .wl-success { display:none; text-align:center; }
+    .wl-success .s-icon { font-size:3rem; margin-bottom:1rem; }
+    .wl-success h3 { color:var(--white); font-family:'DM Serif Display',serif; font-size:1.5rem; margin-bottom:.5rem; }
+    .wl-success p { color:rgba(255,255,255,.75); font-size:.9rem; }
+
+    /* Footer */
+    footer { background:var(--navy); padding:3rem 2rem 2rem; }
+    .footer-inner { max-width:1200px; margin:0 auto; }
+    .footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,.08); }
+    .footer-brand .nav-logo { display:block; margin-bottom:.75rem; }
+    .footer-brand p { color:var(--slate); font-size:.8125rem; line-height:1.6; max-width:260px; }
+    .footer-links { display:flex; gap:3rem; flex-wrap:wrap; }
+    .footer-col h4 { color:var(--white); font-size:.8125rem; font-weight:600; margin-bottom:1rem; }
+    .footer-col a { display:block; color:var(--slate); text-decoration:none; font-size:.8125rem; margin-bottom:.5rem; transition:color .2s; }
+    .footer-col a:hover { color:var(--white); }
+    .footer-bottom { margin-top:1.5rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem; }
+    .footer-bottom p { color:var(--slate); font-size:.78rem; }
+
+    /* Animations */
+    @keyframes up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    /* Responsive */
+    @media(max-width:1024px) { .hero-inner { grid-template-columns:1fr; } .hero-phone { display:none; } .wege-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:768px) {
+      .nav-links { display:none; }
+      .prob-row1,.ziel-grid,.feat-grid,.foerd-grid,.price-grid { grid-template-columns:1fr; }
+      .prob-row2 { grid-template-columns:1fr; max-width:100%; }
+      .wege-grid { grid-template-columns:1fr 1fr; }
+      .fly-arrow { display:none; }
+      .footer-top { flex-direction:column; }
+    }
+    @media(max-width:480px) { .wege-grid { grid-template-columns:1fr; } .hero-stats { gap:1.5rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Edu<span>Connect</span></a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#wege">Bildungswege</a>
+    <a href="#foerderung">Förderung</a>
+    <a href="#verguetung">Für Unternehmen</a>
+    <a href="#waitlist" class="btn-nav">Jetzt registrieren</a>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="hero-badge-dot"></span>Das Bildungs-OS für Deutschland</div>
+      <h1 class="hero-title">Vom Schulzeugnis zum<br><em>Traumberuf.</em><br>Alles auf einer App.</h1>
+      <p class="hero-sub">EduConnect verbindet Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Notenprofil, Berufsorientierung, Fördergelder, Nachhilfe und Praktika — personalisiert, motivierend und kostenlos für Schüler.</p>
+      <div class="hero-actions">
+        <a href="#waitlist" class="btn-primary">Jetzt vorregistrieren →</a>
+        <a href="#features" class="btn-ghost">Mehr erfahren</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>11 Mio.</strong><span>Schüler in DE</span></div>
+        <div class="hero-stat"><strong>34.000</strong><span>Schulen</span></div>
+        <div class="hero-stat"><strong>50.000+</strong><span>unbesetzte Azubi-Plätze</span></div>
+        <div class="hero-stat"><strong>Mrd. €</strong><span>ungenutzte Fördergelder</span></div>
+      </div>
+    </div>
+    <div class="hero-phone">
+      <div class="phone-wrap">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="ps-bar"><span>9:41</span><span>●●●</span></div>
+            <div class="ps-hdr">
+              <div class="ps-hdr-name">Hallo, Leon! 👋</div>
+              <div class="ps-hdr-sub">Klasse 9B · Realschule · NRW</div>
+            </div>
+            <div class="ps-body">
+              <div class="ps-card">
+                <div class="ps-label">Zielberuf</div>
+                <div class="ps-val">Fachinformatiker</div>
+                <div class="ps-sub">Fit-Score: 68% — du bist auf Kurs</div>
+                <div class="ps-bar2"><div class="ps-fill"></div></div>
+              </div>
+              <div class="ps-sec">Nächste Schritte</div>
+              <div class="ps-step" style="background:#1A1020;border-color:#F43F5E"><span>📐 Mathe auf Note 2 bringen</span></div>
+              <div class="ps-step" style="background:#0A1F10;border-color:#10B981"><span>💼 Praktikum bei SAP buchen</span></div>
+              <div class="ps-step" style="background:#0A1020;border-color:#8B5CF6"><span>💶 BAföG-Anspruch prüfen</span></div>
+              <div class="ps-card" style="border-color:#10B981">
+                <div class="ps-label" style="color:#10B981">Förderung verfügbar</div>
+                <div class="ps-val" style="font-size:10px;color:#94A3B8">BAB · Kindergeld · Begabtenförderung</div>
+              </div>
+            </div>
+            <div class="ps-nav">
+              <span class="act">🏠 Home</span><span>🗺️ Pfad</span><span>🔍 Jobs</span><span>👤 Profil</span>
+            </div>
+          </div>
+        </div>
+        <div class="phone-badge pb1"><span class="pb-dot" style="background:#10B981"></span>68% Fit-Score ↑</div>
+        <div class="phone-badge pb2"><span class="pb-dot" style="background:#F59E0B"></span>3 Förderungen</div>
+        <div class="phone-badge pb3"><span class="pb-dot" style="background:#0D9488"></span>Praktikum frei</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Das Problem</div>
+      <h2 class="sec-title">Fünf ungelöste Probleme. Ein Markt.</h2>
+      <p class="sec-sub">Schüler, Eltern, Schulen und Unternehmen kämpfen alle mit denselben Hürden — getrennt, ohne Verbindung.</p>
+    </div>
+    <div class="prob-row1 reveal">
+      <div class="prob-card">
+        <div class="prob-bar" style="background:var(--teal)"></div>
+        <div class="prob-icon" style="background:rgba(13,148,136,.1)">🎓</div>
+        <h3>Schüler — orientierungslos</h3>
+        <p>53 % der Jugendlichen sind mit dem Informationsangebot überfordert. Orientierung kommt meist erst wenige Monate vor dem Schulabschluss.</p>
+      </div>
+      <div class="prob-card">
+        <div class="prob-bar" style="background:var(--gold)"></div>
+        <div class="prob-icon" style="background:rgba(245,158,11,.1)">👨‍👩‍👧</div>
+        <h3>Eltern — veraltet informiert</h3>
+        <p>73 % der Jugendlichen verlassen sich auf die Eltern. Diese raten oft zu Studium — obwohl Meister und Fachwirt heute mehr verdienen als ein Bachelor.</p>
+      </div>
+      <div class="prob-card">
+        <div class="prob-bar" style="background:var(--coral)"></div>
+        <div class="prob-icon" style="background:rgba(244,63,94,.1)">🏢</div>
+        <h3>Unternehmen — keine Azubis</h3>
+        <p>Über 50.000 Ausbildungsplätze bleiben jährlich unbesetzt. Firmen erreichen Schüler zu spät und über die falschen Kanäle.</p>
+      </div>
+    </div>
+    <div class="prob-row2 reveal">
+      <div class="prob-card">
+        <div class="prob-bar" style="background:var(--purp)"></div>
+        <div class="prob-icon" style="background:rgba(139,92,246,.1)">🏫</div>
+        <h3>Schulen — profitieren nicht</h3>
+        <p>Schulen organisieren Praktika manuell ohne digitale Tools — und erhalten trotz ihrer Schlüsselrolle keinerlei finanzielle Unterstützung.</p>
+      </div>
+      <div class="prob-card">
+        <div class="prob-bar" style="background:var(--green)"></div>
+        <div class="prob-icon" style="background:rgba(16,185,129,.1)">💶</div>
+        <h3>Fördergelder bleiben liegen</h3>
+        <p>Milliarden Euro an BAföG, Stipendien und Meisterprämien werden nicht abgerufen — weil niemand informiert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ziele">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Die Lösung</div>
+      <h2 class="sec-title lt">Eine Plattform. Sechs Zielgruppen.</h2>
+      <p class="sec-sub lt">EduConnect schafft den Netzwerkeffekt: Je mehr Schüler, desto wertvoller für Unternehmen — desto mehr Einnahmen für Schulen.</p>
+    </div>
+    <div class="ziel-grid reveal">
+      <div class="ziel-card">
+        <div class="ziel-icon" style="background:rgba(245,158,11,.15)">🎓</div>
+        <h3>Schüler & Eltern — kostenlos</h3>
+        <ul>
+          <li>Notenprofil + automatische Gap-Analyse zum Wunschberuf</li>
+          <li>Interessen-Check → konkrete Berufsvorschläge mit Begründung</li>
+          <li>Interaktiver Bildungsweg-Pfad mit Gehalts-Zeitstrahl</li>
+          <li>Förderplan: BAföG, Stipendien, Meisterprämien je Bundesland</li>
+          <li>Praktikumsvermittlung + digitales Tagebuch</li>
+          <li>Nachhilfe direkt aus der Gap-Analyse buchbar</li>
+        </ul>
+      </div>
+      <div class="ziel-card">
+        <div class="ziel-icon" style="background:rgba(13,148,136,.15)">🏢</div>
+        <h3>Unternehmen — zahlen</h3>
+        <ul>
+          <li>Unternehmensprofil mit Videos und Azubi-Berichten</li>
+          <li>Ausbildungsstellen mit Anforderungsprofil eingeben</li>
+          <li>Automatischer Fit-Score gegen Schülerprofile</li>
+          <li>Werbeflächen an Partnerschulen (physisch + digital)</li>
+          <li>Frühzeitiger Kontakt 1–2 Jahre vor Ausbildungsstart</li>
+          <li>Anonymisierte Reichweitendaten je Region</li>
+        </ul>
+      </div>
+      <div class="ziel-card">
+        <div class="ziel-icon" style="background:rgba(244,63,94,.15)">🏫</div>
+        <h3>Schulen & Fördervereine — profitieren</h3>
+        <ul>
+          <li>25–30 % der Unternehmenseinnahmen fließen in den Förderverein</li>
+          <li>Praktikumsverwaltung digital — kein manueller Aufwand mehr</li>
+          <li>Digitale Mitgliederverwaltung für Fördervereine</li>
+          <li>Öffentliche Spendennennung als PR für Partnerunternehmen</li>
+          <li>Fertige Berufsorientierungsmaterialien für Lehrkräfte</li>
+        </ul>
+      </div>
+      <div class="ziel-card">
+        <div class="ziel-icon" style="background:rgba(16,185,129,.15)">📚</div>
+        <h3>Nachhilfe & Lernplattformen</h3>
+        <ul>
+          <li>Einzelne Nachhilfelehrer mit Profil und Bewertung</li>
+          <li>Nachhilfeinstitute mit Paketbuchungen</li>
+          <li>Digitale Lernplattformen verlinkt</li>
+          <li>Direktbuchung aus der Gap-Analyse — kontextuelle Vermittlung</li>
+          <li>10–15 % Provision pro gebuchter Stunde</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Features</div>
+      <h2 class="sec-title">Alles was Schüler wirklich brauchen.</h2>
+      <p class="sec-sub">Kein anderer Anbieter verbindet Noten, Bildungsweg, Förderung und Nachhilfe in einem personalisierten Pfad.</p>
+    </div>
+    <div class="feat-grid reveal">
+      <div class="feat-card"><div class="feat-emoji">📊</div><h3>Notenprofil & Gap-Analyse</h3><p>Noten eingeben, Zielberuf wählen — die App zeigt sofort welche Fächer fehlen und was zu tun ist.</p></div>
+      <div class="feat-card"><div class="feat-emoji">❤️</div><h3>Interessen & Persönlichkeit</h3><p>15 spielerische Fragen zu Interessen und Gewohnheiten → konkrete Berufsvorschläge mit Begründung.</p></div>
+      <div class="feat-card"><div class="feat-emoji">🗺️</div><h3>Bildungsweg-Navigator</h3><p>Alle Pfade von Hauptschule bis Studium — nach Bundesland gefiltert, mit Gehalts-Zeitstrahl über 20 Jahre.</p></div>
+      <div class="feat-card"><div class="feat-emoji">💶</div><h3>Förderplan integriert</h3><p>BAföG, BAB, Begabtenförderung, Meisterprämien — automatisch berechnet, direkt im Pfad verankert.</p></div>
+      <div class="feat-card"><div class="feat-emoji">💼</div><h3>Praktikum + Tagebuch</h3><p>Praktikumsplatz finden, bewerben, digitales Tagebuch führen — daraus entsteht ein persönliches Stärkenprofil.</p></div>
+      <div class="feat-card"><div class="feat-emoji">🎯</div><h3>Gamification & Pfad-App</h3><p>Fortschrittsbalken, Abzeichen, Lernpfade — der Weg zum Zielberuf wird sichtbar und motivierend.</p></div>
+      <div class="feat-card"><div class="feat-emoji">📐</div><h3>Nachhilfe buchen</h3><p>Direkt aus der Gap-Analyse: Lehrer, Institute oder digitale Lernplattformen mit einem Klick buchbar.</p></div>
+      <div class="feat-card"><div class="feat-emoji">👨‍👩‍👧</div><h3>Family-Account</h3><p>Eltern verknüpfen ihr Konto mit dem Kind. Gemeinsam Wege erkunden, Gehaltsvergleiche sehen, Förderungen finden.</p></div>
+      <div class="feat-card"><div class="feat-emoji">🔔</div><h3>Smart Notifications</h3><p>Neue Praktikumsplätze, Stellen von Wunschfirmen, Bewerbungsfristen und Stipendien — automatisch.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="wege">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Bildungsweg-Navigator</div>
+      <h2 class="sec-title">Meister verdient mehr als Bachelor.<br>Das wissen die wenigsten.</h2>
+      <p class="sec-sub">Laut Destatis Mikrozensus 2022: Meister, Techniker und Fachwirte verdienen im Schnitt 4.826 € / Monat — mehr als Bachelor-Absolventen mit 4.551 €.</p>
+    </div>
+    <div class="wege-grid reveal">
+      <div class="wege-card">
+        <div class="wege-hdr" style="background:var(--teall);color:var(--dark)">Pfad A — Gymnasium</div>
+        <div class="wege-body">
+          <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">1</div><div class="wege-txt">Gymnasium Kl. 5–12</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">2</div><div class="wege-txt">Abitur</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">3</div><div class="wege-txt">Studium 3–5 Jahre</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">4</div><div class="wege-txt">Bachelor / Master</div></div>
+          <div class="wege-sal" style="background:rgba(94,234,212,.1);color:var(--teal)">Ø 4.551 € / Monat</div>
+        </div>
+      </div>
+      <div class="wege-card">
+        <div class="wege-hdr" style="background:var(--gold)">Pfad B — IHK Aufstieg ★</div>
+        <div class="wege-body">
+          <div class="wege-step"><div class="wege-num" style="background:var(--gold)">1</div><div class="wege-txt">Realschule</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--gold)">2</div><div class="wege-txt">Ausbildung 2–3 Jahre</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--gold)">3</div><div class="wege-txt">IHK Fachwirt (DQR 6 = Bachelor)</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--gold)">4</div><div class="wege-txt">IHK Betriebswirt (DQR 7 = Master)</div></div>
+          <div class="wege-sal" style="background:rgba(245,158,11,.1);color:var(--gold)">Ø 4.826 € / Monat ★</div>
+        </div>
+      </div>
+      <div class="wege-card">
+        <div class="wege-hdr" style="background:var(--coral)">Pfad C — Handwerksmeister ★</div>
+        <div class="wege-body">
+          <div class="wege-step"><div class="wege-num" style="background:var(--coral)">1</div><div class="wege-txt">Haupt- / Realschule</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--coral)">2</div><div class="wege-txt">Ausbildung Handwerk</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--coral)">3</div><div class="wege-txt">Gesellenbrief</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--coral)">4</div><div class="wege-txt">Meister (DQR 6 = Bachelor)</div></div>
+          <div class="wege-sal" style="background:rgba(244,63,94,.1);color:var(--coral)">Ø 4.826 € / Monat ★</div>
+        </div>
+      </div>
+      <div class="wege-card">
+        <div class="wege-hdr" style="background:var(--purp)">Pfad D — 2. Bildungsweg</div>
+        <div class="wege-body">
+          <div class="wege-step"><div class="wege-num" style="background:var(--purp)">1</div><div class="wege-txt">Hauptschule</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--purp)">2</div><div class="wege-txt">Ausbildung + Berufserfahrung</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--purp)">3</div><div class="wege-txt">Abendgymnasium (kostenlos)</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--purp)">4</div><div class="wege-txt">Abitur → Studium möglich</div></div>
+          <div class="wege-sal" style="background:rgba(139,92,246,.1);color:var(--purp)">Flexibel — kein Abschluss ist final</div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem;color:var(--slate);font-size:.8rem;text-align:center">★ Fachwirt/Meister übertrifft den Bachelor-Durchschnitt · Quelle: Destatis Mikrozensus 2022 · Bundesagentur für Arbeit</p>
+  </div>
+</section>
+
+<section id="netzwerk">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <div class="sec-label">Netzwerkeffekt</div>
+      <h2 class="sec-title lt">Warum die Plattform automatisch skaliert.</h2>
+      <p class="sec-sub lt" style="margin:0 auto">Fördervereine gewinnen Schüler — Schüler machen die Plattform wertvoll für Unternehmen — Unternehmen zahlen — Schulen profitieren.</p>
+    </div>
+    <div class="fly-wrap reveal">
+      <div class="fly-step"><div class="fly-circle" style="background:rgba(13,148,136,.15);border-color:var(--teal)">🏫</div><p>Schulen &<br>Fördervereine<br>partizipieren</p></div>
+      <div class="fly-arrow">→</div>
+      <div class="fly-step"><div class="fly-circle" style="background:rgba(245,158,11,.15);border-color:var(--gold)">🎓</div><p>Schüler &<br>Eltern nutzen<br>die App</p></div>
+      <div class="fly-arrow">→</div>
+      <div class="fly-step"><div class="fly-circle" style="background:rgba(94,234,212,.15);border-color:var(--teall)">📊</div><p>Plattform<br>sammelt<br>Daten</p></div>
+      <div class="fly-arrow">→</div>
+      <div class="fly-step"><div class="fly-circle" style="background:rgba(244,63,94,.15);border-color:var(--coral)">🏢</div><p>Unternehmen<br>zahlen für<br>Reichweite</p></div>
+      <div class="fly-arrow">→</div>
+      <div class="fly-step"><div class="fly-circle" style="background:rgba(16,185,129,.15);border-color:var(--green)">💶</div><p>Förderverein<br>erhält<br>Provision</p></div>
+      <div class="fly-arrow">→</div>
+      <div class="fly-step"><div class="fly-circle" style="background:rgba(139,92,246,.15);border-color:var(--purp)">🚀</div><p>Mehr Schulen<br>werden<br>Partner</p></div>
+    </div>
+    <div class="fly-insight reveal">Mehr Schüler → wertvoller für Unternehmen → mehr Erlös für Schulen → mehr Schulen → mehr Schüler</div>
+  </div>
+</section>
+
+<section id="foerderung">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Finanzielle Förderung</div>
+      <h2 class="sec-title">Milliarden Euro warten darauf,<br>abgerufen zu werden.</h2>
+      <p class="sec-sub">EduConnect zeigt jedem Schüler automatisch seinen persönlichen Förderplan — nach Bundesland, Ausbildungsweg und Einkommenssituation.</p>
+    </div>
+    <div class="foerd-grid reveal">
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--teal)">350 € / Monat</div><h3>BAB — Berufsausbildungsbeihilfe</h3><p>Für duale Ausbildung wenn auswärtige Unterbringung nötig. Wenig bekannt, automatisch auf Berechtigung geprüft.</p><span class="foerd-tag" style="background:rgba(13,148,136,.1);color:var(--teal)">Während Ausbildung</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--gold)">2.400 € / Jahr</div><h3>Begabtenförderung Berufliche Bildung</h3><p>Für überdurchschnittliche Azubis. Über 3 Jahre = 7.200 € — kaum bekannt, selten genutzt.</p><span class="foerd-tag" style="background:rgba(245,158,11,.1);color:var(--gold)">Bei guten Leistungen</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--coral)">75 % Kostenübernahme</div><h3>Aufstiegs-BAföG</h3><p>Für Meister, Fachwirt, Techniker. 50 % Darlehenserlass bei Bestehen. Direkt im Bildungsweg-Navigator verankert.</p><span class="foerd-tag" style="background:rgba(244,63,94,.1);color:var(--coral)">Für Weiterbildung</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--purp)">bis 6.000 €</div><h3>Meisterprämien je Bundesland</h3><p>Bayern 3.000 €, Berlin 5.000–6.000 €, NRW 2.500 €, Hessen 3.500 €. Automatisch nach Bundesland angezeigt.</p><span class="foerd-tag" style="background:rgba(139,92,246,.1);color:var(--purp)">Nach Prüfung</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--green)">300 € / Monat</div><h3>Deutschlandstipendium</h3><p>300 € monatlich für Studierende. Über Hochschulen beantragt. Kombinierbar mit BAföG.</p><span class="foerd-tag" style="background:rgba(16,185,129,.1);color:var(--green)">Für Studium</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--teal)">250 € / Monat</div><h3>Kindergeld & weitere Hilfen</h3><p>Kindergeld bis 25, Wohngeld für Azubis, Azubi-Ticket — alles automatisch auf Berechtigung geprüft.</p><span class="foerd-tag" style="background:rgba(13,148,136,.1);color:var(--teal)">Sofort verfügbar</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="verguetung">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Für Unternehmen</div>
+      <h2 class="sec-title lt">Azubis finden — 1–2 Jahre früher<br>als bei jedem Wettbewerber.</h2>
+      <p class="sec-sub lt">Über EduConnect erreichen Sie Schüler bereits in der Praktikumsphase — bevor sie sich anderswo bewerben.</p>
+    </div>
+    <div class="price-grid reveal">
+      <div class="price-card">
+        <div class="price-tier" style="color:var(--teall)">Basis</div>
+        <div class="price-val">500–1.000 €</div>
+        <div class="price-period">pro Jahr</div>
+        <ul class="price-list">
+          <li>Unternehmensprofil</li><li>Ausbildungsstellen schalten</li>
+          <li>Regionale Sichtbarkeit</li><li>Schüler-Matching (Fit-Score)</li>
+        </ul>
+      </div>
+      <div class="price-card feat">
+        <div class="price-badge">Empfohlen</div>
+        <div class="price-tier" style="color:var(--gold)">Premium</div>
+        <div class="price-val">2.500–5.000 €</div>
+        <div class="price-period">pro Jahr</div>
+        <ul class="price-list">
+          <li>Alles aus Basis</li><li>Werbeflächen an Schulen</li>
+          <li>Anonymisierte Reichweitendaten</li><li>Öffentliche Spendennennung</li>
+          <li>Praktikumsplatz-Slot</li><li>Nachhilfe-Listing</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-tier" style="color:var(--coral)">Enterprise</div>
+        <div class="price-val">8.000–15.000 €</div>
+        <div class="price-period">pro Jahr</div>
+        <ul class="price-list">
+          <li>Alles aus Premium</li><li>Mehrere Regionen bundesweit</li>
+          <li>Direktkontakt Schüler (opt-in)</li><li>Detaillierte Auswertungen</li>
+          <li>Video-Unternehmensprofil</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-school reveal">
+      <strong>🏫 Schulen & Fördervereine erhalten 25–30 % der Unternehmenseinnahmen</strong>
+      Rechtssicher über den Schulförderverein abgewickelt · in allen 16 Bundesländern möglich
+    </div>
+  </div>
+</section>
+
+<section id="waitlist">
+  <div class="wl-inner">
+    <div class="wl-count"><span class="wl-count-dot"></span>Erste Pilotschulen registrieren sich gerade</div>
+    <h2 class="sec-title">Jetzt vorregistrieren.<br>Kostenlos. Unverbindlich.</h2>
+    <p class="wl-sub">Egal ob Schule, Förderverein, Unternehmen oder Elternteil — sichern Sie sich frühen Zugang und gestalten Sie EduConnect mit.</p>
+    <div class="wl-tabs">
+      <button class="wl-tab active" onclick="switchTab('schule')">🏫 Schule / Förderverein</button>
+      <button class="wl-tab" onclick="switchTab('unternehmen')">🏢 Unternehmen</button>
+      <button class="wl-tab" onclick="switchTab('eltern')">👨‍👩‍👧 Eltern / Schüler</button>
+    </div>
+    <div id="form-schule" class="wl-form">
+      <input type="text" placeholder="Name der Schule / des Fördervereins" />
+      <input type="text" placeholder="Ihr Name" />
+      <input type="email" placeholder="E-Mail-Adresse" />
+      <select>
+        <option value="" disabled selected>Bundesland wählen</option>
+        <option>Baden-Württemberg</option><option>Bayern</option><option>Berlin</option>
+        <option>Brandenburg</option><option>Bremen</option><option>Hamburg</option>
+        <option>Hessen</option><option>Mecklenburg-Vorpommern</option><option>Niedersachsen</option>
+        <option>Nordrhein-Westfalen</option><option>Rheinland-Pfalz</option><option>Saarland</option>
+        <option>Sachsen</option><option>Sachsen-Anhalt</option><option>Schleswig-Holstein</option>
+        <option>Thüringen</option>
+      </select>
+      <button class="btn-submit" onclick="submitForm(event)">Jetzt als Pilotschule registrieren →</button>
+    </div>
+    <div id="form-unternehmen" class="wl-form" style="display:none">
+      <input type="text" placeholder="Unternehmensname" />
+      <input type="text" placeholder="Ihr Name & Position" />
+      <input type="email" placeholder="E-Mail-Adresse" />
+      <input type="text" placeholder="Anzahl Ausbildungsplätze pro Jahr" />
+      <button class="btn-submit" onclick="submitForm(event)">Als Unternehmenspartner registrieren →</button>
+    </div>
+    <div id="form-eltern" class="wl-form" style="display:none">
+      <input type="text" placeholder="Ihr Name" />
+      <input type="email" placeholder="E-Mail-Adresse" />
+      <select>
+        <option value="" disabled selected>Ich bin...</option>
+        <option>Elternteil eines Schülers</option>
+        <option>Schüler / Schülerin (14+)</option>
+        <option>Lehrkraft</option>
+      </select>
+      <button class="btn-submit" onclick="submitForm(event)">Frühen Zugang sichern →</button>
+    </div>
+    <div class="wl-success" id="wl-success">
+      <div class="s-icon">🎉</div>
+      <h3>Danke — Sie sind dabei!</h3>
+      <p>Wir melden uns sobald der Pilot startet.<br>Bei Fragen: <strong>hallo@edu-connect.com</strong></p>
+    </div>
+    <p class="wl-note">Kein Spam. Keine Weitergabe. Jederzeit abmeldbar.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">Edu<span>Connect</span></a>
+        <p>Das Bildungs-OS für Jugendliche in Deutschland. Schüler, Eltern, Schulen und Unternehmen auf einer Plattform.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Plattform</h4>
+          <a href="#features">Features</a>
+          <a href="#wege">Bildungswege</a>
+          <a href="#foerderung">Förderungen</a>
+          <a href="#netzwerk">Netzwerkeffekt</a>
+        </div>
+        <div class="footer-col">
+          <h4>Zielgruppen</h4>
+          <a href="#ziele">Schüler & Eltern</a>
+          <a href="#ziele">Schulen & Vereine</a>
+          <a href="#verguetung">Unternehmen</a>
+          <a href="#ziele">Nachhilfe</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <a href="mailto:hallo@edu-connect.com">hallo@edu-connect.com</a>
+          <a href="#waitlist">Pilot-Anfrage</a>
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 EduConnect. Alle Rechte vorbehalten.</p>
+      <p>Made in Germany 🇩🇪</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function switchTab(tab) {
+    ['schule','unternehmen','eltern'].forEach(t => {
+      document.getElementById('form-'+t).style.display = t===tab ? 'flex' : 'none';
+    });
+    document.querySelectorAll('.wl-tab').forEach((btn,i) => {
+      btn.classList.toggle('active', ['schule','unternehmen','eltern'][i]===tab);
+    });
+  }
+  function submitForm(e) {
+    e.preventDefault();
+    document.querySelectorAll('.wl-form').forEach(f => f.style.display='none');
+    document.querySelector('.wl-tabs').style.display='none';
+    document.getElementById('wl-success').style.display='block';
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,.3)' : 'none';
+  });
+</script>
+</body>
+</html>
