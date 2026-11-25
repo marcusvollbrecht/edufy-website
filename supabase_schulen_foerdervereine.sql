@@ -1,11 +1,31 @@
 -- =====================================================================
 -- Edufy – Schema Schulen, Fördervereine, Förderverein-Profile, Provisionen
--- Datei: supabase_schulen_foerdervereine.sql   (Aufgaben F-001, F-001b)
+-- Datei: supabase_schulen_foerdervereine.sql   (Aufgaben F-001, F-001b, F-008)
 --
 -- Einspielen: Supabase → SQL Editor → kompletten Inhalt einfügen → „Run“.
 -- Die Datei ist idempotent (mehrfach ausführbar, ohne Daten zu löschen).
 -- Voraussetzung: keine. Reihenfolge zu anderen Schemas egal
 -- (supabase_setup.sql für Schüler kann vorher oder nachher laufen).
+--
+-- Migration vom Stand Sprint 1 (F-001b) auf F-008
+-- ------------------------------------------------
+-- Einfach diese Datei komplett erneut ausführen – am besten VOR dem Deployment
+-- der neuen Förderverein-Seiten. Es werden keine Daten und keine Spalten gelöscht:
+-- * foerdervereine.status: Werte jetzt 'registriert', 'wartet_auf_schulleitung',
+--   'aktiv', 'pausiert', 'beendet' (Default 'registriert'). Vorhandene Zeilen
+--   mit 'neu' werden zu 'registriert'; 'aktiv' und 'pausiert' bleiben.
+-- * foerderverein_profiles: Die Datenschutz-Checkbox entfällt (Rechtsgrundlage
+--   der Registrierung ist Art. 6 Abs. 1 lit. b DSGVO, keine Einwilligung).
+--   Neue Spalte datenschutzhinweis_am (Zeitpunkt, zu dem die Registrierung mit
+--   angezeigtem Datenschutzhinweis abgeschickt wurde). Bestehende Zeilen erhalten
+--   den Wert aus datenschutz_akzeptiert_am. Die alten Spalten
+--   datenschutz_akzeptiert / datenschutz_akzeptiert_am bleiben als historischer
+--   Nachweis erhalten, sind jetzt aber nullable und werden nicht mehr befüllt.
+--   Sie können in einer späteren Migration gelöscht werden.
+-- * register_foerderverein: neue Signatur ohne p_datenschutz_akzeptiert
+--   (15 Parameter). Die alte Signatur (16 Parameter) bleibt als Übergangs-
+--   Wrapper bestehen, damit noch geöffnete alte Seiten weiter funktionieren.
+--   Entfernen, sobald die neuen Seiten live sind (siehe Ende der Datei).
 --
 -- Sicherheitskonzept
 -- ------------------
@@ -101,14 +121,31 @@ create table if not exists public.foerdervereine (
   gemeinnuetzig       boolean not null,
   -- IBAN wird bewusst NICHT bei der Registrierung abgefragt (erst für Auszahlungen, späteres Ticket).
   iban                text check (iban is null or char_length(iban) between 15 and 34),
-  status              text not null default 'neu' check (status in ('neu', 'aktiv', 'pausiert')),
+  -- Status nur serverseitig änderbar (kein UPDATE-Recht für Nutzer, siehe Tabellenrechte)
+  status              text not null default 'registriert'
+                        constraint foerdervereine_status_check check (status in (
+                          'registriert', 'wartet_auf_schulleitung', 'aktiv', 'pausiert', 'beendet')),
   created_by          uuid references auth.users (id) on delete set null,
   created_at          timestamptz not null default now(),
   updated_at          timestamptz not null default now()
 );
 comment on table public.foerdervereine is 'Fördervereine. Genau ein Verein pro Schule (school_id unique).';
 comment on column public.foerdervereine.iban is 'Später für Auszahlungen; wird im Onboarding (F-001) nicht abgefragt.';
-comment on column public.foerdervereine.status is 'neu = registriert, noch kein Gespräch; aktiv = freigeschaltet; pausiert.';
+-- Migration Sprint 1 → F-008: Status-Werte umstellen (idempotent).
+-- Der alte Check hieß automatisch ebenfalls foerdervereine_status_check.
+alter table public.foerdervereine drop constraint if exists foerdervereine_status_check;
+update public.foerdervereine set status = 'registriert' where status = 'neu';
+alter table public.foerdervereine alter column status set default 'registriert';
+alter table public.foerdervereine add constraint foerdervereine_status_check
+  check (status in ('registriert', 'wartet_auf_schulleitung', 'aktiv', 'pausiert', 'beendet'));
+
+comment on column public.foerdervereine.status is
+  'registriert = Registrierung abgeschlossen, noch nicht aktiv; '
+  'wartet_auf_schulleitung = Gespräch geführt, formale Zustimmung der Schulleitung steht aus (F-006); '
+  'aktiv = Zustimmung liegt vor und Jahresvereinbarung ist geschlossen (F-007); '
+  'pausiert = vorübergehend nicht aktiv (Altwert Sprint 1 / Support); '
+  'beendet = Jahresvereinbarung beendet oder Zustimmung widerrufen. '
+  'Nur serverseitig (Service-Role/Support) änderbar.';
 
 drop trigger if exists foerdervereine_set_updated_at on public.foerdervereine;
 create trigger foerdervereine_set_updated_at
@@ -129,14 +166,35 @@ create table if not exists public.foerderverein_profiles (
   email                       text not null check (char_length(email) between 3 and 254),
   telefon                     text check (telefon is null or char_length(telefon) <= 40),
   vertretung_bestaetigt       boolean not null default false,
-  datenschutz_akzeptiert      boolean not null check (datenschutz_akzeptiert = true),
-  datenschutz_akzeptiert_am   timestamptz not null,
+  -- datenschutzhinweis_am: Registrierung mit angezeigtem Datenschutzhinweis abgeschickt (F-008)
+  datenschutzhinweis_am       timestamptz not null default now(),
+  -- Veraltet seit F-008 (Checkbox „einverstanden“ aus Sprint 1), nur noch historischer Nachweis
+  datenschutz_akzeptiert      boolean,
+  datenschutz_akzeptiert_am   timestamptz,
   created_at                  timestamptz not null default now(),
   updated_at                  timestamptz not null default now()
 );
 comment on table public.foerderverein_profiles is 'Ansprechpersonen eines Fördervereins; id = auth.users.id.';
 comment on column public.foerderverein_profiles.vertretung_bestaetigt is 'Person hat bestätigt, Vorstandsmitglied oder vom Vorstand beauftragt zu sein.';
-comment on column public.foerderverein_profiles.datenschutz_akzeptiert_am is 'Zeitpunkt der Zustimmung zur Datenschutzerklärung (Nachweis nach Art. 7 Abs. 1 DSGVO).';
+
+-- Migration Sprint 1 → F-008: Datenschutz-Checkbox → Hinweis (idempotent, nichts wird gelöscht)
+alter table public.foerderverein_profiles add column if not exists datenschutzhinweis_am timestamptz;
+update public.foerderverein_profiles
+   set datenschutzhinweis_am = coalesce(datenschutz_akzeptiert_am, created_at)
+ where datenschutzhinweis_am is null;
+alter table public.foerderverein_profiles alter column datenschutzhinweis_am set default now();
+alter table public.foerderverein_profiles alter column datenschutzhinweis_am set not null;
+alter table public.foerderverein_profiles drop constraint if exists foerderverein_profiles_datenschutz_akzeptiert_check;
+alter table public.foerderverein_profiles alter column datenschutz_akzeptiert drop not null;
+alter table public.foerderverein_profiles alter column datenschutz_akzeptiert_am drop not null;
+
+comment on column public.foerderverein_profiles.datenschutzhinweis_am is
+  'Zeitpunkt, zu dem die Registrierung mit angezeigtem Datenschutzhinweis (Art. 13 DSGVO) abgeschickt wurde. '
+  'Rechtsgrundlage der Registrierung: Art. 6 Abs. 1 lit. b DSGVO – keine Einwilligung.';
+comment on column public.foerderverein_profiles.datenschutz_akzeptiert is
+  'VERALTET seit F-008: Checkbox aus Sprint 1, wird nicht mehr befüllt. Nur historischer Wert; später löschen.';
+comment on column public.foerderverein_profiles.datenschutz_akzeptiert_am is
+  'VERALTET seit F-008: Zeitpunkt der Checkbox aus Sprint 1, wird nicht mehr befüllt. Nur historischer Wert; später löschen.';
 
 create index if not exists foerderverein_profiles_verein_idx
   on public.foerderverein_profiles (foerderverein_id);
@@ -208,11 +266,12 @@ grant select on public.schools, public.foerdervereine,
                 public.foerderverein_profiles, public.provisions
   to authenticated;
 
--- Verein: Stammdaten änderbar; school_id, iban, status nicht (Support/Backend)
+-- Verein: Stammdaten änderbar; school_id, iban, status nicht (Support/Backend).
+-- Wichtig für F-006/F-007: status (Schulleitung, Aktivierung) bleibt rein serverseitig.
 grant update (vereinsname, vereinsregister_nr, registergericht, gemeinnuetzig)
   on public.foerdervereine to authenticated;
 
--- Profil: persönliche Angaben änderbar; Vereinszuordnung/E-Mail/Einwilligung nicht
+-- Profil: persönliche Angaben änderbar; Vereinszuordnung/E-Mail/Datenschutz-Zeitstempel nicht
 grant update (vorname, nachname, funktion, telefon)
   on public.foerderverein_profiles to authenticated;
 
@@ -411,9 +470,12 @@ grant execute on function public.check_school_registered(text, text) to anon, au
 -- RPC: register_foerderverein – legt Schule (falls neu), Verein und Profil an
 -- Fehler werden als 'EDUFY:<CODE>' gemeldet, das Frontend übersetzt sie.
 --   NICHT_ANGEMELDET, PFLICHTFELD, UNGUELTIGE_PLZ, UNGUELTIGE_SCHULFORM,
---   UNGUELTIGES_BUNDESLAND, UNGUELTIGE_FUNKTION, DATENSCHUTZ_FEHLT,
---   VERTRETUNG_FEHLT, SCHULE_BEREITS_REGISTRIERT
+--   UNGUELTIGES_BUNDESLAND, UNGUELTIGE_FUNKTION, VERTRETUNG_FEHLT,
+--   SCHULE_BEREITS_REGISTRIERT
+-- (DATENSCHUTZ_FEHLT entfällt seit F-008: keine Einwilligung mehr nötig,
+--  der Datenschutzhinweis wird angezeigt und datenschutzhinweis_am gesetzt.)
 -- Rückgabe: jsonb { status: 'angelegt' | 'bereits_registriert', foerderverein_id, school_id }
+-- Der neue Verein startet mit foerdervereine.status = 'registriert'.
 -- ---------------------------------------------------------------------
 create or replace function public.register_foerderverein(
   p_schulname              text,
@@ -430,8 +492,7 @@ create or replace function public.register_foerderverein(
   p_nachname               text,
   p_funktion               text,
   p_telefon                text,
-  p_vertretung_bestaetigt  boolean,
-  p_datenschutz_akzeptiert boolean
+  p_vertretung_bestaetigt  boolean
 )
 returns jsonb
 language plpgsql
@@ -490,9 +551,6 @@ begin
        'schriftfuehrung', 'beisitz', 'sonstiges') then
     raise exception 'EDUFY:UNGUELTIGE_FUNKTION';
   end if;
-  if p_datenschutz_akzeptiert is distinct from true then
-    raise exception 'EDUFY:DATENSCHUTZ_FEHLT';
-  end if;
   if p_vertretung_bestaetigt is distinct from true then
     raise exception 'EDUFY:VERTRETUNG_FEHLT';
   end if;
@@ -539,8 +597,8 @@ begin
 
   begin
     insert into public.foerdervereine (school_id, vereinsname, vereinsregister_nr,
-                                       registergericht, gemeinnuetzig, created_by)
-    values (v_school_id, v_verein, v_vr_nr, v_gericht, p_gemeinnuetzig, v_uid)
+                                       registergericht, gemeinnuetzig, status, created_by)
+    values (v_school_id, v_verein, v_vr_nr, v_gericht, p_gemeinnuetzig, 'registriert', v_uid)
     returning id into v_verein_id;
   exception when unique_violation then
     raise exception 'EDUFY:SCHULE_BEREITS_REGISTRIERT';
@@ -548,14 +606,59 @@ begin
 
   insert into public.foerderverein_profiles (id, foerderverein_id, vorname, nachname, funktion,
                                              email, telefon, vertretung_bestaetigt,
-                                             datenschutz_akzeptiert, datenschutz_akzeptiert_am)
+                                             datenschutzhinweis_am)
   values (v_uid, v_verein_id, v_vorname, v_nachname, p_funktion,
-          v_email, v_telefon, true, true, now());
+          v_email, v_telefon, true, now());
 
   return jsonb_build_object('status', 'angelegt',
                             'foerderverein_id', v_verein_id,
                             'school_id', v_school_id);
 end;
+$$;
+
+revoke execute on function public.register_foerderverein(
+  text, text, text, text, text, text, text, text, text, boolean,
+  text, text, text, text, boolean) from public, anon;
+grant execute on function public.register_foerderverein(
+  text, text, text, text, text, text, text, text, text, boolean,
+  text, text, text, text, boolean) to authenticated;
+
+-- ---------------------------------------------------------------------
+-- Übergangs-Wrapper (F-008): alte Signatur mit p_datenschutz_akzeptiert.
+-- Damit funktionieren Seiten im alten Stand (noch offene Browser-Tabs oder
+-- Frontend-Deployment nach dem SQL) weiter. Der Wert wird ignoriert.
+-- Entfernen, sobald die neuen Seiten live sind:
+--   drop function if exists public.register_foerderverein(
+--     text, text, text, text, text, text, text, text, text, boolean,
+--     text, text, text, text, boolean, boolean);
+-- ---------------------------------------------------------------------
+create or replace function public.register_foerderverein(
+  p_schulname              text,
+  p_schulform              text,
+  p_strasse                text,
+  p_plz                    text,
+  p_ort                    text,
+  p_bundesland             text,
+  p_vereinsname            text,
+  p_vereinsregister_nr     text,
+  p_registergericht        text,
+  p_gemeinnuetzig          boolean,
+  p_vorname                text,
+  p_nachname               text,
+  p_funktion               text,
+  p_telefon                text,
+  p_vertretung_bestaetigt  boolean,
+  p_datenschutz_akzeptiert boolean
+)
+returns jsonb
+language sql
+security invoker
+set search_path = ''
+as $$
+  select public.register_foerderverein(
+    p_schulname, p_schulform, p_strasse, p_plz, p_ort, p_bundesland,
+    p_vereinsname, p_vereinsregister_nr, p_registergericht, p_gemeinnuetzig,
+    p_vorname, p_nachname, p_funktion, p_telefon, p_vertretung_bestaetigt);
 $$;
 
 revoke execute on function public.register_foerderverein(

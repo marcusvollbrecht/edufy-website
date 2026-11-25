@@ -150,17 +150,25 @@
           <h3>Vorstand informieren</h3>
           <p>Erzählen Sie Ihren Vorstandskolleginnen und -kollegen von Edufy. Diesen Text können Sie zum Beispiel per E-Mail weitergeben:</p>
           <p class="vorlage" id="vorlage">Liebe Vorstandskolleginnen und -kollegen,
-ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unseren Schülerinnen und Schülern bei der Berufs- und Studienorientierung. Unser Verein wird an den Einnahmen beteiligt, die Unternehmen über unsere Schule erzielen. Die Registrierung ist kostenlos und unverbindlich; die Details erklärt uns Edufy in einem persönlichen Gespräch.</p>
+ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft Schülerinnen und Schülern bei der Berufs- und Studienorientierung. Unser Verein soll an den Einnahmen beteiligt werden, die Edufy mit Unternehmen über unsere Schule erzielt. Während der kostenlosen Pilotphase für Unternehmen fallen noch keine Einnahmen an, unser Verein erhält in dieser Zeit also noch keine Vergütung. Die Registrierung ist kostenlos und unverbindlich. Bevor es losgeht, muss unsere Schulleitung zustimmen und der Vorstand eine Jahresvereinbarung beschließen. Unternehmen sehen dabei nur anonyme Statistiken, keine Daten einzelner Schülerinnen und Schüler. Die Details erklärt uns Edufy in einem persönlichen Gespräch.</p>
           <button type="button" class="btn btn-secondary" id="btn-copy" style="margin-top:.6rem">Text kopieren</button>
           <span id="copy-status" role="status" aria-live="polite"></span>
         </li>
         <li>
           <h3>Persönliches Gespräch</h3>
-          <p>Wir melden uns bei Ihnen per E-Mail oder Telefon. Im Gespräch erklären wir, wie die Beteiligung des Vereins an den Unternehmenseinnahmen funktioniert, und beantworten Ihre Fragen.</p>
+          <p>Wir melden uns per E-Mail oder Telefon. Im Gespräch erklären wir, wie die Beteiligung des Vereins funktioniert, wie die Zustimmung der Schulleitung abläuft und was in der Jahresvereinbarung steht.</p>
+        </li>
+        <li id="step-schulleitung">
+          <h3>Zustimmung der Schulleitung einholen <span class="badge">Infoschreiben kommt bald</span></h3>
+          <p>Bevor Ihr Verein aktiv wird, muss Ihre Schulleitung formal zustimmen. Sie bestätigt damit, dass sie Edufy kennt und einverstanden ist, dass Ihr Verein Edufy an der Schule bekannt macht. Pflichten für die Schule entstehen dadurch nicht. Für das Gespräch mit Ihrer Schulleitung stellen wir Ihnen ein Infoschreiben bereit – es kommt in Kürze.</p>
+        </li>
+        <li>
+          <h3>Jahresvereinbarung abschließen</h3>
+          <p>Ihr Vorstand schließt eine Jahresvereinbarung mit Edufy. Erst dann wird Ihr Verein aktiv. Während der kostenlosen Pilotphase für Unternehmen fallen noch keine Einnahmen an – Ihr Verein erhält in dieser Zeit deshalb noch keine Vergütung.</p>
         </li>
         <li>
           <h3>Schülerinnen und Schüler einladen <span class="badge">kommt bald</span></h3>
-          <p>In Kürze erhalten Sie hier einen Einladungslink und einen QR-Code, den Sie an Schülerinnen, Schüler und Eltern weitergeben können.</p>
+          <p>Sobald Ihr Verein aktiv ist, erhalten Sie hier einen Einladungslink und einen QR-Code, den Sie an Schülerinnen, Schüler und Eltern weitergeben können.</p>
         </li>
       </ol>
     </section>
@@ -212,7 +220,7 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
 
     <section class="card" aria-labelledby="h-kontakt">
       <h2 id="h-kontakt">Fragen? Wir helfen gerne.</h2>
-      <p>Schreiben Sie uns an <a href="mailto:hallo@edu-connect.com">hallo@edu-connect.com</a>. Wir antworten persönlich.</p>
+      <p>Schreiben Sie uns an <a href="mailto:hallo@edufy.world">hallo@edufy.world</a>. Wir antworten persönlich.</p>
     </section>
   </main>
 
@@ -222,7 +230,7 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
       <nav aria-label="Rechtliches">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
-        <a href="mailto:hallo@edu-connect.com">Kontakt</a>
+        <a href="mailto:hallo@edufy.world">Kontakt</a>
       </nav>
     </div>
   </footer>
@@ -234,7 +242,7 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
   (function () {
     'use strict';
 
-    var KONTAKT = 'hallo@edu-connect.com';
+    var KONTAKT = 'hallo@edufy.world';
     var db = window.edufyDbReady ? window.edufyDb : null;
     var statusEl = document.getElementById('status');
     var params = new URLSearchParams(window.location.search);
@@ -329,7 +337,9 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
       $('step-email-text').textContent = 'Ihre E-Mail-Adresse ist bestätigt.';
     }
 
-    // Identisch zur Registrierungsseite: explizite Feldzuordnung, kein Spread
+    // Identisch zur Registrierungsseite: explizite Feldzuordnung, kein Spread.
+    // Seit F-008 ohne p_datenschutz_akzeptiert (Hinweis statt Einwilligung). Ältere Metadaten
+    // mit datenschutz_akzeptiert werden einfach ignoriert.
     function buildRpcParams(r) {
       return {
         p_schulname: r.schulname,
@@ -346,8 +356,7 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
         p_nachname: r.nachname,
         p_funktion: r.funktion,
         p_telefon: r.telefon || null,
-        p_vertretung_bestaetigt: r.vertretung_bestaetigt === true,
-        p_datenschutz_akzeptiert: r.datenschutz_akzeptiert === true
+        p_vertretung_bestaetigt: r.vertretung_bestaetigt === true
       };
     }
 
@@ -379,7 +388,7 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
     // ---------- Ansichten ----------
     function showAwaitingEmail(email) {
       setHeading('Vielen Dank! Bitte bestätigen Sie jetzt Ihre E-Mail-Adresse.',
-        'Die Registrierung ist kostenlos und unverbindlich. Hier sehen Sie, was als Nächstes passiert.');
+        'Die Registrierung ist kostenlos und verpflichtet Sie zu nichts. Verbindlich wird es erst mit der Jahresvereinbarung. Hier sehen Sie, was als Nächstes passiert.');
       $('email-target').textContent = ' an ' + email;
       prefillEmail(email);
       showCards(['schritte', 'anmelden', 'erneut-senden']);
@@ -399,11 +408,11 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
     function showDone(vereinsname) {
       markEmailDone();
       setHeading('Ihr Förderverein ist registriert!',
-        'Vielen Dank für Ihre Registrierung. Die Registrierung ist kostenlos und unverbindlich. Hier sehen Sie, was als Nächstes passiert.');
+        'Vielen Dank für Ihre Registrierung. Die Registrierung ist kostenlos und verpflichtet Sie zu nichts. Verbindlich wird es erst mit der Jahresvereinbarung. Hier sehen Sie, was als Nächstes passiert.');
       showCards(['schritte']);
       setStatus('ok', 'Registrierung abgeschlossen.',
-        (vereinsname ? '„' + vereinsname + '“ ist jetzt bei Edufy angemeldet. ' : 'Ihr Verein ist jetzt bei Edufy angemeldet. ') +
-        'Wir melden uns in Kürze für ein persönliches Gespräch bei Ihnen.', true);
+        (vereinsname ? '„' + vereinsname + '“ ist jetzt bei Edufy registriert. ' : 'Ihr Verein ist jetzt bei Edufy registriert. ') +
+        'Wir melden uns in Kürze für ein persönliches Gespräch bei Ihnen. Ihr nächster Schritt danach: die Zustimmung Ihrer Schulleitung einholen.', true);
     }
 
     function showDuplicate(reg, email, cleaned) {

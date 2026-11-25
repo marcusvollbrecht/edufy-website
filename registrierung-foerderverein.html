@@ -146,14 +146,16 @@
     <h1>Förderverein kostenlos registrieren</h1>
     <p class="lead">Melden Sie den Förderverein Ihrer Schule bei Edufy an. Das dauert etwa 5 Minuten. Halten Sie, wenn möglich, die Vereinsregister-Nummer bereit – Sie können sie aber auch später nachtragen.</p>
     <ul class="trust">
-      <li><span><strong>Kostenlos und unverbindlich:</strong> keine Gebühren, kein Abo, kein Mitgliedsbeitrag.</span></li>
-      <li><span><strong>Ihr Vorteil:</strong> Der Förderverein wird an den Einnahmen beteiligt, die Unternehmen über Ihre Schule bei Edufy erzielen. Die Details besprechen wir mit Ihnen im persönlichen Gespräch.</span></li>
+      <li><span><strong>Kostenlose Registrierung:</strong> Die Anmeldung kostet nichts und verpflichtet zu nichts – keine Gebühren, kein Mitgliedsbeitrag.</span></li>
+      <li><span><strong>Ihr Vorteil:</strong> Der Förderverein wird an den Einnahmen beteiligt, die Edufy mit Unternehmen über Ihre Schule erzielt. Die Details besprechen wir mit Ihnen persönlich.</span></li>
+      <li><span><strong>Pilotphase:</strong> Während der kostenlosen Pilotphase für Unternehmen fallen noch keine Einnahmen an. Ihr Verein erhält in dieser Zeit deshalb noch keine Vergütung.</span></li>
+      <li><span><strong>Erst später verbindlich:</strong> Bevor Ihr Verein aktiv wird, braucht es die Zustimmung Ihrer Schulleitung und eine Jahresvereinbarung, die Ihr Vorstand abschließt. Beides erklären wir im Gespräch.</span></li>
     </ul>
     <p class="login-hint">Schon registriert? <a href="foerderverein-bestaetigung.html#anmelden">Anmelden</a></p>
 
     <div id="config-warning" class="notice notice-warn" role="status" hidden>
       <strong>Hinweis: Die Online-Registrierung ist gerade noch nicht freigeschaltet.</strong>
-      Sie können das Formular schon ansehen und ausfüllen, das Absenden funktioniert aber noch nicht. Schreiben Sie uns gerne: <a href="mailto:hallo@edu-connect.com">hallo@edu-connect.com</a>.
+      Sie können das Formular schon ansehen und ausfüllen, das Absenden funktioniert aber noch nicht. Schreiben Sie uns gerne: <a href="mailto:hallo@edufy.world">hallo@edufy.world</a>.
     </div>
 
     <nav class="progress" aria-label="Fortschritt der Registrierung">
@@ -321,12 +323,12 @@
           <span class="err" id="passwort-err"></span>
         </div>
         <fieldset class="field">
-          <legend>Einverständnis</legend>
-          <label class="choice"><input type="checkbox" id="vertretung" name="vertretung" required aria-describedby="vertretung-err" /> <span>Ich bin im Vorstand des Fördervereins oder wurde vom Vorstand gebeten, den Verein zu registrieren.</span></label>
+          <legend>Bestätigung</legend>
+          <label class="choice"><input type="checkbox" id="vertretung" name="vertretung" required aria-describedby="vertretung-hint vertretung-err" /> <span>Ich bin im Vorstand des Fördervereins oder wurde vom Vorstand gebeten, den Verein zu registrieren.</span></label>
+          <span class="hint" id="vertretung-hint">Für die kostenlose Registrierung genügt das. Die spätere Jahresvereinbarung schließt der vertretungsberechtigte Vorstand laut Satzung (§ 26 BGB).</span>
           <span class="err" id="vertretung-err"></span>
-          <label class="choice"><input type="checkbox" id="datenschutz" name="datenschutz" required aria-describedby="datenschutz-err" /> <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung (öffnet in neuem Tab)</a> gelesen und bin einverstanden, dass Edufy meine Angaben zur Registrierung und Kontaktaufnahme speichert.</span></label>
-          <span class="err" id="datenschutz-err"></span>
         </fieldset>
+        <p class="hint" id="datenschutz-hinweis">Wir verarbeiten Ihre Angaben, um Ihr Konto anzulegen und Sie zur Beteiligung Ihres Vereins zu kontaktieren. Telefonnummer und Registerangaben sind freiwillig. Details in der <a href="datenschutz.html#registrierung-foerderverein" target="_blank" rel="noopener">Datenschutzerklärung (öffnet in neuem Tab)</a>.</p>
       </section>
 
       <!-- Schritt 4: Zusammenfassung -->
@@ -349,10 +351,12 @@
           <strong>So geht es nach dem Absenden weiter</strong>
           <ol class="next-steps">
             <li>Sie bekommen eine E-Mail mit einem Bestätigungslink. Bitte klicken Sie darauf.</li>
-            <li>Wir melden uns bei Ihnen und erklären im persönlichen Gespräch, wie der Verein an den Unternehmenseinnahmen beteiligt wird.</li>
-            <li>Danach können Sie Schülerinnen und Schüler Ihrer Schule einladen (Einladungslink und QR-Code – kommt in Kürze).</li>
+            <li>Wir melden uns und erklären im persönlichen Gespräch, wie der Verein an den Einnahmen beteiligt wird.</li>
+            <li>Ihre Schulleitung bestätigt, dass sie einverstanden ist. Den Link dafür bekommen Sie von uns.</li>
+            <li>Ihr Vorstand schließt eine Jahresvereinbarung mit Edufy. Erst dann wird Ihr Verein aktiv und kann Schülerinnen und Schüler einladen.</li>
           </ol>
-          <p style="margin-top:.5rem">Die Registrierung ist kostenlos und unverbindlich.</p>
+          <p style="margin-top:.5rem">Während der kostenlosen Pilotphase für Unternehmen fallen noch keine Einnahmen an. Ihr Verein erhält in dieser Zeit deshalb noch keine Vergütung.</p>
+          <p style="margin-top:.5rem">Die Registrierung ist kostenlos und verpflichtet Sie zu nichts. Verbindlich wird es erst mit der Jahresvereinbarung.</p>
         </div>
         <div id="submit-error" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
       </section>
@@ -372,7 +376,7 @@
       <nav aria-label="Rechtliches">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
-        <a href="mailto:hallo@edu-connect.com">Kontakt</a>
+        <a href="mailto:hallo@edufy.world">Kontakt</a>
       </nav>
     </div>
   </footer>
@@ -384,7 +388,7 @@
   (function () {
     'use strict';
 
-    var KONTAKT = 'hallo@edu-connect.com';
+    var KONTAKT = 'hallo@edufy.world';
     var TOTAL = 4;
     var STEP_TITLES = { 1: 'Schule', 2: 'Verein', 3: 'Ansprechperson', 4: 'Prüfen & absenden' };
     var LABELS = {
@@ -476,7 +480,6 @@
         var pw = $('passwort').value || '';
         check('passwort', pw.length >= 8, pw ? 'Das Passwort ist zu kurz – bitte mindestens 8 Zeichen.' : 'Bitte wählen Sie ein Passwort (mindestens 8 Zeichen).');
         check('vertretung', $('vertretung').checked, 'Bitte bestätigen Sie, dass Sie für den Verein handeln dürfen.');
-        check('datenschutz', $('datenschutz').checked, 'Bitte stimmen Sie der Datenschutzerklärung zu, sonst können wir Ihre Angaben nicht speichern.');
       }
       return errors;
     }
@@ -633,8 +636,7 @@
         funktion: val('funktion'),
         email: val('email').toLowerCase(),
         telefon: val('telefon'),
-        vertretung_bestaetigt: $('vertretung').checked,
-        datenschutz_akzeptiert: $('datenschutz').checked
+        vertretung_bestaetigt: $('vertretung').checked
       };
     }
 
@@ -655,13 +657,12 @@
         nachname: d.nachname,
         funktion: d.funktion,
         telefon: d.telefon,
-        vertretung_bestaetigt: d.vertretung_bestaetigt,
-        datenschutz_akzeptiert: d.datenschutz_akzeptiert,
-        datenschutz_akzeptiert_am: new Date().toISOString()
+        vertretung_bestaetigt: d.vertretung_bestaetigt
       };
     }
 
-    // Parameter für die RPC register_foerderverein (identisch auf der Bestätigungsseite)
+    // Parameter für die RPC register_foerderverein (identisch auf der Bestätigungsseite).
+    // Seit F-008 ohne Datenschutz-Einwilligung: Rechtsgrundlage Art. 6 Abs. 1 lit. b DSGVO, Hinweis statt Checkbox.
     function buildRpcParams(r) {
       return {
         p_schulname: r.schulname,
@@ -678,8 +679,7 @@
         p_nachname: r.nachname,
         p_funktion: r.funktion,
         p_telefon: r.telefon || null,
-        p_vertretung_bestaetigt: r.vertretung_bestaetigt === true,
-        p_datenschutz_akzeptiert: r.datenschutz_akzeptiert === true
+        p_vertretung_bestaetigt: r.vertretung_bestaetigt === true
       };
     }
 
@@ -713,7 +713,6 @@
       var raw = String((err && (err.message || err.error_description || err.msg)) || err || '');
       var m = raw.toLowerCase();
       if (m.indexOf('edufy:schule_bereits_registriert') !== -1) return 'Für diese Schule ist bereits ein Förderverein bei Edufy registriert. Bitte sprechen Sie mit Ihrem Vorstand oder schreiben Sie uns an ' + KONTAKT + ' – wir klären das gemeinsam.';
-      if (m.indexOf('edufy:datenschutz_fehlt') !== -1) return 'Bitte stimmen Sie der Datenschutzerklärung zu.';
       if (m.indexOf('edufy:vertretung_fehlt') !== -1) return 'Bitte bestätigen Sie, dass Sie für den Verein handeln dürfen.';
       if (m.indexOf('edufy:ungueltige_plz') !== -1) return 'Die Postleitzahl ist ungültig. Bitte prüfen Sie Schritt 1.';
       if (m.indexOf('edufy:') !== -1) return 'Einige Angaben sind unvollständig. Bitte prüfen Sie Ihre Eingaben.';
