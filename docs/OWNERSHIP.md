@@ -5,7 +5,7 @@ Dateinamen sind Muster. Stand Sprint 1: Repo-Root enthält die HTML-Seiten, SQL 
 
 | Bereich | Owner | Dateien/Muster |
 |---|---|---|
-| Schüler & Content | edufy-dev-schueler | `schueler*.html`, `registrierung-schueler*.html`, `berufe*.html`, `studium*.html`, `dashboard-schueler*.html`, `data/berufe*`, `data/studium*`, `sql/schueler*.sql`, `supabase_setup.sql` |
+| Schüler & Content | edufy-dev-schueler | `schueler*.html`, `registrierung-schueler*.html`, `berufe*.html`, `studium*.html`, `dashboard-schueler*.html`, `eltern-freigabe*.html`, `foerderungen*.html`, `navigator*.html`, `data/foerderungen*`, `data/bildungswege*`, `docs/content/*`, `supabase/functions/schueler*`, `data/berufe*`, `data/studium*`, `sql/schueler*.sql`, `supabase_setup.sql` |
 | Förderverein & Schule | edufy-dev-foerderverein | `foerderverein*.html`, `schule*.html`, `registrierung-foerderverein*.html`, `dashboard-foerderverein*.html`, `sql/foerderverein*.sql`, `supabase_schulen_foerdervereine.sql` |
 | Unternehmen | edufy-dev-unternehmen | `unternehmen*.html`, `registrierung-unternehmen*.html`, `dashboard-unternehmen*.html`, `angebote*.html`, `sql/unternehmen*.sql` |
 | **Gemeinsam** | **nur nach Freigabe durch edufy-pm** | `index.html`, Navigation/Header/Footer, `css/*` (global), `js/supabase*.js`, `js/auth*.js`, `vercel.json`, Impressum/Datenschutz/AGB |

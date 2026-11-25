@@ -39,6 +39,13 @@ Status: abgeschlossen 2026-11-25. Website-Texte rechtlich vorgeprüft und umgese
 - Landingpage „Vier Zielgruppen“: bleibt ohne Pilot-Zusatz.
 - **Schülerkonten und gut aufbereiteter Schüler-Content sind Voraussetzung für den Pilot** – ohne sie kein Pilotstart. Minderjährigen-Fragen an den Anwalt bleiben in Gruppe „vor Pilotstart zwingend“.
 
+## Sprint 3 (2026-11-25) — Ziel: Schülerbereich aufbauen (Content + Schülerkonto)
+Entscheidung Marcus: kein Bestandscode, neu aufbauen; Pilot-Content = Berufsbibliothek (Top 50), Bildungsweg-Navigator, Förderungen, Studiumsbibliothek.
+- [ ] S-003 | S | P0 | Content-Datenbasis nach docs/content/SCHEMA.md: data/berufe.json (Top 50), data/studium.json, data/foerderungen.json, data/bildungswege.json, docs/content/QUELLEN.md — Owner: Content-Redaktion (edufy-dev-schueler, Recherche mit Websuche)
+- [ ] S-004 | S | P0 | Content-Seiten ohne Login: berufe.html, studium.html, foerderungen.html, navigator.html (lesen data/*.json) — Owner: edufy-dev-schueler (Instanz „Seiten“)
+- [ ] S-002 | S | P0 | Schülerkonto + U16-Eltern-Freigabe: supabase_setup.sql, registrierung-schueler.html, eltern-freigabe.html, dashboard-schueler.html (Merkliste), Supabase Edge Function für Eltern-Mail — Owner: edufy-dev-schueler (Instanz „Konto“)
+- danach: edufy-legal (Minderjährige, U16-Flow, Content-Aussagen), edufy-test-schueler (Lena 15, Jonas 18)
+
 ## Offene Entscheidungen für Marcus
 - [ ] GmbH gründen (nach internem Test) – danach Impressumsangaben ausfüllen, Datenschutzerklärung finalisieren (nach Legal-Vorprüfung, mit Anwalt)
 - [ ] Supabase-Projekt-URL + Anon-Key für `js/supabase-config.js`
@@ -65,7 +72,6 @@ Status: abgeschlossen 2026-11-25. Website-Texte rechtlich vorgeprüft und umgese
 - [ ] F-005 | F | P2 | Schulauswahl über amtliche Schulnummer statt Freitext (robuste Dublettenerkennung) + Rate-Limit für check_school_registered — Quelle: Bericht F-001b
 - [ ] F-006 | F | P1 | Formale Zustimmung der Schulleitung (Einladungslink an Schulleitung, Status „wartet auf Schulleitung“, Verein erst danach aktiv) — Quelle: Entscheidung Marcus
 - [ ] F-007 | F | P1 | Förderverein-Jahresvertrag bei Aktivierung (Vertragstext von edufy-legal, Annahme im Dashboard, Laufzeit/Kündigung im Schema) — blockiert durch L-001/T-001
-- [ ] S-002 | S | P0 | Eltern-Freigabe für Schüler unter 16 per E-Mail-Link, eingeschränktes Konto bis zur Freigabe — Quelle: Entscheidung Marcus
 - [ ] U-003 | U | P2 | Stripe-Integration (Billing/SEPA/Rechnung) nach Pilotphase, Gutschriften an Fördervereine — Quelle: Entscheidung Marcus
 
 
