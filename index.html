@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
-  <title>EduConnect — Das Bildungs-OS für Jugendliche in Deutschland</title>
-  <meta name="description" content="EduConnect verbindet Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Berufsorientierung, Notenprofil, Förderungen und Nachhilfe auf einer Plattform." />
+  <title>Edufy – Berufs- und Studienorientierung für Jugendliche in Deutschland</title>
+  <meta name="description" content="Edufy verbindet Schülerinnen und Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Geplant: Berufsorientierung, Notenprofil und Überblick über Förderungen – kostenlos für Schülerinnen und Schüler." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://edufy.world/" />
   <meta name="theme-color" content="#0B1F3A" />
@@ -14,17 +14,17 @@
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
-  <meta property="og:site_name" content="EduConnect" />
+  <meta property="og:site_name" content="Edufy" />
   <meta property="og:url" content="https://edufy.world/" />
-  <meta property="og:title" content="EduConnect — Das Bildungs-OS für Jugendliche in Deutschland" />
-  <meta property="og:description" content="EduConnect verbindet Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Berufsorientierung, Notenprofil, Förderungen und Nachhilfe auf einer Plattform." />
+  <meta property="og:title" content="Edufy – Berufs- und Studienorientierung für Jugendliche in Deutschland" />
+  <meta property="og:description" content="Edufy verbindet Schülerinnen und Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Geplant: Berufsorientierung, Notenprofil und Überblick über Förderungen – kostenlos für Schülerinnen und Schüler." />
   <!-- TODO (G-004): /og-image.jpg (1200×630) anlegen – Datei existiert noch nicht. -->
   <meta property="og:image" content="https://edufy.world/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EduConnect — Das Bildungs-OS für Jugendliche in Deutschland" />
-  <meta name="twitter:description" content="EduConnect verbindet Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Berufsorientierung, Notenprofil, Förderungen und Nachhilfe auf einer Plattform." />
+  <meta name="twitter:title" content="Edufy – Berufs- und Studienorientierung für Jugendliche in Deutschland" />
+  <meta name="twitter:description" content="Edufy verbindet Schülerinnen und Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Geplant: Berufsorientierung, Notenprofil und Überblick über Förderungen – kostenlos für Schülerinnen und Schüler." />
   <meta name="twitter:image" content="https://edufy.world/og-image.jpg" />
 
   <!-- Schriften lokal (kein Google-Request) -->
@@ -56,7 +56,7 @@
 
     /* Fokus: auf hellem Grund Navy, auf dunklem Grund Hellgelb */
     :focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
-    header, .hero, #ziele, #netzwerk, #verguetung, #waitlist, footer, .skip-link { --focus:#FDE68A; }
+    header, .hero, #ziele, #netzwerk, #unternehmen, #waitlist, footer, .skip-link { --focus:#FDE68A; }
     section { scroll-margin-top:72px; }
     .skip-link {
       position:absolute; left:1rem; top:-100px; z-index:1000;
@@ -149,10 +149,13 @@
     .btn-ghost:hover { border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.06); }
     .hero-stats { display:flex; gap:2.5rem; margin-top:3rem; flex-wrap:wrap; animation:up .6s .4s ease both; }
     .hero-stat strong { display:block; font-size:1.75rem; font-weight:700; color:var(--gold); line-height:1; }
-    .hero-stat span { font-size:.78rem; color:var(--slate-light); margin-top:.25rem; display:block; }
+    .hero-stat span { font-size:.78rem; color:var(--slate-light); margin-top:.25rem; display:block; max-width:11rem; }
+    .hero-stat sup, .hero-src sup { font-size:.7em; line-height:0; }
+    .hero-src { margin-top:1.5rem; font-size:.72rem; line-height:1.5; color:var(--slate-light); max-width:560px; animation:up .6s .4s ease both; }
 
     /* Phone */
-    .hero-phone { display:flex; justify-content:center; animation:up .8s .2s ease both; }
+    .hero-phone { display:flex; flex-direction:column; align-items:center; gap:1.25rem; animation:up .8s .2s ease both; }
+    .phone-caption { color:var(--slate-light); font-size:.78rem; text-align:center; }
     .phone-wrap { position:relative; width:270px; filter:drop-shadow(0 40px 80px rgba(0,0,0,.55)); }
     .phone-frame { background:#1C1C1E; border:2px solid #3A3A3C; border-radius:44px; padding:12px 10px 18px; }
     .phone-notch { width:80px; height:18px; background:#1C1C1E; border-radius:10px; margin:0 auto 8px; }
@@ -190,7 +193,7 @@
     section { padding:5rem 2rem; }
     .container { max-width:1200px; margin:0 auto; }
     .sec-label { color:var(--teal-text); font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.6rem; }
-    #ziele .sec-label, #netzwerk .sec-label, #verguetung .sec-label { color:var(--teal-on-dark); }
+    #ziele .sec-label, #netzwerk .sec-label, #unternehmen .sec-label { color:var(--teal-on-dark); }
     .sec-title { font-family:'DM Serif Display',serif; font-size:clamp(1.75rem,3vw,2.5rem); line-height:1.15; letter-spacing:-.02em; margin-bottom:.75rem; }
     .sec-sub { color:var(--slate); font-size:1rem; line-height:1.7; font-weight:300; max-width:580px; }
     .sec-title.lt { color:var(--white); }
@@ -224,9 +227,10 @@
     .ziel-card ul { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
     .ziel-card li { color:var(--slate-light); font-size:.8125rem; display:flex; gap:.5rem; align-items:flex-start; }
     .ziel-card li::before { content:'→'; content:'→' / ''; color:var(--teal-on-dark); flex-shrink:0; }
+    .ziel-note { margin-top:1.5rem; color:var(--slate-light); font-size:.8125rem; text-align:center; }
 
-    /* Features */
-    #features { background:var(--off); }
+    /* Funktionen */
+    #funktionen { background:var(--off); }
     .feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:3rem; }
     .feat-card {
       background:var(--white); border-radius:12px; padding:1.75rem;
@@ -248,6 +252,7 @@
     .wege-num { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.68rem; font-weight:700; flex-shrink:0; color:var(--white); }
     .wege-txt { font-size:.8rem; color:var(--dark); line-height:1.4; padding-top:2px; }
     .wege-sal { margin-top:1rem; padding:.625rem; border-radius:8px; text-align:center; font-size:.78rem; font-weight:700; }
+    .wege-src { margin:1.5rem auto 0; max-width:760px; color:var(--slate); font-size:.8rem; line-height:1.6; text-align:center; }
 
     /* Netzwerk */
     #netzwerk { background:var(--navy); }
@@ -266,6 +271,7 @@
       background:rgba(13,148,136,.1); border:1px solid rgba(13,148,136,.25);
       border-radius:10px; color:var(--teall); font-size:.9rem; line-height:1.6; text-align:center;
     }
+    .fly-privacy { margin:1.25rem auto 0; max-width:720px; color:var(--white); font-size:.9rem; line-height:1.6; text-align:center; }
 
     /* Förderung */
     #foerderung { background:var(--off); }
@@ -275,9 +281,10 @@
     .foerd-card h3 { font-size:.9375rem; font-weight:600; color:var(--dark); margin-bottom:.4rem; }
     .foerd-card p { font-size:.8125rem; color:var(--slate); line-height:1.6; }
     .foerd-tag { display:inline-block; padding:.25rem .625rem; border-radius:100px; font-size:.72rem; font-weight:600; margin-top:.75rem; }
+    .foerd-src { margin-top:1.5rem; color:var(--slate); font-size:.8rem; line-height:1.6; }
 
     /* Vergütung */
-    #verguetung { background:var(--navy); }
+    #unternehmen { background:var(--navy); }
     .price-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; align-items:start; }
     .price-card { background:var(--card); border-radius:16px; padding:2rem; border:1px solid rgba(255,255,255,.08); transition:transform .2s; }
     .price-card:hover { transform:translateY(-3px); }
@@ -289,6 +296,9 @@
     .price-list { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
     .price-list li { color:var(--slate-light); font-size:.8125rem; display:flex; gap:.5rem; align-items:flex-start; }
     .price-list li::before { content:'✓'; content:'✓' / ''; color:var(--teal-on-dark); font-weight:700; flex-shrink:0; }
+    .price-grid-single { grid-template-columns:1fr; max-width:560px; margin-left:auto; margin-right:auto; }
+    .price-terms { margin:1.25rem 0 0; line-height:1.6; }
+    .price-cta { margin-top:1.5rem; }
     .price-school {
       margin-top:2rem; padding:1.25rem;
       background:rgba(13,148,136,.1); border:1px solid rgba(13,148,136,.25);
@@ -341,7 +351,6 @@
       background:rgba(255,255,255,.15); border-radius:100px;
       padding:.375rem 1rem; font-size:.8rem; color:var(--white); font-weight:500; margin-bottom:1.5rem;
     }
-    .wl-count-dot { width:6px; height:6px; background:var(--teall); border-radius:50%; animation:pulse 2s infinite; }
     .wl-success { text-align:center; }
     .wl-success .s-icon { font-size:3rem; margin-bottom:1rem; }
     .wl-success h3 { color:var(--white); font-family:'DM Serif Display',serif; font-size:1.5rem; margin-bottom:.5rem; }
@@ -364,7 +373,6 @@
     @keyframes up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
     @keyframes rise { from { transform:translateY(20px); } to { transform:translateY(0); } }
     @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
-    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
     /* Nur ausblenden, wenn JS läuft – ohne JS bleibt alles sichtbar */
     .js .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
     .js .reveal.visible { opacity:1; transform:none; }
@@ -414,15 +422,15 @@
 
 <header>
 <nav aria-label="Hauptnavigation">
-  <a href="#hero" class="nav-logo" aria-label="EduConnect – zum Seitenanfang">Edu<span>Connect</span></a>
+  <a href="#hero" class="nav-logo" aria-label="Edufy – zum Seitenanfang">Edu<span>fy</span></a>
   <div class="nav-links" id="nav-menu">
-    <a href="#features">Features</a>
+    <a href="#funktionen">Funktionen</a>
     <a href="#wege">Bildungswege</a>
-    <a href="#foerderung">Förderung</a>
-    <a href="#verguetung">Für Unternehmen</a>
+    <a href="#foerderung">Förderungen</a>
+    <a href="#unternehmen">Für Unternehmen</a>
   </div>
   <div class="nav-actions">
-    <a href="#waitlist" class="btn-nav">Jetzt registrieren</a>
+    <a href="#waitlist" class="btn-nav">Jetzt vorregistrieren</a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
       <span class="nav-toggle-bars" aria-hidden="true"></span>
       <span class="visually-hidden">Menü</span>
@@ -436,55 +444,60 @@
 <section class="hero" id="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-badge"><span class="hero-badge-dot"></span>Das Bildungs-OS für Deutschland</div>
-      <h1 class="hero-title">Vom Schulzeugnis zum<br><em>Traumberuf.</em><br>Alles auf einer App.</h1>
-      <p class="hero-sub">EduConnect verbindet Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Notenprofil, Berufsorientierung, Fördergelder, Nachhilfe und Praktika — personalisiert, motivierend und kostenlos für Schüler.</p>
+      <div class="hero-badge"><span class="hero-badge-dot"></span>Im Aufbau – Pilotstart in Vorbereitung</div>
+      <h1 class="hero-title">Vom Schulzeugnis zum<br><em>Traumberuf.</em><br>Alles an einem Ort.</h1>
+      <p class="hero-sub">Edufy verbindet Schülerinnen und Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Geplant sind Notenprofil, Berufsorientierung, Überblick über Förderungen und Praktikumsangebote – kostenlos für Schülerinnen und Schüler.</p>
       <div class="hero-actions">
         <a href="#waitlist" class="btn-primary">Jetzt vorregistrieren <span aria-hidden="true">→</span></a>
-        <a href="#features" class="btn-ghost">Mehr erfahren</a>
+        <a href="#funktionen" class="btn-ghost">Mehr erfahren</a>
       </div>
+      <!-- Zahlen vor Veröffentlichung in den Destatis-/BIBB-Pressemitteilungen gegenprüfen (Legal E-2) -->
       <div class="hero-stats">
-        <div class="hero-stat"><strong>11 Mio.</strong><span>Schüler in DE</span></div>
-        <div class="hero-stat"><strong>34.000</strong><span>Schulen</span></div>
-        <div class="hero-stat"><strong>50.000+</strong><span>unbesetzte Azubi-Plätze</span></div>
-        <div class="hero-stat"><strong>Mrd. €</strong><span>ungenutzte Fördergelder</span></div>
+        <div class="hero-stat"><strong>über 11 Mio.</strong><span>Schülerinnen und Schüler in Deutschland<sup>1</sup></span></div>
+        <div class="hero-stat"><strong>rund 32.800</strong><span>allgemeinbildende Schulen<sup>1</sup></span></div>
+        <div class="hero-stat"><strong>rund 54.400</strong><span>unbesetzte Ausbildungsstellen 2025<sup>2</sup></span></div>
+        <div class="hero-stat"><strong>0 €</strong><span>für Schülerinnen und Schüler</span></div>
       </div>
+      <p class="hero-src"><sup>1</sup> Statistisches Bundesamt (Destatis), Schuljahr 2024/25 (alle Schularten, vorläufig) bzw. 2025/26 (allgemeinbildende Schulen). <sup>2</sup> BIBB, Ausbildungsmarkt zum 30.09.2025.</p>
     </div>
-    <div class="hero-phone" role="img" aria-label="App-Vorschau: Startbildschirm mit Zielberuf, Fit-Score, nächsten Schritten und verfügbaren Förderungen">
-      <div class="phone-wrap" aria-hidden="true">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="ps-bar"><span>9:41</span><span>●●●</span></div>
-            <div class="ps-hdr">
-              <div class="ps-hdr-name">Hallo, Leon! 👋</div>
-              <div class="ps-hdr-sub">Klasse 9B · Realschule · NRW</div>
-            </div>
-            <div class="ps-body">
-              <div class="ps-card">
-                <div class="ps-label">Zielberuf</div>
-                <div class="ps-val">Fachinformatiker</div>
-                <div class="ps-sub">Fit-Score: 68% — du bist auf Kurs</div>
-                <div class="ps-bar2"><div class="ps-fill"></div></div>
+    <div class="hero-phone">
+      <div class="phone-img" role="img" aria-label="Beispielhafte App-Vorschau (Entwurf): Zielberuf, Fortschritt, nächste Schritte und mögliche Förderungen">
+        <div class="phone-wrap" aria-hidden="true">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="ps-bar"><span>9:41</span><span>●●●</span></div>
+              <div class="ps-hdr">
+                <div class="ps-hdr-name">Hallo, Leon! 👋</div>
+                <div class="ps-hdr-sub">Klasse 9b · Realschule · NRW</div>
               </div>
-              <div class="ps-sec">Nächste Schritte</div>
-              <div class="ps-step" style="background:#1A1020;border-color:#F43F5E"><span>📐 Mathe auf Note 2 bringen</span></div>
-              <div class="ps-step" style="background:#0A1F10;border-color:#10B981"><span>💼 Praktikum bei SAP buchen</span></div>
-              <div class="ps-step" style="background:#0A1020;border-color:#8B5CF6"><span>💶 BAföG-Anspruch prüfen</span></div>
-              <div class="ps-card" style="border-color:#10B981">
-                <div class="ps-label" style="color:#10B981">Förderung verfügbar</div>
-                <div class="ps-val" style="font-size:10px;color:#94A3B8">BAB · Kindergeld · Begabtenförderung</div>
+              <div class="ps-body">
+                <div class="ps-card">
+                  <div class="ps-label">Zielberuf</div>
+                  <div class="ps-val">Fachinformatiker</div>
+                  <div class="ps-sub">Fit-Score: 68 % – du bist auf Kurs</div>
+                  <div class="ps-bar2"><div class="ps-fill"></div></div>
+                </div>
+                <div class="ps-sec">Nächste Schritte</div>
+                <div class="ps-step" style="background:#1A1020;border-color:#F43F5E"><span>📐 Mathe auf Note 2 bringen</span></div>
+                <div class="ps-step" style="background:#0A1F10;border-color:#10B981"><span>💼 Praktikum im IT-Betrieb finden</span></div>
+                <div class="ps-step" style="background:#0A1020;border-color:#8B5CF6"><span>💶 Förderungen ansehen</span></div>
+                <div class="ps-card" style="border-color:#10B981">
+                  <div class="ps-label" style="color:#10B981">Mögliche Förderungen</div>
+                  <div class="ps-val" style="font-size:10px;color:#94A3B8">BAB · Kindergeld · Stipendien</div>
+                </div>
               </div>
-            </div>
-            <div class="ps-nav">
-              <span class="act">🏠 Home</span><span>🗺️ Pfad</span><span>🔍 Jobs</span><span>👤 Profil</span>
+              <div class="ps-nav">
+                <span class="act">🏠 Start</span><span>🗺️ Pfad</span><span>🔍 Praktika</span><span>👤 Profil</span>
+              </div>
             </div>
           </div>
+          <div class="phone-badge pb1"><span class="pb-dot" style="background:#10B981"></span>68 % Fit-Score ↑</div>
+          <div class="phone-badge pb2"><span class="pb-dot" style="background:#F59E0B"></span>3 Förderungen</div>
+          <div class="phone-badge pb3"><span class="pb-dot" style="background:#0D9488"></span>Neues Praktikum</div>
         </div>
-        <div class="phone-badge pb1"><span class="pb-dot" style="background:#10B981"></span>68% Fit-Score ↑</div>
-        <div class="phone-badge pb2"><span class="pb-dot" style="background:#F59E0B"></span>3 Förderungen</div>
-        <div class="phone-badge pb3"><span class="pb-dot" style="background:#0D9488"></span>Praktikum frei</div>
       </div>
+      <p class="phone-caption">Beispielhafte Darstellung – Funktionen in Entwicklung.</p>
     </div>
   </div>
 </section>
@@ -492,42 +505,42 @@
 <section id="problem">
   <div class="container">
     <div class="reveal">
-      <div class="sec-label">Das Problem</div>
-      <h2 class="sec-title">Fünf ungelöste Probleme. Ein Markt.</h2>
-      <p class="sec-sub">Schüler, Eltern, Schulen und Unternehmen kämpfen alle mit denselben Hürden — getrennt, ohne Verbindung.</p>
+      <div class="sec-label">Die Ausgangslage</div>
+      <h2 class="sec-title">Fünf Hürden auf dem Weg in den Beruf.</h2>
+      <p class="sec-sub">Schülerinnen und Schüler, Eltern, Schulen und Unternehmen stehen vor ähnlichen Fragen – bisher meist getrennt voneinander.</p>
     </div>
     <div class="prob-row1 reveal">
       <div class="prob-card">
         <div class="prob-bar" style="background:var(--teal)"></div>
         <div class="prob-icon" aria-hidden="true" style="background:rgba(13,148,136,.1)">🎓</div>
-        <h3>Schüler — orientierungslos</h3>
-        <p>53 % der Jugendlichen sind mit dem Informationsangebot überfordert. Orientierung kommt meist erst wenige Monate vor dem Schulabschluss.</p>
+        <h3>Schülerinnen und Schüler – viele Infos, wenig Überblick</h3>
+        <p>53 % der Jugendlichen fühlen sich vom Informationsangebot zur Berufswahl überfordert (Bertelsmann Stiftung, Jugendbefragung 2022).</p>
       </div>
       <div class="prob-card">
         <div class="prob-bar" style="background:var(--gold)"></div>
         <div class="prob-icon" aria-hidden="true" style="background:rgba(245,158,11,.1)">👨‍👩‍👧</div>
-        <h3>Eltern — veraltet informiert</h3>
-        <p>73 % der Jugendlichen verlassen sich auf die Eltern. Diese raten oft zu Studium — obwohl Meister und Fachwirt heute mehr verdienen als ein Bachelor.</p>
+        <h3>Eltern – die wichtigsten Ratgeber</h3>
+        <p>Für 73 % der Jugendlichen sind die Eltern die wichtigste Unterstützung bei der Berufswahl (Bertelsmann Stiftung, 2022). Viele Eltern kennen vor allem den Weg über das Studium – dabei bieten auch Ausbildung und Aufstiegsfortbildung wie Meister oder Fachwirt sehr gute Perspektiven.</p>
       </div>
       <div class="prob-card">
         <div class="prob-bar" style="background:var(--coral)"></div>
         <div class="prob-icon" aria-hidden="true" style="background:rgba(244,63,94,.1)">🏢</div>
-        <h3>Unternehmen — keine Azubis</h3>
-        <p>Über 50.000 Ausbildungsplätze bleiben jährlich unbesetzt. Firmen erreichen Schüler zu spät und über die falschen Kanäle.</p>
+        <h3>Unternehmen – offene Ausbildungsstellen</h3>
+        <p>Rund 54.400 Ausbildungsstellen blieben 2025 unbesetzt (BIBB, Stand 30.09.2025). Viele Betriebe erreichen Schülerinnen und Schüler erst spät.</p>
       </div>
     </div>
     <div class="prob-row2 reveal">
       <div class="prob-card">
         <div class="prob-bar" style="background:var(--purp)"></div>
         <div class="prob-icon" aria-hidden="true" style="background:rgba(139,92,246,.1)">🏫</div>
-        <h3>Schulen — profitieren nicht</h3>
-        <p>Schulen organisieren Praktika manuell ohne digitale Tools — und erhalten trotz ihrer Schlüsselrolle keinerlei finanzielle Unterstützung.</p>
+        <h3>Schulen – viel Handarbeit</h3>
+        <p>Schulen organisieren Praktika oft noch mit viel Handarbeit.</p>
       </div>
       <div class="prob-card">
         <div class="prob-bar" style="background:var(--green)"></div>
         <div class="prob-icon" aria-hidden="true" style="background:rgba(16,185,129,.1)">💶</div>
-        <h3>Fördergelder bleiben liegen</h3>
-        <p>Milliarden Euro an BAföG, Stipendien und Meisterprämien werden nicht abgerufen — weil niemand informiert.</p>
+        <h3>Förderungen sind oft unbekannt</h3>
+        <p>BAföG, BAB, Stipendien, Meisterprämien: Viele Angebote sind kompliziert und wenig bekannt. Edufy will helfen, den Überblick zu behalten.</p>
       </div>
     </div>
   </div>
@@ -536,78 +549,76 @@
 <section id="ziele">
   <div class="container">
     <div class="reveal">
-      <div class="sec-label">Die Lösung</div>
-      <h2 class="sec-title lt">Eine Plattform. Sechs Zielgruppen.</h2>
-      <p class="sec-sub lt">EduConnect schafft den Netzwerkeffekt: Je mehr Schüler, desto wertvoller für Unternehmen — desto mehr Einnahmen für Schulen.</p>
+      <div class="sec-label">Die Idee</div>
+      <h2 class="sec-title lt">Eine Plattform. Vier Zielgruppen.</h2>
+      <p class="sec-sub lt">Schülerinnen und Schüler entdecken ihren Weg. Unternehmen stellen sich und ihre Angebote vor. Schulen und Fördervereine profitieren mit.</p>
     </div>
     <div class="ziel-grid reveal">
       <div class="ziel-card">
         <div class="ziel-icon" aria-hidden="true" style="background:rgba(245,158,11,.15)">🎓</div>
-        <h3>Schüler & Eltern — kostenlos</h3>
+        <h3>Schülerinnen, Schüler & Eltern – kostenlos</h3>
         <ul>
-          <li>Notenprofil + automatische Gap-Analyse zum Wunschberuf</li>
-          <li>Interessen-Check → konkrete Berufsvorschläge mit Begründung</li>
-          <li>Interaktiver Bildungsweg-Pfad mit Gehalts-Zeitstrahl</li>
-          <li>Förderplan: BAföG, Stipendien, Meisterprämien je Bundesland</li>
-          <li>Praktikumsvermittlung + digitales Tagebuch</li>
-          <li>Nachhilfe direkt aus der Gap-Analyse buchbar</li>
+          <li>Notenprofil mit Gap-Analyse zum Wunschberuf</li>
+          <li>Interessen-Check mit Berufsvorschlägen und Begründung</li>
+          <li>Bildungsweg-Navigator: Wege nach der Schule im Überblick</li>
+          <li>Überblick über Förderungen wie BAföG, Stipendien und Meisterprämien je Bundesland</li>
+          <li>Praktikumssuche und digitales Praktikumstagebuch</li>
+          <li>Passende Nachhilfe finden (geplant)</li>
         </ul>
       </div>
       <div class="ziel-card">
         <div class="ziel-icon" aria-hidden="true" style="background:rgba(13,148,136,.15)">🏢</div>
-        <h3>Unternehmen — zahlen</h3>
+        <h3>Unternehmen</h3>
         <ul>
           <li>Unternehmensprofil mit Videos und Azubi-Berichten</li>
-          <li>Ausbildungsstellen mit Anforderungsprofil eingeben</li>
-          <li>Automatischer Fit-Score gegen Schülerprofile</li>
-          <li>Werbeflächen an Partnerschulen (physisch + digital)</li>
-          <li>Frühzeitiger Kontakt 1–2 Jahre vor Ausbildungsstart</li>
-          <li>Anonymisierte Reichweitendaten je Region</li>
+          <li>Ausbildungs- und Praktikumsangebote veröffentlichen</li>
+          <li>Anonyme Statistiken je Partnerschule (z. B. Interesse an Berufsfeldern)</li>
+          <li>Kontaktanfragen von Schülerinnen und Schülern, die sich für Ihr Angebot interessieren</li>
+          <li>Kontaktdaten nur, wenn Jugendliche selbst Kontakt aufnehmen – unter 16 nur mit Freigabe der Eltern</li>
         </ul>
       </div>
       <div class="ziel-card">
         <div class="ziel-icon" aria-hidden="true" style="background:rgba(244,63,94,.15)">🏫</div>
-        <h3>Schulen & Fördervereine — profitieren</h3>
+        <h3>Schulen & Fördervereine</h3>
         <ul>
-          <li>25–30 % der Unternehmenseinnahmen fließen in den Förderverein</li>
-          <li>Praktikumsverwaltung digital — kein manueller Aufwand mehr</li>
-          <li>Digitale Mitgliederverwaltung für Fördervereine</li>
-          <li>Öffentliche Spendennennung als PR für Partnerunternehmen</li>
-          <li>Fertige Berufsorientierungsmaterialien für Lehrkräfte</li>
+          <li>Der Förderverein wird an den Einnahmen beteiligt, die Edufy mit Unternehmen über die Schule erzielt (nach der kostenlosen Pilotphase)</li>
+          <li>Praktikumsverwaltung digital (geplant)</li>
+          <li>Fertige Materialien zur Berufsorientierung für Lehrkräfte (geplant)</li>
+          <li>Start nur mit Zustimmung der Schulleitung</li>
         </ul>
       </div>
       <div class="ziel-card">
         <div class="ziel-icon" aria-hidden="true" style="background:rgba(16,185,129,.15)">📚</div>
-        <h3>Nachhilfe & Lernplattformen</h3>
+        <h3>Nachhilfe & Lernplattformen (geplant)</h3>
         <ul>
-          <li>Einzelne Nachhilfelehrer mit Profil und Bewertung</li>
-          <li>Nachhilfeinstitute mit Paketbuchungen</li>
-          <li>Digitale Lernplattformen verlinkt</li>
-          <li>Direktbuchung aus der Gap-Analyse — kontextuelle Vermittlung</li>
-          <li>10–15 % Provision pro gebuchter Stunde</li>
+          <li>Nachhilfelehrkräfte mit Profil und Bewertungen</li>
+          <li>Nachhilfeinstitute mit ihren Angeboten</li>
+          <li>Digitale Lernplattformen</li>
+          <li>Passende Angebote direkt aus der Gap-Analyse</li>
         </ul>
       </div>
     </div>
+    <p class="ziel-note reveal">Edufy befindet sich im Aufbau. Die Funktionen starten schrittweise ab der Pilotphase.</p>
   </div>
 </section>
 
-<section id="features">
+<section id="funktionen">
   <div class="container">
     <div class="reveal">
-      <div class="sec-label">Features</div>
-      <h2 class="sec-title">Alles, was Schüler wirklich brauchen.</h2>
-      <p class="sec-sub">Kein anderer Anbieter verbindet Noten, Bildungsweg, Förderung und Nachhilfe in einem personalisierten Pfad.</p>
+      <div class="sec-label">Funktionen</div>
+      <h2 class="sec-title">Was Edufy für Schülerinnen und Schüler plant.</h2>
+      <p class="sec-sub">Geplante Funktionen: Noten, Bildungswege, Förderungen und Praktika in einem persönlichen Pfad.</p>
     </div>
     <div class="feat-grid reveal">
-      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">📊</div><h3>Notenprofil & Gap-Analyse</h3><p>Noten eingeben, Zielberuf wählen — die App zeigt sofort, welche Fächer fehlen und was zu tun ist.</p></div>
-      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">❤️</div><h3>Interessen & Persönlichkeit</h3><p>15 spielerische Fragen zu Interessen und Gewohnheiten → konkrete Berufsvorschläge mit Begründung.</p></div>
-      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">🗺️</div><h3>Bildungsweg-Navigator</h3><p>Alle Pfade von Hauptschule bis Studium — nach Bundesland gefiltert, mit Gehalts-Zeitstrahl über 20 Jahre.</p></div>
-      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">💶</div><h3>Förderplan integriert</h3><p>BAföG, BAB, Begabtenförderung, Meisterprämien — automatisch berechnet, direkt im Pfad verankert.</p></div>
-      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">💼</div><h3>Praktikum + Tagebuch</h3><p>Praktikumsplatz finden, bewerben, digitales Tagebuch führen — daraus entsteht ein persönliches Stärkenprofil.</p></div>
-      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">🎯</div><h3>Gamification & Pfad-App</h3><p>Fortschrittsbalken, Abzeichen, Lernpfade — der Weg zum Zielberuf wird sichtbar und motivierend.</p></div>
-      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">📐</div><h3>Nachhilfe buchen</h3><p>Direkt aus der Gap-Analyse: Lehrer, Institute oder digitale Lernplattformen mit einem Klick buchbar.</p></div>
-      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">👨‍👩‍👧</div><h3>Family-Account</h3><p>Eltern verknüpfen ihr Konto mit dem Kind. Gemeinsam Wege erkunden, Gehaltsvergleiche sehen, Förderungen finden.</p></div>
-      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">🔔</div><h3>Smart Notifications</h3><p>Neue Praktikumsplätze, Stellen von Wunschfirmen, Bewerbungsfristen und Stipendien — automatisch.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">📊</div><h3>Notenprofil & Gap-Analyse</h3><p>Noten eingeben, Zielberuf wählen – Edufy zeigt, in welchen Fächern noch Luft nach oben ist.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">❤️</div><h3>Interessen & Persönlichkeit</h3><p>15 spielerische Fragen zu Interessen und Gewohnheiten – daraus entstehen Berufsvorschläge mit Begründung.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">🗺️</div><h3>Bildungsweg-Navigator</h3><p>Wege von der Hauptschule bis zum Studium – nach Bundesland gefiltert, mit Verdienstbeispielen aus amtlichen Statistiken.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">💶</div><h3>Förderungen im Überblick</h3><p>BAföG, BAB, Stipendien, Meisterprämien – als Überblick im Pfad. Unverbindliche Orientierung, keine Antragsprüfung.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">💼</div><h3>Praktikum & Tagebuch</h3><p>Praktikumsplatz finden, bewerben, digitales Tagebuch führen – daraus entsteht ein persönliches Stärkenprofil.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">🎯</div><h3>Fortschritt & Motivation</h3><p>Fortschrittsbalken, Abzeichen und Lernpfade – der Weg zum Zielberuf wird sichtbar.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">📐</div><h3>Nachhilfe finden</h3><p>Direkt aus der Gap-Analyse passende Nachhilfeangebote finden (geplant).</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">👨‍👩‍👧</div><h3>Zugang für Eltern</h3><p>Eltern verknüpfen ihr Konto mit dem ihres Kindes (geplant): gemeinsam Wege erkunden, Verdienste vergleichen, Förderungen finden.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">🔔</div><h3>Erinnerungen</h3><p>Hinweise auf neue Praktikumsplätze, Bewerbungsfristen und Stipendien (geplant).</p></div>
     </div>
   </div>
 </section>
@@ -616,154 +627,143 @@
   <div class="container">
     <div class="reveal">
       <div class="sec-label">Bildungsweg-Navigator</div>
-      <h2 class="sec-title">Meister verdient mehr als Bachelor.<br>Das wissen die wenigsten.</h2>
-      <p class="sec-sub">Laut Destatis Mikrozensus 2022: Meister, Techniker und Fachwirte verdienen im Schnitt 4.826 € / Monat — mehr als Bachelor-Absolventen mit 4.551 €.</p>
+      <h2 class="sec-title">Meister, Techniker, Fachwirt:<br>Gute Verdienstchancen auch ohne Studium.</h2>
+      <p class="sec-sub">Beschäftigte mit Meister-, Techniker- oder Fachschulabschluss verdienten im April 2025 im Schnitt 5.405 € brutto im Monat – etwas mehr als mit Bachelorabschluss (5.289 €). Mit Masterabschluss waren es 7.019 €. (Statistisches Bundesamt, Verdiensterhebung April 2025; Durchschnittswerte ohne Sonderzahlungen – der eigene Verdienst hängt stark von Beruf, Branche und Region ab.)</p>
     </div>
     <div class="wege-grid reveal">
       <div class="wege-card">
-        <div class="wege-hdr" style="background:var(--teall);color:var(--dark)">Pfad A — Gymnasium</div>
+        <h3 class="wege-hdr" style="background:var(--teall);color:var(--dark)">Pfad A – Gymnasium</h3>
         <div class="wege-body">
-          <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">1</div><div class="wege-txt">Gymnasium Kl. 5–12</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">1</div><div class="wege-txt">Gymnasium Kl. 5–12/13</div></div>
           <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">2</div><div class="wege-txt">Abitur</div></div>
           <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">3</div><div class="wege-txt">Studium 3–5 Jahre</div></div>
           <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">4</div><div class="wege-txt">Bachelor / Master</div></div>
-          <div class="wege-sal" style="background:rgba(94,234,212,.1);color:var(--teal-text)">Ø 4.551 € / Monat</div>
+          <div class="wege-sal" style="background:rgba(94,234,212,.1);color:var(--teal-text)">Bachelor Ø 5.289 € · Master Ø 7.019 €</div>
         </div>
       </div>
       <div class="wege-card">
-        <div class="wege-hdr" style="background:var(--gold);color:var(--dark)">Pfad B — IHK Aufstieg ★</div>
+        <h3 class="wege-hdr" style="background:var(--gold);color:var(--dark)">Pfad B – IHK-Aufstieg</h3>
         <div class="wege-body">
           <div class="wege-step"><div class="wege-num" style="background:var(--gold);color:var(--dark)">1</div><div class="wege-txt">Realschule</div></div>
           <div class="wege-step"><div class="wege-num" style="background:var(--gold);color:var(--dark)">2</div><div class="wege-txt">Ausbildung 2–3 Jahre</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--gold);color:var(--dark)">3</div><div class="wege-txt">IHK Fachwirt (DQR 6 = Bachelor)</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--gold);color:var(--dark)">4</div><div class="wege-txt">IHK Betriebswirt (DQR 7 = Master)</div></div>
-          <div class="wege-sal" style="background:rgba(245,158,11,.1);color:var(--gold-text)">Ø 4.826 € / Monat ★</div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--gold);color:var(--dark)">3</div><div class="wege-txt">IHK Fachwirt (DQR-Niveau 6 – wie Bachelor)</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--gold);color:var(--dark)">4</div><div class="wege-txt">IHK Betriebswirt (DQR-Niveau 7 – wie Master)</div></div>
+          <div class="wege-sal" style="background:rgba(245,158,11,.1);color:var(--gold-text)">Ø 5.405 € / Monat*</div>
         </div>
       </div>
       <div class="wege-card">
-        <div class="wege-hdr" style="background:var(--coral-dark)">Pfad C — Handwerksmeister ★</div>
+        <h3 class="wege-hdr" style="background:var(--coral-dark)">Pfad C – Handwerksmeister</h3>
         <div class="wege-body">
           <div class="wege-step"><div class="wege-num" style="background:var(--coral-dark)">1</div><div class="wege-txt">Haupt- / Realschule</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--coral-dark)">2</div><div class="wege-txt">Ausbildung Handwerk</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--coral-dark)">2</div><div class="wege-txt">Ausbildung im Handwerk</div></div>
           <div class="wege-step"><div class="wege-num" style="background:var(--coral-dark)">3</div><div class="wege-txt">Gesellenbrief</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--coral-dark)">4</div><div class="wege-txt">Meister (DQR 6 = Bachelor)</div></div>
-          <div class="wege-sal" style="background:rgba(244,63,94,.1);color:var(--coral-dark)">Ø 4.826 € / Monat ★</div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--coral-dark)">4</div><div class="wege-txt">Meister (DQR-Niveau 6 – wie Bachelor)</div></div>
+          <div class="wege-sal" style="background:rgba(244,63,94,.1);color:var(--coral-dark)">Ø 5.405 € / Monat*</div>
         </div>
       </div>
       <div class="wege-card">
-        <div class="wege-hdr" style="background:var(--purp-dark)">Pfad D — 2. Bildungsweg</div>
+        <h3 class="wege-hdr" style="background:var(--purp-dark)">Pfad D – Zweiter Bildungsweg</h3>
         <div class="wege-body">
           <div class="wege-step"><div class="wege-num" style="background:var(--purp-dark)">1</div><div class="wege-txt">Hauptschule</div></div>
           <div class="wege-step"><div class="wege-num" style="background:var(--purp-dark)">2</div><div class="wege-txt">Ausbildung + Berufserfahrung</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--purp-dark)">3</div><div class="wege-txt">Abendgymnasium (kostenlos)</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--purp-dark)">3</div><div class="wege-txt">Abendgymnasium / Kolleg</div></div>
           <div class="wege-step"><div class="wege-num" style="background:var(--purp-dark)">4</div><div class="wege-txt">Abitur → Studium möglich</div></div>
-          <div class="wege-sal" style="background:rgba(139,92,246,.1);color:var(--purp-dark)">Flexibel — kein Abschluss ist final</div>
+          <div class="wege-sal" style="background:rgba(139,92,246,.1);color:var(--purp-dark)">Flexibel – kein Abschluss ist endgültig</div>
         </div>
       </div>
     </div>
-    <p style="margin-top:1.5rem;color:var(--slate);font-size:.8rem;text-align:center">★ Fachwirt/Meister übertrifft den Bachelor-Durchschnitt · Quelle: Destatis Mikrozensus 2022 · Bundesagentur für Arbeit</p>
+    <!-- Vor Veröffentlichung prüfen: Beziehen sich die Destatis-Werte auf Vollzeit oder alle Beschäftigten? Fußnote ggf. anpassen (Legal E-12). -->
+    <p class="wege-src">* Durchschnitt aller Beschäftigten mit Meister-, Techniker- oder Fachschulabschluss, April 2025. Quelle: Statistisches Bundesamt (Destatis), Pressemitteilung vom 25.03.2026. Einzelwerte für Fachwirt, Betriebswirt oder einzelne Handwerke weist diese Statistik nicht aus.</p>
   </div>
 </section>
 
 <section id="netzwerk">
   <div class="container">
     <div class="reveal" style="text-align:center">
-      <div class="sec-label">Netzwerkeffekt</div>
-      <h2 class="sec-title lt">Warum die Plattform automatisch skaliert.</h2>
-      <p class="sec-sub lt" style="margin:0 auto">Fördervereine gewinnen Schüler — Schüler machen die Plattform wertvoll für Unternehmen — Unternehmen zahlen — Schulen profitieren.</p>
+      <div class="sec-label">Zusammenspiel</div>
+      <h2 class="sec-title lt">So wirkt Edufy zusammen.</h2>
+      <p class="sec-sub lt" style="margin:0 auto">Fördervereine laden Schülerinnen und Schüler ein – Jugendliche entdecken Angebote – Unternehmen stellen sich vor – der Förderverein der Schule wird beteiligt.</p>
     </div>
     <div class="fly-wrap reveal">
-      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(13,148,136,.15);border-color:var(--teal)">🏫</div><p>Schulen &<br>Fördervereine<br>partizipieren</p></div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(13,148,136,.15);border-color:var(--teal)">🏫</div><p>Fördervereine<br>laden<br>ein</p></div>
       <div class="fly-arrow" aria-hidden="true">→</div>
-      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(245,158,11,.15);border-color:var(--gold)">🎓</div><p>Schüler &<br>Eltern nutzen<br>die App</p></div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(245,158,11,.15);border-color:var(--gold)">🎓</div><p>Jugendliche &<br>Eltern nutzen<br>Edufy</p></div>
       <div class="fly-arrow" aria-hidden="true">→</div>
-      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(94,234,212,.15);border-color:var(--teall)">📊</div><p>Plattform<br>sammelt<br>Daten</p></div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(94,234,212,.15);border-color:var(--teall)">🧭</div><p>Edufy zeigt<br>passende<br>Angebote</p></div>
       <div class="fly-arrow" aria-hidden="true">→</div>
-      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(244,63,94,.15);border-color:var(--coral)">🏢</div><p>Unternehmen<br>zahlen für<br>Reichweite</p></div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(244,63,94,.15);border-color:var(--coral)">🏢</div><p>Unternehmen<br>stellen sich<br>vor</p></div>
       <div class="fly-arrow" aria-hidden="true">→</div>
-      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(16,185,129,.15);border-color:var(--green)">💶</div><p>Förderverein<br>erhält<br>Provision</p></div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(16,185,129,.15);border-color:var(--green)">💶</div><p>Förderverein<br>wird<br>beteiligt</p></div>
       <div class="fly-arrow" aria-hidden="true">→</div>
       <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(139,92,246,.15);border-color:var(--purp)">🚀</div><p>Mehr Schulen<br>werden<br>Partner</p></div>
     </div>
-    <div class="fly-insight reveal">Mehr Schüler → wertvoller für Unternehmen → mehr Erlös für Schulen → mehr Schulen → mehr Schüler</div>
+    <div class="fly-insight reveal">Mehr Schulen → mehr Orientierung für Jugendliche → mehr Ausbildungsangebote → mehr Unterstützung für Fördervereine</div>
+    <p class="fly-privacy reveal"><span aria-hidden="true">🔒</span> Wir verkaufen keine Daten. Unternehmen sehen nur anonyme Statistiken. Persönliche Angaben erhalten sie erst, wenn eine Schülerin oder ein Schüler selbst Kontakt aufnimmt.</p>
   </div>
 </section>
 
 <section id="foerderung">
   <div class="container">
     <div class="reveal">
-      <div class="sec-label">Finanzielle Förderung</div>
-      <h2 class="sec-title">Milliarden Euro warten darauf,<br>abgerufen zu werden.</h2>
-      <p class="sec-sub">EduConnect zeigt jedem Schüler automatisch seinen persönlichen Förderplan — nach Bundesland, Ausbildungsweg und Einkommenssituation.</p>
+      <div class="sec-label">Förderungen</div>
+      <h2 class="sec-title">Förderungen, die viele nicht kennen.</h2>
+      <p class="sec-sub">Geplant: Edufy zeigt Schülerinnen und Schülern einen Überblick über Förderungen, die für sie in Frage kommen können – nach Bundesland und Bildungsweg. Ob ein Anspruch besteht, entscheidet immer die zuständige Stelle.</p>
     </div>
+    <!-- Beträge vor Veröffentlichung an amtlicher Quelle prüfen (Legal E-13): Kindergeld 259 € (Familienkasse), Weiterbildungsstipendium 9.135 € (SBB/BMFTR). -->
     <div class="foerd-grid reveal">
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--teal-text)">350 € / Monat</div><h3>BAB — Berufsausbildungsbeihilfe</h3><p>Für duale Ausbildung, wenn auswärtige Unterbringung nötig. Wenig bekannt, automatisch auf Berechtigung geprüft.</p><span class="foerd-tag" style="background:rgba(13,148,136,.1);color:var(--teal-text)">Während Ausbildung</span></div>
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--gold-text)">2.400 € / Jahr</div><h3>Begabtenförderung Berufliche Bildung</h3><p>Für überdurchschnittliche Azubis. Über 3 Jahre = 7.200 € — kaum bekannt, selten genutzt.</p><span class="foerd-tag" style="background:rgba(245,158,11,.1);color:var(--gold-text)">Bei guten Leistungen</span></div>
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--coral-dark)">75 % Kostenübernahme</div><h3>Aufstiegs-BAföG</h3><p>Für Meister, Fachwirt, Techniker. 50 % Darlehenserlass bei Bestehen. Direkt im Bildungsweg-Navigator verankert.</p><span class="foerd-tag" style="background:rgba(244,63,94,.1);color:var(--coral-dark)">Für Weiterbildung</span></div>
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--purp-dark)">bis 6.000 €</div><h3>Meisterprämien je Bundesland</h3><p>Bayern 3.000 €, Berlin 5.000–6.000 €, NRW 2.500 €, Hessen 3.500 €. Automatisch nach Bundesland angezeigt.</p><span class="foerd-tag" style="background:rgba(139,92,246,.1);color:var(--purp-dark)">Nach Prüfung</span></div>
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--green-text)">300 € / Monat</div><h3>Deutschlandstipendium</h3><p>300 € monatlich für Studierende. Über Hochschulen beantragt. Kombinierbar mit BAföG.</p><span class="foerd-tag" style="background:rgba(16,185,129,.1);color:var(--green-text)">Für Studium</span></div>
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--teal-text)">250 € / Monat</div><h3>Kindergeld & weitere Hilfen</h3><p>Kindergeld bis 25, Wohngeld für Azubis, Azubi-Ticket — alles automatisch auf Berechtigung geprüft.</p><span class="foerd-tag" style="background:rgba(13,148,136,.1);color:var(--teal-text)">Sofort verfügbar</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--teal-text)">je nach Bedarf</div><h3>BAB – Berufsausbildungsbeihilfe</h3><p>Zuschuss der Agentur für Arbeit für Azubis, die nicht bei den Eltern wohnen (z. B. weil der Ausbildungsbetrieb zu weit entfernt ist). Die Höhe hängt von Ausbildungsvergütung, Miete und Einkommen der Eltern ab.</p><span class="foerd-tag" style="background:rgba(13,148,136,.1);color:var(--teal-text)">Während der Ausbildung</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--gold-text)">bis 9.135 €</div><h3>Weiterbildungsstipendium</h3><p>Für junge Fachkräfte mit sehr gutem Berufsabschluss, in der Regel unter 25 Jahren. Zuschuss zu Weiterbildungskosten über bis zu drei Jahre, 10 % Eigenanteil.</p><span class="foerd-tag" style="background:rgba(245,158,11,.1);color:var(--gold-text)">Nach der Ausbildung</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--coral-dark)">bis zu 75 %</div><h3>Aufstiegs-BAföG</h3><p>Für Meister, Fachwirt, Techniker und weitere Fortbildungen: 50 % der Lehrgangs- und Prüfungsgebühren als Zuschuss, beim Bestehen wird die Hälfte des Restdarlehens erlassen.</p><span class="foerd-tag" style="background:rgba(244,63,94,.1);color:var(--coral-dark)">Für Weiterbildung</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--purp-dark)">je nach Land</div><h3>Meisterprämien der Länder</h3><p>Viele Bundesländer zahlen nach bestandener Meisterprüfung eine Prämie – Höhe und Bedingungen unterscheiden sich je nach Land, einige Länder zahlen keine.</p><span class="foerd-tag" style="background:rgba(139,92,246,.1);color:var(--purp-dark)">Nach der Prüfung</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--green-text)">300 € / Monat</div><h3>Deutschlandstipendium</h3><p>Für leistungsstarke Studierende, vergeben von den Hochschulen. Einkommensunabhängig und nicht auf das BAföG angerechnet. Kein Rechtsanspruch.</p><span class="foerd-tag" style="background:rgba(16,185,129,.1);color:var(--green-text)">Für das Studium</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--teal-text)">259 € / Monat</div><h3>Kindergeld</h3><p>Erhalten die Eltern auf Antrag – bis 18 Jahre, während Ausbildung oder Studium in der Regel bis 25 Jahre. Betrag seit 1. Januar 2026.</p><span class="foerd-tag" style="background:rgba(13,148,136,.1);color:var(--teal-text)">Für Familien</span></div>
     </div>
+    <p class="foerd-src">Stand: November 2026. Angaben ohne Gewähr; maßgeblich sind die zuständigen Stellen (Familienkasse, Agentur für Arbeit, Kammern, Hochschulen, Länder).</p>
   </div>
 </section>
 
-<section id="verguetung">
+<section id="unternehmen">
   <div class="container">
     <div class="reveal">
       <div class="sec-label">Für Unternehmen</div>
-      <h2 class="sec-title lt">Azubis finden — 1–2 Jahre früher<br>als bei jedem Wettbewerber.</h2>
-      <p class="sec-sub lt">Über EduConnect erreichen Sie Schüler bereits in der Praktikumsphase — bevor sie sich anderswo bewerben.</p>
+      <h2 class="sec-title lt">Azubis früh erreichen –<br>mit Respekt vor dem Datenschutz.</h2>
+      <p class="sec-sub lt">Über Edufy stellen Sie Ihr Unternehmen und Ihre Ausbildungs- und Praktikumsangebote Schülerinnen und Schülern in Ihrer Region vor. Sie sehen anonyme Statistiken je Schule. Persönliche Angaben erhalten Sie erst, wenn Jugendliche von sich aus Kontakt zu Ihnen aufnehmen.</p>
     </div>
-    <div class="price-grid reveal">
-      <div class="price-card">
-        <h3 class="price-tier" style="color:var(--teall)">Basis</h3>
-        <div class="price-val">500–1.000 €</div>
-        <div class="price-period">pro Jahr</div>
-        <ul class="price-list">
-          <li>Unternehmensprofil</li><li>Ausbildungsstellen schalten</li>
-          <li>Regionale Sichtbarkeit</li><li>Schüler-Matching (Fit-Score)</li>
-        </ul>
-      </div>
+    <!-- TODO Marcus: Zahl der Pilotunternehmen und Enddatum der Pilotphase eintragen (Legal E-14: „für [Zahl] Pilotunternehmen, befristet bis [Datum]“). -->
+    <div class="price-grid price-grid-single reveal">
       <div class="price-card feat">
-        <div class="price-badge">Empfohlen</div>
-        <h3 class="price-tier" style="color:var(--gold)">Premium</h3>
-        <div class="price-val">2.500–5.000 €</div>
-        <div class="price-period">pro Jahr</div>
+        <div class="price-badge">Pilotphase</div>
+        <h3 class="price-tier" style="color:var(--gold)">Pilotunternehmen</h3>
+        <div class="price-val">kostenlos</div>
+        <div class="price-period">befristet, für eine begrenzte Zahl von Pilotunternehmen</div>
         <ul class="price-list">
-          <li>Alles aus Basis</li><li>Werbeflächen an Schulen</li>
-          <li>Anonymisierte Reichweitendaten</li><li>Öffentliche Spendennennung</li>
-          <li>Praktikumsplatz-Slot</li><li>Nachhilfe-Listing</li>
+          <li>Unternehmensprofil</li>
+          <li>Ausbildungs- und Praktikumsangebote veröffentlichen</li>
+          <li>Anonyme Statistiken je Partnerschule</li>
+          <li>Kontaktanfragen interessierter Schülerinnen und Schüler</li>
         </ul>
-      </div>
-      <div class="price-card">
-        <h3 class="price-tier" style="color:var(--coral-light)">Enterprise</h3>
-        <div class="price-val">8.000–15.000 €</div>
-        <div class="price-period">pro Jahr</div>
-        <ul class="price-list">
-          <li>Alles aus Premium</li><li>Mehrere Regionen bundesweit</li>
-          <li>Direktkontakt Schüler (opt-in)</li><li>Detaillierte Auswertungen</li>
-          <li>Video-Unternehmensprofil</li>
-        </ul>
+        <p class="price-period price-terms">Keine automatische Verlängerung: Nach der Pilotphase entscheiden Sie selbst, ob Sie weitermachen. Die Preise danach legen wir mit dem Feedback der Pilotunternehmen fest.</p>
+        <a href="#waitlist" class="btn-primary price-cta" data-open-tab="unternehmen">Pilot anfragen <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <div class="price-school reveal">
-      <strong><span aria-hidden="true">🏫</span> Schulen & Fördervereine erhalten 25–30 % der Unternehmenseinnahmen</strong>
-      Rechtssicher über den Schulförderverein abgewickelt · in allen 16 Bundesländern möglich
+      <strong><span aria-hidden="true">🏫</span> Schulen & Fördervereine profitieren mit</strong>
+      Der Förderverein der Schule wird an den Einnahmen beteiligt, die Edufy mit Unternehmen über diese Schule erzielt (nach der kostenlosen Pilotphase). Voraussetzung ist die Zustimmung der Schulleitung. Die Einzelheiten besprechen wir persönlich.
     </div>
   </div>
 </section>
 
 <section id="waitlist">
   <div class="wl-inner">
-    <div class="wl-count"><span class="wl-count-dot"></span>Erste Pilotschulen registrieren sich gerade</div>
+    <div class="wl-count">Jetzt für den Pilot vormerken</div>
     <h2 class="sec-title">Jetzt vorregistrieren.<br>Kostenlos. Unverbindlich.</h2>
-    <p class="wl-sub">Egal ob Schule, Förderverein, Unternehmen oder Elternteil — sichern Sie sich frühen Zugang und gestalten Sie EduConnect mit.</p>
+    <p class="wl-sub">Ob Schule, Förderverein, Unternehmen oder Eltern – lassen Sie sich vormerken und gestalten Sie Edufy mit.</p>
     <div class="wl-tabs" role="tablist" aria-label="Ich registriere mich als">
       <button type="button" class="wl-tab" role="tab" id="tab-schule" data-tab="schule" aria-controls="panel-schule" aria-selected="true"><span aria-hidden="true">🏫</span> Schule / Förderverein</button>
       <button type="button" class="wl-tab" role="tab" id="tab-unternehmen" data-tab="unternehmen" aria-controls="panel-unternehmen" aria-selected="false" tabindex="-1"><span aria-hidden="true">🏢</span> Unternehmen</button>
       <button type="button" class="wl-tab" role="tab" id="tab-eltern" data-tab="eltern" aria-controls="panel-eltern" aria-selected="false" tabindex="-1"><span aria-hidden="true">👨‍👩‍👧</span> Eltern / Schüler</button>
     </div>
-    <noscript><p class="wl-error">Für das Formular wird JavaScript benötigt. Alternativ schreiben Sie uns an <a href="mailto:hallo@edu-connect.com">hallo@edu-connect.com</a>.</p></noscript>
+    <noscript><p class="wl-error">Für das Formular wird JavaScript benötigt. Alternativ schreiben Sie uns an <a href="mailto:hallo@edufy.world">hallo@edufy.world</a>.</p></noscript>
 
     <div role="tabpanel" id="panel-schule" aria-labelledby="tab-schule" class="wl-panel">
       <form class="wl-form" method="post" data-typ="schule" aria-label="Vorregistrierung Schule / Förderverein">
@@ -794,10 +794,10 @@
         </div>
         <label class="wl-check">
           <input type="checkbox" name="consent_privacy" value="1" required />
-          <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Kontaktaufnahme zum Pilotstart gespeichert werden.</span>
+          <span>Ich willige ein, dass Edufy meine Angaben speichert, um mich zum Pilotstart zu kontaktieren. Ich kann die Einwilligung jederzeit per E-Mail an hallo@edufy.world widerrufen. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
         </label>
         <p class="wl-error" role="alert" hidden></p>
-        <button type="submit" class="btn-submit">Jetzt als Pilotschule registrieren <span aria-hidden="true">→</span></button>
+        <button type="submit" class="btn-submit">Jetzt vorregistrieren <span aria-hidden="true">→</span></button>
       </form>
     </div>
 
@@ -826,10 +826,10 @@
         </div>
         <label class="wl-check">
           <input type="checkbox" name="consent_privacy" value="1" required />
-          <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Kontaktaufnahme zum Pilotstart gespeichert werden.</span>
+          <span>Ich willige ein, dass Edufy meine Angaben speichert, um mich zum Pilotstart zu kontaktieren. Ich kann die Einwilligung jederzeit per E-Mail an hallo@edufy.world widerrufen. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
         </label>
         <p class="wl-error" role="alert" hidden></p>
-        <button type="submit" class="btn-submit">Als Unternehmenspartner registrieren <span aria-hidden="true">→</span></button>
+        <button type="submit" class="btn-submit">Jetzt vorregistrieren <span aria-hidden="true">→</span></button>
       </form>
     </div>
 
@@ -846,33 +846,33 @@
         </div>
         <div class="wl-field">
           <label for="e-rolle">Ich bin …</label>
-          <select id="e-rolle" name="rolle" required>
+          <select id="e-rolle" name="rolle" required aria-describedby="e-hint">
             <option value="">Bitte wählen</option>
-            <option value="elternteil">Elternteil eines Schülers</option>
-            <option value="schueler">Schüler / Schülerin (14+)</option>
+            <option value="elternteil">Elternteil</option>
+            <option value="schueler">Schülerin / Schüler (ab 16 Jahren)</option>
             <option value="lehrkraft">Lehrkraft</option>
           </select>
         </div>
-        <p class="wl-hint" id="e-hint">Hinweis für Schülerinnen und Schüler: Wer jünger als 16 Jahre ist, braucht für die Anmeldung die Zustimmung der Eltern.</p>
+        <p class="wl-hint" id="e-hint">Du bist jünger als 16? Dann können sich deine Eltern hier für dich vormerken lassen.</p>
         <label class="wl-check">
           <input type="checkbox" name="consent_age" value="1" required aria-describedby="e-hint" />
-          <span>Ich bin 16 Jahre oder älter bzw. meine Eltern sind einverstanden.</span>
+          <span>Ich bin mindestens 16 Jahre alt oder melde mich als Elternteil bzw. Lehrkraft an.</span>
         </label>
         <label class="wl-check">
           <input type="checkbox" name="consent_privacy" value="1" required />
-          <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Kontaktaufnahme zum Pilotstart gespeichert werden.</span>
+          <span>Ich willige ein, dass Edufy meine Angaben speichert, um mich zum Pilotstart zu kontaktieren. Ich kann die Einwilligung jederzeit per E-Mail an hallo@edufy.world widerrufen. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
         </label>
         <p class="wl-error" role="alert" hidden></p>
-        <button type="submit" class="btn-submit">Frühen Zugang sichern <span aria-hidden="true">→</span></button>
+        <button type="submit" class="btn-submit">Jetzt vorregistrieren <span aria-hidden="true">→</span></button>
       </form>
     </div>
 
     <div class="wl-success" id="wl-success" role="status" tabindex="-1" hidden>
       <div class="s-icon" aria-hidden="true">🎉</div>
-      <h3>Danke — Sie sind dabei!</h3>
-      <p>Wir melden uns, sobald der Pilot startet.<br>Bei Fragen: <strong>hallo@edu-connect.com</strong></p>
+      <h3>Danke – Sie sind vorgemerkt!</h3>
+      <p>Wir melden uns, sobald der Pilot startet.<br>Bei Fragen: <strong>hallo@edufy.world</strong></p>
     </div>
-    <p class="wl-note">Kein Spam. Keine Weitergabe. Jederzeit abmeldbar.</p>
+    <p class="wl-note">Kein Spam. Ihre Angaben geben wir nicht an Unternehmen weiter. Abmelden jederzeit per E-Mail an hallo@edufy.world.</p>
   </div>
 </section>
 </main>
@@ -881,36 +881,36 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#hero" class="nav-logo" aria-label="EduConnect – zum Seitenanfang">Edu<span>Connect</span></a>
-        <p>Das Bildungs-OS für Jugendliche in Deutschland. Schüler, Eltern, Schulen und Unternehmen auf einer Plattform.</p>
+        <a href="#hero" class="nav-logo" aria-label="Edufy – zum Seitenanfang">Edu<span>fy</span></a>
+        <p>Berufs- und Studienorientierung für Jugendliche in Deutschland. Schülerinnen und Schüler, Eltern, Schulen und Unternehmen auf einer Plattform.</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
           <h2>Plattform</h2>
-          <a href="#features">Features</a>
+          <a href="#funktionen">Funktionen</a>
           <a href="#wege">Bildungswege</a>
           <a href="#foerderung">Förderungen</a>
-          <a href="#netzwerk">Netzwerkeffekt</a>
+          <a href="#netzwerk">Zusammenspiel</a>
         </div>
         <div class="footer-col">
           <h2>Zielgruppen</h2>
           <a href="#ziele">Schüler & Eltern</a>
-          <a href="#ziele">Schulen & Vereine</a>
-          <a href="#verguetung">Unternehmen</a>
+          <a href="#ziele">Schulen & Fördervereine</a>
+          <a href="#unternehmen">Unternehmen</a>
           <a href="#ziele">Nachhilfe</a>
         </div>
         <div class="footer-col">
           <h2>Kontakt</h2>
-          <a href="mailto:hallo@edu-connect.com">hallo@edu-connect.com</a>
-          <a href="#waitlist">Pilot-Anfrage</a>
+          <a href="mailto:hallo@edufy.world">hallo@edufy.world</a>
+          <a href="#waitlist">Pilot anfragen</a>
           <a href="impressum.html">Impressum</a>
           <a href="datenschutz.html">Datenschutz</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© <span data-year>2026</span> EduConnect. Alle Rechte vorbehalten.</p>
-      <p>Made in Germany <span aria-hidden="true">🇩🇪</span></p>
+      <p>© <span data-year>2026</span> Edufy. Alle Rechte vorbehalten.</p>
+      <p>Entwickelt in Deutschland</p>
     </div>
   </div>
 </footer>
@@ -924,7 +924,7 @@
 <script>
 (function () {
   'use strict';
-  var CONTACT_MAIL = 'hallo@edu-connect.com';
+  var CONTACT_MAIL = 'hallo@edufy.world';
 
   /* ---------- Jahr im Footer ---------- */
   var yearEls = document.querySelectorAll('[data-year]');
@@ -996,6 +996,14 @@
       else if (e.key === 'Home') { next = tabs[0]; }
       else if (e.key === 'End') { next = tabs[tabs.length - 1]; }
       if (next) { e.preventDefault(); selectTab(next, true); }
+    });
+  });
+
+  /* ---------- Links, die einen bestimmten Tab öffnen (z. B. „Pilot anfragen“) ---------- */
+  document.querySelectorAll('a[data-open-tab]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var target = document.getElementById('tab-' + link.getAttribute('data-open-tab'));
+      if (target) { selectTab(target, false); }
     });
   });
 
