@@ -1,0 +1,49 @@
+{
+  "_hinweis": "BEISPIELDATEN – nur für die Entwicklung der Seiten (S-004). Keine echten oder geprüften Inhalte, Beträge frei erfunden. Nur sichtbar mit ?beispiel=1.",
+  "stand": "2026-11",
+  "quellen": [
+    { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" }
+  ],
+  "foerderungen": [
+    {
+      "id": "beispiel-azubi-zuschuss",
+      "name": "Beispiel-Zuschuss für Azubis",
+      "fuer": "Beispiel: Azubis, die nicht bei den Eltern wohnen",
+      "art": "Zuschuss",
+      "betrag_text": "Beispiel: bedarfsabhängig",
+      "voraussetzungen": ["Beispiel: Du machst eine Ausbildung", "Beispiel: Du wohnst nicht bei deinen Eltern"],
+      "selbstcheck": ["Machst du eine Ausbildung oder fängst bald eine an?", "Wohnst du während der Ausbildung nicht bei deinen Eltern?"],
+      "antrag_bei": "Beispiel: Agentur für Arbeit",
+      "link": "https://example.org/beispiel-zuschuss",
+      "quelle": { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" },
+      "geprueft": true
+    },
+    {
+      "id": "beispiel-studi-darlehen",
+      "name": "Beispiel-Förderung für Studierende",
+      "fuer": "Beispiel: Studierende mit wenig Geld",
+      "art": "Darlehen",
+      "betrag_text": "Beispiel: bis zu 999 € im Monat",
+      "voraussetzungen": ["Beispiel: Du studierst", "Beispiel: Deine Eltern verdienen nicht zu viel"],
+      "selbstcheck": ["Studierst du oder fängst bald an?", { "frage": "Verdienen deine Eltern sehr gut?", "erwartet": "nein" }],
+      "antrag_bei": "Beispiel: Studierendenwerk",
+      "link": "https://example.org/beispiel-studium",
+      "quelle": { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" },
+      "geprueft": false,
+      "hinweis": "Beispiel: Betrag noch nicht an der Primärquelle geprüft."
+    },
+    {
+      "id": "beispiel-stipendium",
+      "name": "Beispiel-Stipendium für Engagierte",
+      "fuer": "Beispiel: Schüler/-innen und Studierende mit Engagement",
+      "art": "Stipendium",
+      "betrag_text": "Beispiel: 300 € im Monat",
+      "voraussetzungen": ["Beispiel: Ehrenamt oder Engagement", "Beispiel: Bewerbung mit Lebenslauf"],
+      "selbstcheck": ["Engagierst du dich ehrenamtlich (z. B. Verein, Schülervertretung)?", "Studierst du oder fängst bald an?"],
+      "antrag_bei": "Beispiel: Stiftung",
+      "link": "https://example.org/beispiel-stipendium",
+      "quelle": { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" },
+      "geprueft": true
+    }
+  ]
+}

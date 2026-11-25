@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="no-referrer" />
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+  <title>Bildungsweg-Navigator – welcher Weg passt zu dir? | Edufy</title>
+  <meta name="description" content="In drei Schritten zu möglichen Bildungswegen: Schulform, Klasse, Interesse. Ohne Anmeldung, nichts wird gespeichert." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://edufy.world/navigator.html" />
+  <meta name="theme-color" content="#0B1F3A" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="fonts/fonts.css" />
+  <!-- Gemeinsame Content-Optik (identisch in berufe/studium/foerderungen/navigator.html; Farben aus index.html) -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#0B1F3A; --teal:#0D9488; --teall:#5EEAD4;
+      --white:#FFFFFF; --off:#F8FAFC; --slate:#64748B; --dark:#1E293B; --border:#E2E8F0;
+      --teal-dark:#0B7A70; --teal-darker:#095E57; --teal-text:#0F766E;
+      --gold-text:#B45309; --green-text:#047857; --coral-dark:#BE123C;
+      --slate-text:#475569; /* Grauer Text auf hellem Grund (7:1) */
+      --slate-light:#94A3B8; --focus:#0B1F3A;
+    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust:100%; }
+    body { font-family:'DM Sans', sans-serif; background:var(--off); color:var(--dark); line-height:1.55; overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column; }
+    main { flex:1; width:100%; }
+    [hidden] { display:none !important; }
+    h1, h2, h3, p, li, td, th, a, label, legend, span { overflow-wrap:break-word; hyphens:auto; }
+    :focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
+    .site-header, .site-footer, .skip-link { --focus:#FDE68A; }
+    .skip-link { position:absolute; left:1rem; top:-100px; z-index:1000; background:var(--navy); color:var(--white); padding:.75rem 1rem; border-radius:6px; font-weight:600; text-decoration:none; }
+    .skip-link:focus { top:.5rem; }
+    .visually-hidden { position:absolute!important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+    /* Header */
+    .site-header { background:var(--navy); position:sticky; top:0; z-index:50; border-bottom:1px solid rgba(255,255,255,.07); }
+    .site-nav { max-width:1100px; margin:0 auto; min-height:64px; padding:0 1rem; display:flex; align-items:center; gap:1rem; }
+    .nav-logo { font-family:'DM Serif Display',serif; font-size:1.5rem; color:var(--white); text-decoration:none; display:inline-flex; align-items:center; min-height:44px; }
+    .nav-logo span { color:var(--teall); }
+    .nav-links { display:flex; gap:.25rem; margin-left:auto; list-style:none; flex-wrap:wrap; }
+    .nav-links a { color:#CBD5E1; text-decoration:none; font-size:.9375rem; font-weight:500; display:inline-flex; align-items:center; min-height:44px; padding:0 .75rem; border-radius:6px; }
+    .nav-links a:hover { color:var(--white); background:rgba(255,255,255,.06); }
+    .nav-links a[aria-current="page"] { color:var(--white); box-shadow:inset 0 -3px 0 var(--teall); }
+    .nav-toggle { display:none; margin-left:auto; width:44px; height:44px; border-radius:8px; cursor:pointer; background:transparent; border:1px solid rgba(255,255,255,.3); color:var(--white); align-items:center; justify-content:center; }
+    .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after { display:block; width:20px; height:2px; background:currentColor; border-radius:1px; position:relative; transition:transform .2s; }
+    .nav-toggle-bars::before, .nav-toggle-bars::after { content:''; position:absolute; left:0; }
+    .nav-toggle-bars::before { top:-6px; } .nav-toggle-bars::after { top:6px; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars { background:transparent; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { transform:translateY(6px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { transform:translateY(-6px) rotate(-45deg); }
+    @media (max-width:820px) {
+      .js .nav-toggle { display:inline-flex; }
+      .js .nav-links { display:none; position:absolute; top:64px; left:0; right:0; flex-direction:column; gap:0; background:var(--navy); padding:.25rem 1rem 1rem; box-shadow:0 16px 32px rgba(0,0,0,.35); border-bottom:1px solid rgba(255,255,255,.12); }
+      .js .nav-links.open { display:flex; }
+      .js .nav-links a { display:flex; min-height:48px; font-size:1rem; border-bottom:1px solid rgba(255,255,255,.08); border-radius:0; }
+      .js .nav-links a[aria-current="page"] { box-shadow:inset 4px 0 0 var(--teall); }
+    }
+
+    /* Seitenkopf */
+    .page-hero { background:var(--navy); color:var(--white); padding:2rem 1rem 2.25rem; }
+    .page-hero-inner { max-width:1100px; margin:0 auto; }
+    .page-hero h1 { font-family:'DM Serif Display',serif; font-weight:400; font-size:clamp(1.9rem,6vw,2.75rem); line-height:1.12; letter-spacing:-.02em; margin-bottom:.5rem; }
+    .page-hero p { color:#CBD5E1; font-size:1.0625rem; max-width:620px; }
+    .wrap { max-width:1100px; margin:0 auto; padding:1.5rem 1rem 3rem; }
+
+    /* Hinweise */
+    .notice { border-radius:10px; padding:1rem 1.125rem; margin:0 0 1.25rem; border:1px solid var(--border); background:var(--white); font-size:.9375rem; }
+    .notice strong { display:block; margin-bottom:.15rem; }
+    .notice-info { background:#EFF6FF; border-color:#BFDBFE; color:#1E3A8A; }
+    .notice-warn { background:#FFFBEB; border-color:#FCD34D; color:#78350F; }
+    .notice-demo { background:#FEF3C7; border:2px dashed #B45309; color:#78350F; }
+    .notice a { color:inherit; }
+
+    /* Formularelemente */
+    .filters { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:1rem; display:grid; gap:.875rem; grid-template-columns:1fr; margin-bottom:1rem; }
+    @media (min-width:760px) { .filters { grid-template-columns:2fr 1fr 1fr 1fr; align-items:end; } .filters.f3 { grid-template-columns:2fr 1fr 1fr; } }
+    .field label, .field-label { display:block; font-weight:600; font-size:.875rem; margin-bottom:.3rem; color:var(--dark); }
+    input[type="search"], select { width:100%; min-height:48px; font:inherit; font-size:1rem; color:var(--dark); background:var(--white); border:1.5px solid #64748B; border-radius:8px; padding:.5rem .75rem; }
+    select { appearance:auto; }
+    input[type="search"]:focus-visible, select:focus-visible { outline:3px solid var(--focus); outline-offset:1px; border-color:var(--navy); }
+    .filter-bar { display:flex; align-items:center; justify-content:space-between; gap:.75rem; flex-wrap:wrap; margin:0 0 1rem; }
+    .result-count { font-weight:600; color:var(--slate-text); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:.4rem; min-height:44px; padding:.5rem 1.125rem; border-radius:8px; font:inherit; font-weight:600; font-size:.9375rem; cursor:pointer; text-decoration:none; border:1.5px solid transparent; transition:background .2s; }
+    .btn-primary { background:var(--teal-dark); color:var(--white); }
+    .btn-primary:hover { background:var(--teal-darker); }
+    .btn-secondary { background:var(--white); color:var(--teal-text); border-color:var(--teal-text); }
+    .btn-secondary:hover { background:#F0FDFA; }
+    .btn-link { background:transparent; color:var(--teal-text); padding-left:0; padding-right:0; text-decoration:underline; text-underline-offset:3px; border:0; }
+
+    /* Karten */
+    .grid { display:grid; gap:1rem; grid-template-columns:1fr; list-style:none; }
+    @media (min-width:640px) { .grid { grid-template-columns:repeat(2,1fr); } }
+    @media (min-width:1000px) { .grid { grid-template-columns:repeat(3,1fr); } }
+    .card { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:1.125rem; display:flex; flex-direction:column; gap:.5rem; min-width:0; position:relative; }
+    .card:hover { border-color:#99F6E4; box-shadow:0 6px 20px rgba(11,31,58,.07); }
+    .card h2, .card h3 { font-size:1.125rem; line-height:1.3; color:var(--navy); }
+    .card h2 a, .card h3 a { color:inherit; text-decoration:none; }
+    .card h2 a::after, .card h3 a::after { content:''; position:absolute; inset:0; border-radius:12px; }
+    .card h2 a:focus-visible, .card h3 a:focus-visible { outline:none; }
+    .card:focus-within { outline:3px solid var(--focus); outline-offset:2px; }
+    .card p { color:var(--slate-text); font-size:.9375rem; }
+    .card-meta { display:flex; flex-wrap:wrap; gap:.375rem; }
+    .card-facts { display:flex; flex-wrap:wrap; gap:.25rem 1rem; font-size:.875rem; color:var(--dark); margin-top:auto; padding-top:.25rem; }
+    .card-facts span { white-space:nowrap; }
+    .card-more { color:var(--teal-text); font-weight:600; font-size:.9375rem; }
+    .chip { display:inline-block; font-size:.78rem; font-weight:600; padding:.2rem .6rem; border-radius:100px; background:#E6F4F1; color:#0B5F58; }
+    .chip-alt { background:#EEF2FF; color:#3730A3; }
+    .chip-warn { background:#FEF3C7; color:#78350F; }
+    .empty { background:var(--white); border:1px dashed #94A3B8; border-radius:12px; padding:1.5rem; text-align:center; color:var(--slate-text); }
+
+    /* Detail */
+    .back { margin-bottom:1rem; }
+    .detail { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:1.25rem; }
+    @media (min-width:760px) { .detail { padding:2rem; } }
+    .detail h1 { font-family:'DM Serif Display',serif; font-weight:400; font-size:clamp(1.6rem,5.5vw,2.25rem); line-height:1.15; color:var(--navy); margin:.5rem 0; }
+    .detail h1:focus { outline:none; }
+    .detail h1:focus-visible { outline:3px solid var(--focus); }
+    .detail h2 { font-size:1.125rem; color:var(--navy); margin:1.5rem 0 .5rem; }
+    .detail p, .detail li { font-size:1rem; }
+    .detail ul { padding-left:1.25rem; }
+    .detail li { margin:.2rem 0; }
+    .lead { font-size:1.0625rem !important; color:var(--dark); }
+    .facts { display:grid; grid-template-columns:1fr; gap:.5rem; margin:1rem 0; }
+    @media (min-width:640px) { .facts { grid-template-columns:repeat(3,1fr); } }
+    .fact { background:var(--off); border-radius:10px; padding:.75rem .875rem; }
+    .fact-k { display:block; font-size:.8125rem; color:var(--slate-text); font-weight:600; }
+    .fact-v { display:block; font-weight:700; color:var(--navy); }
+    .table-wrap { overflow-x:auto; }
+    table { border-collapse:collapse; width:100%; max-width:460px; font-size:.9375rem; }
+    caption { text-align:left; font-weight:600; padding-bottom:.4rem; color:var(--dark); }
+    th, td { text-align:left; padding:.55rem .75rem; border-bottom:1px solid var(--border); }
+    th { background:var(--off); font-weight:600; }
+    td.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+    .pending { color:var(--gold-text); font-weight:600; }
+    .small { font-size:.875rem !important; color:var(--slate-text); }
+    .source { font-size:.875rem; color:var(--slate-text); margin-top:.5rem; }
+    .source a, .detail a, .wrap a:not(.btn):not(.card-link) { color:var(--teal-text); text-underline-offset:3px; }
+    .dqr { display:inline-block; min-width:3.5rem; text-align:center; font-size:.78rem; font-weight:700; background:var(--navy); color:var(--white); border-radius:6px; padding:.1rem .4rem; margin-right:.4rem; }
+    .link-list { list-style:none; padding:0 !important; display:flex; flex-wrap:wrap; gap:.5rem; }
+    .link-list a { display:inline-flex; align-items:center; min-height:44px; padding:.25rem .875rem; border:1.5px solid var(--teal-text); border-radius:100px; text-decoration:none; font-weight:600; font-size:.9375rem; }
+    .link-list a:hover { background:#F0FDFA; }
+    .sources-box { margin-top:2rem; font-size:.875rem; color:var(--slate-text); }
+    .sources-box h2 { font-size:1rem; color:var(--dark); margin-bottom:.25rem; }
+    .sources-box ul { padding-left:1.25rem; }
+
+    /* Footer */
+    .site-footer { background:var(--navy); color:#CBD5E1; padding:2rem 1rem; margin-top:auto; }
+    .footer-inner { max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem 2rem; align-items:center; justify-content:space-between; }
+    .footer-inner p { font-size:.875rem; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:0 1.25rem; list-style:none; }
+    .footer-links a { color:#E2E8F0; display:inline-flex; align-items:center; min-height:44px; font-size:.9375rem; text-underline-offset:3px; }
+    .footer-links a:hover { color:var(--white); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+    }
+    input::placeholder { color:#64748B; opacity:1; }
+    .grid > .empty { grid-column:1 / -1; }
+    .page-hero[hidden] { display:none !important; }
+    .share { display:flex; flex-wrap:wrap; align-items:center; gap:.75rem; margin-top:1.75rem; padding-top:1.25rem; border-top:1px solid var(--border); }
+    .detail ul.plain { list-style:none; padding-left:0; }
+    .detail ul.plain li { margin:.4rem 0; }
+    .grid > li > .card { height:100%; }
+    .source a, .sources-box a, .small a, .empty a { display:inline-flex; align-items:center; min-height:44px; }
+    .hint { margin:-.25rem 0 .75rem; }
+    .navform, .results { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:1.25rem; }
+    .stepper { font-weight:700; color:var(--teal-text); font-size:.875rem; text-transform:uppercase; letter-spacing:.06em; }
+    .progress { height:6px; background:var(--border); border-radius:3px; margin:.4rem 0 1rem; overflow:hidden; }
+    .progress span { display:block; height:100%; background:var(--teal-dark); width:33%; transition:width .3s; }
+    .step { border:0; }
+    .step legend { font-family:'DM Serif Display',serif; font-size:clamp(1.4rem,5vw,1.9rem); color:var(--navy); line-height:1.2; margin-bottom:.75rem; }
+    .opts { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .opts-col { flex-direction:column; }
+    .opt { display:flex; align-items:center; gap:.6rem; min-height:48px; padding:.4rem 1rem .4rem .8rem; border:1.5px solid #64748B; border-radius:10px; cursor:pointer; font-weight:500; background:var(--white); }
+    .opt input { width:20px; height:20px; accent-color:var(--teal-dark); margin:0; flex:none; }
+    .opt:has(input:checked) { background:#E6F4F1; border-color:var(--teal-text); }
+    .field { max-width:360px; }
+    .check-actions { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1.25rem; }
+    .form-error { color:var(--coral-dark); font-weight:600; margin-top:.75rem; }
+    .form-error:empty { display:none; }
+    .results h2 { font-family:'DM Serif Display',serif; font-weight:400; font-size:clamp(1.5rem,5vw,2rem); color:var(--navy); margin-bottom:.25rem; }
+    .results h2:focus { outline:none; }
+    .results h2:focus-visible { outline:3px solid var(--focus); }
+    .weg { border:1px solid var(--border); border-radius:12px; padding:1rem 1rem 1.125rem; margin:1rem 0; }
+    .weg h3 { font-size:1.0625rem; line-height:1.35; color:var(--navy); }
+    .weg-meta { font-size:.875rem; color:var(--slate-text); margin:.2rem 0 .75rem; }
+    .timeline { list-style:none; position:relative; margin-left:.5rem; padding-left:1.25rem; border-left:3px solid #99F6E4; }
+    .timeline li { position:relative; padding:.1rem 0 .9rem; }
+    .timeline li::before { content:''; position:absolute; left:calc(-1.25rem - 9px); top:.35rem; width:15px; height:15px; border-radius:50%; background:var(--white); border:3px solid var(--teal-dark); }
+    .timeline li.tl-goal::before { background:var(--teal-dark); }
+    .timeline li:last-child { padding-bottom:0; }
+    .tl-title { display:block; font-weight:700; }
+    .tl-sub { display:block; font-size:.9375rem; color:var(--slate-text); }
+    .timeline .link-list { margin-top:.5rem; list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:.5rem; }
+    .timeline .link-list li { padding:0; }
+    .timeline .link-list li::before { display:none; }
+    .link-list a { display:inline-flex; align-items:center; min-height:44px; padding:.25rem .875rem; border:1.5px solid var(--teal-text); border-radius:100px; text-decoration:none; font-weight:600; font-size:.9375rem; color:var(--teal-text); }
+    .link-list a:hover { background:#F0FDFA; }
+    .weg .small { margin-top:.75rem; }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <a href="index.html" class="nav-logo" aria-label="Edufy – zur Startseite">Edu<span>fy</span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="visually-hidden">Menü</span>
+    </button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="berufe.html" data-keep-qs>Berufe</a></li>
+      <li><a href="studium.html" data-keep-qs>Studium</a></li>
+      <li><a href="foerderungen.html" data-keep-qs>Förderungen</a></li>
+      <li><a href="navigator.html" data-keep-qs aria-current="page">Navigator</a></li>
+      <li><a href="index.html">Startseite</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="page-hero" id="hero">
+  <div class="page-hero-inner">
+    <h1>Bildungsweg-Navigator</h1>
+    <p>Drei kurze Fragen – dann siehst du, welche Wege dir offenstehen. Nichts wird gespeichert.</p>
+  </div>
+</div>
+<div class="wrap">
+  <form id="nav-form" class="navform" autocomplete="off" novalidate hidden>
+    <p class="stepper" id="stepper">Schritt 1 von 3</p>
+    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+    <fieldset class="step" id="step1">
+      <legend>Auf welche Schule gehst du?</legend>
+      <div class="opts opts-col" id="sf-opts"></div>
+    </fieldset>
+    <fieldset class="step" id="step2" hidden>
+      <legend>In welcher Klasse bist du?</legend>
+      <div class="field">
+        <label for="klasse">Klasse oder Abschluss</label>
+        <select id="klasse" name="klasse" autocomplete="off"><option value="">Bitte wählen</option></select>
+      </div>
+    </fieldset>
+    <fieldset class="step" id="step3" hidden>
+      <legend>Was interessiert dich?</legend>
+      <div class="opts" id="bereich-opts"></div>
+    </fieldset>
+    <p class="form-error" id="nav-error" role="alert"></p>
+    <div class="check-actions">
+      <button type="button" class="btn btn-secondary" id="prev" hidden>Zurück</button>
+      <button type="submit" class="btn btn-primary" id="next">Weiter</button>
+    </div>
+  </form>
+
+  <section id="results" class="results" aria-labelledby="res-h" hidden>
+    <h2 id="res-h" tabindex="-1">Deine möglichen Wege</h2>
+    <p class="result-count" id="res-summary"></p>
+    <div id="res-note" class="notice notice-info" role="status" hidden></div>
+    <div id="res-list"></div>
+    <p class="small">Das ist eine Orientierung, keine Beratung. Die Regeln unterscheiden sich je nach Bundesland – frag bei deiner Schule oder der Berufsberatung der Agentur für Arbeit nach.</p>
+    <div class="check-actions">
+      <button type="button" class="btn btn-secondary" id="restart">Auswahl ändern</button>
+    </div>
+  </section>
+  <div id="status-box" hidden></div>
+  <div id="sources"></div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© <span data-year>2026</span> Edufy · kostenlos für Schülerinnen und Schüler · ohne Anmeldung, ohne Tracking, ohne Cookies</p>
+    <ul class="footer-links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="mailto:hallo@edufy.world">hallo@edufy.world</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+/* Gemeinsame Hilfsfunktionen der Content-Seiten (identisch in berufe/studium/foerderungen/navigator.html).
+   Regeln: keine Template-Literals mit Regex (CLAUDE.md Regel 3), Daten nur per textContent ins DOM,
+   nichts wird gespeichert oder gesendet (kein Cookie, kein Storage, kein Tracking). */
+var Edufy = (function () {
+  'use strict';
+  var params = new URLSearchParams(window.location.search);
+  var BEISPIEL = params.get('beispiel') === '1';
+  var QS = BEISPIEL ? '?beispiel=1' : '';
+  var BEREICHE = ['Kaufmännisch', 'Handwerk', 'Industrie/Technik', 'IT', 'Gesundheit/Soziales', 'Gastro/Tourismus',
+    'Handel', 'Bau', 'Logistik', 'Medien/Gestaltung', 'Öffentlicher Dienst', 'Landwirtschaft/Umwelt'];
+  var DIACRITICS = /[̀-ͯ]/g;
+  var ID_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+  var euro = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+  var dec = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 });
+
+  function str(v) { return (v === null || v === undefined) ? '' : String(v); }
+  function arr(v) { return Array.isArray(v) ? v : []; }
+  function isNum(v) { return typeof v === 'number' && isFinite(v); }
+  function isId(v) { return typeof v === 'string' && ID_PATTERN.test(v); }
+  function norm(v) {
+    return str(v).toLocaleLowerCase('de-DE').split('ß').join('ss').normalize('NFD').replace(DIACRITICS, '').trim();
+  }
+
+  /* DOM-Helfer: Text immer über textContent, nie über innerHTML */
+  function el(tag, opts, children) {
+    var node = document.createElement(tag);
+    var o = opts || {};
+    Object.keys(o).forEach(function (k) {
+      if (k === 'text') { node.textContent = str(o.text); }
+      else if (k === 'class') { node.className = o[k]; }
+      else if (k === 'hidden') { node.hidden = !!o[k]; }
+      else if (o[k] !== null && o[k] !== undefined && o[k] !== false) { node.setAttribute(k, o[k] === true ? '' : String(o[k])); }
+    });
+    arr(children).forEach(function (c) {
+      if (c === null || c === undefined || c === false) { return; }
+      node.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+    });
+    return node;
+  }
+  function clear(node) { while (node.firstChild) { node.removeChild(node.firstChild); } }
+
+  /* Nur https-Links aus den Daten zulassen */
+  function safeUrl(u) {
+    try {
+      var x = new URL(str(u));
+      if (x.protocol === 'https:') { return x.href; }
+    } catch (e) { /* ungültig */ }
+    return '';
+  }
+  function externalLink(url, text, cls) {
+    var href = safeUrl(url);
+    if (!href) { return null; }
+    return el('a', { href: href, target: '_blank', rel: 'noopener noreferrer', class: cls || null }, [
+      text, el('span', { class: 'visually-hidden', text: ' (öffnet eine neue Seite)' })
+    ]);
+  }
+
+  function formatEuro(n) { return isNum(n) ? euro.format(n) : ''; }
+  function yearsText(months) {
+    if (!isNum(months) || months <= 0) { return ''; }
+    var y = months / 12;
+    return dec.format(y) + (y === 1 ? ' Jahr' : ' Jahre');
+  }
+  function durationText(months) {
+    var y = yearsText(months);
+    return y ? y + ' (' + months + ' Monate)' : '';
+  }
+  function standText(s) {
+    var p = str(s).split('-');
+    if (p.length >= 2 && p[0].length === 4) { return p[1] + '/' + p[0]; }
+    return str(s);
+  }
+
+  /* Quellenzeile: „Quelle: BIBB – Titel, Stand 10/2025“ + Link */
+  function sourceNode(q, prefix) {
+    if (!q || typeof q !== 'object' || (!q.titel && !q.herausgeber)) { return null; }
+    var parts = [];
+    if (q.herausgeber) { parts.push(str(q.herausgeber)); }
+    if (q.titel) { parts.push(str(q.titel)); }
+    var text = (prefix === undefined ? 'Quelle: ' : prefix) + parts.join(' – ') + (q.stand ? ', Stand ' + standText(q.stand) : '');
+    var p = el('p', { class: 'source' }, [text]);
+    var a = externalLink(q.url, 'Zur Quelle', null);
+    if (a) { p.appendChild(document.createTextNode(' · ')); p.appendChild(a); }
+    return p;
+  }
+  function sourcesBox(data) {
+    var qs = arr(data && data.quellen);
+    var box = el('section', { class: 'sources-box', 'aria-labelledby': 'quellen-h' }, [
+      el('h2', { id: 'quellen-h', text: 'Quellen und Stand' }),
+      data && data.stand ? el('p', { text: 'Stand der Inhalte: ' + standText(data.stand) }) : null
+    ]);
+    if (qs.length) {
+      var ul = el('ul');
+      qs.forEach(function (q) { var s = sourceNode(q, ''); if (s) { ul.appendChild(el('li', null, Array.prototype.slice.call(s.childNodes))); } });
+      box.appendChild(ul);
+    }
+    box.appendChild(el('p', { text: 'Fehler entdeckt? Schreib uns an hallo@edufy.world.' }));
+    return box;
+  }
+
+  function pageUrl(page, id) { return page + QS + (id ? '#' + encodeURIComponent(id) : ''); }
+  function hashId() {
+    var h = window.location.hash.slice(1);
+    try { h = decodeURIComponent(h); } catch (e) { return ''; }
+    return isId(h) ? h : '';
+  }
+
+  /* Lädt data/<name>.json – Beispieldaten NUR mit ?beispiel=1, kein automatischer Fallback */
+  function loadJson(name) {
+    var url = (BEISPIEL ? 'data/_beispiel/' : 'data/') + name + '.json';
+    return fetch(url, { cache: 'no-cache', credentials: 'same-origin' }).then(function (r) {
+      if (!r.ok) { throw new Error('HTTP ' + r.status); }
+      return r.json();
+    });
+  }
+  function unavailable(container, what) {
+    clear(container);
+    container.hidden = false;
+    container.appendChild(el('div', { class: 'empty', role: 'status' }, [
+      el('p', null, [el('strong', { text: 'Hier kommt bald mehr.' })]),
+      el('p', { text: 'Die ' + what + ' werden gerade vorbereitet und sind noch nicht online. Schau bald wieder vorbei!' }),
+      el('p', { class: 'small' }, ['Fragen? Schreib uns: ', el('a', { href: 'mailto:hallo@edufy.world', text: 'hallo@edufy.world' })])
+    ]));
+  }
+
+  function initChrome() {
+    var y = document.querySelectorAll('[data-year]');
+    for (var i = 0; i < y.length; i++) { y[i].textContent = String(new Date().getFullYear()); }
+    if (BEISPIEL) {
+      var keep = document.querySelectorAll('a[data-keep-qs]');
+      for (var k = 0; k < keep.length; k++) { keep[k].setAttribute('href', keep[k].getAttribute('href') + QS); }
+      var main = document.getElementById('main');
+      main.insertBefore(el('div', { class: 'wrap', style: 'padding-bottom:0' }, [
+        el('div', { class: 'notice notice-demo', role: 'note' }, [
+          el('strong', { text: 'Beispieldaten – nur für die Entwicklung' }),
+          'Du siehst Testdaten aus data/_beispiel/. Die Angaben sind nicht echt und nicht geprüft.'
+        ])
+      ]), main.firstChild);
+    }
+    var toggle = document.querySelector('.nav-toggle');
+    var menu = document.getElementById('nav-menu');
+    if (!toggle || !menu) { return; }
+    function setMenu(open, focusBack) {
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menu.classList.toggle('open', open);
+      if (!open && focusBack) { toggle.focus(); }
+    }
+    toggle.addEventListener('click', function () { setMenu(toggle.getAttribute('aria-expanded') !== 'true', false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setMenu(false, true); }
+    });
+    window.matchMedia('(min-width: 821px)').addEventListener('change', function (mq) { if (mq.matches) { setMenu(false, false); } });
+  }
+  initChrome();
+
+  return {
+    BEISPIEL: BEISPIEL, QS: QS, BEREICHE: BEREICHE,
+    str: str, arr: arr, isNum: isNum, isId: isId, norm: norm, el: el, clear: clear,
+    safeUrl: safeUrl, externalLink: externalLink, formatEuro: formatEuro, yearsText: yearsText,
+    durationText: durationText, standText: standText, sourceNode: sourceNode, sourcesBox: sourcesBox,
+    pageUrl: pageUrl, hashId: hashId, loadJson: loadJson, unavailable: unavailable
+  };
+})();
+</script>
+<script>
+(function () {
+  'use strict';
+  var E = Edufy, el = E.el;
+  function $(id) { return document.getElementById(id); }
+  var form = $('nav-form'), stepper = $('stepper'), bar = $('progress-bar'), errorBox = $('nav-error');
+  var prevBtn = $('prev'), nextBtn = $('next'), results = $('results'), resList = $('res-list');
+  var klasseSel = $('klasse');
+  var steps = [$('step1'), $('step2'), $('step3')];
+  var schulformen = [], wege = [], lookup = {}, bereiche = [], current = 0, total = 3;
+  var FERTIG = 'fertig';
+
+  Promise.all([
+    E.loadJson('bildungswege'),
+    E.loadJson('berufe').catch(function () { return null; }),
+    E.loadJson('studium').catch(function () { return null; })
+  ]).then(init, fail);
+
+  function fail() { form.hidden = true; E.unavailable($('status-box'), 'Bildungswege'); }
+
+  function sfOf(s) {
+    if (typeof s === 'string') { return { value: s, label: s }; }
+    if (s && typeof s === 'object') {
+      var v = E.str(s.id || s.name || s.titel), l = E.str(s.name || s.titel || s.id);
+      return v ? { value: v, label: l } : null;
+    }
+    return null;
+  }
+  function sameSf(a, sf) { var n = E.norm(a); return n && (n === E.norm(sf.value) || n === E.norm(sf.label)); }
+
+  function init(res) {
+    var bw = res[0], berufe = res[1], studium = res[2];
+    schulformen = E.arr(bw && bw.schulformen).map(sfOf).filter(Boolean);
+    wege = E.arr(bw && bw.wege).filter(function (w) { return w && w.von && E.arr(w.schritte).length; });
+    if (!schulformen.length || !wege.length) { fail(); return; }
+    E.arr(berufe && berufe.berufe).forEach(function (b) {
+      if (b && E.isId(b.id) && b.name) { lookup[b.id] = { name: b.name, bereich: b.bereich, href: E.pageUrl('berufe.html', b.id), typ: 'Ausbildung' }; }
+    });
+    E.arr(studium && studium.studiengaenge).forEach(function (s) {
+      if (s && E.isId(s.id) && s.name && !lookup[s.id]) { lookup[s.id] = { name: s.name, bereich: s.bereich, href: E.pageUrl('studium.html', s.id), typ: s.art || 'Studium' }; }
+    });
+    var seen = {};
+    wege.forEach(function (w) { E.arr(w.ziel_beispiele).forEach(function (id) { var t = lookup[id]; if (t && t.bereich) { seen[t.bereich] = true; } }); });
+    bereiche = E.BEREICHE.filter(function (b) { return seen[b]; });
+    Object.keys(seen).sort().forEach(function (b) { if (bereiche.indexOf(b) === -1) { bereiche.push(b); } });
+    total = bereiche.length ? 3 : 2;
+
+    schulformen.forEach(function (sf, i) { $('sf-opts').appendChild(radio('schulform', sf.value, sf.label, 'sf' + i)); });
+    for (var k = 5; k <= 13; k++) { klasseSel.appendChild(el('option', { value: String(k), text: 'Klasse ' + k })); }
+    klasseSel.appendChild(el('option', { value: FERTIG, text: 'Ich bin schon fertig mit der Schule' }));
+    bereiche.forEach(function (b, i) { $('bereich-opts').appendChild(radio('bereich', b, b, 'b' + i)); });
+    $('bereich-opts').appendChild(radio('bereich', '', 'Weiß ich noch nicht', 'b-x'));
+
+    form.addEventListener('submit', function (e) { e.preventDefault(); next(); });
+    prevBtn.addEventListener('click', function () { show(current - 1, true); });
+    $('restart').addEventListener('click', function () {
+      results.hidden = true; form.hidden = false;
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+      show(0, true);
+    });
+    $('sources').appendChild(E.sourcesBox(bw));
+    form.hidden = false;
+    if (!restoreFromHash()) { show(0, false); }
+  }
+
+  function radio(name, value, label, id) {
+    return el('label', { class: 'opt', for: 'opt-' + id }, [el('input', { type: 'radio', name: name, value: value, id: 'opt-' + id }), label]);
+  }
+  function checked(name) { var c = form.querySelector('input[name="' + name + '"]:checked'); return c ? c : null; }
+
+  function show(i, focus) {
+    current = Math.max(0, Math.min(total - 1, i));
+    steps.forEach(function (s, n) { s.hidden = n !== current; });
+    stepper.textContent = 'Schritt ' + (current + 1) + ' von ' + total;
+    bar.style.width = Math.round((current + 1) / total * 100) + '%';
+    prevBtn.hidden = current === 0;
+    nextBtn.textContent = current === total - 1 ? 'Wege anzeigen' : 'Weiter';
+    errorBox.textContent = '';
+    if (focus) {
+      var f = steps[current].querySelector('input:checked') || steps[current].querySelector('input, select');
+      if (f) { f.focus(); }
+    }
+  }
+
+  function next() {
+    if (current === 0 && !checked('schulform')) { errorBox.textContent = 'Bitte wähl deine Schulform aus.'; return; }
+    if (current === 1 && !klasseSel.value) { errorBox.textContent = 'Bitte wähl deine Klasse aus.'; klasseSel.focus(); return; }
+    if (current < total - 1) { show(current + 1, true); return; }
+    showResults(true);
+  }
+
+  function selection() {
+    var sfInput = checked('schulform'), bInput = checked('bereich');
+    var sf = null;
+    if (sfInput) { schulformen.forEach(function (s) { if (s.value === sfInput.value) { sf = s; } }); }
+    return { sf: sf, klasse: klasseSel.value, bereich: total === 3 && bInput ? bInput.value : '' };
+  }
+
+  function restoreFromHash() {
+    var p = new URLSearchParams(window.location.hash.slice(1));
+    var sf = p.get('schulform'), k = p.get('klasse'), b = p.get('bereich') || '';
+    if (!sf || !k) { return false; }
+    var sfInput = null, bInput = null;
+    Array.prototype.forEach.call(form.querySelectorAll('input[name="schulform"]'), function (inp) { if (inp.value === sf) { sfInput = inp; } });
+    Array.prototype.forEach.call(form.querySelectorAll('input[name="bereich"]'), function (inp) { if (inp.value === b) { bInput = inp; } });
+    var kOk = Array.prototype.some.call(klasseSel.options, function (o) { return o.value === k && k !== ''; });
+    if (!sfInput || !kOk) { return false; }
+    sfInput.checked = true; klasseSel.value = k; if (bInput) { bInput.checked = true; }
+    show(total - 1, false);
+    showResults(false);
+    return true;
+  }
+
+  function sumMonths(w) {
+    return E.arr(w.schritte).reduce(function (s, x) { return s + (x && E.isNum(x.dauer_monate) ? x.dauer_monate : 0); }, 0);
+  }
+  function wegBereiche(w) {
+    return E.arr(w.ziel_beispiele).map(function (id) { return lookup[id] && lookup[id].bereich; }).filter(Boolean);
+  }
+
+  function showResults(focus) {
+    var s = selection();
+    if (!s.sf) { show(0, true); return; }
+    var p = new URLSearchParams();
+    p.set('schulform', s.sf.value); p.set('klasse', s.klasse); if (s.bereich) { p.set('bereich', s.bereich); }
+    history.replaceState(null, '', window.location.pathname + window.location.search + '#' + p.toString());
+
+    var notes = [];
+    var pool = wege.filter(function (w) { return sameSf(w.von.schulform, s.sf); });
+    if (!pool.length) { notes.push('Für diese Schulform haben wir noch keine eigenen Wege. Hier siehst du alle Wege.'); pool = wege.slice(); }
+    var shown = pool;
+    if (s.bereich) {
+      var m = pool.filter(function (w) { return wegBereiche(w).indexOf(s.bereich) !== -1; });
+      if (m.length) { shown = m; }
+      else { notes.push('Zu „' + s.bereich + '“ haben wir für deine Schulform noch keine Beispiele. Hier sind alle Wege für dich.'); }
+    }
+    shown = shown.slice().sort(function (a, b) {
+      return ((a.von.klasse_min || 0) - (b.von.klasse_min || 0)) || (sumMonths(a) - sumMonths(b));
+    });
+
+    var klasseText = s.klasse === FERTIG ? 'Schule abgeschlossen' : 'Klasse ' + s.klasse;
+    $('res-summary').textContent = s.sf.label + ' · ' + klasseText + (s.bereich ? ' · Interesse: ' + s.bereich : '') +
+      ' – ' + (shown.length === 1 ? '1 Weg' : shown.length + ' Wege');
+    var note = $('res-note');
+    note.hidden = !notes.length; note.textContent = notes.join(' ');
+    E.clear(resList);
+    shown.forEach(function (w, i) { resList.appendChild(wegNode(w, s, i)); });
+    form.hidden = true; results.hidden = false;
+    if (focus) { $('res-h').focus(); window.scrollTo(0, results.getBoundingClientRect().top + window.scrollY - 80); }
+  }
+
+  function wegNode(w, s, i) {
+    var schritte = E.arr(w.schritte).filter(function (x) { return x && x.titel; });
+    var title = E.str(w.titel) || schritte.map(function (x) { return E.str(x.titel); }).join(' → ');
+    var months = sumMonths(w);
+    var meta = [];
+    if (months) { meta.push('ca. ' + E.yearsText(months)); }
+    if (E.isNum(w.ziel_dqr)) { meta.push('Ziel: DQR-Stufe ' + w.ziel_dqr); }
+    var hid = 'weg-' + i;
+    var items = [];
+    var km = w.von.klasse_min;
+    var start = 'Start: ' + (E.isNum(km) ? 'ab Klasse ' + km : 'jetzt');
+    var startSub = '';
+    var kNum = parseInt(s.klasse, 10);
+    if (E.isNum(km) && isFinite(kNum) && kNum < km) { startSub = 'Du bist in Klasse ' + kNum + ' – dieser Weg beginnt ab Klasse ' + km + '.'; }
+    items.push(el('li', null, [el('span', { class: 'tl-title', text: start }), startSub ? el('span', { class: 'tl-sub', text: startSub }) : null]));
+    schritte.forEach(function (x) {
+      var sub = [];
+      if (E.isNum(x.dauer_monate) && x.dauer_monate > 0) { sub.push('ca. ' + E.yearsText(x.dauer_monate)); }
+      if (x.abschluss) { sub.push('Abschluss: ' + E.str(x.abschluss)); }
+      items.push(el('li', null, [el('span', { class: 'tl-title', text: x.titel }), sub.length ? el('span', { class: 'tl-sub', text: sub.join(' · ') }) : null]));
+    });
+    var ziele = E.arr(w.ziel_beispiele).filter(function (id) { return lookup[id]; });
+    if (s.bereich) {
+      ziele.sort(function (a, b) { return (lookup[b].bereich === s.bereich ? 1 : 0) - (lookup[a].bereich === s.bereich ? 1 : 0); });
+    }
+    items.push(el('li', { class: 'tl-goal' }, [
+      el('span', { class: 'tl-title', text: E.isNum(w.ziel_dqr) ? 'Ziel: DQR-Stufe ' + w.ziel_dqr : 'Ziel' }),
+      ziele.length ? el('span', { class: 'tl-sub', text: 'Zum Beispiel:' }) : null,
+      ziele.length ? el('ul', { class: 'link-list' }, ziele.map(function (id) {
+        var t = lookup[id];
+        return el('li', null, [el('a', { href: t.href, text: t.name + ' (' + t.typ + ')' })]);
+      })) : null
+    ]));
+    return el('article', { class: 'weg', 'aria-labelledby': hid }, [
+      el('h3', { id: hid, text: title }),
+      meta.length ? el('p', { class: 'weg-meta', text: meta.join(' · ') }) : null,
+      el('ol', { class: 'timeline' }, items),
+      w.hinweis_laender ? el('p', { class: 'small', text: 'Hinweis: ' + E.str(w.hinweis_laender) }) : null
+    ]);
+  }
+})();
+</script>
+</body>
+</html>

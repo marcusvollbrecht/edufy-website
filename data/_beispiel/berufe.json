@@ -1,0 +1,74 @@
+{
+  "_hinweis": "BEISPIELDATEN – nur für die Entwicklung der Seiten (S-004). Keine echten oder geprüften Inhalte, Beträge frei erfunden. Nur sichtbar mit ?beispiel=1.",
+  "stand": "2026-11",
+  "quellen": [
+    { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" }
+  ],
+  "berufe": [
+    {
+      "id": "beispiel-kaufmann-buero",
+      "name": "Kaufmann/-frau für Büromanagement (Beispiel)",
+      "bereich": "Kaufmännisch",
+      "kurz": "BEISPIEL: Du organisierst Abläufe im Büro, schreibst E-Mails und kümmerst dich um Termine.",
+      "taetigkeiten": ["Beispiel: Termine planen", "Beispiel: Rechnungen prüfen", "Beispiel: Kundschaft beraten"],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "mittlerer Schulabschluss",
+      "verguetung": { "jahr1": 1000, "jahr2": 1100, "jahr3": 1200, "jahr4": null, "einheit": "EUR brutto/Monat, tariflicher Durchschnitt", "quelle": { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" }, "geprueft": true },
+      "staerken": ["Beispiel: Organisationstalent", "Beispiel: Freude am Schreiben", "Beispiel: Sorgfalt"],
+      "aufstieg": [ { "abschluss": "Beispiel: Fachwirt/-in (IHK)", "dqr": 6 }, { "abschluss": "Beispiel: Betriebswirt/-in", "dqr": 7 } ],
+      "aehnlich": ["beispiel-kaufmann-einzelhandel", "beispiel-fachinformatiker"]
+    },
+    {
+      "id": "beispiel-kaufmann-einzelhandel",
+      "name": "Kaufmann/-frau im Einzelhandel (Beispiel)",
+      "bereich": "Handel",
+      "kurz": "BEISPIEL: Du berätst Kundschaft im Laden und sorgst dafür, dass die Ware stimmt.",
+      "taetigkeiten": ["Beispiel: Kundschaft beraten", "Beispiel: Ware bestellen", "Beispiel: Kasse abrechnen"],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "Hauptschulabschluss oder mittlerer Schulabschluss",
+      "verguetung": { "jahr1": 0, "jahr2": 0, "jahr3": 0, "jahr4": null, "einheit": "EUR brutto/Monat, tariflicher Durchschnitt", "quelle": { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" }, "geprueft": false, "hinweis": "Beispiel: Wert noch nicht an der Primärquelle abgelesen." },
+      "staerken": ["Beispiel: Kontaktfreude", "Beispiel: Rechnen", "Beispiel: Geduld"],
+      "aufstieg": [ { "abschluss": "Beispiel: Handelsfachwirt/-in", "dqr": 6 } ],
+      "aehnlich": ["beispiel-kaufmann-buero"]
+    },
+    {
+      "id": "beispiel-fachinformatiker",
+      "name": "Fachinformatiker/-in Anwendungsentwicklung (Beispiel)",
+      "bereich": "IT",
+      "kurz": "BEISPIEL: Du programmierst Apps und Programme und testest, ob alles läuft.",
+      "taetigkeiten": ["Beispiel: Programmieren", "Beispiel: Fehler suchen", "Beispiel: Software testen"],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "Abitur oder Fachhochschulreife",
+      "verguetung": { "jahr1": 1050, "jahr2": 1150, "jahr3": 1250, "jahr4": null, "einheit": "EUR brutto/Monat, tariflicher Durchschnitt", "quelle": { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" }, "geprueft": true },
+      "staerken": ["Beispiel: logisches Denken", "Beispiel: Ausdauer", "Beispiel: Englisch lesen"],
+      "aufstieg": [ { "abschluss": "Beispiel: IT-Spezialist/-in", "dqr": 5 }, { "abschluss": "Beispiel: Bachelor Informatik", "dqr": 6 } ],
+      "aehnlich": ["beispiel-kaufmann-buero", "beispiel-elektroniker"]
+    },
+    {
+      "id": "beispiel-elektroniker",
+      "name": "Elektroniker/-in für Betriebstechnik (Beispiel)",
+      "bereich": "Industrie/Technik",
+      "kurz": "BEISPIEL: Du installierst und wartest elektrische Anlagen in Fabriken.",
+      "taetigkeiten": ["Beispiel: Anlagen verkabeln", "Beispiel: Störungen finden", "Beispiel: Messen und prüfen"],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "mittlerer Schulabschluss",
+      "verguetung": { "jahr1": 1100, "jahr2": 1150, "jahr3": 1250, "jahr4": 1300, "einheit": "EUR brutto/Monat, tariflicher Durchschnitt", "quelle": { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" }, "geprueft": true },
+      "staerken": ["Beispiel: Technikverständnis", "Beispiel: Mathe", "Beispiel: Sorgfalt"],
+      "aufstieg": [ { "abschluss": "Beispiel: Industriemeister/-in Elektrotechnik", "dqr": 6 } ],
+      "aehnlich": ["beispiel-fachinformatiker"]
+    },
+    {
+      "id": "beispiel-fachlagerist",
+      "name": "Fachlagerist/-in (Beispiel)",
+      "bereich": "Logistik",
+      "kurz": "BEISPIEL: Du nimmst Waren an, lagerst sie richtig und packst Lieferungen.",
+      "taetigkeiten": ["Beispiel: Waren annehmen", "Beispiel: Gabelstapler fahren", "Beispiel: Lieferungen packen"],
+      "dauer_monate": 24,
+      "schulabschluss_typisch": "Hauptschulabschluss",
+      "verguetung": { "jahr1": null, "jahr2": null, "jahr3": null, "jahr4": null, "einheit": "EUR brutto/Monat, tariflicher Durchschnitt", "quelle": {}, "geprueft": false, "hinweis": "Beispiel: Noch keine Quelle." },
+      "staerken": ["Beispiel: Ordnung", "Beispiel: körperliche Fitness", "Beispiel: Teamarbeit"],
+      "aufstieg": [ { "abschluss": "Beispiel: Fachkraft für Lagerlogistik", "dqr": 4 } ],
+      "aehnlich": []
+    }
+  ]
+}

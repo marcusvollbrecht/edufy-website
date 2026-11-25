@@ -1,0 +1,57 @@
+{
+  "_hinweis": "BEISPIELDATEN – nur für die Entwicklung der Seiten (S-004). Keine echten oder geprüften Inhalte. Nur sichtbar mit ?beispiel=1.",
+  "stand": "2026-11",
+  "quellen": [
+    { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" }
+  ],
+  "studiengaenge": [
+    {
+      "id": "beispiel-informatik",
+      "name": "Informatik (Beispiel)",
+      "art": "Studium",
+      "bereich": "IT",
+      "kurz": "BEISPIEL: Du lernst, wie Computer und Software funktionieren – mit viel Mathe.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte",
+      "nc_hinweis": "Beispiel: Je nach Hochschule zulassungsfrei oder mit örtlicher Zulassungsbeschränkung.",
+      "perspektiven": ["Beispiel: Softwareentwicklung", "Beispiel: IT-Sicherheit", "Beispiel: Forschung"],
+      "aehnlich": ["beispiel-wirtschaftsinformatik-dual"]
+    },
+    {
+      "id": "beispiel-wirtschaftsinformatik-dual",
+      "name": "Wirtschaftsinformatik dual (Beispiel)",
+      "art": "Duales Studium",
+      "bereich": "IT",
+      "kurz": "BEISPIEL: Du studierst und arbeitest abwechselnd in einem Unternehmen.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife + Vertrag mit einem Praxisbetrieb",
+      "nc_hinweis": "Beispiel: Meist entscheidet der Betrieb über die Aufnahme.",
+      "perspektiven": ["Beispiel: IT-Beratung", "Beispiel: Projektleitung"],
+      "aehnlich": ["beispiel-informatik", "beispiel-bwl"]
+    },
+    {
+      "id": "beispiel-bwl",
+      "name": "Betriebswirtschaftslehre (Beispiel)",
+      "art": "Studium",
+      "bereich": "Kaufmännisch",
+      "kurz": "BEISPIEL: Du lernst, wie Unternehmen planen, rechnen und verkaufen.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte",
+      "nc_hinweis": "Beispiel: An vielen Hochschulen zulassungsbeschränkt.",
+      "perspektiven": ["Beispiel: Controlling", "Beispiel: Marketing", "Beispiel: Personal"],
+      "aehnlich": ["beispiel-wirtschaftsinformatik-dual"]
+    },
+    {
+      "id": "beispiel-pflege-dual",
+      "name": "Pflege dual (Beispiel)",
+      "art": "Duales Studium",
+      "bereich": "Gesundheit/Soziales",
+      "kurz": "BEISPIEL: Du lernst Pflege an der Hochschule und im Krankenhaus.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife",
+      "nc_hinweis": "Beispiel: Je nach Hochschule unterschiedlich.",
+      "perspektiven": ["Beispiel: Pflege im Krankenhaus", "Beispiel: Pflegeleitung"],
+      "aehnlich": []
+    }
+  ]
+}

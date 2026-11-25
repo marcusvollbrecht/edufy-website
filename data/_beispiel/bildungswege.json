@@ -1,0 +1,54 @@
+{
+  "_hinweis": "BEISPIELDATEN – nur für die Entwicklung der Seiten (S-004). Keine echten oder geprüften Inhalte. Nur sichtbar mit ?beispiel=1.",
+  "stand": "2026-11",
+  "quellen": [
+    { "titel": "BEISPIEL – keine echte Quelle", "herausgeber": "Beispiel-Herausgeber", "url": "https://example.org/beispiel", "stand": "2025-10" }
+  ],
+  "schulformen": ["Hauptschule/Mittelschule", "Realschule", "Gesamtschule", "Gymnasium"],
+  "wege": [
+    {
+      "id": "beispiel-real-ausbildung",
+      "von": { "schulform": "Realschule", "klasse_min": 10 },
+      "schritte": [
+        { "titel": "Beispiel: Mittlerer Schulabschluss", "dauer_monate": 0, "abschluss": "mittlerer Schulabschluss" },
+        { "titel": "Beispiel: Duale Ausbildung", "dauer_monate": 36, "abschluss": "Berufsabschluss" }
+      ],
+      "ziel_dqr": 4,
+      "ziel_beispiele": ["beispiel-kaufmann-buero", "beispiel-fachinformatiker", "beispiel-elektroniker"],
+      "hinweis_laender": "Beispiel: Bezeichnung des Abschlusses je nach Bundesland unterschiedlich."
+    },
+    {
+      "id": "beispiel-real-fos-studium",
+      "von": { "schulform": "Realschule", "klasse_min": 10 },
+      "schritte": [
+        { "titel": "Beispiel: Fachoberschule", "dauer_monate": 24, "abschluss": "Fachhochschulreife" },
+        { "titel": "Beispiel: Bachelor an einer Hochschule", "dauer_monate": 36, "abschluss": "Bachelor" }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": ["beispiel-bwl", "beispiel-informatik"],
+      "hinweis_laender": "Beispiel: Schulformen der Oberstufe je nach Bundesland unterschiedlich."
+    },
+    {
+      "id": "beispiel-haupt-ausbildung",
+      "von": { "schulform": "Hauptschule/Mittelschule", "klasse_min": 9 },
+      "schritte": [
+        { "titel": "Beispiel: Erster Schulabschluss", "dauer_monate": 0, "abschluss": "Hauptschulabschluss" },
+        { "titel": "Beispiel: Zweijährige Ausbildung", "dauer_monate": 24, "abschluss": "Berufsabschluss" }
+      ],
+      "ziel_dqr": 3,
+      "ziel_beispiele": ["beispiel-fachlagerist", "beispiel-kaufmann-einzelhandel"],
+      "hinweis_laender": "Beispiel: je nach Bundesland unterschiedlich."
+    },
+    {
+      "id": "beispiel-gym-dual",
+      "von": { "schulform": "Gymnasium", "klasse_min": 12 },
+      "schritte": [
+        { "titel": "Beispiel: Abitur", "dauer_monate": 0, "abschluss": "Allgemeine Hochschulreife" },
+        { "titel": "Beispiel: Duales Studium", "dauer_monate": 42, "abschluss": "Bachelor + Praxiserfahrung" }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": ["beispiel-wirtschaftsinformatik-dual", "beispiel-pflege-dual", "beispiel-fachinformatiker"],
+      "hinweis_laender": "Beispiel: Abitur nach Klasse 12 oder 13, je nach Bundesland."
+    }
+  ]
+}

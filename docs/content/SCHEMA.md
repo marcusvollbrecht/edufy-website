@@ -40,3 +40,9 @@ Gemeinsame Felder:
 `schulformen[]` (Hauptschule/Mittelschule, Realschule, Gesamtschule, Gymnasium …) und `wege[]`:
 `{ id, von: {schulform, klasse_min}, schritte: [ {titel, dauer_monate, abschluss} ], ziel_dqr, ziel_beispiele: [beruf/studium-ids], hinweis_laender }`.
 Länderunterschiede nur allgemein benennen („je nach Bundesland“), nichts erfinden.
+
+## Ergänzungen (PM, nach S-004)
+- `hinweis` ist **intern** (Prüfvermerke, Quellenprobleme) und wird nie angezeigt.
+- Neues optionales Feld `hinweis_oeffentlich` (Text für Schüler, z. B. „Betriebe ohne Tarif dürfen bis zu 20 % darunter liegen“) – wird auf den Seiten angezeigt.
+- Selbstcheck: `selbstcheck` ist ein Array aus Strings **oder** Objekten `{ "frage": "...", "erwartet": "ja"|"nein" }`. Konvention: Antwort = `erwartet` (Default „ja“) bedeutet „Voraussetzung erfüllt“. Keine Wissensfragen („Weißt du, ob …“) – nur Fragen zur eigenen Situation.
+- `schulabschluss_typisch` bleibt Freitext, soll aber mit einer der Stufen beginnen: „ohne Abschluss möglich“, „Hauptschulabschluss“, „mittlerer Schulabschluss“, „Fachhochschulreife“, „Abitur“.
