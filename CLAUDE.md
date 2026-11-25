@@ -12,6 +12,9 @@ Fördervereine und Unternehmen verbindet.
   öffentlich aber kein Prozentsatz nennen; Jahresvertrag für Fördervereine; formale Zustimmung der Schulleitung;
   Unternehmen sehen nur Schulstatistiken, Schülerdetails erst nach aktiver Kontaktaufnahme des Schülers;
   U16 nur mit Eltern-Freigabe per E-Mail; Pilotphase für Unternehmen kostenlos; Zahlungen später über Stripe.
+- Entscheidungen Runde 2: GmbH-Gründung erst nach internem Test; bis dahin **nur interne Tests, keine echten
+  Nutzer/Daten, kein öffentlicher Livegang**. Pilot 6 Monate, max. 20 Unternehmen. Jahresvereinbarung beginnt
+  erst nach der Pilotphase. Nachwirkung bis Laufzeitende bestehender Unternehmensverträge. DSB: interne Person.
 
 ## Stack
 - Frontend: Multi-Page-HTML (Vanilla HTML/CSS/JS), keine Build-Pipeline.

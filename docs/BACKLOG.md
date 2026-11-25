@@ -29,21 +29,25 @@ Status: abgeschlossen 2026-11-25. Website-Texte rechtlich vorgeprüft und umgese
 - Preise Unternehmen: **Pilotphase kostenlos**, Preise danach anhand Feedback.
 - Zahlung: **Stripe** (Billing, SEPA, Rechnung); Auszahlung an Fördervereine per Gutschrift.
 
+## Entschiedene Punkte (Marcus, 2026-11-25, Runde 2)
+- Rechtsträger: **GmbH**, Gründung erst, wenn alles steht und getestet ist.
+- Bis zur Gründung: **komplett intern testen** – keine echten Nutzer, kein öffentlicher Livegang, keine echten Daten (nur lokale/Agenten-Tests, ggf. Supabase-Testprojekt mit Testdaten).
+- Pilotphase Unternehmen: **6 Monate kostenlos, max. 20 Pilotunternehmen** (Website angepasst).
+- Jahresvereinbarung Förderverein: **beginnt erst nach der Pilotphase** (mit dem ersten zahlenden Unternehmen); in der Pilotphase nur kurze, jederzeit kündbare Pilotvereinbarung.
+- Nachwirkung: Beteiligung läuft für während der Laufzeit geschlossene Unternehmensverträge **bis zu deren aktuellem Laufzeitende** weiter, nicht für Verlängerungen.
+- Datenschutzbeauftragte/r: **interne Person** (mit Fachkundeschulung, nicht Geschäftsführung).
+- Landingpage „Vier Zielgruppen“: bleibt ohne Pilot-Zusatz.
+
 ## Offene Entscheidungen für Marcus
-- [ ] Impressumsangaben ausfüllen, Datenschutzerklärung finalisieren (nach Legal-Vorprüfung, mit Anwalt)
+- [ ] GmbH gründen (nach internem Test) – danach Impressumsangaben ausfüllen, Datenschutzerklärung finalisieren (nach Legal-Vorprüfung, mit Anwalt)
 - [ ] Supabase-Projekt-URL + Anon-Key für `js/supabase-config.js`
 - [ ] Postfach hallo@edufy.world einrichten
 - [ ] Anwalt beauftragen: Vorprüfung docs/legal/2026-11-25-… bestätigen lassen (A1–A13), vorrangig A1 (§ 331 StGB Schulleitung/Förderverein) und A2 (zulässige Bundesländer, Bayern Art. 84 BayEUG, NRW § 99 SchulG)
-- [ ] Rechtsträger und Sitz von Edufy festlegen (Voraussetzung Impressum, Verträge)
-- [ ] Nachwirkung der Förderverein-Beteiligung nach Vertragsende
-- [ ] Stimmt „Erste Pilotschulen registrieren sich gerade“? Sonst streichen
-- [ ] Datenschutzbeauftragten benennen (DSFA für Daten Minderjähriger voraussichtlich Pflicht → § 38 BDSG)
+- [ ] Interne Person als Datenschutzbeauftragte/n bestimmen und schulen lassen (nicht Geschäftsführung; DSFA für Daten Minderjähriger voraussichtlich Pflicht → § 38 BDSG)
 - [ ] Auftragsverarbeitungsverträge mit Vercel und Supabase abschließen
 - [ ] Anwalt: zusätzlich Fragen A14–A18 aus docs/legal/2026-11-25-review-sprint2.md
-- [ ] Obergrenze Pilotunternehmen intern festlegen (sonst bleibt „begrenzte Zahl“ von der Website)
 - [ ] Hinweisblatt Steuern für Fördervereine (nach Steuerberater)
 - [ ] Steuerberater beauftragen: Vorprüfung docs/steuer/2026-11-25-vorpruefung-foerdervereinsmodell.md bestätigen lassen (20 Fragen)
-- [ ] Dauer der kostenlosen Pilotphase und Zahl der Pilotunternehmen
 
 ## Backlog
 - [ ] S-001 | S | P1 | Bestandsaufnahme Schüler-Wizard und Bibliotheken gegen Supabase-Schema — Akzeptanz: Liste funktionierender/defekter Schritte — Quelle: Marcus
