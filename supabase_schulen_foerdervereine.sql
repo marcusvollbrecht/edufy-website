@@ -1,6 +1,6 @@
 -- =====================================================================
 -- Edufy – Schema Schulen, Fördervereine, Förderverein-Profile, Provisionen
--- Datei: supabase_schulen_foerdervereine.sql   (Aufgabe F-001)
+-- Datei: supabase_schulen_foerdervereine.sql   (Aufgaben F-001, F-001b)
 --
 -- Einspielen: Supabase → SQL Editor → kompletten Inhalt einfügen → „Run“.
 -- Die Datei ist idempotent (mehrfach ausführbar, ohne Daten zu löschen).
@@ -10,7 +10,9 @@
 -- Sicherheitskonzept
 -- ------------------
 -- * Jede Tabelle hat RLS aktiviert und ausdrücklich definierte Policies.
--- * Für „anon“ (nicht angemeldet) gibt es KEINE Tabellenrechte.
+-- * Für „anon“ (nicht angemeldet) gibt es KEINE Tabellenrechte. Einzige
+--   Ausnahme ist die Funktion check_school_registered(name, plz): Sie
+--   liefert nur true/false (Verein für diese Schule schon registriert?).
 -- * Angemeldete Förderverein-Nutzer sehen/ändern nur ihr eigenes Profil
 --   und ihren eigenen Verein; Provisionen nur lesend für den eigenen Verein.
 -- * Angelegt werden Schule + Verein + Profil ausschließlich über die
@@ -20,6 +22,8 @@
 --
 -- Registrierungsablauf (Frontend: registrierung-foerderverein.html)
 -- -----------------------------------------------------------------
+-- 0. Nach Schritt 1 des Formulars: rpc('check_school_registered',
+--      { p_name, p_plz }) – bei true wird die Registrierung nicht fortgesetzt.
 -- 1. supabase.auth.signUp({ email, password, options: { data: {
 --      rolle: 'foerderverein', registrierung: { …alle Formularfelder… } },
 --      emailRedirectTo: '<Domain>/foerderverein-bestaetigung.html' } })
@@ -32,6 +36,8 @@
 --     user_metadata.registrierung nachholen und die Metadaten danach leeren
 --     (Datensparsamkeit). Die Funktion ist idempotent: ein zweiter Aufruf
 --     liefert nur den bestehenden Verein zurück.
+--     Bei endgültigem Fehler (z. B. SCHULE_BEREITS_REGISTRIERT) leert die
+--     Seite die Metadaten ebenfalls (Name, Telefon, Vereinsdaten).
 -- =====================================================================
 
 begin;
@@ -252,6 +258,156 @@ create policy "provisions_select_eigener_verein" on public.provisions
   using (foerderverein_id = public.current_foerderverein_id());
 
 -- ---------------------------------------------------------------------
+-- Dublettenerkennung (F-001b): unscharfer Vergleich von Schulnamen
+-- ---------------------------------------------------------------------
+-- edufy_schulname_key(name, ort, sortiert) bildet einen Vergleichsschlüssel:
+--   * Kleinschreibung, ä/ö/ü → ae/oe/ue, ß → ss, Akzente entfernt
+--   * Satzzeichen, Bindestriche, Leerzeichen spielen keine Rolle
+--   * „schule“ in jeder Schreibweise entfernt (Goetheschule = Goethe-Schule)
+--   * Füllwörter (der/die/am/zur …, städtische/staatliche) und der Ortsname
+--     werden ignoriert („Goethe-Gymnasium Musterstadt“ = „Goethe Gymnasium“)
+--   * Abkürzungen gym./gymn. → gymnasium, st. → sankt
+--   * sortiert = true: Wortreihenfolge egal („Gymnasium Goethe“ = „Goethe-Gymnasium“)
+-- Bewusst ohne pg_trgm: Erweiterungsfunktionen liegen bei Supabase im Schema
+-- „extensions“; security-definer-Funktionen mit leerem search_path müssten
+-- sie schema-qualifiziert aufrufen, was je nach Projekt-Setup bricht. Der
+-- Vergleich ist auf dieselbe PLZ beschränkt, dadurch bleibt die Gefahr von
+-- Fehltreffern klein.
+-- Grundnormalisierung: Kleinbuchstaben, Umlaute/ß/Akzente, nur a–z, 0–9 und Leerzeichen
+create or replace function public.edufy_text_normalisieren(p_text text)
+returns text
+language sql
+immutable
+set search_path = ''
+as $$
+  select regexp_replace(
+           translate(
+             replace(replace(replace(replace(
+               lower(replace(replace(replace(replace(coalesce(p_text, ''),
+                 'Ä', 'ä'), 'Ö', 'ö'), 'Ü', 'ü'), 'ẞ', 'ß')),
+               'ä', 'ae'), 'ö', 'oe'), 'ü', 'ue'), 'ß', 'ss'),
+             'áàâãåéèêëíìîïóòôõúùûçñ', 'aaaaaeeeeiiiiooooouuucn'),
+           '[^a-z0-9]+', ' ', 'g');
+$$;
+
+create or replace function public.edufy_schulname_key(
+  p_name     text,
+  p_ort      text default null,
+  p_sortiert boolean default false
+)
+returns text
+language plpgsql
+immutable
+set search_path = ''
+as $$
+declare
+  v_stop   text[] := array['der', 'die', 'das', 'des', 'dem', 'den', 'am', 'an', 'auf',
+                           'im', 'in', 'zu', 'zum', 'zur', 'und', 'fuer', 'von', 'vom',
+                           'staedtische', 'staedtisches', 'staedt', 'staatliche', 'staatliches'];
+  v_ort    text[] := '{}';
+  v_toks   text[] := '{}';
+  v_tok    text;
+  v_runde  int;
+begin
+  if p_ort is not null then
+    v_ort := regexp_split_to_array(btrim(public.edufy_text_normalisieren(p_ort)), ' ');
+  end if;
+
+  -- Runde 1 mit Entfernen des Ortsnamens, Runde 2 ohne (falls sonst nichts übrig bliebe)
+  for v_runde in 1..2 loop
+    v_toks := '{}';
+    foreach v_tok in array regexp_split_to_array(btrim(public.edufy_text_normalisieren(p_name)), ' ') loop
+      if v_tok = '' or v_tok = any (v_stop) or (v_runde = 1 and v_tok = any (v_ort)) then
+        continue;
+      end if;
+      v_tok := replace(v_tok, 'schule', '');
+      if v_tok in ('gym', 'gymn') then v_tok := 'gymnasium'; end if;
+      if v_tok = 'st' then v_tok := 'sankt'; end if;
+      if v_tok <> '' then
+        v_toks := v_toks || v_tok;
+      end if;
+    end loop;
+    exit when cardinality(v_toks) > 0;
+  end loop;
+
+  if cardinality(v_toks) = 0 then
+    return replace(public.edufy_text_normalisieren(p_name), ' ', '');
+  end if;
+  if p_sortiert then
+    return array_to_string(array(select t from unnest(v_toks) as t order by t), ' ');
+  end if;
+  return array_to_string(v_toks, '');
+end;
+$$;
+
+-- true, wenn ein eingegebener Schulname zu einer gespeicherten Schule passt
+create or replace function public.edufy_schule_passt(p_eingabe text, p_name text, p_ort text)
+returns boolean
+language sql
+immutable
+set search_path = ''
+as $$
+  select public.edufy_schulname_key(p_eingabe, p_ort, false) = public.edufy_schulname_key(p_name, p_ort, false)
+      or public.edufy_schulname_key(p_eingabe, p_ort, true)  = public.edufy_schulname_key(p_name, p_ort, true);
+$$;
+
+revoke execute on function public.edufy_text_normalisieren(text) from public, anon, authenticated;
+revoke execute on function public.edufy_schulname_key(text, text, boolean) from public, anon, authenticated;
+revoke execute on function public.edufy_schule_passt(text, text, text) from public, anon, authenticated;
+
+-- Zusätzlicher Dublettenschutz auf Datenbankebene (gleicher Schlüssel + PLZ).
+-- Wird nur angelegt, wenn die vorhandenen Daten keine Dubletten enthalten –
+-- sonst Hinweis im Log, damit das Skript nicht abbricht.
+do $$
+begin
+  if not exists (select 1 from pg_indexes
+                 where schemaname = 'public' and indexname = 'schools_key_plz_uniq') then
+    if exists (select 1 from public.schools
+               group by public.edufy_schulname_key(name, ort, false), plz
+               having count(*) > 1) then
+      raise notice 'schools_key_plz_uniq nicht angelegt: es gibt bereits ähnliche Schulnamen mit gleicher PLZ. Bitte bereinigen und Skript erneut ausführen.';
+    else
+      create unique index schools_key_plz_uniq
+        on public.schools (public.edufy_schulname_key(name, ort, false), plz);
+    end if;
+  end if;
+end;
+$$;
+
+-- ---------------------------------------------------------------------
+-- RPC: check_school_registered – frühe Dublettenprüfung im Formular (Schritt 1)
+-- Für anon aufrufbar. Gibt NUR true/false zurück (gibt es zu diesem Namen und
+-- dieser PLZ schon einen registrierten Förderverein?) – keine Vereins- oder
+-- Personendaten, keine Liste von Schulen.
+-- ---------------------------------------------------------------------
+create or replace function public.check_school_registered(p_name text, p_plz text)
+returns boolean
+language plpgsql
+stable
+security definer
+set search_path = ''
+as $$
+declare
+  v_name text := btrim(coalesce(p_name, ''));
+  v_plz  text := btrim(coalesce(p_plz, ''));
+begin
+  if char_length(v_name) < 2 or char_length(v_name) > 200 or v_plz !~ '^[0-9]{5}$' then
+    return false;
+  end if;
+  return exists (
+    select 1
+    from public.schools s
+    join public.foerdervereine f on f.school_id = s.id
+    where s.plz = v_plz
+      and public.edufy_schule_passt(v_name, s.name, s.ort)
+  );
+end;
+$$;
+
+revoke execute on function public.check_school_registered(text, text) from public;
+grant execute on function public.check_school_registered(text, text) to anon, authenticated;
+
+-- ---------------------------------------------------------------------
 -- RPC: register_foerderverein – legt Schule (falls neu), Verein und Profil an
 -- Fehler werden als 'EDUFY:<CODE>' gemeldet, das Frontend übersetzt sie.
 --   NICHT_ANGEMELDET, PFLICHTFELD, UNGUELTIGE_PLZ, UNGUELTIGE_SCHULFORM,
@@ -353,16 +509,24 @@ begin
     raise exception 'EDUFY:NICHT_ANGEMELDET';
   end if;
 
-  -- Schule suchen bzw. anlegen; Duplikat (gleicher Name + PLZ) mit Verein → Fehler
+  -- Schule suchen bzw. anlegen. Unscharfer Vergleich (gleiche PLZ + normalisierter
+  -- Name, siehe edufy_schule_passt). Passende Schule mit Verein → Fehler.
+  if exists (select 1
+             from public.schools s
+             join public.foerdervereine f on f.school_id = s.id
+             where s.plz = v_plz
+               and public.edufy_schule_passt(v_schulname, s.name, s.ort)) then
+    raise exception 'EDUFY:SCHULE_BEREITS_REGISTRIERT';
+  end if;
+
   select s.id into v_school_id
   from public.schools s
-  where lower(btrim(s.name)) = lower(v_schulname) and s.plz = v_plz;
+  where s.plz = v_plz
+    and public.edufy_schule_passt(v_schulname, s.name, s.ort)
+  order by s.created_at
+  limit 1;
 
-  if v_school_id is not null then
-    if exists (select 1 from public.foerdervereine f where f.school_id = v_school_id) then
-      raise exception 'EDUFY:SCHULE_BEREITS_REGISTRIERT';
-    end if;
-  else
+  if v_school_id is null then
     begin
       insert into public.schools (name, schulform, strasse, plz, ort, bundesland, created_by)
       values (v_schulname, p_schulform, v_strasse, v_plz, v_ort, p_bundesland, v_uid)

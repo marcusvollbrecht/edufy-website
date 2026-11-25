@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Förderverein kostenlos registrieren – Edufy</title>
   <link rel="stylesheet" href="fonts/fonts.css">
-  <meta name="description" content="Registrieren Sie den Förderverein Ihrer Schule kostenlos bei Edufy. Keine Gebühren, kein Vertrag – in etwa 5 Minuten erledigt." />
+  <meta name="description" content="Registrieren Sie den Förderverein Ihrer Schule bei Edufy. Die Registrierung ist kostenlos und unverbindlich – in etwa 5 Minuten erledigt." />
   <meta name="robots" content="noindex" />
   <link rel="icon" href="data:," />
   <style>
@@ -42,6 +42,9 @@
     .lead { color: var(--muted); margin-bottom: 1.25rem; }
     .trust { list-style: none; display: grid; gap: .5rem; margin-bottom: 1.5rem; }
     .trust li { display: flex; gap: .6rem; align-items: flex-start; }
+    .login-hint { margin: -.75rem 0 1.5rem; }
+    .login-hint a { font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; padding: 0 .25rem; }
+    .notice p { margin-top: .5rem; }
     .trust li::before { content: '✓'; color: var(--teal); font-weight: 700; flex: 0 0 auto; }
 
     .notice { border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: 1.25rem; border: 1px solid; }
@@ -144,9 +147,9 @@
     <p class="lead">Melden Sie den Förderverein Ihrer Schule bei Edufy an. Das dauert etwa 5 Minuten. Halten Sie, wenn möglich, die Vereinsregister-Nummer bereit – Sie können sie aber auch später nachtragen.</p>
     <ul class="trust">
       <li><span><strong>Kostenlos und unverbindlich:</strong> keine Gebühren, kein Abo, kein Mitgliedsbeitrag.</span></li>
-      <li><span><strong>Sie unterschreiben nichts.</strong> Mit der Registrierung geht der Verein keinen Vertrag ein.</span></li>
       <li><span><strong>Ihr Vorteil:</strong> Der Förderverein wird an den Einnahmen beteiligt, die Unternehmen über Ihre Schule bei Edufy erzielen. Die Details besprechen wir mit Ihnen im persönlichen Gespräch.</span></li>
     </ul>
+    <p class="login-hint">Schon registriert? <a href="foerderverein-bestaetigung.html#anmelden">Anmelden</a></p>
 
     <div id="config-warning" class="notice notice-warn" role="status" hidden>
       <strong>Hinweis: Die Online-Registrierung ist gerade noch nicht freigeschaltet.</strong>
@@ -170,6 +173,7 @@
       <section class="step" data-step="1" aria-labelledby="h-step1">
         <h2 id="h-step1" tabindex="-1">Zu welcher Schule gehört Ihr Förderverein?</h2>
         <p class="step-intro">Wir brauchen die Schule, damit Schülerinnen und Schüler später Ihrem Verein zugeordnet werden können.</p>
+        <div id="dup-notice" class="notice notice-warn" role="alert" tabindex="-1" hidden></div>
         <div class="field">
           <label for="schulname">Name der Schule</label>
           <span class="hint" id="schulname-hint">So wie er offiziell lautet, z. B. „Goethe-Gymnasium Musterstadt“</span>
@@ -348,7 +352,7 @@
             <li>Wir melden uns bei Ihnen und erklären im persönlichen Gespräch, wie der Verein an den Unternehmenseinnahmen beteiligt wird.</li>
             <li>Danach können Sie Schülerinnen und Schüler Ihrer Schule einladen (Einladungslink und QR-Code – kommt in Kürze).</li>
           </ol>
-          <p style="margin-top:.5rem">Die Registrierung ist kostenlos. Sie unterschreiben nichts und können jederzeit wieder austreten.</p>
+          <p style="margin-top:.5rem">Die Registrierung ist kostenlos und unverbindlich.</p>
         </div>
         <div id="submit-error" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
       </section>
@@ -524,9 +528,62 @@
       }
     }
 
-    function next() {
+    // ---------- Frühe Dublettenprüfung nach Schritt 1 ----------
+    // true = für diese Schule (Name + PLZ, unscharf) ist schon ein Verein registriert.
+    // Ohne Supabase oder bei technischem Fehler: false (der Server prüft beim Absenden erneut).
+    async function schoolAlreadyRegistered() {
+      if (!window.edufyDbReady || !window.edufyDb) return false;
+      try {
+        var r = await window.edufyDb.rpc('check_school_registered', { p_name: val('schulname'), p_plz: val('plz') });
+        if (r.error) return false;
+        return r.data === true;
+      } catch (e) { return false; }
+    }
+
+    function hideDuplicate() { $('dup-notice').hidden = true; }
+
+    function showDuplicate() {
+      var box = $('dup-notice');
+      var name = val('schulname');
+      var plz = val('plz');
+      box.textContent = '';
+      var strong = document.createElement('strong');
+      strong.textContent = 'Für diese Schule ist bereits ein Förderverein registriert.';
+      box.appendChild(strong);
+      box.appendChild(document.createTextNode('Bitte sprechen Sie Ihre Vorstandskolleginnen und -kollegen an oder kontaktieren Sie uns – wir helfen Ihnen gerne weiter. Falls es sich um eine andere Schule handelt, prüfen Sie bitte Name und Postleitzahl oder schreiben Sie uns ebenfalls.'));
+      var p1 = document.createElement('p');
+      var mail = document.createElement('a');
+      mail.href = 'mailto:' + KONTAKT +
+        '?subject=' + encodeURIComponent('Förderverein bereits registriert: ' + name + ', ' + plz) +
+        '&body=' + encodeURIComponent('Guten Tag,\n\nich möchte den Förderverein der Schule „' + name + '“ (PLZ ' + plz + ') bei Edufy registrieren. Laut Formular ist für diese Schule bereits ein Förderverein registriert. Bitte melden Sie sich bei mir.\n\nViele Grüße');
+      mail.textContent = 'E-Mail an ' + KONTAKT + ' schreiben';
+      p1.appendChild(mail);
+      box.appendChild(p1);
+      var p2 = document.createElement('p');
+      p2.appendChild(document.createTextNode('Sie haben selbst schon ein Konto? '));
+      var login = document.createElement('a');
+      login.href = 'foerderverein-bestaetigung.html#anmelden';
+      login.textContent = 'Anmelden';
+      p2.appendChild(login);
+      box.appendChild(p2);
+      box.hidden = false;
+      box.focus();
+    }
+
+    var checking = false;
+    async function next() {
+      if (checking) return;
       var errors = validateStep(current);
       if (errors.length) { showErrorSummary(errors); return; }
+      if (current === 1) {
+        hideDuplicate();
+        checking = true;
+        btnNext.disabled = true; btnNext.textContent = 'Wird geprüft …';
+        var dup = await schoolAlreadyRegistered();
+        checking = false;
+        btnNext.disabled = false; btnNext.textContent = 'Weiter';
+        if (dup) { showDuplicate(); return; }   // Registrierung nicht fortsetzen
+      }
       showStep(current + 1, true);
     }
 
@@ -548,6 +605,7 @@
     // Fehlermeldung eines Feldes entfernen, sobald es korrigiert wird
     form.addEventListener('input', function (ev) {
       var id = ev.target.name === 'gemeinnuetzig' ? 'gemeinnuetzig' : ev.target.id;
+      if (id === 'schulname' || id === 'plz') hideDuplicate();
       var err = $(id + '-err');
       if (err && err.textContent) setFieldError(id, '');
     });
@@ -668,12 +726,29 @@
       return 'Leider hat etwas nicht geklappt. Bitte versuchen Sie es in ein paar Minuten erneut oder schreiben Sie uns an ' + KONTAKT + '.';
     }
 
-    function showSubmitError(msg) {
+    function isExistingAccount(err) {
+      var m = String((err && (err.message || err.error_description || err.msg)) || err || '').toLowerCase();
+      return m.indexOf('already registered') !== -1 || m.indexOf('already been registered') !== -1 || m.indexOf('already exists') !== -1;
+    }
+
+    function addErrorLink(box, href, label) {
+      var p = document.createElement('p');
+      var a = document.createElement('a');
+      a.href = href; a.textContent = label;
+      p.appendChild(a);
+      box.appendChild(p);
+    }
+
+    function showSubmitError(msg, loginLinks) {
       submitError.textContent = '';
       var strong = document.createElement('strong');
       strong.textContent = 'Die Registrierung wurde noch nicht abgeschlossen.';
       submitError.appendChild(strong);
       submitError.appendChild(document.createTextNode(msg));
+      if (loginLinks) {
+        addErrorLink(submitError, 'foerderverein-bestaetigung.html#anmelden', 'Zur Anmeldung');
+        addErrorLink(submitError, 'foerderverein-bestaetigung.html#passwort-vergessen', 'Passwort vergessen?');
+      }
       submitError.hidden = false;
       submitError.focus();
     }
@@ -705,6 +780,13 @@
       }
       setBusy(true);
       var db = window.edufyDb;
+      // Dublette nochmals prüfen (falls Schritt 1 über „Ändern“ angepasst wurde)
+      if (await schoolAlreadyRegistered()) {
+        setBusy(false);
+        showStep(1, false);
+        showDuplicate();
+        return;
+      }
       var d = collect();
       var reg = buildRegistrierung(d);
       try {
@@ -722,13 +804,13 @@
             }
           }
         });
-        if (res.error) { setBusy(false); showSubmitError(translateError(res.error)); return; }
+        if (res.error) { setBusy(false); showSubmitError(translateError(res.error), isExistingAccount(res.error)); return; }
         var user = res.data && res.data.user;
         // Bei aktivierter E-Mail-Bestätigung meldet Supabase vorhandene Adressen nicht als Fehler,
         // sondern liefert einen Nutzer ohne Identitäten zurück.
         if (user && Array.isArray(user.identities) && user.identities.length === 0) {
           setBusy(false);
-          showSubmitError(translateError('already registered'));
+          showSubmitError(translateError('already registered'), true);
           return;
         }
         rememberEmail(d.email);

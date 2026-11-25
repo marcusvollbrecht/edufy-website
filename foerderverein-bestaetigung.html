@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registrierung Förderverein – nächste Schritte – Edufy</title>
+  <title>Förderverein: Stand der Registrierung und Anmeldung – Edufy</title>
   <link rel="stylesheet" href="fonts/fonts.css">
   <meta name="description" content="Nächste Schritte nach der Registrierung Ihres Fördervereins bei Edufy." />
   <meta name="robots" content="noindex" />
@@ -48,7 +48,8 @@
     .notice-ok { background: var(--ok-bg); border-color: #6EE7B7; color: #064E3B; }
     .notice strong { display: block; margin-bottom: .25rem; }
     .notice a { color: inherit; font-weight: 600; }
-    .notice .btn { margin-top: .75rem; }
+    .notice .btn { margin-top: .25rem; }
+    .notice a.btn-primary { color: var(--white); }
 
     .card { background: var(--white); border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 18px rgba(11, 31, 58, .05); margin-bottom: 1.5rem; }
     ol.steps { list-style: none; counter-reset: s; }
@@ -64,7 +65,7 @@
 
     .field { margin-bottom: 1rem; }
     .field label { display: block; font-weight: 600; margin-bottom: .3rem; }
-    input[type="email"], input[type="password"] { width: 100%; min-height: 48px; padding: .6rem .8rem; font: inherit; color: var(--text); background: var(--white); border: 2px solid #94A3B8; border-radius: 8px; }
+    input[type="email"], input[type="password"], input[type="text"] { width: 100%; min-height: 48px; padding: .6rem .8rem; font: inherit; color: var(--text); background: var(--white); border: 2px solid #94A3B8; border-radius: 8px; }
     input:focus-visible { outline: 3px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
     input[aria-invalid="true"] { border-color: var(--error); }
     .btn { font: inherit; font-weight: 600; font-size: 1rem; min-height: 48px; padding: .7rem 1.5rem; border-radius: 8px; cursor: pointer; border: 2px solid transparent; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
@@ -74,6 +75,17 @@
     .btn-secondary { background: var(--white); color: var(--navy); border-color: #94A3B8; }
     .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
     .btn-row { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .btn-link { background: none; border: 0; color: var(--teal); text-decoration: underline; font: inherit; font-weight: 600; cursor: pointer; min-height: 44px; padding: 0 .25rem; }
+    .btn-link:hover { color: var(--teal-dark); }
+    .notice .btn-link { color: inherit; padding: 0; }
+    .hint { display: block; font-size: .9375rem; color: var(--muted); margin-bottom: .35rem; }
+    .field label.choice { display: flex; align-items: flex-start; gap: .7rem; min-height: 44px; padding: .5rem 0; margin: 0; cursor: pointer; font-weight: 400; }
+    .choice input { width: 24px; height: 24px; margin-top: .15rem; flex: 0 0 auto; accent-color: var(--teal); cursor: pointer; }
+    .subbox { border-top: 1px solid #E2E8F0; margin-top: .75rem; padding-top: 1rem; }
+    .subbox h3 { font-size: 1.0625rem; color: var(--navy); margin-bottom: .3rem; }
+    .subbox p { margin-bottom: 1rem; }
+    form .notice { margin-top: 1rem; margin-bottom: 0; }
+    form .notice:first-child { margin-top: 0; margin-bottom: 1rem; }
 
     footer { background: var(--navy); color: var(--on-dark); padding: 1.5rem 1rem; }
     .footer-inner { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; align-items: center; font-size: .9375rem; }
@@ -101,8 +113,9 @@
   </header>
 
   <main id="inhalt">
-    <h1 id="title">Vielen Dank für Ihre Registrierung!</h1>
-    <p class="lead" id="lead">Hier sehen Sie, was als Nächstes passiert. Sie müssen nichts unterschreiben und es entstehen keine Kosten.</p>
+    <!-- Überschrift und Einleitung werden erst nach geprüftem Status gesetzt -->
+    <h1 id="title">Stand Ihrer Registrierung</h1>
+    <p class="lead" id="lead">Einen Moment bitte – wir prüfen den Stand Ihrer Registrierung.</p>
 
     <!-- Dynamischer Status (E-Mail bestätigen / abgeschlossen / Fehler) -->
     <div id="status" class="notice notice-info" role="status" aria-live="polite" tabindex="-1">
@@ -110,21 +123,34 @@
       Wir prüfen den Stand Ihrer Registrierung.
     </div>
 
-    <section class="card" aria-labelledby="h-next">
+    <!-- Neues Passwort festlegen (nach Klick auf den Link aus „Passwort vergessen?“) -->
+    <section class="card" id="neues-passwort" aria-labelledby="h-neues-passwort" hidden>
+      <h2 id="h-neues-passwort">Neues Passwort festlegen</h2>
+      <form id="recovery-form" novalidate>
+        <div id="recovery-error" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
+        <div class="field">
+          <label for="neues-passwort-feld">Neues Passwort</label>
+          <span class="hint" id="neues-passwort-hint">Mindestens 8 Zeichen. Tipp: Notieren Sie sich das Passwort an einem sicheren Ort.</span>
+          <input type="password" id="neues-passwort-feld" autocomplete="new-password" minlength="8" maxlength="72" required aria-describedby="neues-passwort-hint" />
+          <label class="choice"><input type="checkbox" id="neues-passwort-zeigen" /> Passwort anzeigen</label>
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-recovery">Passwort speichern</button>
+      </form>
+    </section>
+
+    <!-- Nächste Schritte: nur bei abgeschlossener oder ausstehender (E-Mail) Registrierung -->
+    <section class="card" id="schritte" aria-labelledby="h-next" hidden>
       <h2 id="h-next">Ihre nächsten Schritte</h2>
       <ol class="steps">
         <li id="step-email">
           <h3>E-Mail-Adresse bestätigen <span class="badge" id="badge-email">offen</span></h3>
-          <p>Wir haben Ihnen eine E-Mail mit einem Bestätigungslink geschickt<span id="email-target"></span>. Bitte klicken Sie auf den Link. Keine E-Mail bekommen? Schauen Sie bitte auch im Spam-Ordner nach.</p>
-          <div id="resend-box" hidden>
-            <button type="button" class="btn btn-secondary" id="btn-resend" style="margin-top:.6rem">Bestätigungs-E-Mail erneut senden</button>
-          </div>
+          <p id="step-email-text">Wir haben Ihnen eine E-Mail mit einem Bestätigungslink geschickt<span id="email-target"></span>. Bitte klicken Sie auf den Link. Keine E-Mail bekommen? Schauen Sie bitte auch im Spam-Ordner nach oder <a href="#erneut-senden">lassen Sie sich die E-Mail erneut schicken</a>.</p>
         </li>
         <li>
           <h3>Vorstand informieren</h3>
           <p>Erzählen Sie Ihren Vorstandskolleginnen und -kollegen von Edufy. Diesen Text können Sie zum Beispiel per E-Mail weitergeben:</p>
           <p class="vorlage" id="vorlage">Liebe Vorstandskolleginnen und -kollegen,
-ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unseren Schülerinnen und Schülern bei der Berufs- und Studienorientierung. Unser Verein wird an den Einnahmen beteiligt, die Unternehmen über unsere Schule erzielen. Wir haben nichts unterschrieben; die Details erklärt uns Edufy in einem persönlichen Gespräch.</p>
+ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unseren Schülerinnen und Schülern bei der Berufs- und Studienorientierung. Unser Verein wird an den Einnahmen beteiligt, die Unternehmen über unsere Schule erzielen. Die Registrierung ist kostenlos und unverbindlich; die Details erklärt uns Edufy in einem persönlichen Gespräch.</p>
           <button type="button" class="btn btn-secondary" id="btn-copy" style="margin-top:.6rem">Text kopieren</button>
           <span id="copy-status" role="status" aria-live="polite"></span>
         </li>
@@ -141,8 +167,8 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
 
     <!-- Anmeldung, z. B. wenn der Bestätigungslink auf einem anderen Gerät geöffnet wurde -->
     <section class="card" id="anmelden" aria-labelledby="h-login" hidden>
-      <h2 id="h-login">Schon bestätigt? Hier anmelden</h2>
-      <p style="margin-bottom:1rem">Wenn Sie Ihre E-Mail-Adresse bestätigt haben, melden Sie sich hier an. Wir schließen die Registrierung Ihres Vereins dann automatisch ab.</p>
+      <h2 id="h-login">Anmelden</h2>
+      <p style="margin-bottom:1rem">Sie haben Ihre E-Mail-Adresse bestätigt? Dann melden Sie sich hier an – auch von einem anderen Gerät aus. Wir schließen die Registrierung Ihres Vereins dann automatisch ab.</p>
       <form id="login-form" novalidate>
         <div id="login-error" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
         <div class="field">
@@ -154,6 +180,33 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
           <input type="password" id="login-passwort" autocomplete="current-password" required />
         </div>
         <button type="submit" class="btn btn-primary" id="btn-login">Anmelden</button>
+      </form>
+      <p style="margin-top:.75rem"><button type="button" class="btn-link" id="btn-forgot-toggle" aria-expanded="false" aria-controls="passwort-vergessen">Passwort vergessen?</button></p>
+      <div id="passwort-vergessen" class="subbox" hidden>
+        <h3 id="h-reset">Passwort zurücksetzen</h3>
+        <p>Geben Sie Ihre E-Mail-Adresse ein. Wir schicken Ihnen einen Link, mit dem Sie ein neues Passwort festlegen können.</p>
+        <form id="reset-form" novalidate>
+          <div class="field">
+            <label for="reset-email">E-Mail-Adresse</label>
+            <input type="email" id="reset-email" autocomplete="email" required />
+          </div>
+          <button type="submit" class="btn btn-secondary" id="btn-reset">Link zum Zurücksetzen senden</button>
+          <div id="reset-status" class="notice" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Bestätigungs-E-Mail erneut senden – funktioniert ohne Anmeldung und auf jedem Gerät -->
+    <section class="card" id="erneut-senden" aria-labelledby="h-resend" hidden>
+      <h2 id="h-resend">Keine Bestätigungs-E-Mail bekommen?</h2>
+      <p style="margin-bottom:1rem">Geben Sie die E-Mail-Adresse ein, mit der Sie sich registriert haben. Wir schicken Ihnen den Bestätigungslink noch einmal. Bitte schauen Sie auch im Spam-Ordner nach.</p>
+      <form id="resend-form" novalidate>
+        <div class="field">
+          <label for="resend-email">E-Mail-Adresse</label>
+          <input type="email" id="resend-email" autocomplete="email" required />
+        </div>
+        <button type="submit" class="btn btn-secondary" id="btn-resend">Bestätigungs-E-Mail erneut senden</button>
+        <div id="resend-status" class="notice" role="status" aria-live="polite" tabindex="-1" hidden></div>
       </form>
     </section>
 
@@ -188,15 +241,34 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
     var hashParams = new URLSearchParams(window.location.hash.length > 1 ? window.location.hash.substring(1) : '');
     var urlStatus = params.get('status') || '';
     var wantsLogin = window.location.hash === '#anmelden';
+    var wantsReset = window.location.hash === '#passwort-vergessen';
+    // Link aus „Passwort vergessen?“: ?modus=passwort (eigener Parameter) bzw. type=recovery (Supabase)
+    var recoveryMode = params.get('modus') === 'passwort' || hashParams.get('type') === 'recovery';
+    var PAGE_URL = new URL('foerderverein-bestaetigung.html', window.location.href).href;
 
     function $(id) { return document.getElementById(id); }
+    function show(id, on) { $(id).hidden = !on; }
 
     function storedEmail() {
       try { return sessionStorage.getItem('edufy_fv_email') || ''; } catch (e) { return ''; }
     }
+    function isEmail(s) {
+      if (!s || s.indexOf(' ') !== -1) return false;
+      var at = s.indexOf('@');
+      if (at < 1 || at !== s.lastIndexOf('@')) return false;
+      var domain = s.slice(at + 1);
+      var dot = domain.lastIndexOf('.');
+      return dot > 0 && dot < domain.length - 2;
+    }
+
+    function setHeading(title, lead) {
+      $('title').textContent = title;
+      $('lead').textContent = lead;
+    }
 
     // Status-Box setzen; type: info | ok | warn | error
     function setStatus(type, title, text, focus) {
+      statusEl.hidden = false;
       statusEl.className = 'notice notice-' + type;
       statusEl.setAttribute('role', type === 'error' ? 'alert' : 'status');
       statusEl.textContent = '';
@@ -206,13 +278,47 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
       if (text) statusEl.appendChild(document.createTextNode(text));
       if (focus) statusEl.focus();
     }
-    function addStatusLink(href, label) {
+    function hideStatus() { statusEl.hidden = true; }
+    function addStatusLink(href, label, asButton) {
       var p = document.createElement('p');
-      p.style.marginTop = '.5rem';
+      p.style.marginTop = '.75rem';
       var a = document.createElement('a');
       a.href = href; a.textContent = label;
+      if (asButton) a.className = 'btn btn-primary';
       p.appendChild(a);
       statusEl.appendChild(p);
+    }
+    function addStatusText(text) {
+      var p = document.createElement('p');
+      p.style.marginTop = '.5rem';
+      p.textContent = text;
+      statusEl.appendChild(p);
+    }
+    function mailtoHref(subject, body) {
+      return 'mailto:' + KONTAKT + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+
+    // Kleine Rückmeldebox unter einem Formular (Erneut senden / Passwort zurücksetzen)
+    function setBox(id, type, text) {
+      var box = $(id);
+      box.className = 'notice notice-' + type;
+      box.setAttribute('role', type === 'error' ? 'alert' : 'status');
+      box.textContent = text;
+      box.hidden = false;
+    }
+
+    // Welche Karten sichtbar sind: schritte | anmelden | erneut-senden | neues-passwort
+    function showCards(list) {
+      ['schritte', 'anmelden', 'erneut-senden', 'neues-passwort'].forEach(function (id) {
+        show(id, list.indexOf(id) !== -1);
+      });
+    }
+
+    function prefillEmail(email) {
+      if (!email) return;
+      ['login-email', 'resend-email', 'reset-email'].forEach(function (id) {
+        if (!$(id).value) $(id).value = email;
+      });
     }
 
     function markEmailDone() {
@@ -220,7 +326,7 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
       var b = $('badge-email');
       b.textContent = 'erledigt';
       b.className = 'badge badge-ok';
-      $('resend-box').hidden = true;
+      $('step-email-text').textContent = 'Ihre E-Mail-Adresse ist bestätigt.';
     }
 
     // Identisch zur Registrierungsseite: explizite Feldzuordnung, kein Spread
@@ -245,26 +351,100 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
       };
     }
 
+    function errText(err) {
+      return String((err && (err.message || err.error_description || err.msg)) || err || '').toLowerCase();
+    }
+    function isDuplicateError(err) { return errText(err).indexOf('edufy:schule_bereits_registriert') !== -1; }
+    // Endgültig = erneuter Versuch mit denselben Daten ändert nichts (Prüfungen der Datenbank)
+    function isFinalError(err) {
+      var m = errText(err);
+      return m.indexOf('edufy:') !== -1 && m.indexOf('edufy:nicht_angemeldet') === -1;
+    }
+
     function translateError(err) {
-      var raw = String((err && (err.message || err.error_description || err.msg)) || err || '');
-      var m = raw.toLowerCase();
-      if (m.indexOf('edufy:schule_bereits_registriert') !== -1) return 'Für diese Schule ist bereits ein Förderverein bei Edufy registriert. Ihr Konto ist angelegt, wurde aber noch keinem Verein zugeordnet. Bitte schreiben Sie uns an ' + KONTAKT + ' – wir klären das gemeinsam.';
+      var m = errText(err);
       if (m.indexOf('edufy:nicht_angemeldet') !== -1) return 'Sie sind nicht mehr angemeldet. Bitte melden Sie sich erneut an.';
       if (m.indexOf('edufy:') !== -1) return 'Einige Angaben aus Ihrer Registrierung sind unvollständig. Bitte schreiben Sie uns an ' + KONTAKT + '.';
       if (m.indexOf('invalid login credentials') !== -1) return 'E-Mail-Adresse oder Passwort stimmen nicht. Bitte prüfen Sie Ihre Eingabe.';
-      if (m.indexOf('email not confirmed') !== -1) return 'Ihre E-Mail-Adresse ist noch nicht bestätigt. Bitte klicken Sie zuerst auf den Link in unserer E-Mail.';
+      if (m.indexOf('email not confirmed') !== -1) return 'Ihre E-Mail-Adresse ist noch nicht bestätigt. Bitte klicken Sie zuerst auf den Link in unserer E-Mail – oder lassen Sie sich die E-Mail erneut schicken.';
+      if (m.indexOf('should be different') !== -1) return 'Das neue Passwort muss sich vom bisherigen unterscheiden.';
+      if (m.indexOf('password') !== -1 && (m.indexOf('at least') !== -1 || m.indexOf('short') !== -1 || m.indexOf('weak') !== -1)) return 'Das Passwort ist zu kurz oder zu einfach. Bitte wählen Sie mindestens 8 Zeichen.';
       if (m.indexOf('rate limit') !== -1 || m.indexOf('security purposes') !== -1 || m.indexOf('too many') !== -1) return 'Zu viele Versuche in kurzer Zeit. Bitte warten Sie ein paar Minuten und versuchen Sie es dann erneut.';
+      if (m.indexOf('session') !== -1 && m.indexOf('missing') !== -1) return 'Der Link ist nicht mehr gültig. Bitte fordern Sie einen neuen Link an.';
       if (m.indexOf('could not find the function') !== -1 || m.indexOf('does not exist') !== -1 || m.indexOf('schema cache') !== -1) return 'Die Registrierung ist auf unserer Seite noch nicht vollständig eingerichtet. Ihre Angaben sind gespeichert – bitte versuchen Sie es später erneut oder schreiben Sie uns an ' + KONTAKT + '.';
       if (m.indexOf('failed to fetch') !== -1 || m.indexOf('network') !== -1 || m.indexOf('load failed') !== -1) return 'Es konnte keine Verbindung hergestellt werden. Bitte prüfen Sie Ihre Internetverbindung und laden Sie die Seite neu.';
       return 'Leider hat etwas nicht geklappt. Bitte laden Sie die Seite neu oder schreiben Sie uns an ' + KONTAKT + '.';
     }
 
+    // ---------- Ansichten ----------
+    function showAwaitingEmail(email) {
+      setHeading('Vielen Dank! Bitte bestätigen Sie jetzt Ihre E-Mail-Adresse.',
+        'Die Registrierung ist kostenlos und unverbindlich. Hier sehen Sie, was als Nächstes passiert.');
+      $('email-target').textContent = ' an ' + email;
+      prefillEmail(email);
+      showCards(['schritte', 'anmelden', 'erneut-senden']);
+      setStatus('info', 'Fast geschafft: Bitte bestätigen Sie Ihre E-Mail-Adresse.',
+        'Erst nach dem Klick auf den Link in unserer E-Mail ist die Registrierung Ihres Vereins abgeschlossen.');
+    }
+
+    // Kein bekannter Stand (Direktaufruf, anderes Gerät, Anmelde-Link)
+    function showLoginView(title, lead) {
+      setHeading(title || 'Anmelden oder Registrierung abschließen',
+        lead || 'Melden Sie sich mit der E-Mail-Adresse und dem Passwort an, die Sie bei der Registrierung gewählt haben. Noch nicht bestätigt? Dann können Sie sich den Bestätigungslink unten erneut schicken lassen.');
+      prefillEmail(storedEmail());
+      showCards(['anmelden', 'erneut-senden']);
+      hideStatus();
+    }
+
     function showDone(vereinsname) {
       markEmailDone();
-      $('title').textContent = 'Ihr Förderverein ist registriert!';
+      setHeading('Ihr Förderverein ist registriert!',
+        'Vielen Dank für Ihre Registrierung. Die Registrierung ist kostenlos und unverbindlich. Hier sehen Sie, was als Nächstes passiert.');
+      showCards(['schritte']);
       setStatus('ok', 'Registrierung abgeschlossen.',
         (vereinsname ? '„' + vereinsname + '“ ist jetzt bei Edufy angemeldet. ' : 'Ihr Verein ist jetzt bei Edufy angemeldet. ') +
         'Wir melden uns in Kürze für ein persönliches Gespräch bei Ihnen.', true);
+    }
+
+    function showDuplicate(reg, email, cleaned) {
+      var schule = (reg && reg.schulname) || '';
+      var plz = (reg && reg.plz) || '';
+      setHeading('Für Ihre Schule ist schon ein Förderverein registriert',
+        'Ihr Konto wurde angelegt, ist aber keinem Verein zugeordnet. Der Verein Ihrer Schule ist bereits bei Edufy – Sie müssen ihn nicht noch einmal registrieren.');
+      showCards([]);
+      setStatus('warn', 'Ihr nächster Schritt: Sprechen Sie Ihre Vorstandskolleginnen und -kollegen an oder kontaktieren Sie uns.',
+        'Vermutlich hat jemand aus Ihrem Vorstand den Verein schon registriert. Wenn Sie nicht wissen, wer, schreiben Sie uns – wir klären das gemeinsam und melden uns bei Ihnen.', true);
+      addStatusLink(mailtoHref(
+        'Förderverein bereits registriert' + (schule ? ': ' + schule : '') + (plz ? ', ' + plz : ''),
+        'Guten Tag,\n\nich wollte den Förderverein ' + (schule ? 'der Schule „' + schule + '“ ' : 'unserer Schule ') + (plz ? '(PLZ ' + plz + ') ' : '') +
+        'bei Edufy registrieren. Laut Edufy ist für diese Schule bereits ein Förderverein registriert.\nMein Konto: ' + (email || '') +
+        '\n\nBitte melden Sie sich bei mir.\n\nViele Grüße'), 'E-Mail an ' + KONTAKT + ' schreiben', true);
+      if (cleaned) addStatusText('Ihre Registrierungsangaben (Name, Telefon, Vereinsdaten) haben wir aus Ihrem Konto wieder gelöscht.');
+    }
+
+    function showRegError(err, final) {
+      setHeading('Ihre Registrierung ist noch nicht abgeschlossen',
+        final ? 'Leider konnten wir Ihren Verein mit diesen Angaben nicht anlegen.' : 'Das liegt an einem vorübergehenden Problem. Ihre Angaben sind noch gespeichert.');
+      showCards([]);
+      setStatus('error', 'Die Registrierung konnte nicht abgeschlossen werden.', ' ' + translateError(err), true);
+      if (!final) addStatusLink(window.location.pathname, 'Seite neu laden und erneut versuchen', true);
+      addStatusLink(mailtoHref('Registrierung Förderverein nicht abgeschlossen', 'Guten Tag,\n\nmeine Registrierung als Förderverein bei Edufy konnte nicht abgeschlossen werden.\n\nViele Grüße'), 'E-Mail an ' + KONTAKT + ' schreiben', false);
+    }
+
+    function showNoData() {
+      setHeading('Ihr Konto ist keinem Förderverein zugeordnet',
+        'Für dieses Konto liegen keine Vereinsdaten vor.');
+      showCards([]);
+      setStatus('warn', 'Bitte schreiben Sie uns.',
+        'Wir prüfen Ihr Konto und melden uns bei Ihnen. Bitte nennen Sie uns den Namen und die Postleitzahl Ihrer Schule.', true);
+      addStatusLink(mailtoHref('Konto ohne Förderverein', 'Guten Tag,\n\nmein Edufy-Konto ist keinem Förderverein zugeordnet.\nSchule und PLZ: \n\nViele Grüße'), 'E-Mail an ' + KONTAKT + ' schreiben', true);
+    }
+
+    function showRecovery() {
+      setHeading('Neues Passwort festlegen', 'Wählen Sie ein neues Passwort für Ihr Edufy-Konto.');
+      showCards(['neues-passwort']);
+      hideStatus();
+      $('neues-passwort-feld').focus();
     }
 
     async function loadVereinsname(id) {
@@ -272,6 +452,15 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
         var r = await db.from('foerdervereine').select('vereinsname').eq('id', id).maybeSingle();
         return r.data ? r.data.vereinsname : '';
       } catch (e) { return ''; }
+    }
+
+    // Datensparsamkeit: Registrierungsdaten (Name, Telefon, Vereinsdaten) aus den Konto-Metadaten löschen
+    async function clearRegistrationMetadata(all) {
+      var data = all ? { registrierung: null, vorname: null, nachname: null } : { registrierung: null };
+      try {
+        var r = await db.auth.updateUser({ data: data });
+        return !r.error;
+      } catch (e) { return false; }
     }
 
     // Prüft, ob die RPC schon gelaufen ist, und holt sie sonst mit den Metadaten nach
@@ -282,9 +471,10 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
       finishing = true;
       attempted = true;
       $('btn-logout').hidden = false;
-      $('anmelden').hidden = true;
-      markEmailDone();
+      showCards([]);
+      setHeading('Stand Ihrer Registrierung', 'Einen Moment bitte – wir schließen die Registrierung Ihres Vereins ab.');
       setStatus('info', 'Einen Moment bitte …', 'Wir schließen die Registrierung Ihres Vereins ab.');
+      var reg = null;
       try {
         var prof = await db.from('foerderverein_profiles').select('id, foerderverein_id').eq('id', user.id).maybeSingle();
         if (prof.error) throw prof.error;
@@ -293,54 +483,140 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
           return;
         }
         var meta = user.user_metadata || {};
-        var reg = meta.registrierung;
-        if (!reg || typeof reg !== 'object') {
-          setStatus('warn', 'Für dieses Konto liegen keine Vereinsdaten vor.',
-            'Bitte registrieren Sie Ihren Förderverein über das Formular oder schreiben Sie uns an ' + KONTAKT + '.', true);
-          addStatusLink('registrierung-foerderverein.html', 'Zum Registrierungsformular');
+        reg = meta.registrierung && typeof meta.registrierung === 'object' ? meta.registrierung : null;
+        if (!reg) {
+          showNoData();
           return;
         }
         var rpc = await db.rpc('register_foerderverein', buildRpcParams(reg));
         if (rpc.error) throw rpc.error;
-        // Datensparsamkeit: Registrierungsdaten aus den Konto-Metadaten entfernen
-        try { await db.auth.updateUser({ data: { registrierung: null } }); } catch (e) { /* nicht kritisch */ }
+        await clearRegistrationMetadata(false);
         var vid = rpc.data && rpc.data.foerderverein_id;
         showDone(vid ? await loadVereinsname(vid) : reg.vereinsname);
       } catch (e) {
-        setStatus('error', 'Die Registrierung konnte noch nicht abgeschlossen werden.', ' ' + translateError(e), true);
+        if (reg && isFinalError(e)) {
+          // Endgültiger Fehler: Daten werden nicht mehr gebraucht → aus dem Konto löschen
+          var cleaned = await clearRegistrationMetadata(true);
+          if (isDuplicateError(e)) showDuplicate(reg, user.email, cleaned);
+          else showRegError(e, true);
+        } else {
+          showRegError(e, false);
+        }
       } finally {
         finishing = false;
       }
     }
 
-    function showAwaitingEmail() {
-      var email = storedEmail();
-      if (email) $('email-target').textContent = ' an ' + email;
-      $('resend-box').hidden = !email;
-      $('anmelden').hidden = false;
-      if (email) $('login-email').value = email;
-      setStatus('info', 'Fast geschafft: Bitte bestätigen Sie Ihre E-Mail-Adresse.',
-        'Erst nach dem Klick auf den Link in unserer E-Mail ist die Registrierung Ihres Vereins abgeschlossen.');
-    }
-
-    // ---------- Buttons ----------
+    // ---------- Bestätigungs-E-Mail erneut senden (ohne Anmeldung) ----------
     var resendBusy = false;
-    $('btn-resend').addEventListener('click', async function () {
-      if (resendBusy || !db) return;
-      var email = storedEmail();
-      if (!email) return;
-      resendBusy = true; this.disabled = true;
+    async function doResend(email) {
+      if (resendBusy) return;
+      var input = $('resend-email');
+      input.removeAttribute('aria-invalid');
+      if (!isEmail(email)) {
+        input.setAttribute('aria-invalid', 'true');
+        setBox('resend-status', 'error', 'Bitte geben Sie eine gültige E-Mail-Adresse ein, z. B. name@beispiel.de');
+        input.focus();
+        return;
+      }
+      if (!db) {
+        setBox('resend-status', 'error', 'Das ist technisch gerade noch nicht möglich. Bitte schreiben Sie uns an ' + KONTAKT + '.');
+        return;
+      }
+      resendBusy = true; $('btn-resend').disabled = true; $('btn-resend').textContent = 'Wird gesendet …';
       try {
-        var r = await db.auth.resend({ type: 'signup', email: email, options: { emailRedirectTo: new URL('foerderverein-bestaetigung.html', window.location.href).href } });
+        var r = await db.auth.resend({ type: 'signup', email: email, options: { emailRedirectTo: PAGE_URL } });
         if (r.error) throw r.error;
-        setStatus('info', 'E-Mail wurde erneut gesendet.', 'Bitte schauen Sie in Ihr Postfach (auch im Spam-Ordner).', true);
+        setBox('resend-status', 'ok', 'Wir haben den Bestätigungslink erneut an ' + email + ' geschickt (falls zu dieser Adresse eine unbestätigte Registrierung besteht). Bitte schauen Sie in Ihr Postfach und in den Spam-Ordner.');
       } catch (e) {
-        setStatus('error', 'Die E-Mail konnte nicht gesendet werden.', ' ' + translateError(e), true);
+        setBox('resend-status', 'error', 'Die E-Mail konnte nicht gesendet werden. ' + translateError(e));
       } finally {
-        resendBusy = false; this.disabled = false;
+        resendBusy = false; $('btn-resend').disabled = false; $('btn-resend').textContent = 'Bestätigungs-E-Mail erneut senden';
+        $('resend-status').focus();
+      }
+    }
+    $('resend-form').addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      doResend($('resend-email').value.trim().toLowerCase());
+    });
+
+    // ---------- Passwort vergessen ----------
+    function openForgot(focus) {
+      show('passwort-vergessen', true);
+      $('btn-forgot-toggle').setAttribute('aria-expanded', 'true');
+      var login = $('login-email').value.trim();
+      if (login && !$('reset-email').value) $('reset-email').value = login;
+      if (focus) $('reset-email').focus();
+    }
+    $('btn-forgot-toggle').addEventListener('click', function () {
+      if ($('passwort-vergessen').hidden) openForgot(true);
+      else { show('passwort-vergessen', false); this.setAttribute('aria-expanded', 'false'); }
+    });
+    var resetBusy = false;
+    $('reset-form').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      if (resetBusy) return;
+      var input = $('reset-email');
+      var email = input.value.trim().toLowerCase();
+      input.removeAttribute('aria-invalid');
+      if (!isEmail(email)) {
+        input.setAttribute('aria-invalid', 'true');
+        setBox('reset-status', 'error', 'Bitte geben Sie eine gültige E-Mail-Adresse ein, z. B. name@beispiel.de');
+        input.focus();
+        return;
+      }
+      if (!db) {
+        setBox('reset-status', 'error', 'Das ist technisch gerade noch nicht möglich. Bitte schreiben Sie uns an ' + KONTAKT + '.');
+        return;
+      }
+      resetBusy = true; $('btn-reset').disabled = true; $('btn-reset').textContent = 'Wird gesendet …';
+      try {
+        var r = await db.auth.resetPasswordForEmail(email, { redirectTo: PAGE_URL + '?modus=passwort' });
+        if (r.error) throw r.error;
+        setBox('reset-status', 'ok', 'Falls zu ' + email + ' ein Konto besteht, haben wir Ihnen einen Link zum Zurücksetzen geschickt. Bitte schauen Sie in Ihr Postfach und in den Spam-Ordner.');
+      } catch (e) {
+        setBox('reset-status', 'error', 'Der Link konnte nicht gesendet werden. ' + translateError(e));
+      } finally {
+        resetBusy = false; $('btn-reset').disabled = false; $('btn-reset').textContent = 'Link zum Zurücksetzen senden';
+        $('reset-status').focus();
       }
     });
 
+    // ---------- Neues Passwort speichern ----------
+    $('neues-passwort-zeigen').addEventListener('change', function () { $('neues-passwort-feld').type = this.checked ? 'text' : 'password'; });
+    var recoveryBusy = false;
+    $('recovery-form').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      if (recoveryBusy) return;
+      var box = $('recovery-error');
+      var input = $('neues-passwort-feld');
+      box.hidden = true;
+      input.removeAttribute('aria-invalid');
+      var pw = input.value || '';
+      if (pw.length < 8) {
+        box.textContent = pw ? 'Das Passwort ist zu kurz – bitte mindestens 8 Zeichen.' : 'Bitte geben Sie ein neues Passwort ein (mindestens 8 Zeichen).';
+        input.setAttribute('aria-invalid', 'true');
+        box.hidden = false; box.focus();
+        return;
+      }
+      recoveryBusy = true; $('btn-recovery').disabled = true; $('btn-recovery').textContent = 'Wird gespeichert …';
+      try {
+        var r = await db.auth.updateUser({ password: pw });
+        if (r.error) throw r.error;
+        recoveryMode = false;
+        input.value = '';
+        await finishRegistration(r.data.user);
+        // Erfolgsmeldung ergänzen, ohne den Registrierungsstand zu überdecken
+        addStatusText('Ihr neues Passwort ist gespeichert.');
+      } catch (e) {
+        box.textContent = translateError(e);
+        box.hidden = false; box.focus();
+      } finally {
+        recoveryBusy = false; $('btn-recovery').disabled = false; $('btn-recovery').textContent = 'Passwort speichern';
+      }
+    });
+
+    // ---------- Text kopieren ----------
     $('btn-copy').addEventListener('click', async function () {
       var text = $('vorlage').textContent;
       var ok = false;
@@ -355,6 +631,7 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
       $('copy-status').textContent = ok ? ' Text wurde kopiert.' : ' Bitte markieren Sie den Text und kopieren Sie ihn selbst.';
     });
 
+    // ---------- Anmelden ----------
     var loginBusy = false;
     $('login-form').addEventListener('submit', async function (ev) {
       ev.preventDefault();
@@ -384,6 +661,30 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
         await finishRegistration(r.data.user);
       } catch (e) {
         errBox.textContent = translateError(e);
+        if (errText(e).indexOf('email not confirmed') !== -1) {
+          // Direkt anbieten: Bestätigungs-E-Mail an diese Adresse erneut senden
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'btn btn-secondary';
+          b.textContent = 'Bestätigungs-E-Mail erneut senden';
+          b.addEventListener('click', function () {
+            show('erneut-senden', true);
+            $('resend-email').value = email.toLowerCase();
+            doResend(email.toLowerCase());
+          });
+          var p = document.createElement('p');
+          p.appendChild(b);
+          errBox.appendChild(p);
+        } else if (errText(e).indexOf('invalid login credentials') !== -1) {
+          var a = document.createElement('button');
+          a.type = 'button';
+          a.className = 'btn-link';
+          a.textContent = 'Passwort vergessen?';
+          a.addEventListener('click', function () { openForgot(true); });
+          var p2 = document.createElement('p');
+          p2.appendChild(a);
+          errBox.appendChild(p2);
+        }
         errBox.hidden = false; errBox.focus();
       } finally {
         loginBusy = false; $('btn-login').disabled = false; $('btn-login').textContent = 'Anmelden';
@@ -398,62 +699,75 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unse
     // ---------- Start ----------
     async function init() {
       if (!db) {
-        // Supabase noch nicht konfiguriert: statische Infos zeigen, verständlicher Hinweis
+        // Supabase noch nicht konfiguriert: nichts behaupten, was nicht geprüft ist
+        setHeading('Stand Ihrer Registrierung', 'Hier sehen Sie nach der Registrierung, wie es weitergeht.');
         setStatus('warn', 'Hinweis: Die Online-Registrierung ist gerade noch nicht freigeschaltet.',
-          'Die nächsten Schritte unten gelten trotzdem. Bei Fragen schreiben Sie uns an ' + KONTAKT + '.');
-        $('anmelden').hidden = !wantsLogin;
+          'Bitte schreiben Sie uns an ' + KONTAKT + ' – wir melden uns persönlich bei Ihnen.');
+        showCards(wantsLogin || wantsReset ? ['anmelden', 'erneut-senden'] : []);
+        if (wantsReset) openForgot(false);
         return;
       }
-      // Fehler aus dem Bestätigungslink (z. B. abgelaufen)
+      // Fehler aus einem Link (z. B. abgelaufen)
       var linkError = hashParams.get('error_code') || hashParams.get('error') || params.get('error_code') || params.get('error');
       if (linkError) {
-        var expired = linkError.indexOf('expired') !== -1 || (hashParams.get('error_description') || '').toLowerCase().indexOf('expired') !== -1;
-        setStatus('error', expired ? 'Der Bestätigungslink ist abgelaufen oder wurde schon benutzt.' : 'Der Bestätigungslink hat nicht funktioniert.',
-          ' Bitte melden Sie sich unten an. Falls Ihre E-Mail-Adresse noch nicht bestätigt ist, können Sie sich die E-Mail erneut schicken lassen.', true);
-        $('anmelden').hidden = false;
-        $('resend-box').hidden = !storedEmail();
+        var desc = (hashParams.get('error_description') || params.get('error_description') || '').toLowerCase();
+        var expired = linkError.indexOf('expired') !== -1 || desc.indexOf('expired') !== -1;
+        if (recoveryMode) {
+          recoveryMode = false;
+          showLoginView('Der Link zum Zurücksetzen ist nicht mehr gültig', 'Bitte fordern Sie unten einen neuen Link an.');
+          openForgot(false);
+          setStatus('error', expired ? 'Der Link ist abgelaufen oder wurde schon benutzt.' : 'Der Link hat nicht funktioniert.',
+            ' Unter „Passwort vergessen?“ können Sie einen neuen Link anfordern.', true);
+          return;
+        }
+        showLoginView(expired ? 'Der Bestätigungslink ist abgelaufen' : 'Der Bestätigungslink hat nicht funktioniert',
+          'Falls Sie Ihre E-Mail-Adresse schon bestätigt haben, melden Sie sich einfach an. Sonst lassen Sie sich den Link unten erneut schicken – das geht auch auf einem anderen Gerät.');
+        setStatus('error', expired ? 'Der Link ist abgelaufen oder wurde schon benutzt.' : 'Der Link hat nicht funktioniert.',
+          ' Bitte melden Sie sich an oder lassen Sie sich die Bestätigungs-E-Mail erneut schicken.', true);
         return;
       }
       try {
-        var s = await db.auth.getSession();   // verarbeitet auch die Tokens aus dem Bestätigungslink
+        var s = await db.auth.getSession();   // verarbeitet auch die Tokens aus dem Link in der E-Mail
         var session = s.data && s.data.session;
         if (session && session.user) {
+          $('btn-logout').hidden = false;
+          if (recoveryMode) { showRecovery(); return; }
           await finishRegistration(session.user);
           return;
         }
       } catch (e) {
+        showLoginView();
         setStatus('error', 'Ihr Anmeldestatus konnte nicht geprüft werden.', ' ' + translateError(e), true);
-        $('anmelden').hidden = false;
         return;
       }
-      if (wantsLogin) {
-        $('anmelden').hidden = false;
-        setStatus('info', 'Bitte melden Sie sich an.', 'Dann zeigen wir Ihnen den Stand Ihrer Registrierung.');
-      } else if (urlStatus === 'email' || urlStatus === '') {
-        showAwaitingEmail();
+      var email = storedEmail();
+      if (wantsReset) {
+        showLoginView('Passwort vergessen?', 'Wir schicken Ihnen einen Link, mit dem Sie ein neues Passwort festlegen können.');
+        openForgot(true);
+      } else if (wantsLogin) {
+        showLoginView('Anmelden', 'Melden Sie sich mit der E-Mail-Adresse und dem Passwort an, die Sie bei der Registrierung gewählt haben.');
+        $('login-email').focus();
+      } else if (urlStatus === 'email' && email) {
+        showAwaitingEmail(email);   // direkt nach dem Absenden im selben Tab
       } else {
-        // status=fertig/nachholen, aber keine Session (z. B. anderes Gerät) → Anmeldung anbieten
-        $('anmelden').hidden = false;
-        setStatus('info', 'Bitte melden Sie sich an.', 'Dann zeigen wir Ihnen den Stand Ihrer Registrierung.');
+        showLoginView();            // Direktaufruf, anderes Gerät oder Tab
       }
     }
 
-    if (wantsLogin) {
-      $('title').textContent = 'Anmelden';
-      $('lead').textContent = 'Melden Sie sich mit der E-Mail-Adresse und dem Passwort an, die Sie bei der Registrierung gewählt haben.';
-    }
-    init().then(function () {
-      if (wantsLogin && !$('anmelden').hidden) $('login-email').focus();
-    });
-
-    // Falls die Session erst nach dem Laden ankommt (Bestätigungslink)
+    // Session kommt ggf. erst nach dem Laden an (Link aus der E-Mail)
     if (db) {
       db.auth.onAuthStateChange(function (event, session) {
-        if (event === 'SIGNED_IN' && session && session.user && !attempted) {
-          setTimeout(function () { finishRegistration(session.user); }, 0);
+        if (event === 'PASSWORD_RECOVERY') {
+          recoveryMode = true;
+          setTimeout(showRecovery, 0);
+          return;
+        }
+        if (event === 'SIGNED_IN' && session && session.user && !attempted && !recoveryMode) {
+          setTimeout(function () { if (!attempted && !recoveryMode) finishRegistration(session.user); }, 0);
         }
       });
     }
+    init();
   })();
   </script>
 </body>
