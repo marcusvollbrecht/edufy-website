@@ -1,5 +1,5 @@
 // Gemeinsamer Supabase-Client. Einbinden in dieser Reihenfolge:
-// <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+// <script src="js/vendor/supabase-js-2.45.4.js"></script>   (lokal ausgeliefert, kein CDN – DSGVO)
 // <script src="js/supabase-config.js"></script>
 // <script src="js/supabase-client.js"></script>
 // Danach: window.edufyDb (Client oder null) und window.edufyDbReady (true/false).

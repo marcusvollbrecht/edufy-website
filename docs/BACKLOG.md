@@ -7,7 +7,13 @@ Bereiche: S = Schüler & Content, F = Förderverein, U = Unternehmen, G = Gemein
 
 ## Aktueller Sprint
 Sprint 1 (2026-11-25) — Ziel: Förderverein-Onboarding Ende-zu-Ende + Landingpage launchfähig (technisch/a11y)
-Status: abgeschlossen 2026-11-25 – siehe Erledigt. Nächster Sprint: vom PM nach Entscheidungen von Marcus zu planen.
+Status: abgeschlossen 2026-11-25 – siehe Erledigt.
+
+Sprint 2 (2026-11-25) — Ziel: Website-Texte rechtlich entschärft und auf Edufy umgestellt, Förderverein-Seiten an Entscheidungen angepasst
+- G-007 + G-003 → edufy-dev-landing (Freigabe: index.html, impressum.html, datenschutz.html)
+- F-008 → edufy-dev-foerderverein (Freigabe: eigene Seiten + supabase_schulen_foerdervereine.sql)
+- G-006 → PM (erledigt, Datenschutz-Absatz streicht edufy-dev-landing)
+- danach: Review edufy-legal, Testrunde edufy-test-foerderverein
 
 ## Entschiedene Punkte (Marcus, 2026-11-25)
 - Marke: **Edufy** (edufy.world) überall; Kontakt künftig hallo@edufy.world.
@@ -45,7 +51,7 @@ Status: abgeschlossen 2026-11-25 – siehe Erledigt. Nächster Sprint: vom PM na
 - [ ] G-003 | G | P1 | Landingpage-Texte überarbeiten: Rechtschreibung/Typografie, Pitch-Deck-Ton raus, einheitliche CTAs/Begriffe, „Sechs Zielgruppen“ vs. 4 Karten — Quelle: Lektorats-Audit 2026-11-25 (blockiert durch Marcus-Entscheidungen zu Werbeaussagen)
 - [ ] G-004 | G | P2 | SEO: JSON-LD, robots.txt, sitemap.xml, og-image.jpg, Title/Description mit Suchbegriffen — Quelle: SEO-Audit 2026-11-25
 - [ ] G-005 | G | P2 | Datenschutz Warteliste: Double-Opt-In und Abmeldeweg — Quelle: SEO-Audit 2026-11-25
-- [ ] G-006 | G | P1 | supabase-js lokal ausliefern statt über jsDelivr-CDN (IP-Übertragung an Dritte, wie Google Fonts) — Quelle: Bericht edufy-dev-landing 2026-11-25
+- [x] G-006 | G | P1 | supabase-js lokal ausliefern statt über jsDelivr-CDN (IP-Übertragung an Dritte, wie Google Fonts) — Quelle: Bericht edufy-dev-landing 2026-11-25 — erledigt 2026-11-25 (js/vendor/supabase-js-2.45.4.js, kein externer Request mehr)
 - [ ] F-003 | F | P1 | Mehrere Ansprechpersonen pro Förderverein (Einladung in bestehenden Verein statt Fehlermeldung bei zweiter Registrierung) — Quelle: Bericht edufy-dev-foerderverein 2026-11-25
 - [ ] F-004 | F | P2 | Aufräumen unbestätigter/verwaister Konten und Metadaten (Edge-/Cron-Function mit Service-Role, Frist laut Datenschutz) — Quelle: Bericht F-001b
 - [ ] F-005 | F | P2 | Schulauswahl über amtliche Schulnummer statt Freitext (robuste Dublettenerkennung) + Rate-Limit für check_school_registered — Quelle: Bericht F-001b

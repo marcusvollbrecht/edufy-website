@@ -6,7 +6,7 @@ Fördervereine und Unternehmen verbindet.
 ## Geschäftsmodell (für Produktentscheidungen relevant)
 - Schüler nutzen Edufy kostenlos.
 - Unternehmen zahlen für den Zugang zu Schülern und Schulen.
-- Fördervereine erhalten ca. 25–30 % Provision auf Unternehmensverträge, die über ihre Schule laufen.
+- Fördervereine erhalten 30 % Beteiligung (Vergütung, keine Spende) an Unternehmensverträgen, die über ihre Schule laufen.
 - Fördervereine sind der primäre Go-to-Market-Kanal → ihr Onboarding muss reibungslos sein.
 - Entscheidungen 2026-11-25 (Details in `docs/BACKLOG.md`): Marke „Edufy“; Förderverein-Beteiligung 30 % fix,
   öffentlich aber kein Prozentsatz nennen; Jahresvertrag für Fördervereine; formale Zustimmung der Schulleitung;
