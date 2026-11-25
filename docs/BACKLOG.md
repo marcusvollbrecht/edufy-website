@@ -9,16 +9,24 @@ Bereiche: S = Schüler & Content, F = Förderverein, U = Unternehmen, G = Gemein
 Sprint 1 (2026-11-25) — Ziel: Förderverein-Onboarding Ende-zu-Ende + Landingpage launchfähig (technisch/a11y)
 Status: abgeschlossen 2026-11-25 – siehe Erledigt. Nächster Sprint: vom PM nach Entscheidungen von Marcus zu planen.
 
+## Entschiedene Punkte (Marcus, 2026-11-25)
+- Marke: **Edufy** (edufy.world) überall; Kontakt künftig hallo@edufy.world.
+- Förderverein-Beteiligung: **30 % fix** auf Unternehmensverträge über ihre Schule.
+- Kommunikation: öffentlich nur „Beteiligung an den Einnahmen“, **kein Prozentsatz** auf Website/Registrierung; Details im persönlichen Gespräch.
+- Steuer/Gemeinnützigkeit: Vorprüfung durch Agent **edufy-steuer**, Ergebnis zur Bestätigung an echten Steuerberater.
+- Werbeaussagen Landingpage: **erst Prüfung durch Agent edufy-legal**, dann Umsetzung (G-003).
+- Schülerdaten: Unternehmen sehen **nur Statistiken je Schule**; Details zu Schülern erst, wenn der Schüler **aktiv Kontakt** zum Unternehmen aufnimmt.
+- Schulleitung: **formale Zustimmung** der Schulleitung, bevor ein Förderverein aktiv wird.
+- Förderverein-Laufzeit: **Jahresvertrag** (Registrierung selbst bleibt kostenlos/unverbindlich; Vertrag bei Aktivierung).
+- Schüler unter 16: **Eltern-Freigabe per E-Mail-Link**; bis dahin eingeschränktes Konto (keine Unternehmenskontakte).
+- Preise Unternehmen: **Pilotphase kostenlos**, Preise danach anhand Feedback.
+- Zahlung: **Stripe** (Billing, SEPA, Rechnung); Auszahlung an Fördervereine per Gutschrift.
+
 ## Offene Entscheidungen für Marcus
-- [ ] Preise und Pakete für Unternehmen
-- [ ] Provisionssatz Förderverein (25 % oder 30 %, fix oder gestaffelt)
-- [ ] Zahlungsanbieter / Rechnungsstellung
-- [ ] Einwilligungsprozess für Schüler unter 16 (Eltern)
-- [ ] Markenname: Landingpage heißt „EduConnect“ (Kontakt hallo@edu-connect.com), CLAUDE.md/Domain „Edufy“ (edufy.world) — was gilt?
-- [ ] Impressumsangaben (Rechtsträger, Anschrift, Vertretung, Register, USt-IdNr.) und Inhalt der Datenschutzerklärung (ggf. Anwalt/Generator)
-- [ ] Werbeaussagen mit Rechtsrisiko auf der Landingpage: „Rechtssicher in allen 16 Bundesländern“, „Meister verdient mehr als Bachelor“, unbelegte Statistiken, Förderbeträge (Kindergeld 250 € veraltet), „SAP“ im Mockup, „Spendennennung“ vs. Sponsoring (Gemeinnützigkeit Förderverein!)
-- [ ] Förderverein-Kommunikation: Höhe/Herkunft der Beteiligung öffentlich nennen? (Landingpage nennt 25–30 %, Registrierung nicht), Gemeinnützigkeit/Steuer-Hinweis (Sponsoring = wirtschaftl. Geschäftsbetrieb?), Rolle der Schulleitung, welche Schülerdaten Unternehmen sehen, Austritt — Quelle: feedback/foerderverein/2026-11-25-onboarding.md
+- [ ] Impressumsangaben ausfüllen, Datenschutzerklärung finalisieren (nach Legal-Vorprüfung, mit Anwalt)
 - [ ] Supabase-Projekt-URL + Anon-Key für `js/supabase-config.js`
+- [ ] Postfach hallo@edufy.world einrichten
+- [ ] Dauer der kostenlosen Pilotphase und Zahl der Pilotunternehmen
 
 ## Backlog
 - [ ] S-001 | S | P1 | Bestandsaufnahme Schüler-Wizard und Bibliotheken gegen Supabase-Schema — Akzeptanz: Liste funktionierender/defekter Schritte — Quelle: Marcus
@@ -34,6 +42,13 @@ Status: abgeschlossen 2026-11-25 – siehe Erledigt. Nächster Sprint: vom PM na
 - [ ] F-003 | F | P1 | Mehrere Ansprechpersonen pro Förderverein (Einladung in bestehenden Verein statt Fehlermeldung bei zweiter Registrierung) — Quelle: Bericht edufy-dev-foerderverein 2026-11-25
 - [ ] F-004 | F | P2 | Aufräumen unbestätigter/verwaister Konten und Metadaten (Edge-/Cron-Function mit Service-Role, Frist laut Datenschutz) — Quelle: Bericht F-001b
 - [ ] F-005 | F | P2 | Schulauswahl über amtliche Schulnummer statt Freitext (robuste Dublettenerkennung) + Rate-Limit für check_school_registered — Quelle: Bericht F-001b
+- [ ] L-001 | G | P0 | Rechtliche Vorprüfung Landingpage (Werbeaussagen, Statistiken, Förderbeträge, Marken, Schulrecht), Datenschutz-Entwurf, Förderverein-Seiten — Owner: edufy-legal → docs/legal/
+- [ ] T-001 | G | P0 | Steuerliche Vorprüfung Fördervereinsmodell (30 % Beteiligung, Sponsoring, wirtschaftl. Geschäftsbetrieb, USt, Gutschriften) inkl. Fragenkatalog Steuerberater — Owner: edufy-steuer → docs/steuer/
+- [ ] G-007 | G | P1 | Rebranding Landingpage, Impressum, Datenschutz auf „Edufy“, Kontakt hallo@edufy.world; Prozentsatz der Beteiligung von der Landingpage entfernen; Preis-Tiers durch „Pilotphase kostenlos“ ersetzen — blockiert durch L-001 (gemeinsam mit G-003 umsetzen)
+- [ ] F-006 | F | P1 | Formale Zustimmung der Schulleitung (Einladungslink an Schulleitung, Status „wartet auf Schulleitung“, Verein erst danach aktiv) — Quelle: Entscheidung Marcus
+- [ ] F-007 | F | P1 | Förderverein-Jahresvertrag bei Aktivierung (Vertragstext von edufy-legal, Annahme im Dashboard, Laufzeit/Kündigung im Schema) — blockiert durch L-001/T-001
+- [ ] S-002 | S | P1 | Eltern-Freigabe für Schüler unter 16 per E-Mail-Link, eingeschränktes Konto bis zur Freigabe — Quelle: Entscheidung Marcus
+- [ ] U-003 | U | P2 | Stripe-Integration (Billing/SEPA/Rechnung) nach Pilotphase, Gutschriften an Fördervereine — Quelle: Entscheidung Marcus
 
 ## Erledigt
 - [x] F-001 | F | P0 | Förderverein-Onboarding Ende-zu-Ende lauffähig inkl. Bestätigungsseite — Akzeptanz: Registrierung legt Profil in Supabase an, Nutzer sieht nächste Schritte — Quelle: Marcus — Owner: edufy-dev-foerderverein (+ Freigabe `js/supabase-config.js`, `js/supabase-client.js`) — erledigt 2026-11-25 (live ungetestet: Supabase noch nicht konfiguriert)

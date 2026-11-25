@@ -42,6 +42,9 @@ Haupt-Session (`--agent edufy-pm`) oder über `/sprint` – dann kann er die and
 | edufy-test-schueler | Personas Lena (15) & Jonas (18) | `feedback/schueler/` |
 | edufy-test-foerderverein | Personas Petra (Kassenwartin) & Thomas (Vorsitzender) | `feedback/foerderverein/` |
 | edufy-test-unternehmen | Personas Sandra (Ausbildungsleitung) & Mehmet (Handwerk) | `feedback/unternehmen/` |
+| edufy-dev-landing | Landingpage, Impressum, Datenschutz (nur mit Sprint-Freigabe) | `index.html`, Rechtsseiten |
+| edufy-legal | Rechtliche Vorprüfung (UWG, DSGVO, Schulrecht, Verträge) zur Bestätigung durch Anwalt | `docs/legal/` |
+| edufy-steuer | Steuerliche Vorprüfung (Gemeinnützigkeit, Sponsoring, USt) zur Bestätigung durch Steuerberater | `docs/steuer/` |
 
 ## Was bei Marcus bleibt
 - SQL-Dateien in Supabase einspielen

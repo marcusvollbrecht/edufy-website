@@ -8,6 +8,10 @@ Fördervereine und Unternehmen verbindet.
 - Unternehmen zahlen für den Zugang zu Schülern und Schulen.
 - Fördervereine erhalten ca. 25–30 % Provision auf Unternehmensverträge, die über ihre Schule laufen.
 - Fördervereine sind der primäre Go-to-Market-Kanal → ihr Onboarding muss reibungslos sein.
+- Entscheidungen 2026-11-25 (Details in `docs/BACKLOG.md`): Marke „Edufy“; Förderverein-Beteiligung 30 % fix,
+  öffentlich aber kein Prozentsatz nennen; Jahresvertrag für Fördervereine; formale Zustimmung der Schulleitung;
+  Unternehmen sehen nur Schulstatistiken, Schülerdetails erst nach aktiver Kontaktaufnahme des Schülers;
+  U16 nur mit Eltern-Freigabe per E-Mail; Pilotphase für Unternehmen kostenlos; Zahlungen später über Stripe.
 
 ## Stack
 - Frontend: Multi-Page-HTML (Vanilla HTML/CSS/JS), keine Build-Pipeline.

@@ -11,6 +11,8 @@ Dateinamen sind Muster. Stand Sprint 1: Repo-Root enthält die HTML-Seiten, SQL 
 | **Gemeinsam** | **nur nach Freigabe durch edufy-pm** | `index.html`, Navigation/Header/Footer, `css/*` (global), `js/supabase*.js`, `js/auth*.js`, `vercel.json`, Impressum/Datenschutz/AGB |
 | Landingpage (Sprint-Rolle) | edufy-dev-landing | nur per Sprint-Freigabe: `index.html`, `impressum.html`, `datenschutz.html`, `fonts/*`, `sql/landing*.sql` |
 | Steuerung | edufy-pm | `docs/BACKLOG.md`, `docs/OWNERSHIP.md` |
+| Recht | edufy-legal | `docs/legal/*` (nur Berichte, kein Code) |
+| Steuer | edufy-steuer | `docs/steuer/*` (nur Berichte, kein Code) |
 | Feedback | jeweiliger Test-User | `feedback/<rolle>/*` |
 
 ## Schnittstellen zwischen Bereichen
