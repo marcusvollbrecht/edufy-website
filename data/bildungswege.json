@@ -1,0 +1,1378 @@
+{
+  "stand": "2026-11",
+  "quellen": [
+    {
+      "titel": "Ländervereinbarung über die gemeinsame Grundstruktur des Schulwesens und die gesamtstaatliche Verantwortung der Länder (Bezeichnungen Erster und Mittlerer Schulabschluss)",
+      "herausgeber": "Kultusministerkonferenz (KMK)",
+      "url": "https://www.kmk.org/themen/allgemeinbildende-schulen.html",
+      "stand": "2020-10"
+    },
+    {
+      "titel": "Hochschulzugang für beruflich qualifizierte Bewerber ohne schulische Hochschulzugangsberechtigung (Beschluss vom 06.03.2009)",
+      "herausgeber": "Kultusministerkonferenz (KMK)",
+      "url": "https://www.kmk.org/themen/hochschulen/zugang-zur-hochschule.html",
+      "stand": "2009-03"
+    },
+    {
+      "titel": "Deutscher Qualifikationsrahmen – Zuordnungen (u. a. Ausbildung, Meister, Fachwirt, Techniker, Bachelor)",
+      "herausgeber": "Bund-Länder-Koordinierungsstelle DQR",
+      "url": "https://www.dqr.de",
+      "stand": "2026-11"
+    },
+    {
+      "titel": "Berufsbildungsgesetz (BBiG) § 53a ff. – Fortbildungsstufen Geprüfte/-r Berufsspezialist/-in, Bachelor Professional, Master Professional",
+      "herausgeber": "Bundesamt für Justiz – gesetze-im-internet.de",
+      "url": "https://www.gesetze-im-internet.de/bbig_2005/__53a.html",
+      "stand": "2020-01"
+    }
+  ],
+  "hinweis_oeffentlich": "Das sind typische Wege, vereinfacht dargestellt. Schulformen, Namen, Dauer und Zugangsregeln unterscheiden sich je nach Bundesland. Genaue Regeln erfährst du bei deiner Schule, der Berufsberatung der Agentur für Arbeit oder beim Kultusministerium deines Landes.",
+  "hinweis": "Inhalte aus Vorwissen und Sekundärquellen zusammengestellt, nicht an den Primärquellen (kmk.org, dqr.de, gesetze-im-internet.de) gelesen – geprueft:false, siehe docs/content/QUELLEN.md. Wege sind je passender Schulform dupliziert (id mit Suffix --schulform, Feld basis_id verweist auf den Grundweg), weil von.schulform laut Schema ein Einzelwert ist.",
+  "geprueft": false,
+  "schulformen": [
+    {
+      "id": "hauptschule",
+      "name": "Hauptschule / Mittelschule",
+      "art": "allgemeinbildend",
+      "klassen": "5 bis 9 (teils 10)",
+      "abschluesse": [
+        "Erster Schulabschluss (Hauptschulabschluss) nach Klasse 9",
+        "je nach Bundesland Mittlerer Schulabschluss nach Klasse 10"
+      ],
+      "hinweis_laender": "In vielen Bundesländern gibt es die Hauptschule nicht mehr als eigene Schulform; sie ist in Schularten mit mehreren Bildungsgängen aufgegangen. In Bayern heißt sie Mittelschule."
+    },
+    {
+      "id": "realschule",
+      "name": "Realschule",
+      "art": "allgemeinbildend",
+      "klassen": "5 bis 10",
+      "abschluesse": [
+        "Mittlerer Schulabschluss (Realschulabschluss) nach Klasse 10",
+        "Erster Schulabschluss"
+      ],
+      "hinweis_laender": "Nicht in allen Bundesländern als eigene Schulform vorhanden."
+    },
+    {
+      "id": "schulart-mehrere-bildungsgaenge",
+      "name": "Schulart mit mehreren Bildungsgängen (z. B. Oberschule, Sekundarschule, Regionalschule, Stadtteilschule)",
+      "art": "allgemeinbildend",
+      "klassen": "5 bis 10 (teils mit Oberstufe)",
+      "abschluesse": [
+        "Erster Schulabschluss",
+        "Mittlerer Schulabschluss",
+        "teils Allgemeine Hochschulreife (wenn eine Oberstufe vorhanden ist)"
+      ],
+      "hinweis_laender": "Name und Aufbau unterscheiden sich je nach Bundesland."
+    },
+    {
+      "id": "gesamtschule",
+      "name": "Gesamtschule / Gemeinschaftsschule",
+      "art": "allgemeinbildend",
+      "klassen": "5 bis 10, oft mit gymnasialer Oberstufe bis 12 oder 13",
+      "abschluesse": [
+        "Erster Schulabschluss",
+        "Mittlerer Schulabschluss",
+        "Fachhochschulreife (schulischer Teil, je nach Land)",
+        "Allgemeine Hochschulreife (mit Oberstufe)"
+      ],
+      "hinweis_laender": "Name und Angebot je nach Bundesland unterschiedlich."
+    },
+    {
+      "id": "gymnasium",
+      "name": "Gymnasium",
+      "art": "allgemeinbildend",
+      "klassen": "5 bis 12 oder 13",
+      "abschluesse": [
+        "Allgemeine Hochschulreife (Abitur)",
+        "schulischer Teil der Fachhochschulreife (je nach Land)",
+        "Mittlerer Schulabschluss bzw. gleichwertiger Abschluss nach Klasse 10"
+      ],
+      "hinweis_laender": "Je nach Bundesland Abitur nach 12 (G8) oder 13 Schuljahren (G9). In einigen Ländern beginnt das Gymnasium erst nach Klasse 6."
+    },
+    {
+      "id": "berufsfachschule",
+      "name": "Berufsfachschule",
+      "art": "beruflich",
+      "klassen": "nach Klasse 9 oder 10",
+      "abschluesse": [
+        "schulische Berufsausbildung (z. B. Assistenzberufe)",
+        "je nach Bildungsgang Mittlerer Schulabschluss oder Fachhochschulreife"
+      ],
+      "hinweis_laender": "Bildungsgänge und Abschlüsse sehr unterschiedlich je nach Bundesland."
+    },
+    {
+      "id": "fachoberschule",
+      "name": "Fachoberschule (FOS)",
+      "art": "beruflich",
+      "klassen": "11 und 12 (teils 13)",
+      "abschluesse": [
+        "Fachhochschulreife",
+        "teils fachgebundene oder allgemeine Hochschulreife nach Klasse 13"
+      ],
+      "hinweis_laender": "Voraussetzung ist meist der Mittlere Schulabschluss. Mit abgeschlossener Berufsausbildung reicht oft ein Jahr (Klasse 12). Aufbau je nach Bundesland unterschiedlich."
+    },
+    {
+      "id": "berufsoberschule",
+      "name": "Berufsoberschule (BOS)",
+      "art": "beruflich",
+      "klassen": "nach Ausbildung oder Berufserfahrung, 1 bis 2 Jahre",
+      "abschluesse": [
+        "Fachhochschulreife",
+        "fachgebundene Hochschulreife",
+        "mit zweiter Fremdsprache allgemeine Hochschulreife"
+      ],
+      "hinweis_laender": "Nicht in allen Bundesländern unter diesem Namen; teils als Klasse 13 der FOS oder als Berufliches Gymnasium organisiert."
+    },
+    {
+      "id": "berufliches-gymnasium",
+      "name": "Berufliches Gymnasium (Fachgymnasium)",
+      "art": "beruflich",
+      "klassen": "11 bis 13",
+      "abschluesse": [
+        "Allgemeine Hochschulreife mit beruflichem Schwerpunkt (z. B. Wirtschaft, Technik, Gesundheit)"
+      ],
+      "hinweis_laender": "Name je nach Bundesland unterschiedlich (z. B. Fachgymnasium). Voraussetzung meist Mittlerer Schulabschluss mit bestimmten Noten."
+    },
+    {
+      "id": "fachschule",
+      "name": "Fachschule (z. B. Technikerschule)",
+      "art": "beruflich (Weiterbildung)",
+      "klassen": "nach Ausbildung und meist Berufserfahrung",
+      "abschluesse": [
+        "Staatlich geprüfte/-r Techniker/-in, Betriebswirt/-in oder Erzieher/-in (DQR 6)",
+        "teils zusätzlich Fachhochschulreife"
+      ],
+      "hinweis_laender": "Zugangsvoraussetzungen je nach Bundesland und Fachrichtung."
+    }
+  ],
+  "wege": [
+    {
+      "id": "esa-ausbildung",
+      "titel": "Erster Schulabschluss → duale Ausbildung",
+      "von": {
+        "schulform": "hauptschule",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Erster Schulabschluss (Hauptschulabschluss)",
+          "dauer_monate": null,
+          "abschluss": "Erster Schulabschluss"
+        },
+        {
+          "titel": "Duale Ausbildung im Betrieb und in der Berufsschule",
+          "dauer_monate": 36,
+          "abschluss": "Gesellen- oder Facharbeiterbrief bzw. Kaufmannsgehilfenbrief"
+        }
+      ],
+      "ziel_dqr": 4,
+      "ziel_beispiele": [
+        "maurer",
+        "maler-lackierer",
+        "fachkraft-lagerlogistik",
+        "koch",
+        "berufskraftfahrer"
+      ],
+      "hinweis_laender": "Für eine Ausbildung ist rechtlich meist kein bestimmter Schulabschluss vorgeschrieben – Betriebe entscheiden selbst. Zweijährige Ausbildungen (z. B. Verkäufer/-in, Fachlagerist/-in) liegen auf DQR-Niveau 3. Je nach Bundesland kann mit dem Berufsschulabschluss und der Ausbildung der Mittlere Schulabschluss zuerkannt werden."
+    },
+    {
+      "id": "esa-ausbildung--schulart-mehrere-bildungsgaenge",
+      "titel": "Erster Schulabschluss → duale Ausbildung",
+      "von": {
+        "schulform": "schulart-mehrere-bildungsgaenge",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Erster Schulabschluss (Hauptschulabschluss)",
+          "dauer_monate": null,
+          "abschluss": "Erster Schulabschluss"
+        },
+        {
+          "titel": "Duale Ausbildung im Betrieb und in der Berufsschule",
+          "dauer_monate": 36,
+          "abschluss": "Gesellen- oder Facharbeiterbrief bzw. Kaufmannsgehilfenbrief"
+        }
+      ],
+      "ziel_dqr": 4,
+      "ziel_beispiele": [
+        "maurer",
+        "maler-lackierer",
+        "fachkraft-lagerlogistik",
+        "koch",
+        "berufskraftfahrer"
+      ],
+      "hinweis_laender": "Für eine Ausbildung ist rechtlich meist kein bestimmter Schulabschluss vorgeschrieben – Betriebe entscheiden selbst. Zweijährige Ausbildungen (z. B. Verkäufer/-in, Fachlagerist/-in) liegen auf DQR-Niveau 3. Je nach Bundesland kann mit dem Berufsschulabschluss und der Ausbildung der Mittlere Schulabschluss zuerkannt werden.",
+      "basis_id": "esa-ausbildung"
+    },
+    {
+      "id": "esa-ausbildung--gesamtschule",
+      "titel": "Erster Schulabschluss → duale Ausbildung",
+      "von": {
+        "schulform": "gesamtschule",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Erster Schulabschluss (Hauptschulabschluss)",
+          "dauer_monate": null,
+          "abschluss": "Erster Schulabschluss"
+        },
+        {
+          "titel": "Duale Ausbildung im Betrieb und in der Berufsschule",
+          "dauer_monate": 36,
+          "abschluss": "Gesellen- oder Facharbeiterbrief bzw. Kaufmannsgehilfenbrief"
+        }
+      ],
+      "ziel_dqr": 4,
+      "ziel_beispiele": [
+        "maurer",
+        "maler-lackierer",
+        "fachkraft-lagerlogistik",
+        "koch",
+        "berufskraftfahrer"
+      ],
+      "hinweis_laender": "Für eine Ausbildung ist rechtlich meist kein bestimmter Schulabschluss vorgeschrieben – Betriebe entscheiden selbst. Zweijährige Ausbildungen (z. B. Verkäufer/-in, Fachlagerist/-in) liegen auf DQR-Niveau 3. Je nach Bundesland kann mit dem Berufsschulabschluss und der Ausbildung der Mittlere Schulabschluss zuerkannt werden.",
+      "basis_id": "esa-ausbildung"
+    },
+    {
+      "id": "msa-ausbildung",
+      "titel": "Mittlerer Schulabschluss → duale Ausbildung",
+      "von": {
+        "schulform": "realschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Mittlerer Schulabschluss (Realschulabschluss)",
+          "dauer_monate": null,
+          "abschluss": "Mittlerer Schulabschluss"
+        },
+        {
+          "titel": "Duale Ausbildung im Betrieb und in der Berufsschule",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss vor der Kammer"
+        }
+      ],
+      "ziel_dqr": 4,
+      "ziel_beispiele": [
+        "kaufmann-buero",
+        "industriekaufmann",
+        "medizinische-fachangestellte",
+        "fachinformatiker",
+        "elektroniker-betriebstechnik"
+      ],
+      "hinweis_laender": "Mit guten Leistungen und Zustimmung des Betriebs kann die Ausbildung oft verkürzt werden. Je nach Bundesland kann parallel zur Ausbildung die Fachhochschulreife erworben werden."
+    },
+    {
+      "id": "msa-ausbildung--schulart-mehrere-bildungsgaenge",
+      "titel": "Mittlerer Schulabschluss → duale Ausbildung",
+      "von": {
+        "schulform": "schulart-mehrere-bildungsgaenge",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Mittlerer Schulabschluss (Realschulabschluss)",
+          "dauer_monate": null,
+          "abschluss": "Mittlerer Schulabschluss"
+        },
+        {
+          "titel": "Duale Ausbildung im Betrieb und in der Berufsschule",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss vor der Kammer"
+        }
+      ],
+      "ziel_dqr": 4,
+      "ziel_beispiele": [
+        "kaufmann-buero",
+        "industriekaufmann",
+        "medizinische-fachangestellte",
+        "fachinformatiker",
+        "elektroniker-betriebstechnik"
+      ],
+      "hinweis_laender": "Mit guten Leistungen und Zustimmung des Betriebs kann die Ausbildung oft verkürzt werden. Je nach Bundesland kann parallel zur Ausbildung die Fachhochschulreife erworben werden.",
+      "basis_id": "msa-ausbildung"
+    },
+    {
+      "id": "msa-ausbildung--gesamtschule",
+      "titel": "Mittlerer Schulabschluss → duale Ausbildung",
+      "von": {
+        "schulform": "gesamtschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Mittlerer Schulabschluss (Realschulabschluss)",
+          "dauer_monate": null,
+          "abschluss": "Mittlerer Schulabschluss"
+        },
+        {
+          "titel": "Duale Ausbildung im Betrieb und in der Berufsschule",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss vor der Kammer"
+        }
+      ],
+      "ziel_dqr": 4,
+      "ziel_beispiele": [
+        "kaufmann-buero",
+        "industriekaufmann",
+        "medizinische-fachangestellte",
+        "fachinformatiker",
+        "elektroniker-betriebstechnik"
+      ],
+      "hinweis_laender": "Mit guten Leistungen und Zustimmung des Betriebs kann die Ausbildung oft verkürzt werden. Je nach Bundesland kann parallel zur Ausbildung die Fachhochschulreife erworben werden.",
+      "basis_id": "msa-ausbildung"
+    },
+    {
+      "id": "msa-ausbildung--gymnasium",
+      "titel": "Mittlerer Schulabschluss → duale Ausbildung",
+      "von": {
+        "schulform": "gymnasium",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Mittlerer Schulabschluss (Realschulabschluss)",
+          "dauer_monate": null,
+          "abschluss": "Mittlerer Schulabschluss"
+        },
+        {
+          "titel": "Duale Ausbildung im Betrieb und in der Berufsschule",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss vor der Kammer"
+        }
+      ],
+      "ziel_dqr": 4,
+      "ziel_beispiele": [
+        "kaufmann-buero",
+        "industriekaufmann",
+        "medizinische-fachangestellte",
+        "fachinformatiker",
+        "elektroniker-betriebstechnik"
+      ],
+      "hinweis_laender": "Mit guten Leistungen und Zustimmung des Betriebs kann die Ausbildung oft verkürzt werden. Je nach Bundesland kann parallel zur Ausbildung die Fachhochschulreife erworben werden.",
+      "basis_id": "msa-ausbildung"
+    },
+    {
+      "id": "msa-ausbildung--hauptschule",
+      "titel": "Mittlerer Schulabschluss → duale Ausbildung",
+      "von": {
+        "schulform": "hauptschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Mittlerer Schulabschluss (Realschulabschluss)",
+          "dauer_monate": null,
+          "abschluss": "Mittlerer Schulabschluss"
+        },
+        {
+          "titel": "Duale Ausbildung im Betrieb und in der Berufsschule",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss vor der Kammer"
+        }
+      ],
+      "ziel_dqr": 4,
+      "ziel_beispiele": [
+        "kaufmann-buero",
+        "industriekaufmann",
+        "medizinische-fachangestellte",
+        "fachinformatiker",
+        "elektroniker-betriebstechnik"
+      ],
+      "hinweis_laender": "Mit guten Leistungen und Zustimmung des Betriebs kann die Ausbildung oft verkürzt werden. Je nach Bundesland kann parallel zur Ausbildung die Fachhochschulreife erworben werden.",
+      "basis_id": "msa-ausbildung"
+    },
+    {
+      "id": "msa-fos-studium",
+      "titel": "Mittlerer Schulabschluss → Fachoberschule → Studium an einer Fachhochschule",
+      "von": {
+        "schulform": "realschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Fachoberschule (Klasse 11 und 12, mit Praktikum)",
+          "dauer_monate": 24,
+          "abschluss": "Fachhochschulreife"
+        },
+        {
+          "titel": "Bachelorstudium an einer Fachhochschule / Hochschule für angewandte Wissenschaften",
+          "dauer_monate": 42,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "soziale-arbeit",
+        "bwl",
+        "maschinenbau",
+        "wirtschaftsinformatik"
+      ],
+      "hinweis_laender": "Aufbau der Fachoberschule je nach Bundesland unterschiedlich; teils kann in Klasse 13 die fachgebundene oder allgemeine Hochschulreife erworben werden. Studiendauer meist 6 oder 7 Semester."
+    },
+    {
+      "id": "msa-fos-studium--schulart-mehrere-bildungsgaenge",
+      "titel": "Mittlerer Schulabschluss → Fachoberschule → Studium an einer Fachhochschule",
+      "von": {
+        "schulform": "schulart-mehrere-bildungsgaenge",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Fachoberschule (Klasse 11 und 12, mit Praktikum)",
+          "dauer_monate": 24,
+          "abschluss": "Fachhochschulreife"
+        },
+        {
+          "titel": "Bachelorstudium an einer Fachhochschule / Hochschule für angewandte Wissenschaften",
+          "dauer_monate": 42,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "soziale-arbeit",
+        "bwl",
+        "maschinenbau",
+        "wirtschaftsinformatik"
+      ],
+      "hinweis_laender": "Aufbau der Fachoberschule je nach Bundesland unterschiedlich; teils kann in Klasse 13 die fachgebundene oder allgemeine Hochschulreife erworben werden. Studiendauer meist 6 oder 7 Semester.",
+      "basis_id": "msa-fos-studium"
+    },
+    {
+      "id": "msa-fos-studium--gesamtschule",
+      "titel": "Mittlerer Schulabschluss → Fachoberschule → Studium an einer Fachhochschule",
+      "von": {
+        "schulform": "gesamtschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Fachoberschule (Klasse 11 und 12, mit Praktikum)",
+          "dauer_monate": 24,
+          "abschluss": "Fachhochschulreife"
+        },
+        {
+          "titel": "Bachelorstudium an einer Fachhochschule / Hochschule für angewandte Wissenschaften",
+          "dauer_monate": 42,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "soziale-arbeit",
+        "bwl",
+        "maschinenbau",
+        "wirtschaftsinformatik"
+      ],
+      "hinweis_laender": "Aufbau der Fachoberschule je nach Bundesland unterschiedlich; teils kann in Klasse 13 die fachgebundene oder allgemeine Hochschulreife erworben werden. Studiendauer meist 6 oder 7 Semester.",
+      "basis_id": "msa-fos-studium"
+    },
+    {
+      "id": "msa-fos-studium--hauptschule",
+      "titel": "Mittlerer Schulabschluss → Fachoberschule → Studium an einer Fachhochschule",
+      "von": {
+        "schulform": "hauptschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Fachoberschule (Klasse 11 und 12, mit Praktikum)",
+          "dauer_monate": 24,
+          "abschluss": "Fachhochschulreife"
+        },
+        {
+          "titel": "Bachelorstudium an einer Fachhochschule / Hochschule für angewandte Wissenschaften",
+          "dauer_monate": 42,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "soziale-arbeit",
+        "bwl",
+        "maschinenbau",
+        "wirtschaftsinformatik"
+      ],
+      "hinweis_laender": "Aufbau der Fachoberschule je nach Bundesland unterschiedlich; teils kann in Klasse 13 die fachgebundene oder allgemeine Hochschulreife erworben werden. Studiendauer meist 6 oder 7 Semester.",
+      "basis_id": "msa-fos-studium"
+    },
+    {
+      "id": "ausbildung-bos-studium",
+      "titel": "Ausbildung → Berufsoberschule → Studium",
+      "von": {
+        "schulform": "realschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss"
+        },
+        {
+          "titel": "Berufsoberschule (Vollzeit oder Teilzeit)",
+          "dauer_monate": 24,
+          "abschluss": "fachgebundene oder allgemeine Hochschulreife (nach 1 Jahr teils Fachhochschulreife)"
+        },
+        {
+          "titel": "Bachelorstudium",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "wirtschaftsingenieurwesen",
+        "elektrotechnik",
+        "bwl"
+      ],
+      "hinweis_laender": "Berufsoberschulen gibt es nicht in allen Bundesländern unter diesem Namen. Voraussetzung ist meist ein Mittlerer Schulabschluss und eine abgeschlossene Ausbildung oder Berufserfahrung."
+    },
+    {
+      "id": "ausbildung-bos-studium--schulart-mehrere-bildungsgaenge",
+      "titel": "Ausbildung → Berufsoberschule → Studium",
+      "von": {
+        "schulform": "schulart-mehrere-bildungsgaenge",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss"
+        },
+        {
+          "titel": "Berufsoberschule (Vollzeit oder Teilzeit)",
+          "dauer_monate": 24,
+          "abschluss": "fachgebundene oder allgemeine Hochschulreife (nach 1 Jahr teils Fachhochschulreife)"
+        },
+        {
+          "titel": "Bachelorstudium",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "wirtschaftsingenieurwesen",
+        "elektrotechnik",
+        "bwl"
+      ],
+      "hinweis_laender": "Berufsoberschulen gibt es nicht in allen Bundesländern unter diesem Namen. Voraussetzung ist meist ein Mittlerer Schulabschluss und eine abgeschlossene Ausbildung oder Berufserfahrung.",
+      "basis_id": "ausbildung-bos-studium"
+    },
+    {
+      "id": "ausbildung-bos-studium--gesamtschule",
+      "titel": "Ausbildung → Berufsoberschule → Studium",
+      "von": {
+        "schulform": "gesamtschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss"
+        },
+        {
+          "titel": "Berufsoberschule (Vollzeit oder Teilzeit)",
+          "dauer_monate": 24,
+          "abschluss": "fachgebundene oder allgemeine Hochschulreife (nach 1 Jahr teils Fachhochschulreife)"
+        },
+        {
+          "titel": "Bachelorstudium",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "wirtschaftsingenieurwesen",
+        "elektrotechnik",
+        "bwl"
+      ],
+      "hinweis_laender": "Berufsoberschulen gibt es nicht in allen Bundesländern unter diesem Namen. Voraussetzung ist meist ein Mittlerer Schulabschluss und eine abgeschlossene Ausbildung oder Berufserfahrung.",
+      "basis_id": "ausbildung-bos-studium"
+    },
+    {
+      "id": "msa-berufliches-gymnasium",
+      "titel": "Mittlerer Schulabschluss → Berufliches Gymnasium → Studium",
+      "von": {
+        "schulform": "realschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Berufliches Gymnasium (Klasse 11 bis 13)",
+          "dauer_monate": 36,
+          "abschluss": "Allgemeine Hochschulreife"
+        },
+        {
+          "titel": "Bachelorstudium",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "bwl",
+        "informatik",
+        "maschinenbau"
+      ],
+      "hinweis_laender": "Name (z. B. Fachgymnasium) und Zugangsnoten je nach Bundesland."
+    },
+    {
+      "id": "msa-berufliches-gymnasium--schulart-mehrere-bildungsgaenge",
+      "titel": "Mittlerer Schulabschluss → Berufliches Gymnasium → Studium",
+      "von": {
+        "schulform": "schulart-mehrere-bildungsgaenge",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Berufliches Gymnasium (Klasse 11 bis 13)",
+          "dauer_monate": 36,
+          "abschluss": "Allgemeine Hochschulreife"
+        },
+        {
+          "titel": "Bachelorstudium",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "bwl",
+        "informatik",
+        "maschinenbau"
+      ],
+      "hinweis_laender": "Name (z. B. Fachgymnasium) und Zugangsnoten je nach Bundesland.",
+      "basis_id": "msa-berufliches-gymnasium"
+    },
+    {
+      "id": "msa-berufliches-gymnasium--gesamtschule",
+      "titel": "Mittlerer Schulabschluss → Berufliches Gymnasium → Studium",
+      "von": {
+        "schulform": "gesamtschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Berufliches Gymnasium (Klasse 11 bis 13)",
+          "dauer_monate": 36,
+          "abschluss": "Allgemeine Hochschulreife"
+        },
+        {
+          "titel": "Bachelorstudium",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "bwl",
+        "informatik",
+        "maschinenbau"
+      ],
+      "hinweis_laender": "Name (z. B. Fachgymnasium) und Zugangsnoten je nach Bundesland.",
+      "basis_id": "msa-berufliches-gymnasium"
+    },
+    {
+      "id": "abitur-studium",
+      "titel": "Abitur → Studium (Bachelor, danach Master möglich)",
+      "von": {
+        "schulform": "gymnasium",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Gymnasiale Oberstufe",
+          "dauer_monate": 36,
+          "abschluss": "Allgemeine Hochschulreife (Abitur)"
+        },
+        {
+          "titel": "Bachelorstudium an Universität oder Fachhochschule",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor (DQR 6)"
+        },
+        {
+          "titel": "Optional: Masterstudium",
+          "dauer_monate": 24,
+          "abschluss": "Master (DQR 7)"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "informatik",
+        "psychologie",
+        "medizin",
+        "rechtswissenschaft",
+        "lehramt"
+      ],
+      "hinweis_laender": "Die Oberstufe dauert je nach Bundesland und Schulform 2 oder 3 Jahre (Abitur nach 12 oder 13 Schuljahren). Medizin, Jura und Lehramt enden mit Staatsexamen und haben andere Dauern."
+    },
+    {
+      "id": "abitur-studium--gesamtschule",
+      "titel": "Abitur → Studium (Bachelor, danach Master möglich)",
+      "von": {
+        "schulform": "gesamtschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Gymnasiale Oberstufe",
+          "dauer_monate": 36,
+          "abschluss": "Allgemeine Hochschulreife (Abitur)"
+        },
+        {
+          "titel": "Bachelorstudium an Universität oder Fachhochschule",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor (DQR 6)"
+        },
+        {
+          "titel": "Optional: Masterstudium",
+          "dauer_monate": 24,
+          "abschluss": "Master (DQR 7)"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "informatik",
+        "psychologie",
+        "medizin",
+        "rechtswissenschaft",
+        "lehramt"
+      ],
+      "hinweis_laender": "Die Oberstufe dauert je nach Bundesland und Schulform 2 oder 3 Jahre (Abitur nach 12 oder 13 Schuljahren). Medizin, Jura und Lehramt enden mit Staatsexamen und haben andere Dauern.",
+      "basis_id": "abitur-studium"
+    },
+    {
+      "id": "abitur-studium--berufliches-gymnasium",
+      "titel": "Abitur → Studium (Bachelor, danach Master möglich)",
+      "von": {
+        "schulform": "berufliches-gymnasium",
+        "klasse_min": 11
+      },
+      "schritte": [
+        {
+          "titel": "Gymnasiale Oberstufe",
+          "dauer_monate": 36,
+          "abschluss": "Allgemeine Hochschulreife (Abitur)"
+        },
+        {
+          "titel": "Bachelorstudium an Universität oder Fachhochschule",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor (DQR 6)"
+        },
+        {
+          "titel": "Optional: Masterstudium",
+          "dauer_monate": 24,
+          "abschluss": "Master (DQR 7)"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "informatik",
+        "psychologie",
+        "medizin",
+        "rechtswissenschaft",
+        "lehramt"
+      ],
+      "hinweis_laender": "Die Oberstufe dauert je nach Bundesland und Schulform 2 oder 3 Jahre (Abitur nach 12 oder 13 Schuljahren). Medizin, Jura und Lehramt enden mit Staatsexamen und haben andere Dauern.",
+      "basis_id": "abitur-studium"
+    },
+    {
+      "id": "abitur-duales-studium",
+      "titel": "Abitur oder Fachhochschulreife → duales Studium",
+      "von": {
+        "schulform": "gymnasium",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Abitur oder Fachhochschulreife",
+          "dauer_monate": null,
+          "abschluss": "Hochschulzugangsberechtigung"
+        },
+        {
+          "titel": "Duales Studium: Wechsel zwischen Hochschule und Praxispartner",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor, teils zusätzlich Berufsabschluss (ausbildungsintegrierend)"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "dual-bwl",
+        "dual-informatik",
+        "dual-maschinenbau",
+        "dual-soziale-arbeit",
+        "dual-verwaltung"
+      ],
+      "hinweis_laender": "Bewerbung beim Praxispartner oft schon ein Jahr vor Studienbeginn. Ob die Fachhochschulreife reicht, hängt von Hochschule und Bundesland ab."
+    },
+    {
+      "id": "abitur-duales-studium--gesamtschule",
+      "titel": "Abitur oder Fachhochschulreife → duales Studium",
+      "von": {
+        "schulform": "gesamtschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Abitur oder Fachhochschulreife",
+          "dauer_monate": null,
+          "abschluss": "Hochschulzugangsberechtigung"
+        },
+        {
+          "titel": "Duales Studium: Wechsel zwischen Hochschule und Praxispartner",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor, teils zusätzlich Berufsabschluss (ausbildungsintegrierend)"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "dual-bwl",
+        "dual-informatik",
+        "dual-maschinenbau",
+        "dual-soziale-arbeit",
+        "dual-verwaltung"
+      ],
+      "hinweis_laender": "Bewerbung beim Praxispartner oft schon ein Jahr vor Studienbeginn. Ob die Fachhochschulreife reicht, hängt von Hochschule und Bundesland ab.",
+      "basis_id": "abitur-duales-studium"
+    },
+    {
+      "id": "abitur-duales-studium--berufliches-gymnasium",
+      "titel": "Abitur oder Fachhochschulreife → duales Studium",
+      "von": {
+        "schulform": "berufliches-gymnasium",
+        "klasse_min": 11
+      },
+      "schritte": [
+        {
+          "titel": "Abitur oder Fachhochschulreife",
+          "dauer_monate": null,
+          "abschluss": "Hochschulzugangsberechtigung"
+        },
+        {
+          "titel": "Duales Studium: Wechsel zwischen Hochschule und Praxispartner",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor, teils zusätzlich Berufsabschluss (ausbildungsintegrierend)"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "dual-bwl",
+        "dual-informatik",
+        "dual-maschinenbau",
+        "dual-soziale-arbeit",
+        "dual-verwaltung"
+      ],
+      "hinweis_laender": "Bewerbung beim Praxispartner oft schon ein Jahr vor Studienbeginn. Ob die Fachhochschulreife reicht, hängt von Hochschule und Bundesland ab.",
+      "basis_id": "abitur-duales-studium"
+    },
+    {
+      "id": "abitur-duales-studium--fachoberschule",
+      "titel": "Abitur oder Fachhochschulreife → duales Studium",
+      "von": {
+        "schulform": "fachoberschule",
+        "klasse_min": 11
+      },
+      "schritte": [
+        {
+          "titel": "Abitur oder Fachhochschulreife",
+          "dauer_monate": null,
+          "abschluss": "Hochschulzugangsberechtigung"
+        },
+        {
+          "titel": "Duales Studium: Wechsel zwischen Hochschule und Praxispartner",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor, teils zusätzlich Berufsabschluss (ausbildungsintegrierend)"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "dual-bwl",
+        "dual-informatik",
+        "dual-maschinenbau",
+        "dual-soziale-arbeit",
+        "dual-verwaltung"
+      ],
+      "hinweis_laender": "Bewerbung beim Praxispartner oft schon ein Jahr vor Studienbeginn. Ob die Fachhochschulreife reicht, hängt von Hochschule und Bundesland ab.",
+      "basis_id": "abitur-duales-studium"
+    },
+    {
+      "id": "aufstieg-bachelor-professional",
+      "titel": "Ausbildung → Meister/-in, Fachwirt/-in oder Techniker/-in (Bachelor Professional)",
+      "von": {
+        "schulform": "hauptschule",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss (DQR 4)"
+        },
+        {
+          "titel": "Berufserfahrung (je nach Fortbildung vorausgesetzt)",
+          "dauer_monate": null,
+          "abschluss": "Zulassung zur Fortbildungsprüfung"
+        },
+        {
+          "titel": "Aufstiegsfortbildung in Vollzeit oder berufsbegleitend (förderbar mit Aufstiegs-BAföG)",
+          "dauer_monate": null,
+          "abschluss": "Meister/-in, Fachwirt/-in (Bachelor Professional) oder Staatlich geprüfte/-r Techniker/-in"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "kfz-mechatroniker",
+        "elektroniker-handwerk",
+        "industriekaufmann",
+        "kaufmann-einzelhandel",
+        "industriemechaniker"
+      ],
+      "hinweis_laender": "Diese Abschlüsse liegen auf demselben DQR-Niveau 6 wie ein Bachelor. Seit 2020 tragen Fortbildungsabschlüsse nach BBiG/HwO zusätzlich Bezeichnungen wie „Bachelor Professional“. Dauer je nach Fortbildung und Vollzeit/Teilzeit sehr unterschiedlich. Meisterprämien gibt es je nach Bundesland."
+    },
+    {
+      "id": "aufstieg-bachelor-professional--realschule",
+      "titel": "Ausbildung → Meister/-in, Fachwirt/-in oder Techniker/-in (Bachelor Professional)",
+      "von": {
+        "schulform": "realschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss (DQR 4)"
+        },
+        {
+          "titel": "Berufserfahrung (je nach Fortbildung vorausgesetzt)",
+          "dauer_monate": null,
+          "abschluss": "Zulassung zur Fortbildungsprüfung"
+        },
+        {
+          "titel": "Aufstiegsfortbildung in Vollzeit oder berufsbegleitend (förderbar mit Aufstiegs-BAföG)",
+          "dauer_monate": null,
+          "abschluss": "Meister/-in, Fachwirt/-in (Bachelor Professional) oder Staatlich geprüfte/-r Techniker/-in"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "kfz-mechatroniker",
+        "elektroniker-handwerk",
+        "industriekaufmann",
+        "kaufmann-einzelhandel",
+        "industriemechaniker"
+      ],
+      "hinweis_laender": "Diese Abschlüsse liegen auf demselben DQR-Niveau 6 wie ein Bachelor. Seit 2020 tragen Fortbildungsabschlüsse nach BBiG/HwO zusätzlich Bezeichnungen wie „Bachelor Professional“. Dauer je nach Fortbildung und Vollzeit/Teilzeit sehr unterschiedlich. Meisterprämien gibt es je nach Bundesland.",
+      "basis_id": "aufstieg-bachelor-professional"
+    },
+    {
+      "id": "aufstieg-bachelor-professional--schulart-mehrere-bildungsgaenge",
+      "titel": "Ausbildung → Meister/-in, Fachwirt/-in oder Techniker/-in (Bachelor Professional)",
+      "von": {
+        "schulform": "schulart-mehrere-bildungsgaenge",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss (DQR 4)"
+        },
+        {
+          "titel": "Berufserfahrung (je nach Fortbildung vorausgesetzt)",
+          "dauer_monate": null,
+          "abschluss": "Zulassung zur Fortbildungsprüfung"
+        },
+        {
+          "titel": "Aufstiegsfortbildung in Vollzeit oder berufsbegleitend (förderbar mit Aufstiegs-BAföG)",
+          "dauer_monate": null,
+          "abschluss": "Meister/-in, Fachwirt/-in (Bachelor Professional) oder Staatlich geprüfte/-r Techniker/-in"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "kfz-mechatroniker",
+        "elektroniker-handwerk",
+        "industriekaufmann",
+        "kaufmann-einzelhandel",
+        "industriemechaniker"
+      ],
+      "hinweis_laender": "Diese Abschlüsse liegen auf demselben DQR-Niveau 6 wie ein Bachelor. Seit 2020 tragen Fortbildungsabschlüsse nach BBiG/HwO zusätzlich Bezeichnungen wie „Bachelor Professional“. Dauer je nach Fortbildung und Vollzeit/Teilzeit sehr unterschiedlich. Meisterprämien gibt es je nach Bundesland.",
+      "basis_id": "aufstieg-bachelor-professional"
+    },
+    {
+      "id": "aufstieg-bachelor-professional--gesamtschule",
+      "titel": "Ausbildung → Meister/-in, Fachwirt/-in oder Techniker/-in (Bachelor Professional)",
+      "von": {
+        "schulform": "gesamtschule",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss (DQR 4)"
+        },
+        {
+          "titel": "Berufserfahrung (je nach Fortbildung vorausgesetzt)",
+          "dauer_monate": null,
+          "abschluss": "Zulassung zur Fortbildungsprüfung"
+        },
+        {
+          "titel": "Aufstiegsfortbildung in Vollzeit oder berufsbegleitend (förderbar mit Aufstiegs-BAföG)",
+          "dauer_monate": null,
+          "abschluss": "Meister/-in, Fachwirt/-in (Bachelor Professional) oder Staatlich geprüfte/-r Techniker/-in"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "kfz-mechatroniker",
+        "elektroniker-handwerk",
+        "industriekaufmann",
+        "kaufmann-einzelhandel",
+        "industriemechaniker"
+      ],
+      "hinweis_laender": "Diese Abschlüsse liegen auf demselben DQR-Niveau 6 wie ein Bachelor. Seit 2020 tragen Fortbildungsabschlüsse nach BBiG/HwO zusätzlich Bezeichnungen wie „Bachelor Professional“. Dauer je nach Fortbildung und Vollzeit/Teilzeit sehr unterschiedlich. Meisterprämien gibt es je nach Bundesland.",
+      "basis_id": "aufstieg-bachelor-professional"
+    },
+    {
+      "id": "aufstieg-bachelor-professional--gymnasium",
+      "titel": "Ausbildung → Meister/-in, Fachwirt/-in oder Techniker/-in (Bachelor Professional)",
+      "von": {
+        "schulform": "gymnasium",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss (DQR 4)"
+        },
+        {
+          "titel": "Berufserfahrung (je nach Fortbildung vorausgesetzt)",
+          "dauer_monate": null,
+          "abschluss": "Zulassung zur Fortbildungsprüfung"
+        },
+        {
+          "titel": "Aufstiegsfortbildung in Vollzeit oder berufsbegleitend (förderbar mit Aufstiegs-BAföG)",
+          "dauer_monate": null,
+          "abschluss": "Meister/-in, Fachwirt/-in (Bachelor Professional) oder Staatlich geprüfte/-r Techniker/-in"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "kfz-mechatroniker",
+        "elektroniker-handwerk",
+        "industriekaufmann",
+        "kaufmann-einzelhandel",
+        "industriemechaniker"
+      ],
+      "hinweis_laender": "Diese Abschlüsse liegen auf demselben DQR-Niveau 6 wie ein Bachelor. Seit 2020 tragen Fortbildungsabschlüsse nach BBiG/HwO zusätzlich Bezeichnungen wie „Bachelor Professional“. Dauer je nach Fortbildung und Vollzeit/Teilzeit sehr unterschiedlich. Meisterprämien gibt es je nach Bundesland.",
+      "basis_id": "aufstieg-bachelor-professional"
+    },
+    {
+      "id": "aufstieg-master-professional",
+      "titel": "Bachelor Professional → Geprüfte/-r Betriebswirt/-in (Master Professional)",
+      "von": {
+        "schulform": "realschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Ausbildung und Aufstiegsfortbildung (z. B. Meister/-in oder Fachwirt/-in)",
+          "dauer_monate": null,
+          "abschluss": "Bachelor Professional (DQR 6)"
+        },
+        {
+          "titel": "Weitere Aufstiegsfortbildung",
+          "dauer_monate": null,
+          "abschluss": "z. B. Geprüfte/-r Betriebswirt/-in (IHK) oder Betriebswirt/-in nach der Handwerksordnung – Master Professional"
+        }
+      ],
+      "ziel_dqr": 7,
+      "ziel_beispiele": [
+        "kaufmann-buero",
+        "industriekaufmann",
+        "kfz-mechatroniker"
+      ],
+      "hinweis_laender": "Bundesweit einheitliche Fortbildungsordnungen; Angebote und Prüfungstermine je nach Kammer."
+    },
+    {
+      "id": "aufstieg-master-professional--hauptschule",
+      "titel": "Bachelor Professional → Geprüfte/-r Betriebswirt/-in (Master Professional)",
+      "von": {
+        "schulform": "hauptschule",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Ausbildung und Aufstiegsfortbildung (z. B. Meister/-in oder Fachwirt/-in)",
+          "dauer_monate": null,
+          "abschluss": "Bachelor Professional (DQR 6)"
+        },
+        {
+          "titel": "Weitere Aufstiegsfortbildung",
+          "dauer_monate": null,
+          "abschluss": "z. B. Geprüfte/-r Betriebswirt/-in (IHK) oder Betriebswirt/-in nach der Handwerksordnung – Master Professional"
+        }
+      ],
+      "ziel_dqr": 7,
+      "ziel_beispiele": [
+        "kaufmann-buero",
+        "industriekaufmann",
+        "kfz-mechatroniker"
+      ],
+      "hinweis_laender": "Bundesweit einheitliche Fortbildungsordnungen; Angebote und Prüfungstermine je nach Kammer.",
+      "basis_id": "aufstieg-master-professional"
+    },
+    {
+      "id": "meister-studium-ohne-abitur",
+      "titel": "Meister/-in, Fachwirt/-in oder Techniker/-in → Studium ohne Abitur",
+      "von": {
+        "schulform": "hauptschule",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Ausbildung und Aufstiegsfortbildung",
+          "dauer_monate": null,
+          "abschluss": "Meister/-in, Fachwirt/-in, Techniker/-in o. Ä."
+        },
+        {
+          "titel": "Bachelorstudium",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "bwl",
+        "maschinenbau",
+        "wirtschaftsingenieurwesen"
+      ],
+      "hinweis_laender": "Nach einem KMK-Beschluss (2009) erhalten Inhaber von Meister- und vergleichbaren Fortbildungsabschlüssen grundsätzlich einen allgemeinen Hochschulzugang. Die Umsetzung und Details regelt jedes Bundesland in seinem Hochschulgesetz. Förderung z. B. über das Aufstiegsstipendium."
+    },
+    {
+      "id": "meister-studium-ohne-abitur--realschule",
+      "titel": "Meister/-in, Fachwirt/-in oder Techniker/-in → Studium ohne Abitur",
+      "von": {
+        "schulform": "realschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Ausbildung und Aufstiegsfortbildung",
+          "dauer_monate": null,
+          "abschluss": "Meister/-in, Fachwirt/-in, Techniker/-in o. Ä."
+        },
+        {
+          "titel": "Bachelorstudium",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "bwl",
+        "maschinenbau",
+        "wirtschaftsingenieurwesen"
+      ],
+      "hinweis_laender": "Nach einem KMK-Beschluss (2009) erhalten Inhaber von Meister- und vergleichbaren Fortbildungsabschlüssen grundsätzlich einen allgemeinen Hochschulzugang. Die Umsetzung und Details regelt jedes Bundesland in seinem Hochschulgesetz. Förderung z. B. über das Aufstiegsstipendium.",
+      "basis_id": "meister-studium-ohne-abitur"
+    },
+    {
+      "id": "meister-studium-ohne-abitur--schulart-mehrere-bildungsgaenge",
+      "titel": "Meister/-in, Fachwirt/-in oder Techniker/-in → Studium ohne Abitur",
+      "von": {
+        "schulform": "schulart-mehrere-bildungsgaenge",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Ausbildung und Aufstiegsfortbildung",
+          "dauer_monate": null,
+          "abschluss": "Meister/-in, Fachwirt/-in, Techniker/-in o. Ä."
+        },
+        {
+          "titel": "Bachelorstudium",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "bwl",
+        "maschinenbau",
+        "wirtschaftsingenieurwesen"
+      ],
+      "hinweis_laender": "Nach einem KMK-Beschluss (2009) erhalten Inhaber von Meister- und vergleichbaren Fortbildungsabschlüssen grundsätzlich einen allgemeinen Hochschulzugang. Die Umsetzung und Details regelt jedes Bundesland in seinem Hochschulgesetz. Förderung z. B. über das Aufstiegsstipendium.",
+      "basis_id": "meister-studium-ohne-abitur"
+    },
+    {
+      "id": "meister-studium-ohne-abitur--gesamtschule",
+      "titel": "Meister/-in, Fachwirt/-in oder Techniker/-in → Studium ohne Abitur",
+      "von": {
+        "schulform": "gesamtschule",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Ausbildung und Aufstiegsfortbildung",
+          "dauer_monate": null,
+          "abschluss": "Meister/-in, Fachwirt/-in, Techniker/-in o. Ä."
+        },
+        {
+          "titel": "Bachelorstudium",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "bwl",
+        "maschinenbau",
+        "wirtschaftsingenieurwesen"
+      ],
+      "hinweis_laender": "Nach einem KMK-Beschluss (2009) erhalten Inhaber von Meister- und vergleichbaren Fortbildungsabschlüssen grundsätzlich einen allgemeinen Hochschulzugang. Die Umsetzung und Details regelt jedes Bundesland in seinem Hochschulgesetz. Förderung z. B. über das Aufstiegsstipendium.",
+      "basis_id": "meister-studium-ohne-abitur"
+    },
+    {
+      "id": "berufserfahrung-studium-ohne-abitur",
+      "titel": "Ausbildung + Berufserfahrung → fachgebundenes Studium ohne Abitur",
+      "von": {
+        "schulform": "hauptschule",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung (mindestens zweijährig)",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss"
+        },
+        {
+          "titel": "Berufserfahrung im erlernten Beruf",
+          "dauer_monate": 36,
+          "abschluss": "Voraussetzung für den fachgebundenen Hochschulzugang"
+        },
+        {
+          "titel": "Ggf. Eignungsprüfung oder Probestudium, dann Bachelorstudium in einem passenden Fach",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "soziale-arbeit",
+        "wirtschaftsinformatik",
+        "elektrotechnik"
+      ],
+      "hinweis_laender": "Nach dem KMK-Beschluss (2009) ist mit Ausbildung und in der Regel drei Jahren Berufserfahrung ein fachgebundener Hochschulzugang möglich, oft nach Eignungsprüfung oder Probestudium. Die genauen Regeln legt jedes Bundesland fest."
+    },
+    {
+      "id": "berufserfahrung-studium-ohne-abitur--realschule",
+      "titel": "Ausbildung + Berufserfahrung → fachgebundenes Studium ohne Abitur",
+      "von": {
+        "schulform": "realschule",
+        "klasse_min": 10
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung (mindestens zweijährig)",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss"
+        },
+        {
+          "titel": "Berufserfahrung im erlernten Beruf",
+          "dauer_monate": 36,
+          "abschluss": "Voraussetzung für den fachgebundenen Hochschulzugang"
+        },
+        {
+          "titel": "Ggf. Eignungsprüfung oder Probestudium, dann Bachelorstudium in einem passenden Fach",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "soziale-arbeit",
+        "wirtschaftsinformatik",
+        "elektrotechnik"
+      ],
+      "hinweis_laender": "Nach dem KMK-Beschluss (2009) ist mit Ausbildung und in der Regel drei Jahren Berufserfahrung ein fachgebundener Hochschulzugang möglich, oft nach Eignungsprüfung oder Probestudium. Die genauen Regeln legt jedes Bundesland fest.",
+      "basis_id": "berufserfahrung-studium-ohne-abitur"
+    },
+    {
+      "id": "berufserfahrung-studium-ohne-abitur--schulart-mehrere-bildungsgaenge",
+      "titel": "Ausbildung + Berufserfahrung → fachgebundenes Studium ohne Abitur",
+      "von": {
+        "schulform": "schulart-mehrere-bildungsgaenge",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung (mindestens zweijährig)",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss"
+        },
+        {
+          "titel": "Berufserfahrung im erlernten Beruf",
+          "dauer_monate": 36,
+          "abschluss": "Voraussetzung für den fachgebundenen Hochschulzugang"
+        },
+        {
+          "titel": "Ggf. Eignungsprüfung oder Probestudium, dann Bachelorstudium in einem passenden Fach",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "soziale-arbeit",
+        "wirtschaftsinformatik",
+        "elektrotechnik"
+      ],
+      "hinweis_laender": "Nach dem KMK-Beschluss (2009) ist mit Ausbildung und in der Regel drei Jahren Berufserfahrung ein fachgebundener Hochschulzugang möglich, oft nach Eignungsprüfung oder Probestudium. Die genauen Regeln legt jedes Bundesland fest.",
+      "basis_id": "berufserfahrung-studium-ohne-abitur"
+    },
+    {
+      "id": "berufserfahrung-studium-ohne-abitur--gesamtschule",
+      "titel": "Ausbildung + Berufserfahrung → fachgebundenes Studium ohne Abitur",
+      "von": {
+        "schulform": "gesamtschule",
+        "klasse_min": 9
+      },
+      "schritte": [
+        {
+          "titel": "Duale Ausbildung (mindestens zweijährig)",
+          "dauer_monate": 36,
+          "abschluss": "Berufsabschluss"
+        },
+        {
+          "titel": "Berufserfahrung im erlernten Beruf",
+          "dauer_monate": 36,
+          "abschluss": "Voraussetzung für den fachgebundenen Hochschulzugang"
+        },
+        {
+          "titel": "Ggf. Eignungsprüfung oder Probestudium, dann Bachelorstudium in einem passenden Fach",
+          "dauer_monate": 36,
+          "abschluss": "Bachelor"
+        }
+      ],
+      "ziel_dqr": 6,
+      "ziel_beispiele": [
+        "soziale-arbeit",
+        "wirtschaftsinformatik",
+        "elektrotechnik"
+      ],
+      "hinweis_laender": "Nach dem KMK-Beschluss (2009) ist mit Ausbildung und in der Regel drei Jahren Berufserfahrung ein fachgebundener Hochschulzugang möglich, oft nach Eignungsprüfung oder Probestudium. Die genauen Regeln legt jedes Bundesland fest.",
+      "basis_id": "berufserfahrung-studium-ohne-abitur"
+    }
+  ]
+}

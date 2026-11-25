@@ -26,6 +26,7 @@
       "stand": "2025-10"
     }
   ],
+  "hinweis_oeffentlich": "Die Vergütungen sind tarifliche Durchschnittswerte des Bundesinstituts für Berufsbildung (BIBB), Stand 1. Oktober 2025. Je nach Betrieb, Branche und Region kann deine Vergütung abweichen.",
   "hinweis": "Auswahl: rund 50 der häufigsten dualen Ausbildungsberufe nach BBiG/HwO laut BIBB-Rangliste der Neuabschlüsse 2025 (Reihenfolge ist keine geprüfte Rangfolge). Schulische Ausbildungen (z. B. Pflegefachmann/-frau, Erzieher/-in) sind in der BIBB-Rangliste nicht enthalten. Alle Vergütungswerte geprueft:false – siehe docs/content/QUELLEN.md.",
   "berufe": [
     {
@@ -40,7 +41,7 @@
         "Fahrzeuge für die Hauptuntersuchung vorbereiten"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; Betriebe stellen oft mit mittlerem Schulabschluss oder gutem Hauptschulabschluss ein",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder guter Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1090,
         "jahr2": 1148,
@@ -54,7 +55,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Für Industrie und Handel (IH) nennt die Tabelle einen höheren Gesamtdurchschnitt (ca. 1.311 €)."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw). Für Industrie und Handel (IH) nennt die Tabelle einen höheren Gesamtdurchschnitt (ca. 1.311 €). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Technisches Verständnis",
@@ -93,7 +95,7 @@
         "Daten am Computer pflegen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; meist mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1161,
         "jahr2": 1245,
@@ -107,7 +109,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Weitere Werte laut Tabelle: Handwerk 1.017 / 1.108 / 1.238 €, Öffentlicher Dienst 1.270 / 1.321 / 1.371 €."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Weitere Werte laut Tabelle: Handwerk 1.017 / 1.108 / 1.238 €, Öffentlicher Dienst 1.270 / 1.321 / 1.371 €. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Organisationstalent",
@@ -146,7 +149,7 @@
         "Verkaufsfläche ordentlich halten"
       ],
       "dauer_monate": 24,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1084,
         "jahr2": 1195,
@@ -160,7 +163,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Zweijährige Ausbildung, daher nur zwei Lehrjahre."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Zweijährige Ausbildung, daher nur zwei Lehrjahre. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Kontaktfreude",
@@ -195,7 +199,7 @@
         "Aktionen und Warenpräsentation planen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder guter Hauptschulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder guter Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1087,
         "jahr2": 1195,
@@ -209,7 +213,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Einzelhandel ist regional sehr unterschiedlich tarifiert."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Einzelhandel ist regional sehr unterschiedlich tarifiert. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Kommunikationsstärke",
@@ -244,7 +249,7 @@
         "Hygiene- und Datenschutzregeln einhalten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; meist mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1023,
         "jahr2": 1115,
@@ -258,7 +263,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Freie Berufe (FB). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Freie Berufe (FB). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Freie Berufe (FB). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Einfühlungsvermögen",
@@ -293,7 +299,7 @@
         "Termine und Abrechnung bearbeiten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; meist mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1021,
         "jahr2": 1115,
@@ -307,7 +313,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Freie Berufe (FB). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Freie Berufe (FB). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Freie Berufe (FB). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Geschick mit den Händen",
@@ -342,7 +349,7 @@
         "IT-Sicherheit beachten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1211,
         "jahr2": 1279,
@@ -356,7 +363,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH), alle Fachrichtungen. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Logisches Denken",
@@ -391,7 +399,7 @@
         "Kosten berechnen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1195,
         "jahr2": 1267,
@@ -405,7 +413,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Zahlenverständnis",
@@ -444,7 +453,7 @@
         "Störungen finden und beheben"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder guter Hauptschulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder guter Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 979,
         "jahr2": 1050,
@@ -458,7 +467,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw), alle Fachrichtungen. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Technisches Verständnis",
@@ -493,7 +503,7 @@
         "Kundschaft zu Energiesparen beraten"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss oder mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": null,
         "jahr2": null,
@@ -507,7 +517,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Bundeswert der Zeile Hw in der BIBB-Gesamtübersicht 2025 in den Suchauszügen nicht eindeutig lesbar. Laut BIBB gibt es für diesen Beruf in Ostdeutschland keine Tarifvereinbarungen. Eine Sekundärquelle nennt 927 / 986 / 1.071 / 1.140 € mit Verweis auf BIBB – nicht übernommen, da nicht belegbar."
+        "hinweis": "Bundeswert der Zeile Hw in der BIBB-Gesamtübersicht 2025 in den Suchauszügen nicht eindeutig lesbar. Laut BIBB gibt es für diesen Beruf in Ostdeutschland keine Tarifvereinbarungen. Eine Sekundärquelle nennt 927 / 986 / 1.071 / 1.140 € mit Verweis auf BIBB – nicht übernommen, da nicht belegbar.",
+        "hinweis_oeffentlich": "Für diesen Beruf haben wir noch keinen geprüften Durchschnittswert. Es gilt mindestens die gesetzliche Mindestausbildungsvergütung."
       },
       "staerken": [
         "Handwerkliches Geschick",
@@ -542,7 +553,7 @@
         "Messungen und Prüfungen durchführen"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1221,
         "jahr2": 1287,
@@ -556,7 +567,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Technisches Verständnis",
@@ -595,7 +607,7 @@
         "Mit Scannern, Lagersoftware und Staplern arbeiten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss oder mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1171,
         "jahr2": 1247,
@@ -609,7 +621,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Sorgfalt",
@@ -644,7 +657,7 @@
         "Bei Auslandsgeschäften Zoll und Transport beachten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1198,
         "jahr2": 1271,
@@ -658,7 +671,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH), alle Fachrichtungen. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Verhandlungsgeschick",
@@ -693,7 +707,7 @@
         "Mit Mandantinnen und Mandanten kommunizieren"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": null,
         "jahr2": null,
@@ -707,7 +721,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Laut BIBB gibt es für diesen Beruf keine Tarifverträge zur Ausbildungsvergütung, daher kein Wert in der Gesamtübersicht. Steuerberaterkammern veröffentlichen teils Empfehlungen – nicht geprüft."
+        "hinweis": "Laut BIBB gibt es für diesen Beruf keine Tarifverträge zur Ausbildungsvergütung, daher kein Wert in der Gesamtübersicht. Steuerberaterkammern veröffentlichen teils Empfehlungen – nicht geprüft.",
+        "hinweis_oeffentlich": "Für diesen Beruf gibt es keine Tarifverträge zur Ausbildungsvergütung. Es gilt mindestens die gesetzliche Mindestausbildungsvergütung."
       },
       "staerken": [
         "Zahlenverständnis",
@@ -742,7 +757,7 @@
         "Regeln zu Datenschutz und Geldwäsche beachten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; häufig Abitur oder Fachhochschulreife",
+      "schulabschluss_typisch": "Abitur oder Fachhochschulreife (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1333,
         "jahr2": 1387,
@@ -756,7 +771,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Kommunikationsstärke",
@@ -791,7 +807,7 @@
         "Sicherheitsprüfungen durchführen"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1227,
         "jahr2": 1310,
@@ -805,7 +821,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Technisches Verständnis",
@@ -844,7 +861,7 @@
         "Mit Plänen und Schaltplänen arbeiten"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1224,
         "jahr2": 1297,
@@ -858,7 +875,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Werte nur aus einer Websuche-Zusammenfassung mit Verweis auf BIBB 2025 (Sekundärquelle), nicht im Tabellenauszug selbst gesehen – besonders sorgfältig prüfen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Werte nur aus einer Websuche-Zusammenfassung mit Verweis auf BIBB 2025 (Sekundärquelle), nicht im Tabellenauszug selbst gesehen – besonders sorgfältig prüfen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Technisches Verständnis",
@@ -897,7 +915,7 @@
         "Beim Kunden einbauen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss oder mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 827,
         "jahr2": 964,
@@ -911,7 +929,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Großer Unterschied zwischen West (833 / 970 / 1.087 €) und Ost (780 / 893 / 1.064 €) laut Ost/West-Tabelle."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw). Großer Unterschied zwischen West (833 / 970 / 1.087 €) und Ost (780 / 893 / 1.064 €) laut Ost/West-Tabelle. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Handwerkliches Geschick",
@@ -946,7 +965,7 @@
         "Mit Flurförderzeugen arbeiten"
       ],
       "dauer_monate": 24,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1151,
         "jahr2": 1231,
@@ -960,7 +979,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Zweijährige Ausbildung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Zweijährige Ausbildung. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Zuverlässigkeit",
@@ -995,7 +1015,7 @@
         "Akten und Daten verwalten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; meist mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1286,
         "jahr2": 1337,
@@ -1009,7 +1029,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Öffentlicher Dienst (ÖD), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Öffentlicher Dienst (ÖD), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Öffentlicher Dienst (ÖD), alle Fachrichtungen. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Genauigkeit",
@@ -1044,7 +1065,7 @@
         "Termine und Kasse betreuen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss oder mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 623,
         "jahr2": 723,
@@ -1058,7 +1079,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Laut Tabelle mit Fußnote gekennzeichnet; bei Werten unter der Mindestausbildungsvergütung gilt für Ausbildungsbeginn ab 2020 die gesetzliche Mindestvergütung – Fußnote an der Primärquelle prüfen."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Laut Tabelle mit Fußnote gekennzeichnet; Werte liegen teils unter der Mindestausbildungsvergütung 2025 (682 € im 1. Jahr) – tarifliche Abweichung nach § 17 BBiG möglich. Fußnotentext und öffentliche Darstellung prüfen (Legal)",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Kreativität",
@@ -1093,7 +1115,7 @@
         "Farbtöne mit Kundschaft abstimmen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 868,
         "jahr2": 961,
@@ -1107,7 +1129,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw), alle Fachrichtungen. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Sinn für Farben und Formen",
@@ -1142,7 +1165,7 @@
         "Hygieneregeln einhalten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1120,
         "jahr2": 1233,
@@ -1156,7 +1179,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Laut BIBB liegen für Ostdeutschland keine einschlägigen Tarifvereinbarungen vor; der Bundeswert bezieht sich vor allem auf Westdeutschland."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Laut BIBB liegen für Ostdeutschland keine einschlägigen Tarifvereinbarungen vor; der Bundeswert bezieht sich vor allem auf Westdeutschland. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Kreativität",
@@ -1191,7 +1215,7 @@
         "Mit Kundschaft und Fahrern kommunizieren"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1119,
         "jahr2": 1206,
@@ -1205,7 +1229,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zeile nicht im BIBB-Tabellenauszug gefunden; Werte aus Sekundärquellen, die sich auf BIBB 2025 berufen. An der BIBB-Gesamtübersicht prüfen."
+        "hinweis": "Zeile nicht im BIBB-Tabellenauszug gefunden; Werte aus Sekundärquellen, die sich auf BIBB 2025 berufen. An der BIBB-Gesamtübersicht prüfen.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Organisationstalent",
@@ -1240,7 +1265,7 @@
         "Anlagen warten"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss oder mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 968,
         "jahr2": 1045,
@@ -1254,7 +1279,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw), alle Fachrichtungen. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Handwerkliches Geschick",
@@ -1289,7 +1315,7 @@
         "Altbauten sanieren"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss oder mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1070,
         "jahr2": 1281,
@@ -1303,7 +1329,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Schwindelfreiheit",
@@ -1338,7 +1365,7 @@
         "Reservierungen und Rechnungen bearbeiten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1112,
         "jahr2": 1231,
@@ -1352,7 +1379,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Freundlichkeit",
@@ -1387,7 +1415,7 @@
         "Hygieneregeln einhalten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1029,
         "jahr2": 1104,
@@ -1401,7 +1429,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Schwerpunkte. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Schwerpunkte. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw), alle Schwerpunkte. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Freundlichkeit",
@@ -1436,7 +1465,7 @@
         "Kundschaft beraten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss oder mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1118,
         "jahr2": 1223,
@@ -1450,7 +1479,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Landwirtschaft (Lw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Landwirtschaft (Lw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Landwirtschaft (Lw), alle Fachrichtungen. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Freude an Natur",
@@ -1485,7 +1515,7 @@
         "Kundschaft technisch unterstützen"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1236,
         "jahr2": 1298,
@@ -1499,7 +1529,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Feinmotorik",
@@ -1538,7 +1569,7 @@
         "Maschinen beim Kunden vor Ort reparieren"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss oder mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 927,
         "jahr2": 1019,
@@ -1552,7 +1583,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Technisches Verständnis",
@@ -1587,7 +1619,7 @@
         "Altbauten sanieren"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1079,
         "jahr2": 1286,
@@ -1601,7 +1633,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Körperliche Fitness",
@@ -1636,7 +1669,7 @@
         "Entwässerung einbauen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1084,
         "jahr2": 1286,
@@ -1650,7 +1683,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Für Industrie und Handel (IH) nennt die Tabelle 1.091 / 1.272 / 1.508 €."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw). Für Industrie und Handel (IH) nennt die Tabelle 1.091 / 1.272 / 1.508 €. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Körperliche Fitness",
@@ -1685,7 +1719,7 @@
         "Solaranlagen auf Dächern montieren"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1002,
         "jahr2": 1155,
@@ -1699,7 +1733,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Schwindelfreiheit",
@@ -1734,7 +1769,7 @@
         "Risiken einschätzen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; häufig Abitur oder Fachhochschulreife",
+      "schulabschluss_typisch": "Abitur oder Fachhochschulreife (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1336,
         "jahr2": 1407,
@@ -1748,7 +1783,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Kommunikationsstärke",
@@ -1783,7 +1819,7 @@
         "Bei Kauf und Verkauf beraten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; häufig Abitur oder Fachhochschulreife",
+      "schulabschluss_typisch": "Abitur oder Fachhochschulreife (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1170,
         "jahr2": 1278,
@@ -1797,7 +1833,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Kommunikationsstärke",
@@ -1832,7 +1869,7 @@
         "Werkstattaufträge organisieren"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1101,
         "jahr2": 1147,
@@ -1846,7 +1883,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Für das Handwerk (Hw) nennt die Tabelle einen ähnlichen Gesamtdurchschnitt (ca. 1.152 €)."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Für das Handwerk (Hw) nennt die Tabelle einen ähnlichen Gesamtdurchschnitt (ca. 1.152 €). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Kommunikationsstärke",
@@ -1881,7 +1919,7 @@
         "Verkaufszahlen auswerten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1146,
         "jahr2": 1233,
@@ -1895,7 +1933,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Digitale Neugier",
@@ -1930,7 +1969,7 @@
         "Betrieb und Kosten planen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss oder mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 902,
         "jahr2": 993,
@@ -1944,7 +1983,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Landwirtschaft (Lw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Landwirtschaft (Lw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Landwirtschaft (Lw). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Freude an Natur und Tieren",
@@ -1979,7 +2019,7 @@
         "Termine und Abrechnung bearbeiten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; meist mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": null,
         "jahr2": null,
@@ -1993,7 +2033,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "In den Suchauszügen nur der Gesamtdurchschnitt über alle Lehrjahre gefunden: 1.014 € (BIBB 2025, Freie Berufe). Werte je Lehrjahr an der BIBB-Gesamtübersicht nachtragen."
+        "hinweis": "In den Suchauszügen nur der Gesamtdurchschnitt über alle Lehrjahre gefunden: 1.014 € (BIBB 2025, Freie Berufe). Werte je Lehrjahr an der BIBB-Gesamtübersicht nachtragen.",
+        "hinweis_oeffentlich": "Für diesen Beruf haben wir noch keinen geprüften Durchschnittswert. Es gilt mindestens die gesetzliche Mindestausbildungsvergütung."
       },
       "staerken": [
         "Liebe zu Tieren",
@@ -2028,7 +2069,7 @@
         "Freiverkäufliche Produkte verkaufen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": null,
         "jahr2": null,
@@ -2042,7 +2083,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "In den Suchauszügen nur der Gesamtdurchschnitt über alle Lehrjahre gefunden: 925 € (BIBB 2025, Freie Berufe). Werte je Lehrjahr an der BIBB-Gesamtübersicht nachtragen."
+        "hinweis": "In den Suchauszügen nur der Gesamtdurchschnitt über alle Lehrjahre gefunden: 925 € (BIBB 2025, Freie Berufe). Werte je Lehrjahr an der BIBB-Gesamtübersicht nachtragen.",
+        "hinweis_oeffentlich": "Für diesen Beruf haben wir noch keinen geprüften Durchschnittswert. Es gilt mindestens die gesetzliche Mindestausbildungsvergütung."
       },
       "staerken": [
         "Sorgfalt",
@@ -2077,7 +2119,7 @@
         "Gebühren abrechnen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": null,
         "jahr2": null,
@@ -2091,7 +2133,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Laut BIBB gibt es für diesen Beruf keine Tarifverträge zur Ausbildungsvergütung, daher kein Wert in der Gesamtübersicht. Rechtsanwaltskammern veröffentlichen teils Empfehlungen – nicht geprüft."
+        "hinweis": "Laut BIBB gibt es für diesen Beruf keine Tarifverträge zur Ausbildungsvergütung, daher kein Wert in der Gesamtübersicht. Rechtsanwaltskammern veröffentlichen teils Empfehlungen – nicht geprüft.",
+        "hinweis_oeffentlich": "Für diesen Beruf gibt es keine Tarifverträge zur Ausbildungsvergütung. Es gilt mindestens die gesetzliche Mindestausbildungsvergütung."
       },
       "staerken": [
         "Sprachgefühl",
@@ -2126,7 +2169,7 @@
         "Lenk- und Ruhezeiten einhalten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "schulabschluss_typisch": "Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1114,
         "jahr2": 1200,
@@ -2140,7 +2183,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Verantwortungsbewusstsein",
@@ -2175,7 +2219,7 @@
         "Mit Kundschaft Entwürfe abstimmen"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; häufig mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1156,
         "jahr2": 1227,
@@ -2189,7 +2233,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH), alle Fachrichtungen. Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Kreativität",
@@ -2224,7 +2269,7 @@
         "Brillen reparieren"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 915,
         "jahr2": 990,
@@ -2238,7 +2283,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Handwerk (Hw). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Feinmotorik",
@@ -2273,7 +2319,7 @@
         "Qualitäts- und Datenschutzregeln beachten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1244,
         "jahr2": 1317,
@@ -2287,7 +2333,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Organisationstalent",
@@ -2322,7 +2369,7 @@
         "Sicherheits- und Umweltregeln einhalten"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1185,
         "jahr2": 1274,
@@ -2336,7 +2383,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Interesse an Chemie",
@@ -2375,7 +2423,7 @@
         "Werkzeuge auswählen"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder guter Hauptschulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder guter Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1224,
         "jahr2": 1284,
@@ -2389,7 +2437,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Genauigkeit",
@@ -2424,7 +2473,7 @@
         "Fehler in automatisierten Anlagen finden"
       ],
       "dauer_monate": 42,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Abitur (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": 1211,
         "jahr2": 1283,
@@ -2438,7 +2487,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung.",
+        "hinweis_oeffentlich": "Werte für den Bereich Industrie und Handel (IH). Tarifliche Durchschnittswerte (Stand 1. Oktober 2025). Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der gesetzlichen Mindestausbildungsvergütung. Was du wirklich bekommst, steht in deinem Ausbildungsvertrag."
       },
       "staerken": [
         "Logisches Denken",
@@ -2477,7 +2527,7 @@
         "Hygiene- und Qualitätsstandards einhalten"
       ],
       "dauer_monate": 36,
-      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Hauptschulabschluss",
+      "schulabschluss_typisch": "mittlerer Schulabschluss oder Hauptschulabschluss (typisch – rechtlich ist kein bestimmter Abschluss vorgeschrieben)",
       "verguetung": {
         "jahr1": null,
         "jahr2": null,
@@ -2491,7 +2541,8 @@
           "stand": "2025-10"
         },
         "geprueft": false,
-        "hinweis": "Zeile in den Suchauszügen der BIBB-Gesamtübersicht 2025 nicht gefunden. An der Primärquelle nachtragen."
+        "hinweis": "Zeile in den Suchauszügen der BIBB-Gesamtübersicht 2025 nicht gefunden. An der Primärquelle nachtragen.",
+        "hinweis_oeffentlich": "Für diesen Beruf haben wir noch keinen geprüften Durchschnittswert. Es gilt mindestens die gesetzliche Mindestausbildungsvergütung."
       },
       "staerken": [
         "Organisationstalent",

@@ -26,6 +26,7 @@
       "stand": "2026-11"
     }
   ],
+  "hinweis_oeffentlich": "Die Studiendauer ist die typische Regelstudienzeit und kann je Hochschule abweichen. NC-Werte ändern sich jedes Jahr – schau bei der jeweiligen Hochschule nach.",
   "hinweis": "Auswahl: häufig gewählte Studienfächer nach Destatis (Studierende nach Fächergruppen/Studienbereichen) und die größten Fachrichtungen des dualen Studiums nach BIBB AusbildungPlus 2024 (Wirtschaftswissenschaften, Ingenieurwesen, Gesundheit). Keine geprüfte Rangfolge; Einzelzahlen je Fach waren nicht abrufbar. dauer_semester = typische Regelstudienzeit des Bachelors bzw. Staatsexamens, kann je Hochschule abweichen. Keine NC-Werte.",
   "studiengaenge": [
     {
