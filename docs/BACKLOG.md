@@ -37,6 +37,7 @@ Status: abgeschlossen 2026-11-25. Website-Texte rechtlich vorgeprüft und umgese
 - Nachwirkung: Beteiligung läuft für während der Laufzeit geschlossene Unternehmensverträge **bis zu deren aktuellem Laufzeitende** weiter, nicht für Verlängerungen.
 - Datenschutzbeauftragte/r: **interne Person** (mit Fachkundeschulung, nicht Geschäftsführung).
 - Landingpage „Vier Zielgruppen“: bleibt ohne Pilot-Zusatz.
+- **Schülerkonten und gut aufbereiteter Schüler-Content sind Voraussetzung für den Pilot** – ohne sie kein Pilotstart. Minderjährigen-Fragen an den Anwalt bleiben in Gruppe „vor Pilotstart zwingend“.
 
 ## Offene Entscheidungen für Marcus
 - [ ] GmbH gründen (nach internem Test) – danach Impressumsangaben ausfüllen, Datenschutzerklärung finalisieren (nach Legal-Vorprüfung, mit Anwalt)
@@ -46,12 +47,11 @@ Status: abgeschlossen 2026-11-25. Website-Texte rechtlich vorgeprüft und umgese
 - [ ] Interne Person als Datenschutzbeauftragte/n bestimmen und schulen lassen (nicht Geschäftsführung; DSFA für Daten Minderjähriger voraussichtlich Pflicht → § 38 BDSG)
 - [ ] Auftragsverarbeitungsverträge mit Vercel und Supabase abschließen
 - [ ] Anwalt: zusätzlich Fragen A14–A18 aus docs/legal/2026-11-25-review-sprint2.md
-- [ ] Werden Schülerkonten schon in der Pilotphase freigeschaltet? (bestimmt Dringlichkeit der Minderjährigen-Fragen an den Anwalt)
 - [ ] Hinweisblatt Steuern für Fördervereine (nach Steuerberater)
 - [ ] Steuerberater beauftragen: Vorprüfung docs/steuer/2026-11-25-vorpruefung-foerdervereinsmodell.md bestätigen lassen (20 Fragen)
 
 ## Backlog
-- [ ] S-001 | S | P1 | Bestandsaufnahme Schüler-Wizard und Bibliotheken gegen Supabase-Schema — Akzeptanz: Liste funktionierender/defekter Schritte — Quelle: Marcus
+- [ ] S-001 | S | P0 | Schülerbereich: Es existiert im Repo noch kein Schüler-Code/Schema (`supabase_setup.sql` fehlt) → statt Bestandsaufnahme Konzept + Aufbau: Content-Konzept (Berufs-/Studiumsbibliothek, Förderungen), Datenquellen, Schülerkonto inkl. U16-Eltern-Freigabe (S-002) — pilotkritisch laut Entscheidung — Quelle: Marcus
 - [ ] F-002 | F | P1 | Einladungslink/QR-Code für Schüler im Förderverein-Dashboard — Quelle: Marcus
 - [ ] U-001 | U | P1 | Unternehmens-Registrierung + Firmenprofil (inkl. Supabase-Schema `companies` mit RLS) — Quelle: Marcus
 - [ ] U-002 | U | P2 | Angebot anlegen (Praktikum/Ausbildung) und Sichtbarkeit für Schüler einer Schule — Quelle: Marcus
@@ -65,7 +65,7 @@ Status: abgeschlossen 2026-11-25. Website-Texte rechtlich vorgeprüft und umgese
 - [ ] F-005 | F | P2 | Schulauswahl über amtliche Schulnummer statt Freitext (robuste Dublettenerkennung) + Rate-Limit für check_school_registered — Quelle: Bericht F-001b
 - [ ] F-006 | F | P1 | Formale Zustimmung der Schulleitung (Einladungslink an Schulleitung, Status „wartet auf Schulleitung“, Verein erst danach aktiv) — Quelle: Entscheidung Marcus
 - [ ] F-007 | F | P1 | Förderverein-Jahresvertrag bei Aktivierung (Vertragstext von edufy-legal, Annahme im Dashboard, Laufzeit/Kündigung im Schema) — blockiert durch L-001/T-001
-- [ ] S-002 | S | P1 | Eltern-Freigabe für Schüler unter 16 per E-Mail-Link, eingeschränktes Konto bis zur Freigabe — Quelle: Entscheidung Marcus
+- [ ] S-002 | S | P0 | Eltern-Freigabe für Schüler unter 16 per E-Mail-Link, eingeschränktes Konto bis zur Freigabe — Quelle: Entscheidung Marcus
 - [ ] U-003 | U | P2 | Stripe-Integration (Billing/SEPA/Rechnung) nach Pilotphase, Gutschriften an Fördervereine — Quelle: Entscheidung Marcus
 
 
