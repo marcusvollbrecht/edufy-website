@@ -139,13 +139,13 @@
     <li>Angaben zum Förderverein: Name des Vereins, Angabe zur Gemeinnützigkeit, freiwillig Vereinsregister-Nummer und Registergericht.</li>
     <li>Angaben zu Ihrer Person als Ansprechperson: Vorname, Nachname, Funktion im Verein, E-Mail-Adresse, freiwillig Telefonnummer.</li>
     <li>Zugangsdaten: Passwort (wird von Supabase nur als kryptografischer Hash gespeichert, nicht im Klartext).</li>
-    <li>Ihre Bestätigung, im Vorstand des Vereins zu sein oder vom Vorstand beauftragt zu sein, sowie Ihre Zustimmung zu dieser Datenschutzerklärung mit Zeitpunkt (Nachweis nach Art. 7 Abs. 1 DSGVO).</li>
+    <li>Ihre Bestätigung, im Vorstand des Vereins zu sein oder vom Vorstand beauftragt zu sein, sowie Zeitpunkt der Registrierung mit angezeigtem Datenschutzhinweis.</li>
     <li>Technische Kontodaten: Zeitpunkt der Registrierung, der E-Mail-Bestätigung und der letzten Anmeldung. <span class="ph">[BITTE PRÜFEN: Speichert Supabase Auth zusätzlich IP-Adressen in Audit-Logs? Falls ja, mit Speicherdauer ergänzen]</span></li>
   </ul>
   <p><strong>Ablauf:</strong> Nach Schritt 1 des Formulars prüfen wir anhand von Schulname und Postleitzahl, ob für diese Schule bereits ein Förderverein registriert ist. Diese beiden Angaben werden dafür an unsere Datenbank übermittelt, aber nicht gespeichert. Bis Sie Ihre E-Mail-Adresse über den Link in unserer Bestätigungs-E-Mail bestätigt haben, speichern wir Ihre Formularangaben vorübergehend in den Metadaten Ihres Kontos. Nach der Bestätigung übernehmen wir sie in die Datenbank und löschen sie aus den Metadaten. Kann die Registrierung endgültig nicht abgeschlossen werden (z.&nbsp;B. weil für die Schule schon ein Förderverein registriert ist), löschen wir die Angaben ebenfalls aus den Metadaten. Nach der Anmeldung speichert Ihr Browser ein Anmelde-Token im lokalen Speicher (siehe Nr. 15).</p>
   <ul>
-    <li>Zweck: Anlegen und Verwalten Ihres Kontos, Zuordnung des Fördervereins zu seiner Schule, Vermeidung doppelter Registrierungen für dieselbe Schule und Kontaktaufnahme für das persönliche Gespräch.</li>
-    <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen bzw. Nutzungsverhältnis für das Konto) für die Pflichtangaben; Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) für die freiwilligen Angaben (Telefonnummer, Vereinsregister-Nummer, Registergericht). Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen, z.&nbsp;B. per E-Mail an <a href="mailto:hallo@edufy.world">hallo@edufy.world</a>.</li>
+    <li>Zweck: Anlegen und Verwalten Ihres Kontos, Zuordnung des Fördervereins zu seiner Schule, Vermeidung doppelter Registrierungen für dieselbe Schule und Kontaktaufnahme für das persönliche Gespräch (Beteiligung des Vereins, Zustimmung der Schulleitung, Jahresvereinbarung).</li>
+    <li>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen bzw. Nutzungsverhältnis für das Konto) für die Pflichtangaben; für die freiwilligen Angaben (Telefonnummer, Vereinsregister-Nummer, Registergericht): <span class="ph">[BITTE PRÜFEN: Art. 6 Abs. 1 lit. a oder f DSGVO – keine separate Einwilligungs-Checkbox vorhanden]</span>. Freiwillige Angaben können Sie jederzeit per E-Mail an <a href="mailto:hallo@edufy.world">hallo@edufy.world</a> löschen lassen.</li>
     <li>Pflichtangaben: Ohne die Pflichtangaben ist eine Registrierung nicht möglich. Die Angabe ist freiwillig; es besteht keine gesetzliche Pflicht.</li>
     <li>Empfänger: Supabase als Auftragsverarbeiter für Datenbank, Anmeldung und den Versand der Bestätigungs- und Passwort-E-Mails (siehe Nr. 7) <span class="ph">[BITTE PRÜFEN: Versand über Supabase oder eigenen E-Mail-Dienst (SMTP)? Dann Anbieter ergänzen]</span>. Weitergabe an Unternehmen oder andere Nutzer der Plattform: <span class="ph">[BITTE AUSFÜLLEN: offene Entscheidung – z.&nbsp;B. ob Unternehmen den Namen des Vereins sehen]</span>.</li>
     <li>Speicherdauer: für die Dauer des Nutzerkontos; danach Löschung, soweit keine gesetzlichen Aufbewahrungspflichten (z.&nbsp;B. §§ 147 AO, 257 HGB bei der Abrechnung der Beteiligung von Fördervereinen) bestehen. Konten, deren E-Mail-Adresse nicht bestätigt wurde, und Konten, die keinem Verein zugeordnet werden konnten, löschen wir nach <span class="ph">[BITTE AUSFÜLLEN: Frist, z.&nbsp;B. 30 Tagen – technische Umsetzung steht noch aus]</span>.</li>
@@ -164,7 +164,7 @@
 
   <h2 id="rechtsgrundlagen">9. Rechtsgrundlagen im Überblick</h2>
   <ul>
-    <li>Art. 6 Abs. 1 lit. a DSGVO – Einwilligung (Warteliste, freiwillige Angaben).</li>
+    <li>Art. 6 Abs. 1 lit. a DSGVO – Einwilligung (Warteliste; freiwillige Angaben bei der Förderverein-Registrierung <span class="ph">[BITTE PRÜFEN: lit. a oder f]</span>).</li>
     <li>Art. 6 Abs. 1 lit. b DSGVO – Vertragserfüllung (Nutzerkonto, Leistungen der Plattform).</li>
     <li>Art. 6 Abs. 1 lit. c DSGVO – rechtliche Verpflichtung (z.&nbsp;B. steuerliche Aufbewahrung).</li>
     <li>Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse (Betrieb und Sicherheit der Website).</li>
