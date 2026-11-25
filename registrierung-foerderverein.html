@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Förderverein kostenlos registrieren – Edufy</title>
+  <meta name="description" content="Registrieren Sie den Förderverein Ihrer Schule kostenlos bei Edufy. Keine Gebühren, kein Vertrag – in etwa 5 Minuten erledigt." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:," />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F3A; --teal: #0B7A70; --teal-dark: #08625A; --teall: #5EEAD4;
+      --gold: #F59E0B; --white: #FFFFFF; --off: #F8FAFC;
+      --text: #1E293B; --muted: #475569; --on-dark: #94A3B8; --border: #CBD5E1;
+      --error: #B91C1C; --error-bg: #FEF2F2; --ok-bg: #ECFDF5; --info-bg: #F0FDFA; --warn-bg: #FFFBEB;
+      --font: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-head: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+    }
+    [hidden] { display: none !important; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font); background: var(--off); color: var(--text); font-size: 1.0625rem; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: var(--teal); }
+    a:hover { color: var(--teal-dark); }
+    :focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; border-radius: 4px; }
+    .skip { position: absolute; left: -9999px; top: 0; background: var(--white); color: var(--navy); padding: .75rem 1rem; z-index: 100; }
+    .skip:focus { left: 1rem; top: 1rem; }
+    .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    /* Kopfzeile */
+    .site-header { background: var(--navy); padding: 0 1rem; }
+    .site-header-inner { max-width: 960px; margin: 0 auto; min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .logo { font-family: var(--font-head); font-size: 1.5rem; color: var(--white); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+    .logo span { color: var(--teall); }
+    .site-header a.header-link { color: var(--on-dark); text-decoration: none; font-size: .9375rem; display: inline-flex; align-items: center; min-height: 44px; padding: 0 .25rem; }
+    .site-header a.header-link:hover { color: var(--white); text-decoration: underline; }
+    .site-header :focus-visible { outline-color: var(--teall); }
+
+    main { flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    h1 { font-family: var(--font-head); font-weight: 400; font-size: clamp(1.75rem, 5vw, 2.4rem); line-height: 1.15; color: var(--navy); margin-bottom: .75rem; }
+    .lead { color: var(--muted); margin-bottom: 1.25rem; }
+    .trust { list-style: none; display: grid; gap: .5rem; margin-bottom: 1.5rem; }
+    .trust li { display: flex; gap: .6rem; align-items: flex-start; }
+    .trust li::before { content: '✓'; color: var(--teal); font-weight: 700; flex: 0 0 auto; }
+
+    .notice { border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: 1.25rem; border: 1px solid; }
+    .notice-warn { background: var(--warn-bg); border-color: #F59E0B; color: #713F12; }
+    .notice-error { background: var(--error-bg); border-color: #FCA5A5; color: #7F1D1D; }
+    .notice-info { background: var(--info-bg); border-color: #99F6E4; color: #134E4A; }
+    .notice strong { display: block; margin-bottom: .25rem; }
+    .notice ul { margin: .4rem 0 0 1.2rem; }
+    .notice a { color: inherit; font-weight: 600; }
+
+    /* Fortschritt */
+    .progress { margin-bottom: 1.25rem; }
+    .progress-label { font-weight: 600; color: var(--navy); margin-bottom: .5rem; }
+    .progress ol { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; }
+    .progress li { font-size: .875rem; color: var(--muted); border-top: 5px solid var(--border); padding-top: .4rem; }
+    .progress li.done { border-top-color: var(--teal); color: var(--text); }
+    .progress li[aria-current="step"] { border-top-color: var(--navy); color: var(--navy); font-weight: 700; }
+    .progress .num { display: block; font-size: .8125rem; }
+
+    /* Karte / Formular */
+    .card { background: var(--white); border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 18px rgba(11, 31, 58, .05); }
+    .step h2 { font-size: 1.375rem; color: var(--navy); margin-bottom: .35rem; line-height: 1.3; }
+    .step h2:focus { outline: none; }
+    .step h2:focus-visible { outline: 3px solid var(--teal); }
+    .step-intro { color: var(--muted); margin-bottom: 1.25rem; }
+    .field { margin-bottom: 1.1rem; }
+    .field label, .field legend { display: block; font-weight: 600; margin-bottom: .3rem; color: var(--text); }
+    .opt { font-weight: 400; color: var(--muted); }
+    .hint { display: block; font-size: .9375rem; color: var(--muted); margin-bottom: .35rem; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="password"], select {
+      width: 100%; min-height: 48px; padding: .6rem .8rem; font: inherit; color: var(--text);
+      background: var(--white); border: 2px solid #94A3B8; border-radius: 8px;
+    }
+    select { appearance: auto; }
+    input:focus-visible, select:focus-visible { outline: 3px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+    input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--error); }
+    .row { display: grid; grid-template-columns: 1fr 2fr; gap: 0 1rem; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+    fieldset { border: 0; }
+    .choice { display: flex; align-items: flex-start; gap: .7rem; min-height: 44px; padding: .5rem 0; cursor: pointer; font-weight: 400; }
+    .choice input { width: 24px; height: 24px; margin-top: .15rem; flex: 0 0 auto; accent-color: var(--teal); cursor: pointer; }
+    .choices-inline { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .err { display: block; color: var(--error); font-weight: 600; font-size: .9375rem; margin-top: .3rem; }
+    .err:empty { display: none; }
+    .err::before { content: '⚠ '; }
+    .err:empty::before { content: ''; }
+
+    .actions { display: flex; gap: .75rem; justify-content: space-between; flex-wrap: wrap; margin-top: 1.5rem; }
+    .btn { font: inherit; font-weight: 600; font-size: 1rem; min-height: 48px; padding: .7rem 1.5rem; border-radius: 8px; cursor: pointer; border: 2px solid transparent; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+    .btn-primary { background: var(--teal); color: var(--white); }
+    .btn-primary:hover { background: var(--teal-dark); color: var(--white); }
+    .btn-primary[disabled] { background: #64748B; cursor: wait; }
+    .btn-secondary { background: var(--white); color: var(--navy); border-color: #94A3B8; }
+    .btn-secondary:hover { border-color: var(--navy); }
+    .btn-link { background: none; border: 0; color: var(--teal); text-decoration: underline; font: inherit; font-weight: 600; cursor: pointer; min-height: 44px; padding: 0 .25rem; }
+    .actions .spacer { flex: 1; }
+
+    /* Zusammenfassung */
+    .summary-block { border: 1px solid #E2E8F0; border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: 1rem; }
+    .summary-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: .5rem; }
+    .summary-head h3 { font-size: 1.0625rem; color: var(--navy); }
+    dl.summary { display: grid; grid-template-columns: minmax(120px, 38%) 1fr; gap: .35rem 1rem; }
+    dl.summary dt { color: var(--muted); }
+    dl.summary dd { overflow-wrap: anywhere; }
+    .next-steps { margin: .5rem 0 0 1.3rem; }
+    .next-steps li { margin-bottom: .35rem; }
+
+    footer { background: var(--navy); color: var(--on-dark); padding: 1.5rem 1rem; }
+    .footer-inner { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; align-items: center; font-size: .9375rem; }
+    footer nav { display: flex; gap: .25rem 1.25rem; flex-wrap: wrap; }
+    footer a { color: var(--on-dark); display: inline-flex; align-items: center; min-height: 44px; }
+    footer a:hover { color: var(--white); }
+    footer :focus-visible { outline-color: var(--teall); }
+
+    @media (max-width: 560px) {
+      main { padding-top: 1.25rem; }
+      .card { padding: 1.1rem; }
+      .row, .row-2 { grid-template-columns: 1fr; }
+      .progress li { font-size: 0; }
+      .progress .num { font-size: .8125rem; }
+      dl.summary { grid-template-columns: 1fr; gap: 0; }
+      dl.summary dd { margin-bottom: .5rem; }
+      .actions .btn { flex: 1 1 100%; }
+      .actions .spacer { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="logo" aria-label="Edufy – zur Startseite">Edu<span>fy</span></a>
+      <a href="foerderverein-bestaetigung.html#anmelden" class="header-link">Schon registriert? Anmelden</a>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <h1>Förderverein kostenlos registrieren</h1>
+    <p class="lead">Melden Sie den Förderverein Ihrer Schule bei Edufy an. Das dauert etwa 5 Minuten. Halten Sie, wenn möglich, die Vereinsregister-Nummer bereit – Sie können sie aber auch später nachtragen.</p>
+    <ul class="trust">
+      <li><span><strong>Kostenlos und unverbindlich:</strong> keine Gebühren, kein Abo, kein Mitgliedsbeitrag.</span></li>
+      <li><span><strong>Sie unterschreiben nichts.</strong> Mit der Registrierung geht der Verein keinen Vertrag ein.</span></li>
+      <li><span><strong>Ihr Vorteil:</strong> Der Förderverein wird an den Einnahmen beteiligt, die Unternehmen über Ihre Schule bei Edufy erzielen. Die Details besprechen wir mit Ihnen im persönlichen Gespräch.</span></li>
+    </ul>
+
+    <div id="config-warning" class="notice notice-warn" role="status" hidden>
+      <strong>Hinweis: Die Online-Registrierung ist gerade noch nicht freigeschaltet.</strong>
+      Sie können das Formular schon ansehen und ausfüllen, das Absenden funktioniert aber noch nicht. Schreiben Sie uns gerne: <a href="mailto:hallo@edu-connect.com">hallo@edu-connect.com</a>.
+    </div>
+
+    <nav class="progress" aria-label="Fortschritt der Registrierung">
+      <p class="progress-label" id="progress-label" aria-live="polite">Schritt 1 von 4: Schule</p>
+      <ol>
+        <li data-step="1" aria-current="step"><span class="num">1</span>Schule</li>
+        <li data-step="2"><span class="num">2</span>Verein</li>
+        <li data-step="3"><span class="num">3</span>Ansprechperson</li>
+        <li data-step="4"><span class="num">4</span>Prüfen &amp; absenden</li>
+      </ol>
+    </nav>
+
+    <form id="wizard" class="card" novalidate>
+      <div id="error-summary" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
+
+      <!-- Schritt 1: Schule -->
+      <section class="step" data-step="1" aria-labelledby="h-step1">
+        <h2 id="h-step1" tabindex="-1">Zu welcher Schule gehört Ihr Förderverein?</h2>
+        <p class="step-intro">Wir brauchen die Schule, damit Schülerinnen und Schüler später Ihrem Verein zugeordnet werden können.</p>
+        <div class="field">
+          <label for="schulname">Name der Schule</label>
+          <span class="hint" id="schulname-hint">So wie er offiziell lautet, z. B. „Goethe-Gymnasium Musterstadt“</span>
+          <input type="text" id="schulname" name="schulname" autocomplete="organization" maxlength="200" required aria-describedby="schulname-hint schulname-err" />
+          <span class="err" id="schulname-err"></span>
+        </div>
+        <div class="field">
+          <label for="schulform">Schulform</label>
+          <select id="schulform" name="schulform" required aria-describedby="schulform-err">
+            <option value="">Bitte auswählen</option>
+            <option value="grundschule">Grundschule</option>
+            <option value="hauptschule">Hauptschule / Mittelschule</option>
+            <option value="realschule">Realschule</option>
+            <option value="gymnasium">Gymnasium</option>
+            <option value="gesamtschule">Gesamtschule</option>
+            <option value="oberschule">Oberschule / Sekundarschule</option>
+            <option value="gemeinschaftsschule">Gemeinschaftsschule / Stadtteilschule</option>
+            <option value="foerderschule">Förderschule</option>
+            <option value="berufsbildende_schule">Berufsbildende Schule / Berufskolleg</option>
+            <option value="sonstige">Andere Schulform</option>
+          </select>
+          <span class="err" id="schulform-err"></span>
+        </div>
+        <div class="field">
+          <label for="strasse">Straße und Hausnummer der Schule</label>
+          <input type="text" id="strasse" name="strasse" autocomplete="street-address" maxlength="200" required aria-describedby="strasse-err" />
+          <span class="err" id="strasse-err"></span>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="plz">Postleitzahl</label>
+            <input type="text" id="plz" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" required aria-describedby="plz-err" />
+            <span class="err" id="plz-err"></span>
+          </div>
+          <div class="field">
+            <label for="ort">Ort</label>
+            <input type="text" id="ort" name="ort" autocomplete="address-level2" maxlength="100" required aria-describedby="ort-err" />
+            <span class="err" id="ort-err"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="bundesland">Bundesland</label>
+          <select id="bundesland" name="bundesland" autocomplete="address-level1" required aria-describedby="bundesland-err">
+            <option value="">Bitte auswählen</option>
+            <option value="BW">Baden-Württemberg</option>
+            <option value="BY">Bayern</option>
+            <option value="BE">Berlin</option>
+            <option value="BB">Brandenburg</option>
+            <option value="HB">Bremen</option>
+            <option value="HH">Hamburg</option>
+            <option value="HE">Hessen</option>
+            <option value="MV">Mecklenburg-Vorpommern</option>
+            <option value="NI">Niedersachsen</option>
+            <option value="NW">Nordrhein-Westfalen</option>
+            <option value="RP">Rheinland-Pfalz</option>
+            <option value="SL">Saarland</option>
+            <option value="SN">Sachsen</option>
+            <option value="ST">Sachsen-Anhalt</option>
+            <option value="SH">Schleswig-Holstein</option>
+            <option value="TH">Thüringen</option>
+          </select>
+          <span class="err" id="bundesland-err"></span>
+        </div>
+      </section>
+
+      <!-- Schritt 2: Verein -->
+      <section class="step" data-step="2" aria-labelledby="h-step2" hidden>
+        <h2 id="h-step2" tabindex="-1">Angaben zum Förderverein</h2>
+        <p class="step-intro">Die Angaben finden Sie in der Satzung, im Vereinsregisterauszug oder im Freistellungsbescheid des Finanzamts.</p>
+        <div class="field">
+          <label for="vereinsname">Name des Fördervereins</label>
+          <span class="hint" id="vereinsname-hint">z. B. „Förderverein des Goethe-Gymnasiums e. V.“</span>
+          <input type="text" id="vereinsname" name="vereinsname" autocomplete="off" maxlength="200" required aria-describedby="vereinsname-hint vereinsname-err" />
+          <span class="err" id="vereinsname-err"></span>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <label for="vereinsregister_nr">Vereinsregister-Nummer <span class="opt">(freiwillig)</span></label>
+            <span class="hint" id="vr-hint">z. B. „VR 1234“ – kann später nachgetragen werden</span>
+            <input type="text" id="vereinsregister_nr" name="vereinsregister_nr" autocomplete="off" maxlength="50" aria-describedby="vr-hint" />
+          </div>
+          <div class="field">
+            <label for="registergericht">Registergericht <span class="opt">(freiwillig)</span></label>
+            <span class="hint" id="rg-hint">z. B. „Amtsgericht Köln“</span>
+            <input type="text" id="registergericht" name="registergericht" autocomplete="off" maxlength="100" aria-describedby="rg-hint" />
+          </div>
+        </div>
+        <fieldset class="field" aria-describedby="gem-hint gemeinnuetzig-err">
+          <legend>Ist der Förderverein als gemeinnützig anerkannt?</legend>
+          <span class="hint" id="gem-hint">Das steht im Freistellungsbescheid des Finanzamts. Wenn Sie unsicher sind, wählen Sie „Nein / weiß ich nicht“ – das ist kein Problem.</span>
+          <div class="choices-inline">
+            <label class="choice"><input type="radio" name="gemeinnuetzig" id="gemeinnuetzig-ja" value="ja" required /> Ja</label>
+            <label class="choice"><input type="radio" name="gemeinnuetzig" id="gemeinnuetzig-nein" value="nein" /> Nein / weiß ich nicht</label>
+          </div>
+          <span class="err" id="gemeinnuetzig-err"></span>
+        </fieldset>
+      </section>
+
+      <!-- Schritt 3: Ansprechperson -->
+      <section class="step" data-step="3" aria-labelledby="h-step3" hidden>
+        <h2 id="h-step3" tabindex="-1">Ihre Kontaktdaten und Ihr Zugang</h2>
+        <p class="step-intro">Sie sind unsere Ansprechperson für den Verein. Mit E-Mail-Adresse und Passwort melden Sie sich später bei Edufy an.</p>
+        <div class="row-2">
+          <div class="field">
+            <label for="vorname">Vorname</label>
+            <input type="text" id="vorname" name="vorname" autocomplete="given-name" maxlength="100" required aria-describedby="vorname-err" />
+            <span class="err" id="vorname-err"></span>
+          </div>
+          <div class="field">
+            <label for="nachname">Nachname</label>
+            <input type="text" id="nachname" name="nachname" autocomplete="family-name" maxlength="100" required aria-describedby="nachname-err" />
+            <span class="err" id="nachname-err"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="funktion">Ihre Funktion im Verein</label>
+          <select id="funktion" name="funktion" autocomplete="organization-title" required aria-describedby="funktion-err">
+            <option value="">Bitte auswählen</option>
+            <option value="vorsitz">Vorsitz</option>
+            <option value="stellv_vorsitz">Stellvertretender Vorsitz</option>
+            <option value="kassenwart">Kassenwart / Kassenwartin</option>
+            <option value="schriftfuehrung">Schriftführung</option>
+            <option value="beisitz">Beisitz</option>
+            <option value="sonstiges">Andere Funktion</option>
+          </select>
+          <span class="err" id="funktion-err"></span>
+        </div>
+        <div class="field">
+          <label for="email">E-Mail-Adresse</label>
+          <span class="hint" id="email-hint">Hierhin schicken wir einen Bestätigungslink.</span>
+          <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required aria-describedby="email-hint email-err" />
+          <span class="err" id="email-err"></span>
+        </div>
+        <div class="field">
+          <label for="telefon">Telefonnummer <span class="opt">(freiwillig)</span></label>
+          <span class="hint" id="telefon-hint">Für Rückfragen und das persönliche Gespräch – wenn Ihnen ein Anruf lieber ist als eine E-Mail.</span>
+          <input type="tel" id="telefon" name="telefon" autocomplete="tel" maxlength="40" aria-describedby="telefon-hint telefon-err" />
+          <span class="err" id="telefon-err"></span>
+        </div>
+        <div class="field">
+          <label for="passwort">Passwort wählen</label>
+          <span class="hint" id="passwort-hint">Mindestens 8 Zeichen. Tipp: ein kurzer Satz lässt sich gut merken.</span>
+          <input type="password" id="passwort" name="passwort" autocomplete="new-password" minlength="8" maxlength="72" required aria-describedby="passwort-hint passwort-err" />
+          <label class="choice"><input type="checkbox" id="passwort-zeigen" /> Passwort anzeigen</label>
+          <span class="err" id="passwort-err"></span>
+        </div>
+        <fieldset class="field">
+          <legend>Einverständnis</legend>
+          <label class="choice"><input type="checkbox" id="vertretung" name="vertretung" required aria-describedby="vertretung-err" /> <span>Ich bin im Vorstand des Fördervereins oder wurde vom Vorstand gebeten, den Verein zu registrieren.</span></label>
+          <span class="err" id="vertretung-err"></span>
+          <label class="choice"><input type="checkbox" id="datenschutz" name="datenschutz" required aria-describedby="datenschutz-err" /> <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung (öffnet in neuem Tab)</a> gelesen und bin einverstanden, dass Edufy meine Angaben zur Registrierung und Kontaktaufnahme speichert.</span></label>
+          <span class="err" id="datenschutz-err"></span>
+        </fieldset>
+      </section>
+
+      <!-- Schritt 4: Zusammenfassung -->
+      <section class="step" data-step="4" aria-labelledby="h-step4" hidden>
+        <h2 id="h-step4" tabindex="-1">Bitte prüfen Sie Ihre Angaben</h2>
+        <p class="step-intro">Stimmt alles? Mit „Ändern“ kommen Sie zurück zum jeweiligen Schritt.</p>
+        <div class="summary-block">
+          <div class="summary-head"><h3>Schule</h3><button type="button" class="btn-link" data-goto="1">Ändern<span class="visually-hidden"> (Schule)</span></button></div>
+          <dl class="summary" id="sum-1"></dl>
+        </div>
+        <div class="summary-block">
+          <div class="summary-head"><h3>Förderverein</h3><button type="button" class="btn-link" data-goto="2">Ändern<span class="visually-hidden"> (Förderverein)</span></button></div>
+          <dl class="summary" id="sum-2"></dl>
+        </div>
+        <div class="summary-block">
+          <div class="summary-head"><h3>Ansprechperson</h3><button type="button" class="btn-link" data-goto="3">Ändern<span class="visually-hidden"> (Ansprechperson)</span></button></div>
+          <dl class="summary" id="sum-3"></dl>
+        </div>
+        <div class="notice notice-info">
+          <strong>So geht es nach dem Absenden weiter</strong>
+          <ol class="next-steps">
+            <li>Sie bekommen eine E-Mail mit einem Bestätigungslink. Bitte klicken Sie darauf.</li>
+            <li>Wir melden uns bei Ihnen und erklären im persönlichen Gespräch, wie der Verein an den Unternehmenseinnahmen beteiligt wird.</li>
+            <li>Danach können Sie Schülerinnen und Schüler Ihrer Schule einladen (Einladungslink und QR-Code – kommt in Kürze).</li>
+          </ol>
+          <p style="margin-top:.5rem">Die Registrierung ist kostenlos. Sie unterschreiben nichts und können jederzeit wieder austreten.</p>
+        </div>
+        <div id="submit-error" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
+      </section>
+
+      <div class="actions">
+        <button type="button" class="btn btn-secondary" id="btn-back" hidden>Zurück</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn btn-primary" id="btn-next">Weiter</button>
+        <button type="submit" class="btn btn-primary" id="btn-submit" hidden>Kostenlos registrieren</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Edufy</span>
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="mailto:hallo@edu-connect.com">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    var KONTAKT = 'hallo@edu-connect.com';
+    var TOTAL = 4;
+    var STEP_TITLES = { 1: 'Schule', 2: 'Verein', 3: 'Ansprechperson', 4: 'Prüfen & absenden' };
+    var LABELS = {
+      schulform: { grundschule: 'Grundschule', hauptschule: 'Hauptschule / Mittelschule', realschule: 'Realschule', gymnasium: 'Gymnasium', gesamtschule: 'Gesamtschule', oberschule: 'Oberschule / Sekundarschule', gemeinschaftsschule: 'Gemeinschaftsschule / Stadtteilschule', foerderschule: 'Förderschule', berufsbildende_schule: 'Berufsbildende Schule / Berufskolleg', sonstige: 'Andere Schulform' },
+      funktion: { vorsitz: 'Vorsitz', stellv_vorsitz: 'Stellvertretender Vorsitz', kassenwart: 'Kassenwart / Kassenwartin', schriftfuehrung: 'Schriftführung', beisitz: 'Beisitz', sonstiges: 'Andere Funktion' }
+    };
+
+    var form = document.getElementById('wizard');
+    var btnBack = document.getElementById('btn-back');
+    var btnNext = document.getElementById('btn-next');
+    var btnSubmit = document.getElementById('btn-submit');
+    var errorSummary = document.getElementById('error-summary');
+    var submitError = document.getElementById('submit-error');
+    var current = 1;
+    var busy = false;
+
+    // ---------- Hilfsfunktionen (bewusst ohne Regex in Template-Literals) ----------
+    function $(id) { return document.getElementById(id); }
+    function val(id) { var el = $(id); return el ? String(el.value || '').trim() : ''; }
+    function isDigits(s) {
+      if (!s) return false;
+      for (var i = 0; i < s.length; i++) { var c = s.charCodeAt(i); if (c < 48 || c > 57) return false; }
+      return true;
+    }
+    function isEmail(s) {
+      if (!s || s.indexOf(' ') !== -1) return false;
+      var at = s.indexOf('@');
+      if (at < 1 || at !== s.lastIndexOf('@')) return false;
+      var domain = s.slice(at + 1);
+      var dot = domain.lastIndexOf('.');
+      return dot > 0 && dot < domain.length - 2;
+    }
+    function isPhone(s) {
+      var allowed = '0123456789+ /-()';
+      var digits = 0;
+      for (var i = 0; i < s.length; i++) {
+        var ch = s.charAt(i);
+        if (allowed.indexOf(ch) === -1) return false;
+        if (isDigits(ch)) digits++;
+      }
+      return digits >= 6;
+    }
+    function radioValue(name) {
+      var r = form.querySelector('input[name="' + name + '"]:checked');
+      return r ? r.value : '';
+    }
+
+    function setFieldError(id, msg) {
+      var input = $(id);
+      var err = $(id + '-err');
+      if (err) err.textContent = msg || '';
+      if (input && input.type !== 'radio') {
+        if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+      }
+      if (id === 'gemeinnuetzig') {
+        var radios = form.querySelectorAll('input[name="gemeinnuetzig"]');
+        for (var i = 0; i < radios.length; i++) {
+          if (msg) radios[i].setAttribute('aria-invalid', 'true'); else radios[i].removeAttribute('aria-invalid');
+        }
+      }
+    }
+
+    // ---------- Validierung je Schritt ----------
+    function validateStep(step) {
+      var errors = [];
+      function check(id, ok, msg, focusId) {
+        setFieldError(id, ok ? '' : msg);
+        if (!ok) errors.push({ id: focusId || id, msg: msg });
+      }
+      if (step === 1) {
+        check('schulname', val('schulname').length >= 2, 'Bitte geben Sie den Namen der Schule ein.');
+        check('schulform', val('schulform') !== '', 'Bitte wählen Sie die Schulform aus.');
+        check('strasse', val('strasse').length >= 2, 'Bitte geben Sie Straße und Hausnummer der Schule ein.');
+        var plz = val('plz');
+        check('plz', plz.length === 5 && isDigits(plz), plz ? 'Die Postleitzahl muss aus genau 5 Ziffern bestehen.' : 'Bitte geben Sie die Postleitzahl ein.');
+        check('ort', val('ort').length >= 2, 'Bitte geben Sie den Ort ein.');
+        check('bundesland', val('bundesland') !== '', 'Bitte wählen Sie das Bundesland aus.');
+      } else if (step === 2) {
+        check('vereinsname', val('vereinsname').length >= 2, 'Bitte geben Sie den Namen des Fördervereins ein.');
+        check('gemeinnuetzig', radioValue('gemeinnuetzig') !== '', 'Bitte wählen Sie „Ja“ oder „Nein / weiß ich nicht“.', 'gemeinnuetzig-ja');
+      } else if (step === 3) {
+        check('vorname', val('vorname').length >= 1, 'Bitte geben Sie Ihren Vornamen ein.');
+        check('nachname', val('nachname').length >= 1, 'Bitte geben Sie Ihren Nachnamen ein.');
+        check('funktion', val('funktion') !== '', 'Bitte wählen Sie Ihre Funktion im Verein aus.');
+        var mail = val('email');
+        check('email', isEmail(mail), mail ? 'Die E-Mail-Adresse sieht unvollständig aus. Beispiel: name@beispiel.de' : 'Bitte geben Sie Ihre E-Mail-Adresse ein.');
+        var tel = val('telefon');
+        check('telefon', tel === '' || isPhone(tel), 'Die Telefonnummer darf nur Ziffern, Leerzeichen und + / - ( ) enthalten.');
+        var pw = $('passwort').value || '';
+        check('passwort', pw.length >= 8, pw ? 'Das Passwort ist zu kurz – bitte mindestens 8 Zeichen.' : 'Bitte wählen Sie ein Passwort (mindestens 8 Zeichen).');
+        check('vertretung', $('vertretung').checked, 'Bitte bestätigen Sie, dass Sie für den Verein handeln dürfen.');
+        check('datenschutz', $('datenschutz').checked, 'Bitte stimmen Sie der Datenschutzerklärung zu, sonst können wir Ihre Angaben nicht speichern.');
+      }
+      return errors;
+    }
+
+    function showErrorSummary(errors) {
+      errorSummary.textContent = '';
+      if (!errors.length) { errorSummary.hidden = true; return; }
+      var strong = document.createElement('strong');
+      strong.textContent = errors.length === 1 ? 'Bitte prüfen Sie eine Angabe:' : 'Bitte prüfen Sie ' + errors.length + ' Angaben:';
+      var ul = document.createElement('ul');
+      errors.forEach(function (e) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + e.id;
+        a.textContent = e.msg;
+        a.addEventListener('click', function (ev) { ev.preventDefault(); var t = $(e.id); if (t) t.focus(); });
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      errorSummary.appendChild(strong);
+      errorSummary.appendChild(ul);
+      errorSummary.hidden = false;
+      errorSummary.focus();
+    }
+
+    // ---------- Navigation ----------
+    function showStep(step, moveFocus) {
+      current = step;
+      var steps = form.querySelectorAll('.step');
+      for (var i = 0; i < steps.length; i++) steps[i].hidden = Number(steps[i].getAttribute('data-step')) !== step;
+      var items = document.querySelectorAll('.progress li');
+      for (var j = 0; j < items.length; j++) {
+        var n = Number(items[j].getAttribute('data-step'));
+        items[j].classList.toggle('done', n < step);
+        if (n === step) items[j].setAttribute('aria-current', 'step'); else items[j].removeAttribute('aria-current');
+      }
+      $('progress-label').textContent = 'Schritt ' + step + ' von ' + TOTAL + ': ' + STEP_TITLES[step];
+      btnBack.hidden = step === 1;
+      btnNext.hidden = step === TOTAL;
+      btnSubmit.hidden = step !== TOTAL;
+      errorSummary.hidden = true;
+      if (step === TOTAL) renderSummary();
+      document.title = STEP_TITLES[step] + ' (Schritt ' + step + ' von ' + TOTAL + ') – Förderverein registrieren – Edufy';
+      if (moveFocus) {
+        var h = $('h-step' + step);
+        if (h) { h.focus(); }
+        var top = form.getBoundingClientRect().top + window.pageYOffset - 16;
+        if (window.pageYOffset > top) window.scrollTo(0, top);
+      }
+    }
+
+    function next() {
+      var errors = validateStep(current);
+      if (errors.length) { showErrorSummary(errors); return; }
+      showStep(current + 1, true);
+    }
+
+    btnNext.addEventListener('click', next);
+    btnBack.addEventListener('click', function () { if (current > 1) showStep(current - 1, true); });
+    form.addEventListener('keydown', function (ev) {
+      // Enter in einem Textfeld soll „Weiter“ auslösen statt das Formular abzusenden
+      if (ev.key === 'Enter' && ev.target.tagName === 'INPUT' && ev.target.type !== 'checkbox' && ev.target.type !== 'radio' && current < TOTAL) {
+        ev.preventDefault();
+        next();
+      }
+    });
+    var gotoButtons = form.querySelectorAll('[data-goto]');
+    for (var g = 0; g < gotoButtons.length; g++) {
+      gotoButtons[g].addEventListener('click', function () { showStep(Number(this.getAttribute('data-goto')), true); });
+    }
+    $('passwort-zeigen').addEventListener('change', function () { $('passwort').type = this.checked ? 'text' : 'password'; });
+
+    // Fehlermeldung eines Feldes entfernen, sobald es korrigiert wird
+    form.addEventListener('input', function (ev) {
+      var id = ev.target.name === 'gemeinnuetzig' ? 'gemeinnuetzig' : ev.target.id;
+      var err = $(id + '-err');
+      if (err && err.textContent) setFieldError(id, '');
+    });
+    form.addEventListener('change', function (ev) {
+      var id = ev.target.name === 'gemeinnuetzig' ? 'gemeinnuetzig' : ev.target.id;
+      var err = $(id + '-err');
+      if (err && err.textContent) setFieldError(id, '');
+    });
+
+    // ---------- Daten sammeln (explizite Feldzuordnung, kein Spread) ----------
+    function collect() {
+      return {
+        schulname: val('schulname'),
+        schulform: val('schulform'),
+        strasse: val('strasse'),
+        plz: val('plz'),
+        ort: val('ort'),
+        bundesland: val('bundesland'),
+        vereinsname: val('vereinsname'),
+        vereinsregister_nr: val('vereinsregister_nr'),
+        registergericht: val('registergericht'),
+        gemeinnuetzig: radioValue('gemeinnuetzig') === 'ja',
+        vorname: val('vorname'),
+        nachname: val('nachname'),
+        funktion: val('funktion'),
+        email: val('email').toLowerCase(),
+        telefon: val('telefon'),
+        vertretung_bestaetigt: $('vertretung').checked,
+        datenschutz_akzeptiert: $('datenschutz').checked
+      };
+    }
+
+    // Was in user_metadata.registrierung landet (für das Nachholen nach E-Mail-Bestätigung)
+    function buildRegistrierung(d) {
+      return {
+        schulname: d.schulname,
+        schulform: d.schulform,
+        strasse: d.strasse,
+        plz: d.plz,
+        ort: d.ort,
+        bundesland: d.bundesland,
+        vereinsname: d.vereinsname,
+        vereinsregister_nr: d.vereinsregister_nr,
+        registergericht: d.registergericht,
+        gemeinnuetzig: d.gemeinnuetzig,
+        vorname: d.vorname,
+        nachname: d.nachname,
+        funktion: d.funktion,
+        telefon: d.telefon,
+        vertretung_bestaetigt: d.vertretung_bestaetigt,
+        datenschutz_akzeptiert: d.datenschutz_akzeptiert,
+        datenschutz_akzeptiert_am: new Date().toISOString()
+      };
+    }
+
+    // Parameter für die RPC register_foerderverein (identisch auf der Bestätigungsseite)
+    function buildRpcParams(r) {
+      return {
+        p_schulname: r.schulname,
+        p_schulform: r.schulform,
+        p_strasse: r.strasse,
+        p_plz: r.plz,
+        p_ort: r.ort,
+        p_bundesland: r.bundesland,
+        p_vereinsname: r.vereinsname,
+        p_vereinsregister_nr: r.vereinsregister_nr || null,
+        p_registergericht: r.registergericht || null,
+        p_gemeinnuetzig: r.gemeinnuetzig === true,
+        p_vorname: r.vorname,
+        p_nachname: r.nachname,
+        p_funktion: r.funktion,
+        p_telefon: r.telefon || null,
+        p_vertretung_bestaetigt: r.vertretung_bestaetigt === true,
+        p_datenschutz_akzeptiert: r.datenschutz_akzeptiert === true
+      };
+    }
+
+    // ---------- Zusammenfassung ----------
+    function addRow(dl, label, value) {
+      var dt = document.createElement('dt'); dt.textContent = label;
+      var dd = document.createElement('dd'); dd.textContent = value || '–';
+      dl.appendChild(dt); dl.appendChild(dd);
+    }
+    function renderSummary() {
+      var d = collect();
+      var s1 = $('sum-1'), s2 = $('sum-2'), s3 = $('sum-3');
+      s1.textContent = ''; s2.textContent = ''; s3.textContent = '';
+      var blSelect = $('bundesland');
+      addRow(s1, 'Name', d.schulname);
+      addRow(s1, 'Schulform', LABELS.schulform[d.schulform]);
+      addRow(s1, 'Adresse', d.strasse + ', ' + d.plz + ' ' + d.ort);
+      addRow(s1, 'Bundesland', blSelect.options[blSelect.selectedIndex].text);
+      addRow(s2, 'Name', d.vereinsname);
+      addRow(s2, 'Vereinsregister', d.vereinsregister_nr ? d.vereinsregister_nr + (d.registergericht ? ', ' + d.registergericht : '') : 'wird später nachgetragen');
+      addRow(s2, 'Gemeinnützig', d.gemeinnuetzig ? 'Ja' : 'Nein / weiß ich nicht');
+      addRow(s3, 'Name', d.vorname + ' ' + d.nachname);
+      addRow(s3, 'Funktion', LABELS.funktion[d.funktion]);
+      addRow(s3, 'E-Mail', d.email);
+      addRow(s3, 'Telefon', d.telefon || 'nicht angegeben');
+      addRow(s3, 'Passwort', 'festgelegt (wird nicht angezeigt)');
+    }
+
+    // ---------- Fehlermeldungen übersetzen ----------
+    function translateError(err) {
+      var raw = String((err && (err.message || err.error_description || err.msg)) || err || '');
+      var m = raw.toLowerCase();
+      if (m.indexOf('edufy:schule_bereits_registriert') !== -1) return 'Für diese Schule ist bereits ein Förderverein bei Edufy registriert. Bitte sprechen Sie mit Ihrem Vorstand oder schreiben Sie uns an ' + KONTAKT + ' – wir klären das gemeinsam.';
+      if (m.indexOf('edufy:datenschutz_fehlt') !== -1) return 'Bitte stimmen Sie der Datenschutzerklärung zu.';
+      if (m.indexOf('edufy:vertretung_fehlt') !== -1) return 'Bitte bestätigen Sie, dass Sie für den Verein handeln dürfen.';
+      if (m.indexOf('edufy:ungueltige_plz') !== -1) return 'Die Postleitzahl ist ungültig. Bitte prüfen Sie Schritt 1.';
+      if (m.indexOf('edufy:') !== -1) return 'Einige Angaben sind unvollständig. Bitte prüfen Sie Ihre Eingaben.';
+      if (m.indexOf('already registered') !== -1 || m.indexOf('already been registered') !== -1 || m.indexOf('already exists') !== -1) return 'Mit dieser E-Mail-Adresse gibt es bereits ein Konto. Bitte melden Sie sich an oder verwenden Sie eine andere E-Mail-Adresse.';
+      if (m.indexOf('password') !== -1 && (m.indexOf('at least') !== -1 || m.indexOf('short') !== -1 || m.indexOf('weak') !== -1)) return 'Das Passwort ist zu kurz oder zu einfach. Bitte wählen Sie mindestens 8 Zeichen.';
+      if (m.indexOf('invalid') !== -1 && m.indexOf('email') !== -1) return 'Die E-Mail-Adresse wurde nicht akzeptiert. Bitte prüfen Sie die Schreibweise.';
+      if (m.indexOf('rate limit') !== -1 || m.indexOf('security purposes') !== -1 || m.indexOf('too many') !== -1) return 'Zu viele Versuche in kurzer Zeit. Bitte warten Sie ein paar Minuten und versuchen Sie es dann erneut.';
+      if (m.indexOf('signups not allowed') !== -1 || m.indexOf('signup is disabled') !== -1) return 'Neue Registrierungen sind gerade nicht möglich. Bitte schreiben Sie uns an ' + KONTAKT + '.';
+      if (m.indexOf('failed to fetch') !== -1 || m.indexOf('network') !== -1 || m.indexOf('load failed') !== -1) return 'Es konnte keine Verbindung hergestellt werden. Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.';
+      return 'Leider hat etwas nicht geklappt. Bitte versuchen Sie es in ein paar Minuten erneut oder schreiben Sie uns an ' + KONTAKT + '.';
+    }
+
+    function showSubmitError(msg) {
+      submitError.textContent = '';
+      var strong = document.createElement('strong');
+      strong.textContent = 'Die Registrierung wurde noch nicht abgeschlossen.';
+      submitError.appendChild(strong);
+      submitError.appendChild(document.createTextNode(msg));
+      submitError.hidden = false;
+      submitError.focus();
+    }
+
+    function setBusy(state) {
+      busy = state;
+      btnSubmit.disabled = state;
+      btnBack.disabled = state;
+      btnSubmit.setAttribute('aria-busy', state ? 'true' : 'false');
+      btnSubmit.textContent = state ? 'Wird gesendet …' : 'Kostenlos registrieren';
+    }
+
+    function rememberEmail(email) {
+      try { sessionStorage.setItem('edufy_fv_email', email); } catch (e) { /* Speicher nicht verfügbar – egal */ }
+    }
+
+    // ---------- Absenden ----------
+    async function submitRegistration() {
+      if (busy) return;               // Doppelklick-Schutz
+      // Alle Schritte erneut prüfen (falls über „Ändern“ etwas geleert wurde)
+      for (var s = 1; s < TOTAL; s++) {
+        var errs = validateStep(s);
+        if (errs.length) { showStep(s, true); showErrorSummary(errs); return; }
+      }
+      submitError.hidden = true;
+      if (!window.edufyDbReady || !window.edufyDb) {
+        showSubmitError('Die Online-Registrierung ist technisch noch nicht freigeschaltet. Ihre Angaben wurden nicht gespeichert. Bitte schreiben Sie uns an ' + KONTAKT + '.');
+        return;
+      }
+      setBusy(true);
+      var db = window.edufyDb;
+      var d = collect();
+      var reg = buildRegistrierung(d);
+      try {
+        // 1) Konto anlegen – alle Registrierungsdaten als Metadaten mitgeben
+        var res = await db.auth.signUp({
+          email: d.email,
+          password: $('passwort').value,
+          options: {
+            emailRedirectTo: new URL('foerderverein-bestaetigung.html', window.location.href).href,
+            data: {
+              rolle: 'foerderverein',
+              vorname: d.vorname,
+              nachname: d.nachname,
+              registrierung: reg
+            }
+          }
+        });
+        if (res.error) { setBusy(false); showSubmitError(translateError(res.error)); return; }
+        var user = res.data && res.data.user;
+        // Bei aktivierter E-Mail-Bestätigung meldet Supabase vorhandene Adressen nicht als Fehler,
+        // sondern liefert einen Nutzer ohne Identitäten zurück.
+        if (user && Array.isArray(user.identities) && user.identities.length === 0) {
+          setBusy(false);
+          showSubmitError(translateError('already registered'));
+          return;
+        }
+        rememberEmail(d.email);
+
+        // 2) Session vorhanden (E-Mail-Bestätigung deaktiviert) → Verein sofort anlegen
+        if (res.data && res.data.session) {
+          var rpc = await db.rpc('register_foerderverein', buildRpcParams(reg));
+          if (rpc.error) {
+            // Bestätigungsseite versucht es erneut und zeigt den Fehler verständlich an
+            window.location.href = 'foerderverein-bestaetigung.html?status=nachholen';
+            return;
+          }
+          try { await db.auth.updateUser({ data: { registrierung: null } }); } catch (e) { /* nicht kritisch */ }
+          window.location.href = 'foerderverein-bestaetigung.html?status=fertig';
+          return;
+        }
+        // 3) Keine Session → E-Mail-Bestätigung abwarten, RPC läuft auf der Bestätigungsseite
+        window.location.href = 'foerderverein-bestaetigung.html?status=email';
+      } catch (e) {
+        setBusy(false);
+        showSubmitError(translateError(e));
+      }
+    }
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (current !== TOTAL) { next(); return; }
+      submitRegistration();
+    });
+
+    // ---------- Start ----------
+    if (!window.edufyDbReady) $('config-warning').hidden = false;
+    showStep(1, false);
+  })();
+  </script>
+</body>
+</html>

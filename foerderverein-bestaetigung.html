@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrierung Förderverein – nächste Schritte – Edufy</title>
+  <meta name="description" content="Nächste Schritte nach der Registrierung Ihres Fördervereins bei Edufy." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:," />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F3A; --teal: #0B7A70; --teal-dark: #08625A; --teall: #5EEAD4;
+      --white: #FFFFFF; --off: #F8FAFC;
+      --text: #1E293B; --muted: #475569; --on-dark: #94A3B8; --border: #CBD5E1;
+      --error: #B91C1C; --error-bg: #FEF2F2; --ok-bg: #ECFDF5; --info-bg: #F0FDFA; --warn-bg: #FFFBEB;
+      --font: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-head: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+    }
+    [hidden] { display: none !important; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font); background: var(--off); color: var(--text); font-size: 1.0625rem; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: var(--teal); }
+    a:hover { color: var(--teal-dark); }
+    :focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; border-radius: 4px; }
+    .skip { position: absolute; left: -9999px; top: 0; background: var(--white); color: var(--navy); padding: .75rem 1rem; z-index: 100; }
+    .skip:focus { left: 1rem; top: 1rem; }
+
+    .site-header { background: var(--navy); padding: 0 1rem; }
+    .site-header-inner { max-width: 960px; margin: 0 auto; min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .logo { font-family: var(--font-head); font-size: 1.5rem; color: var(--white); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+    .logo span { color: var(--teall); }
+    .site-header :focus-visible { outline-color: var(--teall); }
+    .header-btn { background: none; border: 1px solid rgba(148, 163, 184, .6); color: var(--white); font: inherit; font-size: .9375rem; min-height: 44px; padding: 0 1rem; border-radius: 8px; cursor: pointer; }
+    .header-btn:hover { border-color: var(--white); }
+
+    main { flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    h1 { font-family: var(--font-head); font-weight: 400; font-size: clamp(1.75rem, 5vw, 2.4rem); line-height: 1.15; color: var(--navy); margin-bottom: .75rem; }
+    h2 { font-size: 1.3rem; color: var(--navy); margin-bottom: .75rem; line-height: 1.3; }
+    .lead { color: var(--muted); margin-bottom: 1.5rem; }
+
+    .notice { border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: 1.25rem; border: 1px solid; }
+    .notice:focus { outline: none; }
+    .notice-warn { background: var(--warn-bg); border-color: #F59E0B; color: #713F12; }
+    .notice-error { background: var(--error-bg); border-color: #FCA5A5; color: #7F1D1D; }
+    .notice-info { background: var(--info-bg); border-color: #99F6E4; color: #134E4A; }
+    .notice-ok { background: var(--ok-bg); border-color: #6EE7B7; color: #064E3B; }
+    .notice strong { display: block; margin-bottom: .25rem; }
+    .notice a { color: inherit; font-weight: 600; }
+    .notice .btn { margin-top: .75rem; }
+
+    .card { background: var(--white); border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 18px rgba(11, 31, 58, .05); margin-bottom: 1.5rem; }
+    ol.steps { list-style: none; counter-reset: s; }
+    ol.steps > li { counter-increment: s; position: relative; padding: 0 0 1.25rem 3.25rem; }
+    ol.steps > li:last-child { padding-bottom: 0; }
+    ol.steps > li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--navy); color: var(--white); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    ol.steps > li.done::before { content: '✓'; background: var(--teal); }
+    ol.steps h3 { font-size: 1.0625rem; color: var(--navy); margin-bottom: .2rem; line-height: 1.4; }
+    ol.steps p { color: var(--text); }
+    .badge { display: inline-block; font-size: .8125rem; font-weight: 700; background: #E2E8F0; color: var(--navy); border-radius: 100px; padding: .05rem .6rem; margin-left: .35rem; vertical-align: middle; }
+    .badge-ok { background: #D1FAE5; color: #064E3B; }
+    .vorlage { background: var(--off); border: 1px dashed var(--border); border-radius: 8px; padding: .75rem .9rem; margin-top: .6rem; white-space: pre-line; font-size: .9375rem; }
+
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-weight: 600; margin-bottom: .3rem; }
+    input[type="email"], input[type="password"] { width: 100%; min-height: 48px; padding: .6rem .8rem; font: inherit; color: var(--text); background: var(--white); border: 2px solid #94A3B8; border-radius: 8px; }
+    input:focus-visible { outline: 3px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+    input[aria-invalid="true"] { border-color: var(--error); }
+    .btn { font: inherit; font-weight: 600; font-size: 1rem; min-height: 48px; padding: .7rem 1.5rem; border-radius: 8px; cursor: pointer; border: 2px solid transparent; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+    .btn-primary { background: var(--teal); color: var(--white); }
+    .btn-primary:hover { background: var(--teal-dark); color: var(--white); }
+    .btn[disabled] { background: #64748B; color: var(--white); cursor: wait; }
+    .btn-secondary { background: var(--white); color: var(--navy); border-color: #94A3B8; }
+    .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+    .btn-row { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+    footer { background: var(--navy); color: var(--on-dark); padding: 1.5rem 1rem; }
+    .footer-inner { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; align-items: center; font-size: .9375rem; }
+    footer nav { display: flex; gap: .25rem 1.25rem; flex-wrap: wrap; }
+    footer a { color: var(--on-dark); display: inline-flex; align-items: center; min-height: 44px; }
+    footer a:hover { color: var(--white); }
+    footer :focus-visible { outline-color: var(--teall); }
+
+    @media (max-width: 560px) {
+      main { padding-top: 1.25rem; }
+      .card { padding: 1.1rem; }
+      .btn-row .btn { flex: 1 1 100%; }
+      ol.steps > li { padding-left: 2.9rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="logo" aria-label="Edufy – zur Startseite">Edu<span>fy</span></a>
+      <button type="button" class="header-btn" id="btn-logout" hidden>Abmelden</button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <h1 id="title">Vielen Dank für Ihre Registrierung!</h1>
+    <p class="lead" id="lead">Hier sehen Sie, was als Nächstes passiert. Sie müssen nichts unterschreiben und es entstehen keine Kosten.</p>
+
+    <!-- Dynamischer Status (E-Mail bestätigen / abgeschlossen / Fehler) -->
+    <div id="status" class="notice notice-info" role="status" aria-live="polite" tabindex="-1">
+      <strong>Einen Moment bitte …</strong>
+      Wir prüfen den Stand Ihrer Registrierung.
+    </div>
+
+    <section class="card" aria-labelledby="h-next">
+      <h2 id="h-next">Ihre nächsten Schritte</h2>
+      <ol class="steps">
+        <li id="step-email">
+          <h3>E-Mail-Adresse bestätigen <span class="badge" id="badge-email">offen</span></h3>
+          <p>Wir haben Ihnen eine E-Mail mit einem Bestätigungslink geschickt<span id="email-target"></span>. Bitte klicken Sie auf den Link. Keine E-Mail bekommen? Schauen Sie bitte auch im Spam-Ordner nach.</p>
+          <div id="resend-box" hidden>
+            <button type="button" class="btn btn-secondary" id="btn-resend" style="margin-top:.6rem">Bestätigungs-E-Mail erneut senden</button>
+          </div>
+        </li>
+        <li>
+          <h3>Vorstand informieren</h3>
+          <p>Erzählen Sie Ihren Vorstandskolleginnen und -kollegen von Edufy. Diesen Text können Sie zum Beispiel per E-Mail weitergeben:</p>
+          <p class="vorlage" id="vorlage">Liebe Vorstandskolleginnen und -kollegen,
+ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft unseren Schülerinnen und Schülern bei der Berufs- und Studienorientierung. Unser Verein wird an den Einnahmen beteiligt, die Unternehmen über unsere Schule erzielen. Wir haben nichts unterschrieben; die Details erklärt uns Edufy in einem persönlichen Gespräch.</p>
+          <button type="button" class="btn btn-secondary" id="btn-copy" style="margin-top:.6rem">Text kopieren</button>
+          <span id="copy-status" role="status" aria-live="polite"></span>
+        </li>
+        <li>
+          <h3>Persönliches Gespräch</h3>
+          <p>Wir melden uns bei Ihnen per E-Mail oder Telefon. Im Gespräch erklären wir, wie die Beteiligung des Vereins an den Unternehmenseinnahmen funktioniert, und beantworten Ihre Fragen.</p>
+        </li>
+        <li>
+          <h3>Schülerinnen und Schüler einladen <span class="badge">kommt bald</span></h3>
+          <p>In Kürze erhalten Sie hier einen Einladungslink und einen QR-Code, den Sie an Schülerinnen, Schüler und Eltern weitergeben können.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Anmeldung, z. B. wenn der Bestätigungslink auf einem anderen Gerät geöffnet wurde -->
+    <section class="card" id="anmelden" aria-labelledby="h-login" hidden>
+      <h2 id="h-login">Schon bestätigt? Hier anmelden</h2>
+      <p style="margin-bottom:1rem">Wenn Sie Ihre E-Mail-Adresse bestätigt haben, melden Sie sich hier an. Wir schließen die Registrierung Ihres Vereins dann automatisch ab.</p>
+      <form id="login-form" novalidate>
+        <div id="login-error" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
+        <div class="field">
+          <label for="login-email">E-Mail-Adresse</label>
+          <input type="email" id="login-email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="login-passwort">Passwort</label>
+          <input type="password" id="login-passwort" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-login">Anmelden</button>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="h-kontakt">
+      <h2 id="h-kontakt">Fragen? Wir helfen gerne.</h2>
+      <p>Schreiben Sie uns an <a href="mailto:hallo@edu-connect.com">hallo@edu-connect.com</a>. Wir antworten persönlich.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Edufy</span>
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="mailto:hallo@edu-connect.com">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    var KONTAKT = 'hallo@edu-connect.com';
+    var db = window.edufyDbReady ? window.edufyDb : null;
+    var statusEl = document.getElementById('status');
+    var params = new URLSearchParams(window.location.search);
+    var hashParams = new URLSearchParams(window.location.hash.length > 1 ? window.location.hash.substring(1) : '');
+    var urlStatus = params.get('status') || '';
+    var wantsLogin = window.location.hash === '#anmelden';
+
+    function $(id) { return document.getElementById(id); }
+
+    function storedEmail() {
+      try { return sessionStorage.getItem('edufy_fv_email') || ''; } catch (e) { return ''; }
+    }
+
+    // Status-Box setzen; type: info | ok | warn | error
+    function setStatus(type, title, text, focus) {
+      statusEl.className = 'notice notice-' + type;
+      statusEl.setAttribute('role', type === 'error' ? 'alert' : 'status');
+      statusEl.textContent = '';
+      var strong = document.createElement('strong');
+      strong.textContent = title;
+      statusEl.appendChild(strong);
+      if (text) statusEl.appendChild(document.createTextNode(text));
+      if (focus) statusEl.focus();
+    }
+    function addStatusLink(href, label) {
+      var p = document.createElement('p');
+      p.style.marginTop = '.5rem';
+      var a = document.createElement('a');
+      a.href = href; a.textContent = label;
+      p.appendChild(a);
+      statusEl.appendChild(p);
+    }
+
+    function markEmailDone() {
+      $('step-email').classList.add('done');
+      var b = $('badge-email');
+      b.textContent = 'erledigt';
+      b.className = 'badge badge-ok';
+      $('resend-box').hidden = true;
+    }
+
+    // Identisch zur Registrierungsseite: explizite Feldzuordnung, kein Spread
+    function buildRpcParams(r) {
+      return {
+        p_schulname: r.schulname,
+        p_schulform: r.schulform,
+        p_strasse: r.strasse,
+        p_plz: r.plz,
+        p_ort: r.ort,
+        p_bundesland: r.bundesland,
+        p_vereinsname: r.vereinsname,
+        p_vereinsregister_nr: r.vereinsregister_nr || null,
+        p_registergericht: r.registergericht || null,
+        p_gemeinnuetzig: r.gemeinnuetzig === true,
+        p_vorname: r.vorname,
+        p_nachname: r.nachname,
+        p_funktion: r.funktion,
+        p_telefon: r.telefon || null,
+        p_vertretung_bestaetigt: r.vertretung_bestaetigt === true,
+        p_datenschutz_akzeptiert: r.datenschutz_akzeptiert === true
+      };
+    }
+
+    function translateError(err) {
+      var raw = String((err && (err.message || err.error_description || err.msg)) || err || '');
+      var m = raw.toLowerCase();
+      if (m.indexOf('edufy:schule_bereits_registriert') !== -1) return 'Für diese Schule ist bereits ein Förderverein bei Edufy registriert. Ihr Konto ist angelegt, wurde aber noch keinem Verein zugeordnet. Bitte schreiben Sie uns an ' + KONTAKT + ' – wir klären das gemeinsam.';
+      if (m.indexOf('edufy:nicht_angemeldet') !== -1) return 'Sie sind nicht mehr angemeldet. Bitte melden Sie sich erneut an.';
+      if (m.indexOf('edufy:') !== -1) return 'Einige Angaben aus Ihrer Registrierung sind unvollständig. Bitte schreiben Sie uns an ' + KONTAKT + '.';
+      if (m.indexOf('invalid login credentials') !== -1) return 'E-Mail-Adresse oder Passwort stimmen nicht. Bitte prüfen Sie Ihre Eingabe.';
+      if (m.indexOf('email not confirmed') !== -1) return 'Ihre E-Mail-Adresse ist noch nicht bestätigt. Bitte klicken Sie zuerst auf den Link in unserer E-Mail.';
+      if (m.indexOf('rate limit') !== -1 || m.indexOf('security purposes') !== -1 || m.indexOf('too many') !== -1) return 'Zu viele Versuche in kurzer Zeit. Bitte warten Sie ein paar Minuten und versuchen Sie es dann erneut.';
+      if (m.indexOf('could not find the function') !== -1 || m.indexOf('does not exist') !== -1 || m.indexOf('schema cache') !== -1) return 'Die Registrierung ist auf unserer Seite noch nicht vollständig eingerichtet. Ihre Angaben sind gespeichert – bitte versuchen Sie es später erneut oder schreiben Sie uns an ' + KONTAKT + '.';
+      if (m.indexOf('failed to fetch') !== -1 || m.indexOf('network') !== -1 || m.indexOf('load failed') !== -1) return 'Es konnte keine Verbindung hergestellt werden. Bitte prüfen Sie Ihre Internetverbindung und laden Sie die Seite neu.';
+      return 'Leider hat etwas nicht geklappt. Bitte laden Sie die Seite neu oder schreiben Sie uns an ' + KONTAKT + '.';
+    }
+
+    function showDone(vereinsname) {
+      markEmailDone();
+      $('title').textContent = 'Ihr Förderverein ist registriert!';
+      setStatus('ok', 'Registrierung abgeschlossen.',
+        (vereinsname ? '„' + vereinsname + '“ ist jetzt bei Edufy angemeldet. ' : 'Ihr Verein ist jetzt bei Edufy angemeldet. ') +
+        'Wir melden uns in Kürze für ein persönliches Gespräch bei Ihnen.', true);
+    }
+
+    async function loadVereinsname(id) {
+      try {
+        var r = await db.from('foerdervereine').select('vereinsname').eq('id', id).maybeSingle();
+        return r.data ? r.data.vereinsname : '';
+      } catch (e) { return ''; }
+    }
+
+    // Prüft, ob die RPC schon gelaufen ist, und holt sie sonst mit den Metadaten nach
+    var finishing = false;
+    var attempted = false;
+    async function finishRegistration(user) {
+      if (finishing) return;
+      finishing = true;
+      attempted = true;
+      $('btn-logout').hidden = false;
+      $('anmelden').hidden = true;
+      markEmailDone();
+      setStatus('info', 'Einen Moment bitte …', 'Wir schließen die Registrierung Ihres Vereins ab.');
+      try {
+        var prof = await db.from('foerderverein_profiles').select('id, foerderverein_id').eq('id', user.id).maybeSingle();
+        if (prof.error) throw prof.error;
+        if (prof.data) {
+          showDone(await loadVereinsname(prof.data.foerderverein_id));
+          return;
+        }
+        var meta = user.user_metadata || {};
+        var reg = meta.registrierung;
+        if (!reg || typeof reg !== 'object') {
+          setStatus('warn', 'Für dieses Konto liegen keine Vereinsdaten vor.',
+            'Bitte registrieren Sie Ihren Förderverein über das Formular oder schreiben Sie uns an ' + KONTAKT + '.', true);
+          addStatusLink('registrierung-foerderverein.html', 'Zum Registrierungsformular');
+          return;
+        }
+        var rpc = await db.rpc('register_foerderverein', buildRpcParams(reg));
+        if (rpc.error) throw rpc.error;
+        // Datensparsamkeit: Registrierungsdaten aus den Konto-Metadaten entfernen
+        try { await db.auth.updateUser({ data: { registrierung: null } }); } catch (e) { /* nicht kritisch */ }
+        var vid = rpc.data && rpc.data.foerderverein_id;
+        showDone(vid ? await loadVereinsname(vid) : reg.vereinsname);
+      } catch (e) {
+        setStatus('error', 'Die Registrierung konnte noch nicht abgeschlossen werden.', ' ' + translateError(e), true);
+      } finally {
+        finishing = false;
+      }
+    }
+
+    function showAwaitingEmail() {
+      var email = storedEmail();
+      if (email) $('email-target').textContent = ' an ' + email;
+      $('resend-box').hidden = !email;
+      $('anmelden').hidden = false;
+      if (email) $('login-email').value = email;
+      setStatus('info', 'Fast geschafft: Bitte bestätigen Sie Ihre E-Mail-Adresse.',
+        'Erst nach dem Klick auf den Link in unserer E-Mail ist die Registrierung Ihres Vereins abgeschlossen.');
+    }
+
+    // ---------- Buttons ----------
+    var resendBusy = false;
+    $('btn-resend').addEventListener('click', async function () {
+      if (resendBusy || !db) return;
+      var email = storedEmail();
+      if (!email) return;
+      resendBusy = true; this.disabled = true;
+      try {
+        var r = await db.auth.resend({ type: 'signup', email: email, options: { emailRedirectTo: new URL('foerderverein-bestaetigung.html', window.location.href).href } });
+        if (r.error) throw r.error;
+        setStatus('info', 'E-Mail wurde erneut gesendet.', 'Bitte schauen Sie in Ihr Postfach (auch im Spam-Ordner).', true);
+      } catch (e) {
+        setStatus('error', 'Die E-Mail konnte nicht gesendet werden.', ' ' + translateError(e), true);
+      } finally {
+        resendBusy = false; this.disabled = false;
+      }
+    });
+
+    $('btn-copy').addEventListener('click', async function () {
+      var text = $('vorlage').textContent;
+      var ok = false;
+      try { if (navigator.clipboard) { await navigator.clipboard.writeText(text); ok = true; } } catch (e) { ok = false; }
+      if (!ok) {
+        try {
+          var range = document.createRange(); range.selectNodeContents($('vorlage'));
+          var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+          ok = document.execCommand('copy');
+        } catch (e2) { ok = false; }
+      }
+      $('copy-status').textContent = ok ? ' Text wurde kopiert.' : ' Bitte markieren Sie den Text und kopieren Sie ihn selbst.';
+    });
+
+    var loginBusy = false;
+    $('login-form').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      if (loginBusy) return;
+      var errBox = $('login-error');
+      errBox.hidden = true;
+      var email = $('login-email').value.trim();
+      var pw = $('login-passwort').value;
+      $('login-email').removeAttribute('aria-invalid');
+      $('login-passwort').removeAttribute('aria-invalid');
+      if (!email || !pw) {
+        errBox.textContent = 'Bitte geben Sie E-Mail-Adresse und Passwort ein.';
+        if (!email) $('login-email').setAttribute('aria-invalid', 'true');
+        if (!pw) $('login-passwort').setAttribute('aria-invalid', 'true');
+        errBox.hidden = false; errBox.focus();
+        return;
+      }
+      if (!db) {
+        errBox.textContent = 'Die Anmeldung ist technisch noch nicht freigeschaltet. Bitte schreiben Sie uns an ' + KONTAKT + '.';
+        errBox.hidden = false; errBox.focus();
+        return;
+      }
+      loginBusy = true; $('btn-login').disabled = true; $('btn-login').textContent = 'Anmeldung läuft …';
+      try {
+        var r = await db.auth.signInWithPassword({ email: email, password: pw });
+        if (r.error) throw r.error;
+        await finishRegistration(r.data.user);
+      } catch (e) {
+        errBox.textContent = translateError(e);
+        errBox.hidden = false; errBox.focus();
+      } finally {
+        loginBusy = false; $('btn-login').disabled = false; $('btn-login').textContent = 'Anmelden';
+      }
+    });
+
+    $('btn-logout').addEventListener('click', async function () {
+      if (db) { try { await db.auth.signOut(); } catch (e) { /* ignorieren */ } }
+      window.location.href = 'index.html';
+    });
+
+    // ---------- Start ----------
+    async function init() {
+      if (!db) {
+        // Supabase noch nicht konfiguriert: statische Infos zeigen, verständlicher Hinweis
+        setStatus('warn', 'Hinweis: Die Online-Registrierung ist gerade noch nicht freigeschaltet.',
+          'Die nächsten Schritte unten gelten trotzdem. Bei Fragen schreiben Sie uns an ' + KONTAKT + '.');
+        $('anmelden').hidden = !wantsLogin;
+        return;
+      }
+      // Fehler aus dem Bestätigungslink (z. B. abgelaufen)
+      var linkError = hashParams.get('error_code') || hashParams.get('error') || params.get('error_code') || params.get('error');
+      if (linkError) {
+        var expired = linkError.indexOf('expired') !== -1 || (hashParams.get('error_description') || '').toLowerCase().indexOf('expired') !== -1;
+        setStatus('error', expired ? 'Der Bestätigungslink ist abgelaufen oder wurde schon benutzt.' : 'Der Bestätigungslink hat nicht funktioniert.',
+          ' Bitte melden Sie sich unten an. Falls Ihre E-Mail-Adresse noch nicht bestätigt ist, können Sie sich die E-Mail erneut schicken lassen.', true);
+        $('anmelden').hidden = false;
+        $('resend-box').hidden = !storedEmail();
+        return;
+      }
+      try {
+        var s = await db.auth.getSession();   // verarbeitet auch die Tokens aus dem Bestätigungslink
+        var session = s.data && s.data.session;
+        if (session && session.user) {
+          await finishRegistration(session.user);
+          return;
+        }
+      } catch (e) {
+        setStatus('error', 'Ihr Anmeldestatus konnte nicht geprüft werden.', ' ' + translateError(e), true);
+        $('anmelden').hidden = false;
+        return;
+      }
+      if (wantsLogin) {
+        $('anmelden').hidden = false;
+        setStatus('info', 'Bitte melden Sie sich an.', 'Dann zeigen wir Ihnen den Stand Ihrer Registrierung.');
+      } else if (urlStatus === 'email' || urlStatus === '') {
+        showAwaitingEmail();
+      } else {
+        // status=fertig/nachholen, aber keine Session (z. B. anderes Gerät) → Anmeldung anbieten
+        $('anmelden').hidden = false;
+        setStatus('info', 'Bitte melden Sie sich an.', 'Dann zeigen wir Ihnen den Stand Ihrer Registrierung.');
+      }
+    }
+
+    if (wantsLogin) {
+      $('title').textContent = 'Anmelden';
+      $('lead').textContent = 'Melden Sie sich mit der E-Mail-Adresse und dem Passwort an, die Sie bei der Registrierung gewählt haben.';
+    }
+    init().then(function () {
+      if (wantsLogin && !$('anmelden').hidden) $('login-email').focus();
+    });
+
+    // Falls die Session erst nach dem Laden ankommt (Bestätigungslink)
+    if (db) {
+      db.auth.onAuthStateChange(function (event, session) {
+        if (event === 'SIGNED_IN' && session && session.user && !attempted) {
+          setTimeout(function () { finishRegistration(session.user); }, 0);
+        }
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
