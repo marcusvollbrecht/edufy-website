@@ -26,6 +26,7 @@ Status: abgeschlossen 2026-11-25 – siehe Erledigt. Nächster Sprint: vom PM na
 - [ ] Impressumsangaben ausfüllen, Datenschutzerklärung finalisieren (nach Legal-Vorprüfung, mit Anwalt)
 - [ ] Supabase-Projekt-URL + Anon-Key für `js/supabase-config.js`
 - [ ] Postfach hallo@edufy.world einrichten
+- [ ] Steuerberater beauftragen: Vorprüfung docs/steuer/2026-11-25-vorpruefung-foerdervereinsmodell.md bestätigen lassen (20 Fragen)
 - [ ] Dauer der kostenlosen Pilotphase und Zahl der Pilotunternehmen
 
 ## Backlog
@@ -43,7 +44,7 @@ Status: abgeschlossen 2026-11-25 – siehe Erledigt. Nächster Sprint: vom PM na
 - [ ] F-004 | F | P2 | Aufräumen unbestätigter/verwaister Konten und Metadaten (Edge-/Cron-Function mit Service-Role, Frist laut Datenschutz) — Quelle: Bericht F-001b
 - [ ] F-005 | F | P2 | Schulauswahl über amtliche Schulnummer statt Freitext (robuste Dublettenerkennung) + Rate-Limit für check_school_registered — Quelle: Bericht F-001b
 - [ ] L-001 | G | P0 | Rechtliche Vorprüfung Landingpage (Werbeaussagen, Statistiken, Förderbeträge, Marken, Schulrecht), Datenschutz-Entwurf, Förderverein-Seiten — Owner: edufy-legal → docs/legal/
-- [ ] T-001 | G | P0 | Steuerliche Vorprüfung Fördervereinsmodell (30 % Beteiligung, Sponsoring, wirtschaftl. Geschäftsbetrieb, USt, Gutschriften) inkl. Fragenkatalog Steuerberater — Owner: edufy-steuer → docs/steuer/
+- [x] T-001 | G | P0 | Steuerliche Vorprüfung Fördervereinsmodell (30 % Beteiligung, Sponsoring, wirtschaftl. Geschäftsbetrieb, USt, Gutschriften) inkl. Fragenkatalog Steuerberater — Owner: edufy-steuer → docs/steuer/2026-11-25-vorpruefung-foerdervereinsmodell.md — Vorprüfung erledigt 2026-11-25; Ergebnis: wirtschaftl. Geschäftsbetrieb beim Verein wahrscheinlich, 19 % USt bzw. Kleinunternehmer, Gutschriften mit USt-Status; 20 Fragen an Steuerberater
 - [ ] G-007 | G | P1 | Rebranding Landingpage, Impressum, Datenschutz auf „Edufy“, Kontakt hallo@edufy.world; Prozentsatz der Beteiligung von der Landingpage entfernen; Preis-Tiers durch „Pilotphase kostenlos“ ersetzen — blockiert durch L-001 (gemeinsam mit G-003 umsetzen)
 - [ ] F-006 | F | P1 | Formale Zustimmung der Schulleitung (Einladungslink an Schulleitung, Status „wartet auf Schulleitung“, Verein erst danach aktiv) — Quelle: Entscheidung Marcus
 - [ ] F-007 | F | P1 | Förderverein-Jahresvertrag bei Aktivierung (Vertragstext von edufy-legal, Annahme im Dashboard, Laufzeit/Kündigung im Schema) — blockiert durch L-001/T-001
