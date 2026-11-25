@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
   <title>EduConnect — Das Bildungs-OS für Jugendliche in Deutschland</title>
   <meta name="description" content="EduConnect verbindet Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Berufsorientierung, Notenprofil, Förderungen und Nachhilfe auf einer Plattform." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://edufy.world/" />
+  <meta name="theme-color" content="#0B1F3A" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="EduConnect" />
+  <meta property="og:url" content="https://edufy.world/" />
+  <meta property="og:title" content="EduConnect — Das Bildungs-OS für Jugendliche in Deutschland" />
+  <meta property="og:description" content="EduConnect verbindet Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Berufsorientierung, Notenprofil, Förderungen und Nachhilfe auf einer Plattform." />
+  <!-- TODO (G-004): /og-image.jpg (1200×630) anlegen – Datei existiert noch nicht. -->
+  <meta property="og:image" content="https://edufy.world/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EduConnect — Das Bildungs-OS für Jugendliche in Deutschland" />
+  <meta name="twitter:description" content="EduConnect verbindet Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Berufsorientierung, Notenprofil, Förderungen und Nachhilfe auf einer Plattform." />
+  <meta name="twitter:image" content="https://edufy.world/og-image.jpg" />
+
+  <!-- Schriften lokal (kein Google-Request) -->
+  <link rel="preload" href="fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="fonts/fonts.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -14,9 +38,33 @@
       --gold:#F59E0B; --coral:#F43F5E; --green:#10B981;
       --purp:#8B5CF6; --white:#FFFFFF; --off:#F8FAFC;
       --slate:#64748B; --dark:#1E293B; --card:#112030; --border:#E2E8F0;
+      /* Kontrastvarianten (WCAG AA) */
+      --teal-dark:#0B7A70;   /* Flächen mit weißer Schrift */
+      --teal-darker:#095E57; /* Hover */
+      --teal-text:#0F766E;   /* Teal-Text auf hellem Grund */
+      --teal-on-dark:#14B8A6;/* Teal-Text auf Navy */
+      --gold-text:#B45309; --green-text:#047857;
+      --coral-dark:#BE123C;  /* Text auf hell + Fläche mit weißer Schrift */
+      --coral-light:#FB7185; /* Coral-Text auf dunklem Grund */
+      --purp-dark:#6D28D9;
+      --slate-light:#94A3B8; /* Grauer Text auf dunklem Grund */
+      --focus:#0B1F3A;       /* Fokusfarbe auf hellem Grund */
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--off); color: var(--dark); overflow-x: hidden; }
+    [hidden] { display:none !important; }
+
+    /* Fokus: auf hellem Grund Navy, auf dunklem Grund Hellgelb */
+    :focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
+    header, .hero, #ziele, #netzwerk, #verguetung, #waitlist, footer, .skip-link { --focus:#FDE68A; }
+    section { scroll-margin-top:72px; }
+    .skip-link {
+      position:absolute; left:1rem; top:-100px; z-index:1000;
+      background:var(--navy); color:var(--white); padding:.75rem 1rem; border-radius:6px;
+      font-weight:600; text-decoration:none;
+    }
+    .skip-link:focus { top:.5rem; }
+    .visually-hidden { position:absolute!important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
     /* NAV */
     nav {
@@ -25,14 +73,31 @@
       background:rgba(11,31,58,0.97); backdrop-filter:blur(16px);
       border-bottom:1px solid rgba(255,255,255,0.07);
       display:flex; align-items:center; justify-content:space-between;
+      transition:box-shadow .2s;
     }
+    nav.scrolled { box-shadow:0 4px 24px rgba(0,0,0,.3); }
     .nav-logo { font-family:'DM Serif Display',serif; font-size:1.5rem; color:var(--white); text-decoration:none; }
     .nav-logo span { color:var(--teall); }
-    .nav-links { display:flex; gap:2rem; align-items:center; }
-    .nav-links a { color:#94A3B8; text-decoration:none; font-size:.875rem; font-weight:500; transition:color .2s; }
+    .nav-links { display:flex; gap:2rem; align-items:center; margin-left:auto; }
+    .nav-links a { color:var(--slate-light); text-decoration:none; font-size:.875rem; font-weight:500; transition:color .2s; display:inline-flex; align-items:center; min-height:44px; }
     .nav-links a:hover { color:var(--white); }
-    .btn-nav { background:var(--teal)!important; color:var(--white)!important; padding:.5rem 1.25rem; border-radius:6px; font-weight:600!important; }
-    .btn-nav:hover { background:#0B7A70!important; }
+    .nav-actions { display:flex; align-items:center; gap:.5rem; margin-left:2rem; }
+    .btn-nav { background:var(--teal-dark); color:var(--white); padding:.5rem 1.25rem; border-radius:6px; font-weight:600; font-size:.875rem; text-decoration:none; display:inline-flex; align-items:center; min-height:44px; transition:background .2s; white-space:nowrap; }
+    .btn-nav:hover { background:var(--teal-darker); }
+    .nav-toggle {
+      display:none; width:44px; height:44px; border-radius:8px; cursor:pointer;
+      background:transparent; border:1px solid rgba(255,255,255,.25); color:var(--white);
+      align-items:center; justify-content:center;
+    }
+    .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after {
+      display:block; width:20px; height:2px; background:currentColor; border-radius:1px; position:relative; transition:transform .2s, opacity .2s;
+    }
+    .nav-toggle-bars::before, .nav-toggle-bars::after { content:''; position:absolute; left:0; }
+    .nav-toggle-bars::before { top:-6px; }
+    .nav-toggle-bars::after { top:6px; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars { background:transparent; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { transform:translateY(6px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { transform:translateY(-6px) rotate(-45deg); }
 
     /* HERO */
     .hero {
@@ -50,6 +115,7 @@
       max-width:1200px; margin:0 auto; width:100%;
       display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; position:relative; z-index:1;
     }
+    .hero-inner > * { min-width:0; }
     .hero-badge {
       display:inline-flex; align-items:center; gap:.5rem;
       background:rgba(13,148,136,.15); border:1px solid rgba(13,148,136,.3);
@@ -62,18 +128,18 @@
       font-family:'DM Serif Display',serif;
       font-size:clamp(2.4rem,5vw,3.75rem);
       color:var(--white); line-height:1.1; letter-spacing:-.03em;
-      margin-bottom:1.5rem; animation:up .6s .1s ease both;
+      margin-bottom:1.5rem; animation:rise .6s .1s ease both; /* ohne opacity:0 (LCP) */
     }
     .hero-title em { font-style:italic; color:var(--teall); }
-    .hero-sub { color:#94A3B8; font-size:1.0625rem; line-height:1.75; font-weight:300; margin-bottom:2.5rem; animation:up .6s .2s ease both; }
+    .hero-sub { color:var(--slate-light); font-size:1.0625rem; line-height:1.75; font-weight:300; margin-bottom:2.5rem; animation:rise .6s .2s ease both; }
     .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; animation:up .6s .3s ease both; }
     .btn-primary {
-      background:var(--teal); color:var(--white);
+      background:var(--teal-dark); color:var(--white);
       padding:.875rem 2rem; border-radius:8px; font-weight:600; font-size:1rem;
       text-decoration:none; border:none; cursor:pointer;
       transition:all .2s; display:inline-flex; align-items:center; gap:.5rem;
     }
-    .btn-primary:hover { background:#0B7A70; transform:translateY(-2px); box-shadow:0 10px 28px rgba(13,148,136,.35); }
+    .btn-primary:hover { background:var(--teal-darker); transform:translateY(-2px); box-shadow:0 10px 28px rgba(13,148,136,.35); }
     .btn-ghost {
       background:transparent; color:var(--white);
       padding:.875rem 2rem; border-radius:8px; font-weight:500; font-size:1rem;
@@ -83,7 +149,7 @@
     .btn-ghost:hover { border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.06); }
     .hero-stats { display:flex; gap:2.5rem; margin-top:3rem; flex-wrap:wrap; animation:up .6s .4s ease both; }
     .hero-stat strong { display:block; font-size:1.75rem; font-weight:700; color:var(--gold); line-height:1; }
-    .hero-stat span { font-size:.78rem; color:var(--slate); margin-top:.25rem; display:block; }
+    .hero-stat span { font-size:.78rem; color:var(--slate-light); margin-top:.25rem; display:block; }
 
     /* Phone */
     .hero-phone { display:flex; justify-content:center; animation:up .8s .2s ease both; }
@@ -93,7 +159,7 @@
     .phone-screen { background:var(--navy); border-radius:32px; overflow:hidden; }
     .ps-bar { background:#0D2440; padding:5px 12px; display:flex; justify-content:space-between; }
     .ps-bar span { color:var(--white); font-size:9px; font-weight:700; }
-    .ps-hdr { background:var(--teal); padding:10px 12px; }
+    .ps-hdr { background:var(--teal-dark); padding:10px 12px; }
     .ps-hdr-name { color:var(--white); font-size:12px; font-weight:700; }
     .ps-hdr-sub { color:rgba(255,255,255,.7); font-size:9px; }
     .ps-body { padding:8px; display:flex; flex-direction:column; gap:7px; }
@@ -123,11 +189,12 @@
     /* Sections */
     section { padding:5rem 2rem; }
     .container { max-width:1200px; margin:0 auto; }
-    .sec-label { color:var(--teal); font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.6rem; }
+    .sec-label { color:var(--teal-text); font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.6rem; }
+    #ziele .sec-label, #netzwerk .sec-label, #verguetung .sec-label { color:var(--teal-on-dark); }
     .sec-title { font-family:'DM Serif Display',serif; font-size:clamp(1.75rem,3vw,2.5rem); line-height:1.15; letter-spacing:-.02em; margin-bottom:.75rem; }
     .sec-sub { color:var(--slate); font-size:1rem; line-height:1.7; font-weight:300; max-width:580px; }
     .sec-title.lt { color:var(--white); }
-    .sec-sub.lt { color:#94A3B8; }
+    .sec-sub.lt { color:var(--slate-light); }
 
     /* Problem */
     #problem { background:var(--white); }
@@ -155,8 +222,8 @@
     .ziel-icon { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.35rem; margin-bottom:1.25rem; }
     .ziel-card h3 { color:var(--white); font-size:1rem; font-weight:600; margin-bottom:.75rem; }
     .ziel-card ul { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
-    .ziel-card li { color:#94A3B8; font-size:.8125rem; display:flex; gap:.5rem; align-items:flex-start; }
-    .ziel-card li::before { content:'→'; color:var(--teal); flex-shrink:0; }
+    .ziel-card li { color:var(--slate-light); font-size:.8125rem; display:flex; gap:.5rem; align-items:flex-start; }
+    .ziel-card li::before { content:'→'; content:'→' / ''; color:var(--teal-on-dark); flex-shrink:0; }
 
     /* Features */
     #features { background:var(--off); }
@@ -192,7 +259,7 @@
       font-size:1.4rem; border:2px solid; margin-bottom:.75rem; transition:transform .2s;
     }
     .fly-step:hover .fly-circle { transform:scale(1.1); }
-    .fly-step p { color:#94A3B8; font-size:.78rem; line-height:1.4; font-weight:500; }
+    .fly-step p { color:var(--slate-light); font-size:.78rem; line-height:1.4; font-weight:500; }
     .fly-arrow { color:var(--teal); font-size:1.4rem; opacity:.5; padding-bottom:2.5rem; margin:0 -.25rem; }
     .fly-insight {
       margin-top:3rem; padding:1.25rem 2rem;
@@ -218,10 +285,10 @@
     .price-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--dark); font-size:.72rem; font-weight:700; padding:3px 14px; border-radius:100px; white-space:nowrap; }
     .price-tier { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.75rem; }
     .price-val { font-size:2rem; font-weight:700; color:var(--white); }
-    .price-period { color:var(--slate); font-size:.875rem; margin-bottom:1.5rem; }
+    .price-period { color:var(--slate-light); font-size:.875rem; margin-bottom:1.5rem; }
     .price-list { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
-    .price-list li { color:#94A3B8; font-size:.8125rem; display:flex; gap:.5rem; align-items:flex-start; }
-    .price-list li::before { content:'✓'; color:var(--teal); font-weight:700; flex-shrink:0; }
+    .price-list li { color:var(--slate-light); font-size:.8125rem; display:flex; gap:.5rem; align-items:flex-start; }
+    .price-list li::before { content:'✓'; content:'✓' / ''; color:var(--teal-on-dark); font-weight:700; flex-shrink:0; }
     .price-school {
       margin-top:2rem; padding:1.25rem;
       background:rgba(13,148,136,.1); border:1px solid rgba(13,148,136,.25);
@@ -230,90 +297,141 @@
     .price-school strong { display:block; font-size:1rem; margin-bottom:.25rem; }
 
     /* Waitlist */
-    #waitlist { background:linear-gradient(135deg, #0B7A70, var(--teal)); padding:5rem 2rem; }
+    #waitlist { background:linear-gradient(135deg, #085A52, #0A6B62); padding:5rem 2rem; }
     .wl-inner { max-width:700px; margin:0 auto; text-align:center; }
     .wl-inner .sec-title { color:var(--white); font-size:clamp(2rem,3.5vw,2.75rem); }
-    .wl-sub { color:rgba(255,255,255,.82); font-size:1rem; line-height:1.7; max-width:560px; margin:.75rem auto 2.5rem; font-weight:300; }
+    .wl-sub { color:rgba(255,255,255,.92); font-size:1rem; line-height:1.7; max-width:560px; margin:.75rem auto 2.5rem; font-weight:300; }
     .wl-tabs { display:flex; justify-content:center; gap:.5rem; margin-bottom:2rem; flex-wrap:wrap; }
     .wl-tab {
-      padding:.5rem 1.25rem; border-radius:100px; cursor:pointer;
-      font-size:.875rem; font-weight:500; transition:all .2s;
-      border:2px solid rgba(255,255,255,.3); color:rgba(255,255,255,.7); background:transparent;
+      padding:.5rem 1.25rem; border-radius:100px; cursor:pointer; min-height:44px;
+      font-size:.875rem; font-weight:500; transition:all .2s; font-family:inherit;
+      border:2px solid rgba(255,255,255,.65); color:rgba(255,255,255,.95); background:transparent;
     }
-    .wl-tab.active { background:var(--white); color:var(--teal); border-color:var(--white); font-weight:700; }
-    .wl-form { display:flex; flex-direction:column; gap:1rem; max-width:480px; margin:0 auto; }
-    .wl-form input, .wl-form select {
+    .wl-tab:hover { border-color:var(--white); }
+    .wl-tab[aria-selected="true"] { background:var(--white); color:var(--teal-text); border-color:var(--white); font-weight:700; }
+    .wl-form { display:flex; flex-direction:column; gap:1rem; max-width:480px; margin:0 auto; text-align:left; }
+    .wl-field { display:flex; flex-direction:column; gap:.375rem; }
+    .wl-field label { color:rgba(255,255,255,.95); font-size:.8125rem; font-weight:600; }
+    .wl-opt { font-weight:400; opacity:.95; }
+    .wl-form input:not([type="checkbox"]), .wl-form select {
       width:100%; padding:1rem 1.25rem; border-radius:10px;
-      border:2px solid rgba(255,255,255,.2); background:rgba(255,255,255,.12);
+      border:2px solid rgba(255,255,255,.65); background:rgba(255,255,255,.1);
       color:var(--white); font-size:.9375rem; font-family:'DM Sans',sans-serif;
-      outline:none; transition:border-color .2s;
+      transition:border-color .2s;
     }
-    .wl-form input::placeholder { color:rgba(255,255,255,.5); }
+    .wl-form input::placeholder { color:rgba(255,255,255,.92); }
     .wl-form select option { background:var(--navy); color:var(--white); }
-    .wl-form input:focus, .wl-form select:focus { border-color:rgba(255,255,255,.7); }
+    .wl-form input:focus, .wl-form select:focus { border-color:var(--white); }
+    .wl-check { display:flex; gap:.625rem; align-items:flex-start; color:rgba(255,255,255,.95); font-size:.8125rem; line-height:1.5; }
+    .wl-check input { width:20px; height:20px; margin-top:1px; flex-shrink:0; accent-color:var(--white); cursor:pointer; }
+    .wl-check a { color:var(--white); text-decoration:underline; }
+    .wl-hint { color:rgba(255,255,255,.95); font-size:.8125rem; line-height:1.5; background:rgba(0,0,0,.15); border-radius:8px; padding:.625rem .875rem; }
+    .wl-error { color:var(--navy); background:#FEF3C7; border-radius:8px; padding:.75rem 1rem; font-size:.875rem; line-height:1.5; }
+    .wl-error a { color:var(--navy); font-weight:700; }
     .wl-form .btn-submit {
-      background:var(--white); color:var(--teal);
-      padding:1rem; border-radius:10px; font-weight:700; font-size:1rem;
+      background:var(--white); color:var(--teal-text);
+      padding:1rem; border-radius:10px; font-weight:700; font-size:1rem; font-family:inherit;
       border:none; cursor:pointer; transition:all .2s;
     }
     .wl-form .btn-submit:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(0,0,0,.2); }
-    .wl-note { color:rgba(255,255,255,.55); font-size:.78rem; margin-top:1rem; }
+    .wl-form .btn-submit[disabled] { opacity:.8; cursor:progress; transform:none; }
+    .wl-note { color:rgba(255,255,255,.92); font-size:.78rem; margin-top:1rem; }
     .wl-count {
       display:inline-flex; align-items:center; gap:.5rem;
       background:rgba(255,255,255,.15); border-radius:100px;
       padding:.375rem 1rem; font-size:.8rem; color:var(--white); font-weight:500; margin-bottom:1.5rem;
     }
     .wl-count-dot { width:6px; height:6px; background:var(--teall); border-radius:50%; animation:pulse 2s infinite; }
-    .wl-success { display:none; text-align:center; }
+    .wl-success { text-align:center; }
     .wl-success .s-icon { font-size:3rem; margin-bottom:1rem; }
     .wl-success h3 { color:var(--white); font-family:'DM Serif Display',serif; font-size:1.5rem; margin-bottom:.5rem; }
-    .wl-success p { color:rgba(255,255,255,.75); font-size:.9rem; }
+    .wl-success p { color:rgba(255,255,255,.95); font-size:.9rem; }
 
     /* Footer */
     footer { background:var(--navy); padding:3rem 2rem 2rem; }
     .footer-inner { max-width:1200px; margin:0 auto; }
     .footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,.08); }
-    .footer-brand .nav-logo { display:block; margin-bottom:.75rem; }
-    .footer-brand p { color:var(--slate); font-size:.8125rem; line-height:1.6; max-width:260px; }
+    .footer-brand .nav-logo { display:inline-block; margin-bottom:.75rem; }
+    .footer-brand p { color:var(--slate-light); font-size:.8125rem; line-height:1.6; max-width:260px; }
     .footer-links { display:flex; gap:3rem; flex-wrap:wrap; }
-    .footer-col h4 { color:var(--white); font-size:.8125rem; font-weight:600; margin-bottom:1rem; }
-    .footer-col a { display:block; color:var(--slate); text-decoration:none; font-size:.8125rem; margin-bottom:.5rem; transition:color .2s; }
+    .footer-col h2 { color:var(--white); font-size:.8125rem; font-weight:600; margin-bottom:.5rem; font-family:inherit; line-height:normal; }
+    .footer-col a { display:flex; align-items:center; min-height:44px; color:var(--slate-light); text-decoration:none; font-size:.8125rem; transition:color .2s; }
     .footer-col a:hover { color:var(--white); }
     .footer-bottom { margin-top:1.5rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem; }
-    .footer-bottom p { color:var(--slate); font-size:.78rem; }
+    .footer-bottom p { color:var(--slate-light); font-size:.78rem; }
 
     /* Animations */
     @keyframes up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes rise { from { transform:translateY(20px); } to { transform:translateY(0); } }
     @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
     @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
-    .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
-    .reveal.visible { opacity:1; transform:none; }
+    /* Nur ausblenden, wenn JS läuft – ohne JS bleibt alles sichtbar */
+    .js .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+    .js .reveal.visible { opacity:1; transform:none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after {
+        animation-duration:.01ms !important; animation-delay:0s !important; animation-iteration-count:1 !important;
+        transition-duration:.01ms !important; transition-delay:0s !important; scroll-behavior:auto !important;
+      }
+      .js .reveal { opacity:1; transform:none; }
+      .prob-card:hover, .feat-card:hover, .wege-card:hover, .ziel-card:hover, .price-card:hover,
+      .btn-primary:hover, .wl-form .btn-submit:hover, .fly-step:hover .fly-circle { transform:none; }
+    }
 
     /* Responsive */
     @media(max-width:1024px) { .hero-inner { grid-template-columns:1fr; } .hero-phone { display:none; } .wege-grid { grid-template-columns:repeat(2,1fr); } }
     @media(max-width:768px) {
-      .nav-links { display:none; }
+      nav { padding:0 1rem; }
+      .nav-toggle { display:inline-flex; }
+      .nav-actions { margin-left:auto; }
+      .btn-nav { padding:.5rem .875rem; font-size:.8125rem; }
+      .nav-links {
+        display:none; position:fixed; top:64px; left:0; right:0;
+        flex-direction:column; align-items:stretch; gap:0;
+        background:var(--navy); border-bottom:1px solid rgba(255,255,255,.12);
+        padding:.5rem 1rem 1rem; box-shadow:0 16px 32px rgba(0,0,0,.35);
+      }
+      .nav-links.open { display:flex; }
+      .nav-links a { font-size:1rem; padding:0 .5rem; min-height:48px; border-bottom:1px solid rgba(255,255,255,.06); }
       .prob-row1,.ziel-grid,.feat-grid,.foerd-grid,.price-grid { grid-template-columns:1fr; }
       .prob-row2 { grid-template-columns:1fr; max-width:100%; }
       .wege-grid { grid-template-columns:1fr 1fr; }
       .fly-arrow { display:none; }
       .footer-top { flex-direction:column; }
     }
-    @media(max-width:480px) { .wege-grid { grid-template-columns:1fr; } .hero-stats { gap:1.5rem; } }
+    @media(max-width:480px) {
+      .wege-grid { grid-template-columns:1fr; } .hero-stats { gap:1.5rem; }
+      section, #waitlist, footer { padding-left:1rem; padding-right:1rem; }
+      .hero { padding-left:1rem; padding-right:1rem; }
+    }
+    @media(max-width:360px) { .nav-logo { font-size:1.25rem; } .btn-nav { padding:.5rem .625rem; } }
   </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-<nav>
-  <a href="#" class="nav-logo">Edu<span>Connect</span></a>
-  <div class="nav-links">
+<header>
+<nav aria-label="Hauptnavigation">
+  <a href="#hero" class="nav-logo" aria-label="EduConnect – zum Seitenanfang">Edu<span>Connect</span></a>
+  <div class="nav-links" id="nav-menu">
     <a href="#features">Features</a>
     <a href="#wege">Bildungswege</a>
     <a href="#foerderung">Förderung</a>
     <a href="#verguetung">Für Unternehmen</a>
+  </div>
+  <div class="nav-actions">
     <a href="#waitlist" class="btn-nav">Jetzt registrieren</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span class="visually-hidden">Menü</span>
+    </button>
   </div>
 </nav>
+</header>
+
+<main id="main">
 
 <section class="hero" id="hero">
   <div class="hero-inner">
@@ -322,7 +440,7 @@
       <h1 class="hero-title">Vom Schulzeugnis zum<br><em>Traumberuf.</em><br>Alles auf einer App.</h1>
       <p class="hero-sub">EduConnect verbindet Schüler, Eltern, Schulen, Fördervereine und Unternehmen. Notenprofil, Berufsorientierung, Fördergelder, Nachhilfe und Praktika — personalisiert, motivierend und kostenlos für Schüler.</p>
       <div class="hero-actions">
-        <a href="#waitlist" class="btn-primary">Jetzt vorregistrieren →</a>
+        <a href="#waitlist" class="btn-primary">Jetzt vorregistrieren <span aria-hidden="true">→</span></a>
         <a href="#features" class="btn-ghost">Mehr erfahren</a>
       </div>
       <div class="hero-stats">
@@ -332,8 +450,8 @@
         <div class="hero-stat"><strong>Mrd. €</strong><span>ungenutzte Fördergelder</span></div>
       </div>
     </div>
-    <div class="hero-phone">
-      <div class="phone-wrap">
+    <div class="hero-phone" role="img" aria-label="App-Vorschau: Startbildschirm mit Zielberuf, Fit-Score, nächsten Schritten und verfügbaren Förderungen">
+      <div class="phone-wrap" aria-hidden="true">
         <div class="phone-frame">
           <div class="phone-notch"></div>
           <div class="phone-screen">
@@ -381,19 +499,19 @@
     <div class="prob-row1 reveal">
       <div class="prob-card">
         <div class="prob-bar" style="background:var(--teal)"></div>
-        <div class="prob-icon" style="background:rgba(13,148,136,.1)">🎓</div>
+        <div class="prob-icon" aria-hidden="true" style="background:rgba(13,148,136,.1)">🎓</div>
         <h3>Schüler — orientierungslos</h3>
         <p>53 % der Jugendlichen sind mit dem Informationsangebot überfordert. Orientierung kommt meist erst wenige Monate vor dem Schulabschluss.</p>
       </div>
       <div class="prob-card">
         <div class="prob-bar" style="background:var(--gold)"></div>
-        <div class="prob-icon" style="background:rgba(245,158,11,.1)">👨‍👩‍👧</div>
+        <div class="prob-icon" aria-hidden="true" style="background:rgba(245,158,11,.1)">👨‍👩‍👧</div>
         <h3>Eltern — veraltet informiert</h3>
         <p>73 % der Jugendlichen verlassen sich auf die Eltern. Diese raten oft zu Studium — obwohl Meister und Fachwirt heute mehr verdienen als ein Bachelor.</p>
       </div>
       <div class="prob-card">
         <div class="prob-bar" style="background:var(--coral)"></div>
-        <div class="prob-icon" style="background:rgba(244,63,94,.1)">🏢</div>
+        <div class="prob-icon" aria-hidden="true" style="background:rgba(244,63,94,.1)">🏢</div>
         <h3>Unternehmen — keine Azubis</h3>
         <p>Über 50.000 Ausbildungsplätze bleiben jährlich unbesetzt. Firmen erreichen Schüler zu spät und über die falschen Kanäle.</p>
       </div>
@@ -401,13 +519,13 @@
     <div class="prob-row2 reveal">
       <div class="prob-card">
         <div class="prob-bar" style="background:var(--purp)"></div>
-        <div class="prob-icon" style="background:rgba(139,92,246,.1)">🏫</div>
+        <div class="prob-icon" aria-hidden="true" style="background:rgba(139,92,246,.1)">🏫</div>
         <h3>Schulen — profitieren nicht</h3>
         <p>Schulen organisieren Praktika manuell ohne digitale Tools — und erhalten trotz ihrer Schlüsselrolle keinerlei finanzielle Unterstützung.</p>
       </div>
       <div class="prob-card">
         <div class="prob-bar" style="background:var(--green)"></div>
-        <div class="prob-icon" style="background:rgba(16,185,129,.1)">💶</div>
+        <div class="prob-icon" aria-hidden="true" style="background:rgba(16,185,129,.1)">💶</div>
         <h3>Fördergelder bleiben liegen</h3>
         <p>Milliarden Euro an BAföG, Stipendien und Meisterprämien werden nicht abgerufen — weil niemand informiert.</p>
       </div>
@@ -424,7 +542,7 @@
     </div>
     <div class="ziel-grid reveal">
       <div class="ziel-card">
-        <div class="ziel-icon" style="background:rgba(245,158,11,.15)">🎓</div>
+        <div class="ziel-icon" aria-hidden="true" style="background:rgba(245,158,11,.15)">🎓</div>
         <h3>Schüler & Eltern — kostenlos</h3>
         <ul>
           <li>Notenprofil + automatische Gap-Analyse zum Wunschberuf</li>
@@ -436,7 +554,7 @@
         </ul>
       </div>
       <div class="ziel-card">
-        <div class="ziel-icon" style="background:rgba(13,148,136,.15)">🏢</div>
+        <div class="ziel-icon" aria-hidden="true" style="background:rgba(13,148,136,.15)">🏢</div>
         <h3>Unternehmen — zahlen</h3>
         <ul>
           <li>Unternehmensprofil mit Videos und Azubi-Berichten</li>
@@ -448,7 +566,7 @@
         </ul>
       </div>
       <div class="ziel-card">
-        <div class="ziel-icon" style="background:rgba(244,63,94,.15)">🏫</div>
+        <div class="ziel-icon" aria-hidden="true" style="background:rgba(244,63,94,.15)">🏫</div>
         <h3>Schulen & Fördervereine — profitieren</h3>
         <ul>
           <li>25–30 % der Unternehmenseinnahmen fließen in den Förderverein</li>
@@ -459,7 +577,7 @@
         </ul>
       </div>
       <div class="ziel-card">
-        <div class="ziel-icon" style="background:rgba(16,185,129,.15)">📚</div>
+        <div class="ziel-icon" aria-hidden="true" style="background:rgba(16,185,129,.15)">📚</div>
         <h3>Nachhilfe & Lernplattformen</h3>
         <ul>
           <li>Einzelne Nachhilfelehrer mit Profil und Bewertung</li>
@@ -477,19 +595,19 @@
   <div class="container">
     <div class="reveal">
       <div class="sec-label">Features</div>
-      <h2 class="sec-title">Alles was Schüler wirklich brauchen.</h2>
+      <h2 class="sec-title">Alles, was Schüler wirklich brauchen.</h2>
       <p class="sec-sub">Kein anderer Anbieter verbindet Noten, Bildungsweg, Förderung und Nachhilfe in einem personalisierten Pfad.</p>
     </div>
     <div class="feat-grid reveal">
-      <div class="feat-card"><div class="feat-emoji">📊</div><h3>Notenprofil & Gap-Analyse</h3><p>Noten eingeben, Zielberuf wählen — die App zeigt sofort welche Fächer fehlen und was zu tun ist.</p></div>
-      <div class="feat-card"><div class="feat-emoji">❤️</div><h3>Interessen & Persönlichkeit</h3><p>15 spielerische Fragen zu Interessen und Gewohnheiten → konkrete Berufsvorschläge mit Begründung.</p></div>
-      <div class="feat-card"><div class="feat-emoji">🗺️</div><h3>Bildungsweg-Navigator</h3><p>Alle Pfade von Hauptschule bis Studium — nach Bundesland gefiltert, mit Gehalts-Zeitstrahl über 20 Jahre.</p></div>
-      <div class="feat-card"><div class="feat-emoji">💶</div><h3>Förderplan integriert</h3><p>BAföG, BAB, Begabtenförderung, Meisterprämien — automatisch berechnet, direkt im Pfad verankert.</p></div>
-      <div class="feat-card"><div class="feat-emoji">💼</div><h3>Praktikum + Tagebuch</h3><p>Praktikumsplatz finden, bewerben, digitales Tagebuch führen — daraus entsteht ein persönliches Stärkenprofil.</p></div>
-      <div class="feat-card"><div class="feat-emoji">🎯</div><h3>Gamification & Pfad-App</h3><p>Fortschrittsbalken, Abzeichen, Lernpfade — der Weg zum Zielberuf wird sichtbar und motivierend.</p></div>
-      <div class="feat-card"><div class="feat-emoji">📐</div><h3>Nachhilfe buchen</h3><p>Direkt aus der Gap-Analyse: Lehrer, Institute oder digitale Lernplattformen mit einem Klick buchbar.</p></div>
-      <div class="feat-card"><div class="feat-emoji">👨‍👩‍👧</div><h3>Family-Account</h3><p>Eltern verknüpfen ihr Konto mit dem Kind. Gemeinsam Wege erkunden, Gehaltsvergleiche sehen, Förderungen finden.</p></div>
-      <div class="feat-card"><div class="feat-emoji">🔔</div><h3>Smart Notifications</h3><p>Neue Praktikumsplätze, Stellen von Wunschfirmen, Bewerbungsfristen und Stipendien — automatisch.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">📊</div><h3>Notenprofil & Gap-Analyse</h3><p>Noten eingeben, Zielberuf wählen — die App zeigt sofort, welche Fächer fehlen und was zu tun ist.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">❤️</div><h3>Interessen & Persönlichkeit</h3><p>15 spielerische Fragen zu Interessen und Gewohnheiten → konkrete Berufsvorschläge mit Begründung.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">🗺️</div><h3>Bildungsweg-Navigator</h3><p>Alle Pfade von Hauptschule bis Studium — nach Bundesland gefiltert, mit Gehalts-Zeitstrahl über 20 Jahre.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">💶</div><h3>Förderplan integriert</h3><p>BAföG, BAB, Begabtenförderung, Meisterprämien — automatisch berechnet, direkt im Pfad verankert.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">💼</div><h3>Praktikum + Tagebuch</h3><p>Praktikumsplatz finden, bewerben, digitales Tagebuch führen — daraus entsteht ein persönliches Stärkenprofil.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">🎯</div><h3>Gamification & Pfad-App</h3><p>Fortschrittsbalken, Abzeichen, Lernpfade — der Weg zum Zielberuf wird sichtbar und motivierend.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">📐</div><h3>Nachhilfe buchen</h3><p>Direkt aus der Gap-Analyse: Lehrer, Institute oder digitale Lernplattformen mit einem Klick buchbar.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">👨‍👩‍👧</div><h3>Family-Account</h3><p>Eltern verknüpfen ihr Konto mit dem Kind. Gemeinsam Wege erkunden, Gehaltsvergleiche sehen, Förderungen finden.</p></div>
+      <div class="feat-card"><div class="feat-emoji" aria-hidden="true">🔔</div><h3>Smart Notifications</h3><p>Neue Praktikumsplätze, Stellen von Wunschfirmen, Bewerbungsfristen und Stipendien — automatisch.</p></div>
     </div>
   </div>
 </section>
@@ -509,37 +627,37 @@
           <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">2</div><div class="wege-txt">Abitur</div></div>
           <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">3</div><div class="wege-txt">Studium 3–5 Jahre</div></div>
           <div class="wege-step"><div class="wege-num" style="background:var(--teall);color:var(--dark)">4</div><div class="wege-txt">Bachelor / Master</div></div>
-          <div class="wege-sal" style="background:rgba(94,234,212,.1);color:var(--teal)">Ø 4.551 € / Monat</div>
+          <div class="wege-sal" style="background:rgba(94,234,212,.1);color:var(--teal-text)">Ø 4.551 € / Monat</div>
         </div>
       </div>
       <div class="wege-card">
-        <div class="wege-hdr" style="background:var(--gold)">Pfad B — IHK Aufstieg ★</div>
+        <div class="wege-hdr" style="background:var(--gold);color:var(--dark)">Pfad B — IHK Aufstieg ★</div>
         <div class="wege-body">
-          <div class="wege-step"><div class="wege-num" style="background:var(--gold)">1</div><div class="wege-txt">Realschule</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--gold)">2</div><div class="wege-txt">Ausbildung 2–3 Jahre</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--gold)">3</div><div class="wege-txt">IHK Fachwirt (DQR 6 = Bachelor)</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--gold)">4</div><div class="wege-txt">IHK Betriebswirt (DQR 7 = Master)</div></div>
-          <div class="wege-sal" style="background:rgba(245,158,11,.1);color:var(--gold)">Ø 4.826 € / Monat ★</div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--gold);color:var(--dark)">1</div><div class="wege-txt">Realschule</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--gold);color:var(--dark)">2</div><div class="wege-txt">Ausbildung 2–3 Jahre</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--gold);color:var(--dark)">3</div><div class="wege-txt">IHK Fachwirt (DQR 6 = Bachelor)</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--gold);color:var(--dark)">4</div><div class="wege-txt">IHK Betriebswirt (DQR 7 = Master)</div></div>
+          <div class="wege-sal" style="background:rgba(245,158,11,.1);color:var(--gold-text)">Ø 4.826 € / Monat ★</div>
         </div>
       </div>
       <div class="wege-card">
-        <div class="wege-hdr" style="background:var(--coral)">Pfad C — Handwerksmeister ★</div>
+        <div class="wege-hdr" style="background:var(--coral-dark)">Pfad C — Handwerksmeister ★</div>
         <div class="wege-body">
-          <div class="wege-step"><div class="wege-num" style="background:var(--coral)">1</div><div class="wege-txt">Haupt- / Realschule</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--coral)">2</div><div class="wege-txt">Ausbildung Handwerk</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--coral)">3</div><div class="wege-txt">Gesellenbrief</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--coral)">4</div><div class="wege-txt">Meister (DQR 6 = Bachelor)</div></div>
-          <div class="wege-sal" style="background:rgba(244,63,94,.1);color:var(--coral)">Ø 4.826 € / Monat ★</div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--coral-dark)">1</div><div class="wege-txt">Haupt- / Realschule</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--coral-dark)">2</div><div class="wege-txt">Ausbildung Handwerk</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--coral-dark)">3</div><div class="wege-txt">Gesellenbrief</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--coral-dark)">4</div><div class="wege-txt">Meister (DQR 6 = Bachelor)</div></div>
+          <div class="wege-sal" style="background:rgba(244,63,94,.1);color:var(--coral-dark)">Ø 4.826 € / Monat ★</div>
         </div>
       </div>
       <div class="wege-card">
-        <div class="wege-hdr" style="background:var(--purp)">Pfad D — 2. Bildungsweg</div>
+        <div class="wege-hdr" style="background:var(--purp-dark)">Pfad D — 2. Bildungsweg</div>
         <div class="wege-body">
-          <div class="wege-step"><div class="wege-num" style="background:var(--purp)">1</div><div class="wege-txt">Hauptschule</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--purp)">2</div><div class="wege-txt">Ausbildung + Berufserfahrung</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--purp)">3</div><div class="wege-txt">Abendgymnasium (kostenlos)</div></div>
-          <div class="wege-step"><div class="wege-num" style="background:var(--purp)">4</div><div class="wege-txt">Abitur → Studium möglich</div></div>
-          <div class="wege-sal" style="background:rgba(139,92,246,.1);color:var(--purp)">Flexibel — kein Abschluss ist final</div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--purp-dark)">1</div><div class="wege-txt">Hauptschule</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--purp-dark)">2</div><div class="wege-txt">Ausbildung + Berufserfahrung</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--purp-dark)">3</div><div class="wege-txt">Abendgymnasium (kostenlos)</div></div>
+          <div class="wege-step"><div class="wege-num" style="background:var(--purp-dark)">4</div><div class="wege-txt">Abitur → Studium möglich</div></div>
+          <div class="wege-sal" style="background:rgba(139,92,246,.1);color:var(--purp-dark)">Flexibel — kein Abschluss ist final</div>
         </div>
       </div>
     </div>
@@ -555,17 +673,17 @@
       <p class="sec-sub lt" style="margin:0 auto">Fördervereine gewinnen Schüler — Schüler machen die Plattform wertvoll für Unternehmen — Unternehmen zahlen — Schulen profitieren.</p>
     </div>
     <div class="fly-wrap reveal">
-      <div class="fly-step"><div class="fly-circle" style="background:rgba(13,148,136,.15);border-color:var(--teal)">🏫</div><p>Schulen &<br>Fördervereine<br>partizipieren</p></div>
-      <div class="fly-arrow">→</div>
-      <div class="fly-step"><div class="fly-circle" style="background:rgba(245,158,11,.15);border-color:var(--gold)">🎓</div><p>Schüler &<br>Eltern nutzen<br>die App</p></div>
-      <div class="fly-arrow">→</div>
-      <div class="fly-step"><div class="fly-circle" style="background:rgba(94,234,212,.15);border-color:var(--teall)">📊</div><p>Plattform<br>sammelt<br>Daten</p></div>
-      <div class="fly-arrow">→</div>
-      <div class="fly-step"><div class="fly-circle" style="background:rgba(244,63,94,.15);border-color:var(--coral)">🏢</div><p>Unternehmen<br>zahlen für<br>Reichweite</p></div>
-      <div class="fly-arrow">→</div>
-      <div class="fly-step"><div class="fly-circle" style="background:rgba(16,185,129,.15);border-color:var(--green)">💶</div><p>Förderverein<br>erhält<br>Provision</p></div>
-      <div class="fly-arrow">→</div>
-      <div class="fly-step"><div class="fly-circle" style="background:rgba(139,92,246,.15);border-color:var(--purp)">🚀</div><p>Mehr Schulen<br>werden<br>Partner</p></div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(13,148,136,.15);border-color:var(--teal)">🏫</div><p>Schulen &<br>Fördervereine<br>partizipieren</p></div>
+      <div class="fly-arrow" aria-hidden="true">→</div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(245,158,11,.15);border-color:var(--gold)">🎓</div><p>Schüler &<br>Eltern nutzen<br>die App</p></div>
+      <div class="fly-arrow" aria-hidden="true">→</div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(94,234,212,.15);border-color:var(--teall)">📊</div><p>Plattform<br>sammelt<br>Daten</p></div>
+      <div class="fly-arrow" aria-hidden="true">→</div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(244,63,94,.15);border-color:var(--coral)">🏢</div><p>Unternehmen<br>zahlen für<br>Reichweite</p></div>
+      <div class="fly-arrow" aria-hidden="true">→</div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(16,185,129,.15);border-color:var(--green)">💶</div><p>Förderverein<br>erhält<br>Provision</p></div>
+      <div class="fly-arrow" aria-hidden="true">→</div>
+      <div class="fly-step"><div class="fly-circle" aria-hidden="true" style="background:rgba(139,92,246,.15);border-color:var(--purp)">🚀</div><p>Mehr Schulen<br>werden<br>Partner</p></div>
     </div>
     <div class="fly-insight reveal">Mehr Schüler → wertvoller für Unternehmen → mehr Erlös für Schulen → mehr Schulen → mehr Schüler</div>
   </div>
@@ -579,12 +697,12 @@
       <p class="sec-sub">EduConnect zeigt jedem Schüler automatisch seinen persönlichen Förderplan — nach Bundesland, Ausbildungsweg und Einkommenssituation.</p>
     </div>
     <div class="foerd-grid reveal">
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--teal)">350 € / Monat</div><h3>BAB — Berufsausbildungsbeihilfe</h3><p>Für duale Ausbildung wenn auswärtige Unterbringung nötig. Wenig bekannt, automatisch auf Berechtigung geprüft.</p><span class="foerd-tag" style="background:rgba(13,148,136,.1);color:var(--teal)">Während Ausbildung</span></div>
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--gold)">2.400 € / Jahr</div><h3>Begabtenförderung Berufliche Bildung</h3><p>Für überdurchschnittliche Azubis. Über 3 Jahre = 7.200 € — kaum bekannt, selten genutzt.</p><span class="foerd-tag" style="background:rgba(245,158,11,.1);color:var(--gold)">Bei guten Leistungen</span></div>
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--coral)">75 % Kostenübernahme</div><h3>Aufstiegs-BAföG</h3><p>Für Meister, Fachwirt, Techniker. 50 % Darlehenserlass bei Bestehen. Direkt im Bildungsweg-Navigator verankert.</p><span class="foerd-tag" style="background:rgba(244,63,94,.1);color:var(--coral)">Für Weiterbildung</span></div>
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--purp)">bis 6.000 €</div><h3>Meisterprämien je Bundesland</h3><p>Bayern 3.000 €, Berlin 5.000–6.000 €, NRW 2.500 €, Hessen 3.500 €. Automatisch nach Bundesland angezeigt.</p><span class="foerd-tag" style="background:rgba(139,92,246,.1);color:var(--purp)">Nach Prüfung</span></div>
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--green)">300 € / Monat</div><h3>Deutschlandstipendium</h3><p>300 € monatlich für Studierende. Über Hochschulen beantragt. Kombinierbar mit BAföG.</p><span class="foerd-tag" style="background:rgba(16,185,129,.1);color:var(--green)">Für Studium</span></div>
-      <div class="foerd-card"><div class="foerd-amount" style="color:var(--teal)">250 € / Monat</div><h3>Kindergeld & weitere Hilfen</h3><p>Kindergeld bis 25, Wohngeld für Azubis, Azubi-Ticket — alles automatisch auf Berechtigung geprüft.</p><span class="foerd-tag" style="background:rgba(13,148,136,.1);color:var(--teal)">Sofort verfügbar</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--teal-text)">350 € / Monat</div><h3>BAB — Berufsausbildungsbeihilfe</h3><p>Für duale Ausbildung, wenn auswärtige Unterbringung nötig. Wenig bekannt, automatisch auf Berechtigung geprüft.</p><span class="foerd-tag" style="background:rgba(13,148,136,.1);color:var(--teal-text)">Während Ausbildung</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--gold-text)">2.400 € / Jahr</div><h3>Begabtenförderung Berufliche Bildung</h3><p>Für überdurchschnittliche Azubis. Über 3 Jahre = 7.200 € — kaum bekannt, selten genutzt.</p><span class="foerd-tag" style="background:rgba(245,158,11,.1);color:var(--gold-text)">Bei guten Leistungen</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--coral-dark)">75 % Kostenübernahme</div><h3>Aufstiegs-BAföG</h3><p>Für Meister, Fachwirt, Techniker. 50 % Darlehenserlass bei Bestehen. Direkt im Bildungsweg-Navigator verankert.</p><span class="foerd-tag" style="background:rgba(244,63,94,.1);color:var(--coral-dark)">Für Weiterbildung</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--purp-dark)">bis 6.000 €</div><h3>Meisterprämien je Bundesland</h3><p>Bayern 3.000 €, Berlin 5.000–6.000 €, NRW 2.500 €, Hessen 3.500 €. Automatisch nach Bundesland angezeigt.</p><span class="foerd-tag" style="background:rgba(139,92,246,.1);color:var(--purp-dark)">Nach Prüfung</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--green-text)">300 € / Monat</div><h3>Deutschlandstipendium</h3><p>300 € monatlich für Studierende. Über Hochschulen beantragt. Kombinierbar mit BAföG.</p><span class="foerd-tag" style="background:rgba(16,185,129,.1);color:var(--green-text)">Für Studium</span></div>
+      <div class="foerd-card"><div class="foerd-amount" style="color:var(--teal-text)">250 € / Monat</div><h3>Kindergeld & weitere Hilfen</h3><p>Kindergeld bis 25, Wohngeld für Azubis, Azubi-Ticket — alles automatisch auf Berechtigung geprüft.</p><span class="foerd-tag" style="background:rgba(13,148,136,.1);color:var(--teal-text)">Sofort verfügbar</span></div>
     </div>
   </div>
 </section>
@@ -598,7 +716,7 @@
     </div>
     <div class="price-grid reveal">
       <div class="price-card">
-        <div class="price-tier" style="color:var(--teall)">Basis</div>
+        <h3 class="price-tier" style="color:var(--teall)">Basis</h3>
         <div class="price-val">500–1.000 €</div>
         <div class="price-period">pro Jahr</div>
         <ul class="price-list">
@@ -608,7 +726,7 @@
       </div>
       <div class="price-card feat">
         <div class="price-badge">Empfohlen</div>
-        <div class="price-tier" style="color:var(--gold)">Premium</div>
+        <h3 class="price-tier" style="color:var(--gold)">Premium</h3>
         <div class="price-val">2.500–5.000 €</div>
         <div class="price-period">pro Jahr</div>
         <ul class="price-list">
@@ -618,7 +736,7 @@
         </ul>
       </div>
       <div class="price-card">
-        <div class="price-tier" style="color:var(--coral)">Enterprise</div>
+        <h3 class="price-tier" style="color:var(--coral-light)">Enterprise</h3>
         <div class="price-val">8.000–15.000 €</div>
         <div class="price-period">pro Jahr</div>
         <ul class="price-list">
@@ -629,7 +747,7 @@
       </div>
     </div>
     <div class="price-school reveal">
-      <strong>🏫 Schulen & Fördervereine erhalten 25–30 % der Unternehmenseinnahmen</strong>
+      <strong><span aria-hidden="true">🏫</span> Schulen & Fördervereine erhalten 25–30 % der Unternehmenseinnahmen</strong>
       Rechtssicher über den Schulförderverein abgewickelt · in allen 16 Bundesländern möglich
     </div>
   </div>
@@ -640,113 +758,340 @@
     <div class="wl-count"><span class="wl-count-dot"></span>Erste Pilotschulen registrieren sich gerade</div>
     <h2 class="sec-title">Jetzt vorregistrieren.<br>Kostenlos. Unverbindlich.</h2>
     <p class="wl-sub">Egal ob Schule, Förderverein, Unternehmen oder Elternteil — sichern Sie sich frühen Zugang und gestalten Sie EduConnect mit.</p>
-    <div class="wl-tabs">
-      <button class="wl-tab active" onclick="switchTab('schule')">🏫 Schule / Förderverein</button>
-      <button class="wl-tab" onclick="switchTab('unternehmen')">🏢 Unternehmen</button>
-      <button class="wl-tab" onclick="switchTab('eltern')">👨‍👩‍👧 Eltern / Schüler</button>
+    <div class="wl-tabs" role="tablist" aria-label="Ich registriere mich als">
+      <button type="button" class="wl-tab" role="tab" id="tab-schule" data-tab="schule" aria-controls="panel-schule" aria-selected="true"><span aria-hidden="true">🏫</span> Schule / Förderverein</button>
+      <button type="button" class="wl-tab" role="tab" id="tab-unternehmen" data-tab="unternehmen" aria-controls="panel-unternehmen" aria-selected="false" tabindex="-1"><span aria-hidden="true">🏢</span> Unternehmen</button>
+      <button type="button" class="wl-tab" role="tab" id="tab-eltern" data-tab="eltern" aria-controls="panel-eltern" aria-selected="false" tabindex="-1"><span aria-hidden="true">👨‍👩‍👧</span> Eltern / Schüler</button>
     </div>
-    <div id="form-schule" class="wl-form">
-      <input type="text" placeholder="Name der Schule / des Fördervereins" />
-      <input type="text" placeholder="Ihr Name" />
-      <input type="email" placeholder="E-Mail-Adresse" />
-      <select>
-        <option value="" disabled selected>Bundesland wählen</option>
-        <option>Baden-Württemberg</option><option>Bayern</option><option>Berlin</option>
-        <option>Brandenburg</option><option>Bremen</option><option>Hamburg</option>
-        <option>Hessen</option><option>Mecklenburg-Vorpommern</option><option>Niedersachsen</option>
-        <option>Nordrhein-Westfalen</option><option>Rheinland-Pfalz</option><option>Saarland</option>
-        <option>Sachsen</option><option>Sachsen-Anhalt</option><option>Schleswig-Holstein</option>
-        <option>Thüringen</option>
-      </select>
-      <button class="btn-submit" onclick="submitForm(event)">Jetzt als Pilotschule registrieren →</button>
+    <noscript><p class="wl-error">Für das Formular wird JavaScript benötigt. Alternativ schreiben Sie uns an <a href="mailto:hallo@edu-connect.com">hallo@edu-connect.com</a>.</p></noscript>
+
+    <div role="tabpanel" id="panel-schule" aria-labelledby="tab-schule" class="wl-panel">
+      <form class="wl-form" method="post" data-typ="schule" aria-label="Vorregistrierung Schule / Förderverein">
+        <input type="hidden" name="typ" value="schule" />
+        <div class="wl-field">
+          <label for="s-organisation">Name der Schule / des Fördervereins</label>
+          <input id="s-organisation" name="organisation" type="text" autocomplete="organization" required maxlength="200" placeholder="z. B. Gesamtschule Musterstadt" />
+        </div>
+        <div class="wl-field">
+          <label for="s-name">Ihr Name</label>
+          <input id="s-name" name="name" type="text" autocomplete="name" required maxlength="200" placeholder="Vor- und Nachname" />
+        </div>
+        <div class="wl-field">
+          <label for="s-email">E-Mail-Adresse</label>
+          <input id="s-email" name="email" type="email" autocomplete="email" required maxlength="320" placeholder="name@beispiel.de" />
+        </div>
+        <div class="wl-field">
+          <label for="s-bundesland">Bundesland <span class="wl-opt">(optional)</span></label>
+          <select id="s-bundesland" name="bundesland" autocomplete="address-level1">
+            <option value="">Bundesland wählen</option>
+            <option>Baden-Württemberg</option><option>Bayern</option><option>Berlin</option>
+            <option>Brandenburg</option><option>Bremen</option><option>Hamburg</option>
+            <option>Hessen</option><option>Mecklenburg-Vorpommern</option><option>Niedersachsen</option>
+            <option>Nordrhein-Westfalen</option><option>Rheinland-Pfalz</option><option>Saarland</option>
+            <option>Sachsen</option><option>Sachsen-Anhalt</option><option>Schleswig-Holstein</option>
+            <option>Thüringen</option>
+          </select>
+        </div>
+        <label class="wl-check">
+          <input type="checkbox" name="consent_privacy" value="1" required />
+          <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Kontaktaufnahme zum Pilotstart gespeichert werden.</span>
+        </label>
+        <p class="wl-error" role="alert" hidden></p>
+        <button type="submit" class="btn-submit">Jetzt als Pilotschule registrieren <span aria-hidden="true">→</span></button>
+      </form>
     </div>
-    <div id="form-unternehmen" class="wl-form" style="display:none">
-      <input type="text" placeholder="Unternehmensname" />
-      <input type="text" placeholder="Ihr Name & Position" />
-      <input type="email" placeholder="E-Mail-Adresse" />
-      <input type="text" placeholder="Anzahl Ausbildungsplätze pro Jahr" />
-      <button class="btn-submit" onclick="submitForm(event)">Als Unternehmenspartner registrieren →</button>
+
+    <div role="tabpanel" id="panel-unternehmen" aria-labelledby="tab-unternehmen" class="wl-panel" hidden>
+      <form class="wl-form" method="post" data-typ="unternehmen" aria-label="Vorregistrierung Unternehmen">
+        <input type="hidden" name="typ" value="unternehmen" />
+        <div class="wl-field">
+          <label for="u-organisation">Unternehmensname</label>
+          <input id="u-organisation" name="organisation" type="text" autocomplete="organization" required maxlength="200" placeholder="z. B. Muster GmbH" />
+        </div>
+        <div class="wl-field">
+          <label for="u-name">Ihr Name</label>
+          <input id="u-name" name="name" type="text" autocomplete="name" required maxlength="200" placeholder="Vor- und Nachname" />
+        </div>
+        <div class="wl-field">
+          <label for="u-funktion">Ihre Position <span class="wl-opt">(optional)</span></label>
+          <input id="u-funktion" name="funktion" type="text" autocomplete="organization-title" maxlength="200" placeholder="z. B. Ausbildungsleitung" />
+        </div>
+        <div class="wl-field">
+          <label for="u-email">E-Mail-Adresse</label>
+          <input id="u-email" name="email" type="email" autocomplete="email" required maxlength="320" placeholder="name@firma.de" />
+        </div>
+        <div class="wl-field">
+          <label for="u-plaetze">Anzahl Ausbildungsplätze pro Jahr <span class="wl-opt">(optional)</span></label>
+          <input id="u-plaetze" name="ausbildungsplaetze" type="number" min="0" max="100000" step="1" inputmode="numeric" placeholder="z. B. 5" />
+        </div>
+        <label class="wl-check">
+          <input type="checkbox" name="consent_privacy" value="1" required />
+          <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Kontaktaufnahme zum Pilotstart gespeichert werden.</span>
+        </label>
+        <p class="wl-error" role="alert" hidden></p>
+        <button type="submit" class="btn-submit">Als Unternehmenspartner registrieren <span aria-hidden="true">→</span></button>
+      </form>
     </div>
-    <div id="form-eltern" class="wl-form" style="display:none">
-      <input type="text" placeholder="Ihr Name" />
-      <input type="email" placeholder="E-Mail-Adresse" />
-      <select>
-        <option value="" disabled selected>Ich bin...</option>
-        <option>Elternteil eines Schülers</option>
-        <option>Schüler / Schülerin (14+)</option>
-        <option>Lehrkraft</option>
-      </select>
-      <button class="btn-submit" onclick="submitForm(event)">Frühen Zugang sichern →</button>
+
+    <div role="tabpanel" id="panel-eltern" aria-labelledby="tab-eltern" class="wl-panel" hidden>
+      <form class="wl-form" method="post" data-typ="eltern" aria-label="Vorregistrierung Eltern / Schüler">
+        <input type="hidden" name="typ" value="eltern" />
+        <div class="wl-field">
+          <label for="e-name">Ihr Name</label>
+          <input id="e-name" name="name" type="text" autocomplete="name" required maxlength="200" placeholder="Vor- und Nachname" />
+        </div>
+        <div class="wl-field">
+          <label for="e-email">E-Mail-Adresse</label>
+          <input id="e-email" name="email" type="email" autocomplete="email" required maxlength="320" placeholder="name@beispiel.de" />
+        </div>
+        <div class="wl-field">
+          <label for="e-rolle">Ich bin …</label>
+          <select id="e-rolle" name="rolle" required>
+            <option value="">Bitte wählen</option>
+            <option value="elternteil">Elternteil eines Schülers</option>
+            <option value="schueler">Schüler / Schülerin (14+)</option>
+            <option value="lehrkraft">Lehrkraft</option>
+          </select>
+        </div>
+        <p class="wl-hint" id="e-hint">Hinweis für Schülerinnen und Schüler: Wer jünger als 16 Jahre ist, braucht für die Anmeldung die Zustimmung der Eltern.</p>
+        <label class="wl-check">
+          <input type="checkbox" name="consent_age" value="1" required aria-describedby="e-hint" />
+          <span>Ich bin 16 Jahre oder älter bzw. meine Eltern sind einverstanden.</span>
+        </label>
+        <label class="wl-check">
+          <input type="checkbox" name="consent_privacy" value="1" required />
+          <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Kontaktaufnahme zum Pilotstart gespeichert werden.</span>
+        </label>
+        <p class="wl-error" role="alert" hidden></p>
+        <button type="submit" class="btn-submit">Frühen Zugang sichern <span aria-hidden="true">→</span></button>
+      </form>
     </div>
-    <div class="wl-success" id="wl-success">
-      <div class="s-icon">🎉</div>
+
+    <div class="wl-success" id="wl-success" role="status" tabindex="-1" hidden>
+      <div class="s-icon" aria-hidden="true">🎉</div>
       <h3>Danke — Sie sind dabei!</h3>
-      <p>Wir melden uns sobald der Pilot startet.<br>Bei Fragen: <strong>hallo@edu-connect.com</strong></p>
+      <p>Wir melden uns, sobald der Pilot startet.<br>Bei Fragen: <strong>hallo@edu-connect.com</strong></p>
     </div>
     <p class="wl-note">Kein Spam. Keine Weitergabe. Jederzeit abmeldbar.</p>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#" class="nav-logo">Edu<span>Connect</span></a>
+        <a href="#hero" class="nav-logo" aria-label="EduConnect – zum Seitenanfang">Edu<span>Connect</span></a>
         <p>Das Bildungs-OS für Jugendliche in Deutschland. Schüler, Eltern, Schulen und Unternehmen auf einer Plattform.</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Plattform</h4>
+          <h2>Plattform</h2>
           <a href="#features">Features</a>
           <a href="#wege">Bildungswege</a>
           <a href="#foerderung">Förderungen</a>
           <a href="#netzwerk">Netzwerkeffekt</a>
         </div>
         <div class="footer-col">
-          <h4>Zielgruppen</h4>
+          <h2>Zielgruppen</h2>
           <a href="#ziele">Schüler & Eltern</a>
           <a href="#ziele">Schulen & Vereine</a>
           <a href="#verguetung">Unternehmen</a>
           <a href="#ziele">Nachhilfe</a>
         </div>
         <div class="footer-col">
-          <h4>Kontakt</h4>
+          <h2>Kontakt</h2>
           <a href="mailto:hallo@edu-connect.com">hallo@edu-connect.com</a>
           <a href="#waitlist">Pilot-Anfrage</a>
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 EduConnect. Alle Rechte vorbehalten.</p>
-      <p>Made in Germany 🇩🇪</p>
+      <p>© <span data-year>2026</span> EduConnect. Alle Rechte vorbehalten.</p>
+      <p>Made in Germany <span aria-hidden="true">🇩🇪</span></p>
     </div>
   </div>
 </footer>
 
+
+<!-- Supabase (Reihenfolge laut js/supabase-client.js) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/supabase-client.js"></script>
+
 <script>
-  function switchTab(tab) {
-    ['schule','unternehmen','eltern'].forEach(t => {
-      document.getElementById('form-'+t).style.display = t===tab ? 'flex' : 'none';
+(function () {
+  'use strict';
+  var CONTACT_MAIL = 'hallo@edu-connect.com';
+
+  /* ---------- Jahr im Footer ---------- */
+  var yearEls = document.querySelectorAll('[data-year]');
+  for (var y = 0; y < yearEls.length; y++) { yearEls[y].textContent = String(new Date().getFullYear()); }
+
+  /* ---------- Mobile Navigation ---------- */
+  var navToggle = document.querySelector('.nav-toggle');
+  var navMenu = document.getElementById('nav-menu');
+  function setMenu(open, returnFocus) {
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navMenu.classList.toggle('open', open);
+    if (!open && returnFocus) { navToggle.focus(); }
+  }
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function () {
+      setMenu(navToggle.getAttribute('aria-expanded') !== 'true', false);
     });
-    document.querySelectorAll('.wl-tab').forEach((btn,i) => {
-      btn.classList.toggle('active', ['schule','unternehmen','eltern'][i]===tab);
+    navMenu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) { setMenu(false, false); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') { setMenu(false, true); }
+    });
+    window.matchMedia('(min-width: 769px)').addEventListener('change', function (mq) {
+      if (mq.matches) { setMenu(false, false); }
     });
   }
-  function submitForm(e) {
-    e.preventDefault();
-    document.querySelectorAll('.wl-form').forEach(f => f.style.display='none');
-    document.querySelector('.wl-tabs').style.display='none';
-    document.getElementById('wl-success').style.display='block';
+
+  /* ---------- Schatten der Navigation beim Scrollen ---------- */
+  var navEl = document.querySelector('nav');
+  var scrolled = false;
+  function onScroll() {
+    var now = window.scrollY > 20;
+    if (now !== scrolled) { scrolled = now; navEl.classList.toggle('scrolled', now); }
   }
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  window.addEventListener('scroll', () => {
-    document.querySelector('nav').style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,.3)' : 'none';
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Reveal-Animation ---------- */
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function (el) { observer.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  /* ---------- Tabs (ARIA-Tabs-Muster) ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.wl-tab[role="tab"]'));
+  function selectTab(tab, focus) {
+    tabs.forEach(function (t) {
+      var active = t === tab;
+      t.setAttribute('aria-selected', active ? 'true' : 'false');
+      t.tabIndex = active ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !active;
+    });
+    if (focus) { tab.focus(); }
+  }
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () { selectTab(tab, false); });
+    tab.addEventListener('keydown', function (e) {
+      var next = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { next = tabs[(i + 1) % tabs.length]; }
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { next = tabs[(i - 1 + tabs.length) % tabs.length]; }
+      else if (e.key === 'Home') { next = tabs[0]; }
+      else if (e.key === 'End') { next = tabs[tabs.length - 1]; }
+      if (next) { e.preventDefault(); selectTab(next, true); }
+    });
   });
+
+  /* ---------- Warteliste ---------- */
+  function val(form, name) {
+    var el = form.elements[name];
+    if (!el) { return null; }
+    var v = String(el.value || '').trim();
+    return v === '' ? null : v;
+  }
+  function checked(form, name) {
+    var el = form.elements[name];
+    return !!(el && el.checked);
+  }
+  function showError(form, text) {
+    var box = form.querySelector('.wl-error');
+    box.textContent = '';
+    box.appendChild(document.createTextNode(text + ' Alternativ schreiben Sie uns an '));
+    var a = document.createElement('a');
+    a.href = 'mailto:' + CONTACT_MAIL;
+    a.textContent = CONTACT_MAIL;
+    box.appendChild(a);
+    box.appendChild(document.createTextNode('.'));
+    box.hidden = false;
+  }
+  function showSuccess() {
+    document.querySelector('.wl-tabs').hidden = true;
+    document.querySelectorAll('.wl-panel').forEach(function (p) { p.hidden = true; });
+    var ok = document.getElementById('wl-success');
+    ok.hidden = false;
+    ok.focus();
+  }
+  function buildRow(form) {
+    var typ = form.elements.typ.value;
+    // Explizite Feldzuordnung (kein Spread)
+    var row = {
+      typ: typ,
+      name: val(form, 'name'),
+      email: val(form, 'email'),
+      organisation: val(form, 'organisation'),
+      funktion: val(form, 'funktion'),
+      bundesland: val(form, 'bundesland'),
+      ausbildungsplaetze: null,
+      rolle: val(form, 'rolle'),
+      consent_privacy: checked(form, 'consent_privacy'),
+      consent_age: typ === 'eltern' ? checked(form, 'consent_age') : null
+    };
+    var plaetze = val(form, 'ausbildungsplaetze');
+    if (plaetze !== null) { row.ausbildungsplaetze = parseInt(plaetze, 10); }
+    return row;
+  }
+
+  document.querySelectorAll('form.wl-form').forEach(function (form) {
+    var btn = form.querySelector('.btn-submit');
+    var btnHtml = btn.innerHTML;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.dataset.busy === '1') { return; }
+      var errBox = form.querySelector('.wl-error');
+      errBox.hidden = true;
+      if (!form.reportValidity()) { return; }
+
+      var db = window.edufyDb;
+      if (!window.edufyDbReady || !db) {
+        showError(form, 'Die Anmeldung ist gerade technisch noch nicht freigeschaltet. Ihre Angaben wurden nicht gespeichert.');
+        return;
+      }
+
+      form.dataset.busy = '1';
+      btn.disabled = true;
+      btn.textContent = 'Wird gesendet …';
+
+      // Insert ohne .select(): anon hat bewusst kein Leserecht
+      db.from('waitlist').insert(buildRow(form)).then(function (res) {
+        if (res && res.error) {
+          if (res.error.code === '23505') {
+            showError(form, 'Sie sind mit dieser E-Mail-Adresse bereits eingetragen – vielen Dank!');
+          } else {
+            console.error('[edufy] Warteliste:', res.error);
+            showError(form, 'Leider ist beim Speichern ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.');
+          }
+          return;
+        }
+        form.reset();
+        showSuccess();
+      }).catch(function (err) {
+        console.error('[edufy] Warteliste:', err);
+        showError(form, 'Leider konnte keine Verbindung hergestellt werden. Bitte versuchen Sie es später erneut.');
+      }).then(function () {
+        form.dataset.busy = '';
+        btn.disabled = false;
+        btn.innerHTML = btnHtml;
+      });
+    });
+  });
+})();
 </script>
 </body>
 </html>
