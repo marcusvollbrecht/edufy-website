@@ -46,6 +46,7 @@ Status: abgeschlossen 2026-11-25. Website-Texte rechtlich vorgeprüft und umgese
 - [ ] Interne Person als Datenschutzbeauftragte/n bestimmen und schulen lassen (nicht Geschäftsführung; DSFA für Daten Minderjähriger voraussichtlich Pflicht → § 38 BDSG)
 - [ ] Auftragsverarbeitungsverträge mit Vercel und Supabase abschließen
 - [ ] Anwalt: zusätzlich Fragen A14–A18 aus docs/legal/2026-11-25-review-sprint2.md
+- [ ] Werden Schülerkonten schon in der Pilotphase freigeschaltet? (bestimmt Dringlichkeit der Minderjährigen-Fragen an den Anwalt)
 - [ ] Hinweisblatt Steuern für Fördervereine (nach Steuerberater)
 - [ ] Steuerberater beauftragen: Vorprüfung docs/steuer/2026-11-25-vorpruefung-foerdervereinsmodell.md bestätigen lassen (20 Fragen)
 
@@ -71,6 +72,8 @@ Status: abgeschlossen 2026-11-25. Website-Texte rechtlich vorgeprüft und umgese
 
 - [ ] F-009 | F | P3 | Trust-Liste: „Bankverbindung brauchen wir jetzt noch nicht“ — Quelle: feedback/foerderverein/2026-11-25-onboarding-runde2.md
 - [ ] F-010 | F | P1 | Infoschreiben für die Schulleitung (länderspezifisch nach Anwaltsantwort A1/A2) — Quelle: Legal-Review Sprint 2
+
+- [ ] F-011 | F | P1 | Texte an Entscheidung Runde 2: in der Pilotphase kurze, jederzeit kündbare Pilotvereinbarung, Jahresvereinbarung erst nach Pilot (registrierung-foerderverein.html ~153/358, foerderverein-bestaetigung.html ~166–167, index.html ~746) — Quelle: Anwalts-Briefing 2026-11-25
 
 ## Erledigt
 - [x] F-001 | F | P0 | Förderverein-Onboarding Ende-zu-Ende lauffähig inkl. Bestätigungsseite — Akzeptanz: Registrierung legt Profil in Supabase an, Nutzer sieht nächste Schritte — Quelle: Marcus — Owner: edufy-dev-foerderverein (+ Freigabe `js/supabase-config.js`, `js/supabase-client.js`) — erledigt 2026-11-25 (live ungetestet: Supabase noch nicht konfiguriert)
