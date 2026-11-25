@@ -150,7 +150,7 @@
           <h3>Vorstand informieren</h3>
           <p>Erzählen Sie Ihren Vorstandskolleginnen und -kollegen von Edufy. Diesen Text können Sie zum Beispiel per E-Mail weitergeben:</p>
           <p class="vorlage" id="vorlage">Liebe Vorstandskolleginnen und -kollegen,
-ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft Schülerinnen und Schülern bei der Berufs- und Studienorientierung. Unser Verein soll an den Einnahmen beteiligt werden, die Edufy mit Unternehmen über unsere Schule erzielt. Während der kostenlosen Pilotphase für Unternehmen fallen noch keine Einnahmen an, unser Verein erhält in dieser Zeit also noch keine Vergütung. Die Registrierung ist kostenlos und unverbindlich. Bevor es losgeht, muss unsere Schulleitung zustimmen und der Vorstand eine Jahresvereinbarung beschließen. Unternehmen sehen dabei nur anonyme Statistiken, keine Daten einzelner Schülerinnen und Schüler. Die Details erklärt uns Edufy in einem persönlichen Gespräch.</p>
+ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft Schülerinnen und Schülern bei der Berufs- und Studienorientierung. Unser Verein soll an den Einnahmen beteiligt werden, die Edufy mit Unternehmen über unsere Schule erzielt. Unternehmen testen Edufy zunächst kostenlos; in dieser Zeit gibt es noch keine Einnahmen und deshalb auch noch keine Auszahlung an unseren Verein. Die Registrierung ist kostenlos und unverbindlich. Bevor es losgeht, muss unsere Schulleitung zustimmen und der Vorstand eine Jahresvereinbarung beschließen. Die Beteiligung ist keine Spende, sondern eine Vergütung; die steuerlichen Folgen für unseren Verein klären wir vorher mit unserer Steuerberatung. Unternehmen sehen nur anonyme Statistiken je Schule. Persönliche Angaben einzelner Schülerinnen und Schüler erhalten sie nur, wenn diese selbst Kontakt zu einem Unternehmen aufnehmen – bei unter 16-Jährigen nur mit Freigabe der Eltern. Die Details erklärt uns Edufy in einem persönlichen Gespräch.</p>
           <button type="button" class="btn btn-secondary" id="btn-copy" style="margin-top:.6rem">Text kopieren</button>
           <span id="copy-status" role="status" aria-live="polite"></span>
         </li>
@@ -160,11 +160,13 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft Sch�
         </li>
         <li id="step-schulleitung">
           <h3>Zustimmung der Schulleitung einholen <span class="badge">Infoschreiben kommt bald</span></h3>
-          <p>Bevor Ihr Verein aktiv wird, muss Ihre Schulleitung formal zustimmen. Sie bestätigt damit, dass sie Edufy kennt und einverstanden ist, dass Ihr Verein Edufy an der Schule bekannt macht. Pflichten für die Schule entstehen dadurch nicht. Für das Gespräch mit Ihrer Schulleitung stellen wir Ihnen ein Infoschreiben bereit – es kommt in Kürze.</p>
+          <p>Bevor Ihr Verein aktiv wird, muss Ihre Schulleitung formal zustimmen. Sie bestätigt damit, dass sie Edufy kennt, dass sie weiß, dass Ihr Verein an den Einnahmen von Edufy beteiligt wird, und dass sie einverstanden ist, dass Ihr Verein Edufy bekannt macht. Vertragliche Pflichten gegenüber Edufy übernimmt die Schule dadurch nicht. Je nach Bundesland müssen außerdem weitere Gremien zustimmen, zum Beispiel die Schulkonferenz oder der Schulträger – das klären wir vorab mit Ihnen. Für das Gespräch mit Ihrer Schulleitung stellen wir Ihnen ein Infoschreiben bereit – es kommt in Kürze.</p>
         </li>
         <li>
           <h3>Jahresvereinbarung abschließen</h3>
-          <p>Ihr Vorstand schließt eine Jahresvereinbarung mit Edufy. Erst dann wird Ihr Verein aktiv. Während der kostenlosen Pilotphase für Unternehmen fallen noch keine Einnahmen an – Ihr Verein erhält in dieser Zeit deshalb noch keine Vergütung.</p>
+          <p>Ihr Vorstand schließt eine Jahresvereinbarung mit Edufy. Erst dann wird Ihr Verein aktiv.</p>
+          <p style="margin-top:.5rem">Pilotphase: Unternehmen testen Edufy zunächst kostenlos. In dieser Zeit gibt es noch keine Einnahmen und deshalb auch noch keine Auszahlung an Ihren Verein.</p>
+          <p style="margin-top:.5rem">Die Beteiligung ist keine Spende, sondern eine Vergütung und kann für Ihren Verein steuerliche Folgen haben. Bitte stimmen Sie das vor dem Abschluss mit Ihrer Steuerberatung oder Ihrem Finanzamt ab.</p>
         </li>
         <li>
           <h3>Schülerinnen und Schüler einladen <span class="badge">kommt bald</span></h3>
@@ -388,7 +390,7 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft Sch�
     // ---------- Ansichten ----------
     function showAwaitingEmail(email) {
       setHeading('Vielen Dank! Bitte bestätigen Sie jetzt Ihre E-Mail-Adresse.',
-        'Die Registrierung ist kostenlos und verpflichtet Sie zu nichts. Verbindlich wird es erst mit der Jahresvereinbarung. Hier sehen Sie, was als Nächstes passiert.');
+        'Die Registrierung ist kostenlos und verpflichtet Sie zu nichts. Verbindlich wird es erst mit der Jahresvereinbarung. Bis dahin genügt eine E-Mail an ' + KONTAKT + ', und wir löschen Ihre Registrierung. Hier sehen Sie, was als Nächstes passiert.');
       $('email-target').textContent = ' an ' + email;
       prefillEmail(email);
       showCards(['schritte', 'anmelden', 'erneut-senden']);
@@ -408,7 +410,7 @@ ich habe unseren Förderverein kostenlos bei Edufy registriert. Edufy hilft Sch�
     function showDone(vereinsname) {
       markEmailDone();
       setHeading('Ihr Förderverein ist registriert!',
-        'Vielen Dank für Ihre Registrierung. Die Registrierung ist kostenlos und verpflichtet Sie zu nichts. Verbindlich wird es erst mit der Jahresvereinbarung. Hier sehen Sie, was als Nächstes passiert.');
+        'Vielen Dank für Ihre Registrierung. Die Registrierung ist kostenlos und verpflichtet Sie zu nichts. Verbindlich wird es erst mit der Jahresvereinbarung. Bis dahin genügt eine E-Mail an ' + KONTAKT + ', und wir löschen Ihre Registrierung. Hier sehen Sie, was als Nächstes passiert.');
       showCards(['schritte']);
       setStatus('ok', 'Registrierung abgeschlossen.',
         (vereinsname ? '„' + vereinsname + '“ ist jetzt bei Edufy registriert. ' : 'Ihr Verein ist jetzt bei Edufy registriert. ') +
