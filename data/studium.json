@@ -1,0 +1,651 @@
+{
+  "stand": "2026-11",
+  "quellen": [
+    {
+      "titel": "Studierende nach Fächergruppen (Wintersemester 2024/25)",
+      "herausgeber": "Statistisches Bundesamt (Destatis)",
+      "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bildung-Forschung-Kultur/Hochschulen/Tabellen/studierende-insgesamt-faechergruppe.html",
+      "stand": "2025-08"
+    },
+    {
+      "titel": "Studierende in Mathematik, Informatik, Naturwissenschaft und Technik-Fächern",
+      "herausgeber": "Statistisches Bundesamt (Destatis)",
+      "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bildung-Forschung-Kultur/Hochschulen/Tabellen/studierende-mint-faechern.html",
+      "stand": "2025-08"
+    },
+    {
+      "titel": "AusbildungPlus – Duales Studium in Zahlen 2024",
+      "herausgeber": "BIBB",
+      "url": "https://www.bibb.de/dienst/publikationen/de/20540",
+      "stand": "2025"
+    },
+    {
+      "titel": "Studienplatzvergabe Medizin (zentrales Verfahren)",
+      "herausgeber": "Stiftung für Hochschulzulassung",
+      "url": "https://www.hochschulstart.de",
+      "stand": "2026-11"
+    }
+  ],
+  "hinweis": "Auswahl: häufig gewählte Studienfächer nach Destatis (Studierende nach Fächergruppen/Studienbereichen) und die größten Fachrichtungen des dualen Studiums nach BIBB AusbildungPlus 2024 (Wirtschaftswissenschaften, Ingenieurwesen, Gesundheit). Keine geprüfte Rangfolge; Einzelzahlen je Fach waren nicht abrufbar. dauer_semester = typische Regelstudienzeit des Bachelors bzw. Staatsexamens, kann je Hochschule abweichen. Keine NC-Werte.",
+  "studiengaenge": [
+    {
+      "id": "bwl",
+      "name": "Betriebswirtschaftslehre (BWL)",
+      "art": "Studium",
+      "bereich": "Wirtschaft",
+      "kurz": "Du lernst, wie Unternehmen funktionieren: Marketing, Finanzen, Personal, Rechnungswesen und Organisation.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife (an Fachhochschulen bzw. Hochschulen für angewandte Wissenschaften) / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Controlling und Finanzen",
+        "Marketing und Vertrieb",
+        "Personalwesen",
+        "Unternehmensberatung"
+      ],
+      "aehnlich": [
+        "vwl",
+        "wirtschaftsingenieurwesen",
+        "dual-bwl"
+      ]
+    },
+    {
+      "id": "informatik",
+      "name": "Informatik",
+      "art": "Studium",
+      "bereich": "Informatik",
+      "kurz": "Du lernst Programmieren, Algorithmen, Datenbanken und wie Computer und Netzwerke aufgebaut sind. Mathe spielt eine große Rolle.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife (an Fachhochschulen bzw. Hochschulen für angewandte Wissenschaften) / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Softwareentwicklung",
+        "IT-Sicherheit",
+        "Datenanalyse und KI",
+        "IT-Beratung"
+      ],
+      "aehnlich": [
+        "wirtschaftsinformatik",
+        "mathematik",
+        "dual-informatik"
+      ]
+    },
+    {
+      "id": "maschinenbau",
+      "name": "Maschinenbau",
+      "art": "Studium",
+      "bereich": "Ingenieurwesen",
+      "kurz": "Du lernst, Maschinen, Fahrzeuge und Anlagen zu entwickeln und zu berechnen – mit viel Mathe und Physik.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife (an Fachhochschulen bzw. Hochschulen für angewandte Wissenschaften) / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Konstruktion und Entwicklung",
+        "Produktion",
+        "Fahrzeug- und Energietechnik",
+        "Qualitätsmanagement"
+      ],
+      "aehnlich": [
+        "elektrotechnik",
+        "wirtschaftsingenieurwesen",
+        "dual-maschinenbau"
+      ]
+    },
+    {
+      "id": "rechtswissenschaft",
+      "name": "Rechtswissenschaft (Jura)",
+      "art": "Studium",
+      "bereich": "Recht",
+      "kurz": "Du lernst, Gesetze zu verstehen und auf echte Fälle anzuwenden. Das Studium endet meist mit dem ersten Staatsexamen, danach folgt das Referendariat.",
+      "dauer_semester": 10,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Häufig örtlich zulassungsbeschränkt, weil sich viele bewerben. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu – prüfe die Werte des Vorjahres bei der jeweiligen Hochschule.",
+      "perspektiven": [
+        "Anwaltschaft",
+        "Justiz (Richter/-in, Staatsanwalt/-anwältin)",
+        "Rechtsabteilungen von Unternehmen",
+        "Öffentliche Verwaltung"
+      ],
+      "aehnlich": [
+        "bwl",
+        "vwl",
+        "dual-verwaltung"
+      ]
+    },
+    {
+      "id": "medizin",
+      "name": "Humanmedizin",
+      "art": "Studium",
+      "bereich": "Medizin/Gesundheit",
+      "kurz": "Du lernst, wie der menschliche Körper funktioniert und wie man Krankheiten erkennt und behandelt. Das Studium ist lang und lernintensiv.",
+      "dauer_semester": 12,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Bundesweit zulassungsbeschränkt. Die Plätze werden zentral über die Stiftung für Hochschulzulassung (hochschulstart.de) vergeben; neben der Abiturnote zählen je nach Hochschule auch Tests, Ausbildung oder Berufserfahrung. Feste NC-Werte nennen wir nicht.",
+      "perspektiven": [
+        "Ärztin/Arzt im Krankenhaus",
+        "Eigene Praxis",
+        "Forschung",
+        "Öffentlicher Gesundheitsdienst"
+      ],
+      "aehnlich": [
+        "psychologie",
+        "biologie",
+        "dual-pflege"
+      ]
+    },
+    {
+      "id": "psychologie",
+      "name": "Psychologie",
+      "art": "Studium",
+      "bereich": "Medizin/Gesundheit",
+      "kurz": "Du lernst, wie Menschen denken, fühlen und handeln – mit viel Statistik und Forschung. Für die Psychotherapie brauchst du zusätzlich einen passenden Master und eine Weiterbildung.",
+      "dauer_semester": 6,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Häufig örtlich zulassungsbeschränkt, weil sich viele bewerben. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu – prüfe die Werte des Vorjahres bei der jeweiligen Hochschule.",
+      "perspektiven": [
+        "Psychotherapie (nach Master und Weiterbildung)",
+        "Beratung",
+        "Personal- und Organisationspsychologie",
+        "Forschung"
+      ],
+      "aehnlich": [
+        "soziale-arbeit",
+        "erziehungswissenschaft",
+        "medizin"
+      ]
+    },
+    {
+      "id": "wirtschaftsingenieurwesen",
+      "name": "Wirtschaftsingenieurwesen",
+      "art": "Studium",
+      "bereich": "Ingenieurwesen",
+      "kurz": "Du verbindest Technik und Wirtschaft: Du lernst Grundlagen aus Maschinenbau oder Elektrotechnik und aus BWL.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife (an Fachhochschulen bzw. Hochschulen für angewandte Wissenschaften) / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Projektmanagement",
+        "Einkauf und Logistik",
+        "Produktionsplanung",
+        "Technischer Vertrieb"
+      ],
+      "aehnlich": [
+        "maschinenbau",
+        "bwl",
+        "dual-wirtschaftsingenieurwesen"
+      ]
+    },
+    {
+      "id": "elektrotechnik",
+      "name": "Elektrotechnik",
+      "art": "Studium",
+      "bereich": "Ingenieurwesen",
+      "kurz": "Du lernst, wie Strom, Elektronik und Steuerungen funktionieren – von Mikrochips bis zur Energieversorgung.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife (an Fachhochschulen bzw. Hochschulen für angewandte Wissenschaften) / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Energietechnik",
+        "Automatisierung",
+        "Elektronikentwicklung",
+        "Nachrichtentechnik"
+      ],
+      "aehnlich": [
+        "maschinenbau",
+        "informatik",
+        "dual-elektrotechnik"
+      ]
+    },
+    {
+      "id": "soziale-arbeit",
+      "name": "Soziale Arbeit",
+      "art": "Studium",
+      "bereich": "Sozialwesen/Pädagogik",
+      "kurz": "Du lernst, Menschen in schwierigen Lebenslagen zu beraten und zu begleiten – z. B. Kinder, Familien oder Menschen ohne Wohnung.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife (an Fachhochschulen bzw. Hochschulen für angewandte Wissenschaften) / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Häufig örtlich zulassungsbeschränkt, weil sich viele bewerben. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu – prüfe die Werte des Vorjahres bei der jeweiligen Hochschule.",
+      "perspektiven": [
+        "Kinder- und Jugendhilfe",
+        "Schulsozialarbeit",
+        "Beratungsstellen",
+        "Arbeit mit Geflüchteten oder Menschen mit Behinderung"
+      ],
+      "aehnlich": [
+        "erziehungswissenschaft",
+        "psychologie",
+        "dual-soziale-arbeit"
+      ]
+    },
+    {
+      "id": "wirtschaftsinformatik",
+      "name": "Wirtschaftsinformatik",
+      "art": "Studium",
+      "bereich": "Informatik",
+      "kurz": "Du verbindest Informatik und BWL und lernst, wie Software Abläufe in Unternehmen verbessert.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife (an Fachhochschulen bzw. Hochschulen für angewandte Wissenschaften) / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "IT-Projektmanagement",
+        "Softwareeinführung in Unternehmen",
+        "Datenanalyse",
+        "IT-Beratung"
+      ],
+      "aehnlich": [
+        "informatik",
+        "bwl",
+        "dual-wirtschaftsinformatik"
+      ]
+    },
+    {
+      "id": "lehramt",
+      "name": "Lehramt",
+      "art": "Studium",
+      "bereich": "Lehramt",
+      "kurz": "Du studierst meist zwei Fächer plus Pädagogik, um Lehrerin oder Lehrer zu werden. Aufbau und Dauer unterscheiden sich je nach Bundesland und Schulform; danach folgt der Vorbereitungsdienst (Referendariat).",
+      "dauer_semester": null,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Fach, Schulform und Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "Lehrkraft an Grund-, Haupt-, Real-, Gesamtschule oder Gymnasium",
+        "Lehrkraft an Berufsschulen",
+        "Bildungsarbeit außerhalb der Schule"
+      ],
+      "aehnlich": [
+        "erziehungswissenschaft",
+        "germanistik",
+        "mathematik"
+      ]
+    },
+    {
+      "id": "bauingenieurwesen",
+      "name": "Bauingenieurwesen",
+      "art": "Studium",
+      "bereich": "Ingenieurwesen",
+      "kurz": "Du lernst, Gebäude, Brücken, Straßen und Wasserbauten zu planen und zu berechnen.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife (an Fachhochschulen bzw. Hochschulen für angewandte Wissenschaften) / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Planungsbüros",
+        "Bauunternehmen und Bauleitung",
+        "Öffentliche Bauverwaltung",
+        "Umwelt- und Wasserbau"
+      ],
+      "aehnlich": [
+        "architektur",
+        "maschinenbau",
+        "dual-bauingenieurwesen"
+      ]
+    },
+    {
+      "id": "biologie",
+      "name": "Biologie",
+      "art": "Studium",
+      "bereich": "Naturwissenschaften",
+      "kurz": "Du erforschst Lebewesen – von Zellen und Genen bis zu Ökosystemen – mit vielen Laborpraktika.",
+      "dauer_semester": 6,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Häufig örtlich zulassungsbeschränkt, weil sich viele bewerben. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu – prüfe die Werte des Vorjahres bei der jeweiligen Hochschule.",
+      "perspektiven": [
+        "Forschung an Hochschulen und Instituten",
+        "Pharma- und Biotechnologie",
+        "Umwelt- und Naturschutz",
+        "Labordiagnostik"
+      ],
+      "aehnlich": [
+        "chemie",
+        "medizin",
+        "lehramt"
+      ]
+    },
+    {
+      "id": "erziehungswissenschaft",
+      "name": "Erziehungswissenschaft / Pädagogik",
+      "art": "Studium",
+      "bereich": "Sozialwesen/Pädagogik",
+      "kurz": "Du beschäftigst dich damit, wie Menschen lernen und wie Bildung und Erziehung gelingen – in Kita, Schule, Beruf und Freizeit.",
+      "dauer_semester": 6,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Erwachsenenbildung",
+        "Kinder- und Jugendarbeit",
+        "Bildungsberatung",
+        "Personalentwicklung"
+      ],
+      "aehnlich": [
+        "soziale-arbeit",
+        "lehramt",
+        "psychologie"
+      ]
+    },
+    {
+      "id": "germanistik",
+      "name": "Germanistik",
+      "art": "Studium",
+      "bereich": "Sprache/Kultur",
+      "kurz": "Du beschäftigst dich mit der deutschen Sprache und Literatur – vom Mittelalter bis heute.",
+      "dauer_semester": 6,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Verlage und Medien",
+        "Kulturbetrieb",
+        "Unternehmenskommunikation",
+        "Lehramt (mit Lehramtsstudium)"
+      ],
+      "aehnlich": [
+        "medienwissenschaft",
+        "lehramt",
+        "erziehungswissenschaft"
+      ]
+    },
+    {
+      "id": "architektur",
+      "name": "Architektur",
+      "art": "Studium",
+      "bereich": "Gestaltung/Bau",
+      "kurz": "Du lernst, Gebäude und Räume zu entwerfen – kreativ, aber auch technisch und rechtlich fundiert.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife (an Fachhochschulen bzw. Hochschulen für angewandte Wissenschaften) / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Häufig örtlich zulassungsbeschränkt, weil sich viele bewerben. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu – prüfe die Werte des Vorjahres bei der jeweiligen Hochschule. An manchen Hochschulen gibt es zusätzlich eine Eignungsprüfung oder Mappe.",
+      "perspektiven": [
+        "Architekturbüros",
+        "Stadtplanung",
+        "Bauverwaltung",
+        "Innenarchitektur und Denkmalpflege"
+      ],
+      "aehnlich": [
+        "bauingenieurwesen",
+        "medienwissenschaft",
+        "dual-bauingenieurwesen"
+      ]
+    },
+    {
+      "id": "chemie",
+      "name": "Chemie",
+      "art": "Studium",
+      "bereich": "Naturwissenschaften",
+      "kurz": "Du lernst, woraus Stoffe bestehen und wie sie reagieren – mit vielen Experimenten im Labor.",
+      "dauer_semester": 6,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Chemische und pharmazeutische Industrie",
+        "Forschung",
+        "Umweltanalytik",
+        "Qualitätskontrolle"
+      ],
+      "aehnlich": [
+        "biologie",
+        "mathematik",
+        "maschinenbau"
+      ]
+    },
+    {
+      "id": "mathematik",
+      "name": "Mathematik",
+      "art": "Studium",
+      "bereich": "Naturwissenschaften",
+      "kurz": "Du lernst, Probleme mit Logik und Beweisen zu lösen. Mathe wird im Studium viel abstrakter als in der Schule.",
+      "dauer_semester": 6,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Versicherungen und Banken",
+        "Datenanalyse",
+        "Softwareentwicklung",
+        "Forschung"
+      ],
+      "aehnlich": [
+        "informatik",
+        "chemie",
+        "lehramt"
+      ]
+    },
+    {
+      "id": "vwl",
+      "name": "Volkswirtschaftslehre (VWL)",
+      "art": "Studium",
+      "bereich": "Wirtschaft",
+      "kurz": "Du untersuchst, wie ganze Volkswirtschaften funktionieren – z. B. Preise, Arbeitsmarkt, Inflation und Handel.",
+      "dauer_semester": 6,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Je nach Hochschule zulassungsfrei oder örtlich zulassungsbeschränkt. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu aus Bewerbungen und Studienplätzen. Schau auf der Seite der Hochschule nach.",
+      "perspektiven": [
+        "Wirtschaftsforschung",
+        "Banken und Verbände",
+        "Ministerien und internationale Organisationen",
+        "Beratung"
+      ],
+      "aehnlich": [
+        "bwl",
+        "mathematik",
+        "rechtswissenschaft"
+      ]
+    },
+    {
+      "id": "medienwissenschaft",
+      "name": "Medien- und Kommunikationswissenschaft",
+      "art": "Studium",
+      "bereich": "Sprache/Kultur",
+      "kurz": "Du untersuchst, wie Medien funktionieren und wirken – von Zeitung und Fernsehen bis Social Media.",
+      "dauer_semester": 6,
+      "zugang": "Abitur (allgemeine Hochschulreife) / fachgebundene Hochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland)",
+      "nc_hinweis": "Häufig örtlich zulassungsbeschränkt, weil sich viele bewerben. Einen festen NC gibt es nicht: Er ergibt sich jedes Jahr neu – prüfe die Werte des Vorjahres bei der jeweiligen Hochschule.",
+      "perspektiven": [
+        "Journalismus",
+        "Öffentlichkeitsarbeit",
+        "Social-Media- und Online-Redaktion",
+        "Marktforschung"
+      ],
+      "aehnlich": [
+        "germanistik",
+        "bwl",
+        "architektur"
+      ]
+    },
+    {
+      "id": "dual-bwl",
+      "name": "Betriebswirtschaftslehre (dual)",
+      "art": "Duales Studium",
+      "bereich": "Wirtschaft",
+      "kurz": "Du wechselst zwischen Hochschule und Betrieb und lernst BWL direkt in der Praxis. Meist bekommst du vom Betrieb eine Vergütung.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte (je nach Hochschule und Bundesland) – zusätzlich ein Vertrag mit einem Praxispartner (Betrieb oder Einrichtung)",
+      "nc_hinweis": "Entscheidend ist meist die Zusage eines Praxispartners (Bewerbung beim Betrieb oft ein Jahr im Voraus). Die Hochschule prüft zusätzlich die Hochschulzugangsberechtigung; einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "Fach- und Führungsaufgaben im Ausbildungsbetrieb",
+        "Controlling, Marketing, Personal",
+        "Handel und Industrie"
+      ],
+      "aehnlich": [
+        "bwl",
+        "dual-wirtschaftsinformatik",
+        "dual-verwaltung"
+      ]
+    },
+    {
+      "id": "dual-informatik",
+      "name": "Informatik (dual)",
+      "art": "Duales Studium",
+      "bereich": "Informatik",
+      "kurz": "Du studierst Informatik und arbeitest in festen Phasen in einem Betrieb an echten IT-Projekten mit.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte (je nach Hochschule und Bundesland) – zusätzlich ein Vertrag mit einem Praxispartner (Betrieb oder Einrichtung)",
+      "nc_hinweis": "Entscheidend ist meist die Zusage eines Praxispartners (Bewerbung beim Betrieb oft ein Jahr im Voraus). Die Hochschule prüft zusätzlich die Hochschulzugangsberechtigung; einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "Softwareentwicklung",
+        "IT-Infrastruktur",
+        "IT-Sicherheit"
+      ],
+      "aehnlich": [
+        "informatik",
+        "dual-wirtschaftsinformatik",
+        "dual-elektrotechnik"
+      ]
+    },
+    {
+      "id": "dual-wirtschaftsinformatik",
+      "name": "Wirtschaftsinformatik (dual)",
+      "art": "Duales Studium",
+      "bereich": "Informatik",
+      "kurz": "Du verbindest Informatik und BWL im Wechsel von Hochschule und Betrieb.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte (je nach Hochschule und Bundesland) – zusätzlich ein Vertrag mit einem Praxispartner (Betrieb oder Einrichtung)",
+      "nc_hinweis": "Entscheidend ist meist die Zusage eines Praxispartners (Bewerbung beim Betrieb oft ein Jahr im Voraus). Die Hochschule prüft zusätzlich die Hochschulzugangsberechtigung; einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "IT-Projektmanagement",
+        "Prozessberatung",
+        "Datenanalyse"
+      ],
+      "aehnlich": [
+        "wirtschaftsinformatik",
+        "dual-informatik",
+        "dual-bwl"
+      ]
+    },
+    {
+      "id": "dual-maschinenbau",
+      "name": "Maschinenbau (dual)",
+      "art": "Duales Studium",
+      "bereich": "Ingenieurwesen",
+      "kurz": "Du studierst Maschinenbau und lernst im Betrieb Konstruktion und Produktion kennen – teils mit Ausbildungsabschluss dazu.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte (je nach Hochschule und Bundesland) – zusätzlich ein Vertrag mit einem Praxispartner (Betrieb oder Einrichtung)",
+      "nc_hinweis": "Entscheidend ist meist die Zusage eines Praxispartners (Bewerbung beim Betrieb oft ein Jahr im Voraus). Die Hochschule prüft zusätzlich die Hochschulzugangsberechtigung; einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "Konstruktion",
+        "Produktion und Fertigungsplanung",
+        "Technischer Vertrieb"
+      ],
+      "aehnlich": [
+        "maschinenbau",
+        "dual-elektrotechnik",
+        "dual-wirtschaftsingenieurwesen"
+      ]
+    },
+    {
+      "id": "dual-elektrotechnik",
+      "name": "Elektrotechnik (dual)",
+      "art": "Duales Studium",
+      "bereich": "Ingenieurwesen",
+      "kurz": "Du studierst Elektrotechnik und wendest das Gelernte in den Praxisphasen im Betrieb an.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte (je nach Hochschule und Bundesland) – zusätzlich ein Vertrag mit einem Praxispartner (Betrieb oder Einrichtung)",
+      "nc_hinweis": "Entscheidend ist meist die Zusage eines Praxispartners (Bewerbung beim Betrieb oft ein Jahr im Voraus). Die Hochschule prüft zusätzlich die Hochschulzugangsberechtigung; einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "Automatisierung",
+        "Energietechnik",
+        "Elektronikentwicklung"
+      ],
+      "aehnlich": [
+        "elektrotechnik",
+        "dual-maschinenbau",
+        "dual-informatik"
+      ]
+    },
+    {
+      "id": "dual-wirtschaftsingenieurwesen",
+      "name": "Wirtschaftsingenieurwesen (dual)",
+      "art": "Duales Studium",
+      "bereich": "Ingenieurwesen",
+      "kurz": "Du verbindest Technik und Wirtschaft im Wechsel zwischen Hochschule und Betrieb.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte (je nach Hochschule und Bundesland) – zusätzlich ein Vertrag mit einem Praxispartner (Betrieb oder Einrichtung)",
+      "nc_hinweis": "Entscheidend ist meist die Zusage eines Praxispartners (Bewerbung beim Betrieb oft ein Jahr im Voraus). Die Hochschule prüft zusätzlich die Hochschulzugangsberechtigung; einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "Projektmanagement",
+        "Einkauf und Logistik",
+        "Produktionsplanung"
+      ],
+      "aehnlich": [
+        "wirtschaftsingenieurwesen",
+        "dual-maschinenbau",
+        "dual-bwl"
+      ]
+    },
+    {
+      "id": "dual-bauingenieurwesen",
+      "name": "Bauingenieurwesen (dual)",
+      "art": "Duales Studium",
+      "bereich": "Ingenieurwesen",
+      "kurz": "Du studierst Bauingenieurwesen und arbeitest in den Praxisphasen in einem Bauunternehmen, Planungsbüro oder einer Behörde.",
+      "dauer_semester": 7,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte (je nach Hochschule und Bundesland) – zusätzlich ein Vertrag mit einem Praxispartner (Betrieb oder Einrichtung)",
+      "nc_hinweis": "Entscheidend ist meist die Zusage eines Praxispartners (Bewerbung beim Betrieb oft ein Jahr im Voraus). Die Hochschule prüft zusätzlich die Hochschulzugangsberechtigung; einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "Bauleitung",
+        "Tragwerksplanung",
+        "Öffentliche Bauverwaltung"
+      ],
+      "aehnlich": [
+        "bauingenieurwesen",
+        "architektur",
+        "dual-wirtschaftsingenieurwesen"
+      ]
+    },
+    {
+      "id": "dual-soziale-arbeit",
+      "name": "Soziale Arbeit (dual)",
+      "art": "Duales Studium",
+      "bereich": "Sozialwesen/Pädagogik",
+      "kurz": "Du studierst Soziale Arbeit und arbeitest parallel in einer sozialen Einrichtung, z. B. in der Jugendhilfe.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte (je nach Hochschule und Bundesland) – zusätzlich ein Vertrag mit einem Praxispartner (Betrieb oder Einrichtung)",
+      "nc_hinweis": "Entscheidend ist meist die Zusage eines Praxispartners (Bewerbung beim Betrieb oft ein Jahr im Voraus). Die Hochschule prüft zusätzlich die Hochschulzugangsberechtigung; einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "Kinder- und Jugendhilfe",
+        "Beratungsstellen",
+        "Eingliederungshilfe"
+      ],
+      "aehnlich": [
+        "soziale-arbeit",
+        "erziehungswissenschaft",
+        "dual-pflege"
+      ]
+    },
+    {
+      "id": "dual-pflege",
+      "name": "Pflege (primärqualifizierendes Pflegestudium)",
+      "art": "Duales Studium",
+      "bereich": "Medizin/Gesundheit",
+      "kurz": "Du studierst Pflege an einer Hochschule und hast Praxiseinsätze in Krankenhaus, Pflegeheim und ambulanter Pflege. Am Ende hast du den Bachelor und die Berufserlaubnis als Pflegefachfrau/-mann.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte (Regeln je nach Bundesland) – zusätzlich ein Vertrag mit einem Träger der praktischen Ausbildung",
+      "nc_hinweis": "Entscheidend ist meist die Zusage eines Praxispartners (Bewerbung beim Betrieb oft ein Jahr im Voraus). Die Hochschule prüft zusätzlich die Hochschulzugangsberechtigung; einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "Pflege im Krankenhaus oder Pflegeheim",
+        "Ambulante Pflege",
+        "Pflegeexpertise und Praxisanleitung"
+      ],
+      "aehnlich": [
+        "medizin",
+        "dual-soziale-arbeit",
+        "psychologie"
+      ]
+    },
+    {
+      "id": "dual-verwaltung",
+      "name": "Öffentliche Verwaltung / Public Management (dual)",
+      "art": "Duales Studium",
+      "bereich": "Öffentlicher Dienst",
+      "kurz": "Du studierst an einer Verwaltungshochschule und arbeitest in Praxisphasen bei einer Behörde – oft als Beamtin oder Beamter auf Widerruf.",
+      "dauer_semester": 6,
+      "zugang": "Abitur / Fachhochschulreife / beruflich Qualifizierte (je nach Hochschule und Bundesland) – zusätzlich ein Vertrag mit einem Dienstherrn bzw. einer Behörde (Einstellungsverfahren)",
+      "nc_hinweis": "Zugang meist über das Auswahlverfahren der Behörde oder Kommune (z. B. Test und Gespräch). Einen festen NC gibt es nicht.",
+      "perspektiven": [
+        "Kommunalverwaltung",
+        "Landes- und Bundesbehörden",
+        "Finanz- und Sozialverwaltung"
+      ],
+      "aehnlich": [
+        "rechtswissenschaft",
+        "dual-bwl",
+        "vwl"
+      ]
+    }
+  ]
+}

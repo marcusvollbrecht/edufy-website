@@ -1,0 +1,216 @@
+{
+  "stand": "2026-11",
+  "quellen": [
+    { "titel": "Berufsausbildungsbeihilfe (BAB)", "herausgeber": "Bundesagentur für Arbeit", "url": "https://www.arbeitsagentur.de/bildung/ausbildung/berufsausbildungsbeihilfe-bab", "stand": "2026-11" },
+    { "titel": "Aufstiegs-BAföG – Informationsportal", "herausgeber": "Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) / Länder", "url": "https://www.aufstiegs-bafoeg.de", "stand": "2026-11" },
+    { "titel": "Weiterbildungsstipendium", "herausgeber": "Stiftung Begabtenförderung berufliche Bildung (SBB)", "url": "https://www.sbb-stipendien.de/weiterbildungsstipendium", "stand": "2026-11" },
+    { "titel": "Aufstiegsstipendium", "herausgeber": "Stiftung Begabtenförderung berufliche Bildung (SBB)", "url": "https://www.sbb-stipendien.de/aufstiegsstipendium", "stand": "2026-11" },
+    { "titel": "BAföG – Informationsportal", "herausgeber": "Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)", "url": "https://www.bafoeg.de", "stand": "2026-11" },
+    { "titel": "Deutschlandstipendium", "herausgeber": "Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)", "url": "https://www.deutschlandstipendium.de", "stand": "2026-11" },
+    { "titel": "Kindergeld", "herausgeber": "Familienportal des Bundesfamilienministeriums (BMBFSFJ)", "url": "https://familienportal.de/bmbfsfj/themen/familie/familienleistungen/kindergeld/", "stand": "2026-01" },
+    { "titel": "Wohngeldgesetz § 20 (Gesetzeskonkurrenz)", "herausgeber": "Bundesamt für Justiz – gesetze-im-internet.de", "url": "https://www.gesetze-im-internet.de/wogg/__20.html", "stand": "2026-11" },
+    { "titel": "Meisterbonus & Co: Hier gibt es Prämien für Meisterschüler und Gründer (Übersicht der Länderprämien)", "herausgeber": "Deutsche Handwerks Zeitung (Sekundärquelle)", "url": "https://www.deutsche-handwerks-zeitung.de/meisterbonus-co-hier-gibt-es-praemien-fuer-meisterschueler-145931/", "stand": "2026-01" }
+  ],
+  "hinweis": "Alle Angaben sind eine unverbindliche Orientierung, keine Rechts- oder Förderberatung. Ob und wie viel Förderung du bekommst, entscheidet allein die zuständige Stelle. Die Selbstcheck-Fragen ersetzen keinen Antrag. Alle Beträge geprueft:false – amtliche Seiten waren in der Agentenumgebung gesperrt, siehe docs/content/QUELLEN.md.",
+  "foerderungen": [
+    {
+      "id": "bab",
+      "name": "Berufsausbildungsbeihilfe (BAB)",
+      "fuer": "Azubis in einer betrieblichen Ausbildung, die nicht bei den Eltern wohnen",
+      "art": "Zuschuss",
+      "betrag_text": "bedarfsabhängig – die Agentur für Arbeit berechnet den Betrag für dich persönlich; muss nicht zurückgezahlt werden",
+      "voraussetzungen": [
+        "Du machst eine betriebliche oder außerbetriebliche Ausbildung in einem anerkannten Ausbildungsberuf.",
+        "Du wohnst während der Ausbildung nicht bei deinen Eltern – unter 18 nur, wenn der Ausbildungsbetrieb von zu Hause aus zu weit weg ist.",
+        "Dein Einkommen (Ausbildungsvergütung) und das deiner Eltern reichen für deinen Lebensunterhalt nicht aus.",
+        "In der Regel nur für die erste Ausbildung."
+      ],
+      "selbstcheck": [
+        "Machst du eine Ausbildung in einem Betrieb (nicht nur in einer Schule)?",
+        "Wohnst du während der Ausbildung nicht bei deinen Eltern?",
+        "Ist es deine erste Berufsausbildung?",
+        "Reicht deine Ausbildungsvergütung nicht für Miete und Leben?"
+      ],
+      "antrag_bei": "Agentur für Arbeit (online oder vor Ort), möglichst schon vor Ausbildungsbeginn",
+      "link": "https://www.arbeitsagentur.de/bildung/ausbildung/berufsausbildungsbeihilfe-bab",
+      "quelle": { "titel": "Berufsausbildungsbeihilfe (BAB)", "herausgeber": "Bundesagentur für Arbeit", "url": "https://www.arbeitsagentur.de/bildung/ausbildung/berufsausbildungsbeihilfe-bab", "stand": "2026-11" },
+      "geprueft": false,
+      "hinweis": "Voraussetzungen aus Sekundärquellen zusammengefasst (arbeitsagentur.de gesperrt). Bewusst kein Eurobetrag: Ratgeberseiten nennen für 2026 widersprüchliche Bedarfssätze (z. B. 822 €/Monat bei eigener Wohnung). Unter-18-Regel und Erstausbildung an der Primärquelle prüfen."
+    },
+    {
+      "id": "aufstiegs-bafoeg",
+      "name": "Aufstiegs-BAföG",
+      "fuer": "Fachkräfte mit Berufsausbildung, die sich zum Meister, Fachwirt, Techniker oder vergleichbar fortbilden",
+      "art": "Zuschuss",
+      "betrag_text": "Lehrgangs- und Prüfungsgebühren bis zu 15.000 € förderfähig, davon 50 % als Zuschuss, der Rest als zinsgünstiges Darlehen; bei bestandener Prüfung kann ein Teil des Restdarlehens erlassen werden. Bei Vollzeit-Fortbildung zusätzlich Unterhaltsbeitrag (einkommensabhängig). Kein Alterslimit.",
+      "voraussetzungen": [
+        "Du hast eine abgeschlossene Berufsausbildung oder eine vergleichbare Qualifikation.",
+        "Die Fortbildung führt zu einem anerkannten Aufstiegsabschluss (z. B. Meister/-in, Fachwirt/-in, Techniker/-in, Erzieher/-in).",
+        "Die Fortbildung hat einen Mindestumfang an Unterrichtsstunden (in Voll- oder Teilzeit)."
+      ],
+      "selbstcheck": [
+        "Hast du eine Berufsausbildung abgeschlossen?",
+        "Willst du eine Fortbildung zum Meister, Fachwirt, Techniker oder Ähnlichem machen?",
+        "Hast du für diese Fortbildung noch kein Aufstiegs-BAföG bekommen?"
+      ],
+      "antrag_bei": "für Aufstiegs-BAföG zuständige Stelle in deinem Bundesland (Online-Antrag möglich); das Darlehen läuft über die KfW",
+      "link": "https://www.aufstiegs-bafoeg.de",
+      "quelle": { "titel": "Aufstiegs-BAföG – Informationsportal", "herausgeber": "BMFTR / Länder", "url": "https://www.aufstiegs-bafoeg.de", "stand": "2026-11" },
+      "geprueft": false,
+      "hinweis": "15.000 € und 50 % Zuschuss aus mehreren Sekundärquellen (Stand 2026). Erlass-Anteil und Unterhaltsbeitrag nicht beziffert, da nur Ratgeberseiten. Achtung: Eine Reform (u. a. höherer Zuschussanteil) ist laut Sekundärquellen als Kabinettsentwurf (Juli 2026) in Arbeit, aber noch nicht in Kraft – bei Wiedervorlage prüfen."
+    },
+    {
+      "id": "weiterbildungsstipendium",
+      "name": "Weiterbildungsstipendium",
+      "fuer": "junge Fachkräfte mit besonders guter Abschlussprüfung, die sich beruflich weiterbilden wollen",
+      "art": "Stipendium",
+      "betrag_text": "bis zu 9.135 € für Weiterbildungen innerhalb von drei Jahren; je Maßnahme trägst du 10 % Eigenanteil",
+      "voraussetzungen": [
+        "Du hast deine Berufsausbildung mit sehr gutem Ergebnis abgeschlossen (z. B. mindestens 87 Punkte) oder warst erfolgreich bei einem Leistungswettbewerb oder wirst von Betrieb oder Berufsschule vorgeschlagen.",
+        "Du bist bei der Aufnahme jünger als 25 Jahre (Ausnahmen z. B. für Freiwilligendienst oder Elternzeit möglich).",
+        "Du arbeitest mindestens 15 Stunden pro Woche oder bist arbeitsuchend gemeldet."
+      ],
+      "selbstcheck": [
+        "Hast du deine Ausbildung mit sehr guter Note abgeschlossen?",
+        "Bist du jünger als 25 Jahre?",
+        "Arbeitest du mindestens 15 Stunden pro Woche in deinem Beruf?"
+      ],
+      "antrag_bei": "Bewerbung bei der Kammer bzw. zuständigen Stelle für deinen Ausbildungsberuf (z. B. IHK, Handwerkskammer); Träger ist die SBB",
+      "link": "https://www.sbb-stipendien.de/weiterbildungsstipendium",
+      "quelle": { "titel": "Weiterbildungsstipendium", "herausgeber": "Stiftung Begabtenförderung berufliche Bildung (SBB)", "url": "https://www.sbb-stipendien.de/weiterbildungsstipendium", "stand": "2026-11" },
+      "geprueft": false,
+      "hinweis": "9.135 € laut mehreren Quellen (u. a. IHK-Seiten, siehe docs/ZAHLEN-PRUEFEN.md Nr. 6); einzelne Sekundärquellen nennen für 2026 abweichend 8.700 € bzw. ältere 8.100 €. Wirkung des 10-%-Eigenanteils (mindert Gesamtbetrag ja/nein) widersprüchlich – an der SBB-Seite prüfen."
+    },
+    {
+      "id": "aufstiegsstipendium",
+      "name": "Aufstiegsstipendium",
+      "fuer": "beruflich Qualifizierte mit Berufserfahrung, die ein erstes Studium beginnen",
+      "art": "Stipendium",
+      "betrag_text": "Vollzeitstudium: 992 € pro Monat plus 80 € Büchergeld (zusammen 1.072 €); berufsbegleitendes Studium: 3.045 € pro Jahr; einkommensunabhängig",
+      "voraussetzungen": [
+        "Du hast eine Berufsausbildung oder Aufstiegsfortbildung mit besonders guten Leistungen abgeschlossen (oder einen begründeten Vorschlag).",
+        "Du hast mindestens zwei Jahre Berufserfahrung.",
+        "Es ist dein erstes Hochschulstudium.",
+        "Du nimmst erfolgreich am Auswahlverfahren teil."
+      ],
+      "selbstcheck": [
+        "Hast du eine Ausbildung oder Fortbildung mit guten Leistungen abgeschlossen?",
+        "Hast du mindestens zwei Jahre gearbeitet?",
+        "Willst du zum ersten Mal studieren?"
+      ],
+      "antrag_bei": "Online-Bewerbung bei der Stiftung Begabtenförderung berufliche Bildung (SBB), Bewerbungsfristen beachten",
+      "link": "https://www.sbb-stipendien.de/aufstiegsstipendium",
+      "quelle": { "titel": "Aufstiegsstipendium", "herausgeber": "Stiftung Begabtenförderung berufliche Bildung (SBB)", "url": "https://www.sbb-stipendien.de/aufstiegsstipendium", "stand": "2026-11" },
+      "geprueft": false,
+      "hinweis": "Beträge aus Sekundärquellen (Hochschul- und Ratgeberseiten, Stand 2026), nicht an sbb-stipendien.de gelesen. Kinderbetreuungspauschale bewusst weggelassen (Angaben widersprüchlich)."
+    },
+    {
+      "id": "bafoeg-studium",
+      "name": "BAföG (Studium)",
+      "fuer": "Studierende an Hochschulen, deren eigenes Einkommen und das der Eltern nicht ausreicht",
+      "art": "Zuschuss",
+      "betrag_text": "bedarfsabhängig; Höchstsatz 992 € pro Monat (bei eigener Wohnung, inkl. Wohnpauschale 380 € und Zuschlag für Kranken- und Pflegeversicherung); in der Regel zur Hälfte Zuschuss, zur Hälfte zinsloses Darlehen mit begrenzter Rückzahlung",
+      "voraussetzungen": [
+        "Du studierst an einer Hochschule (Vollzeit) in einem förderfähigen Studiengang.",
+        "Dein Einkommen und Vermögen sowie das deiner Eltern liegen unter bestimmten Grenzen.",
+        "Altersgrenze bei Studienbeginn grundsätzlich unter 45 Jahren (Ausnahmen möglich)."
+      ],
+      "selbstcheck": [
+        "Studierst du oder willst du bald studieren?",
+        "Reicht das Geld von dir und deinen Eltern nicht für dein Studium?",
+        "Studierst du in Vollzeit?"
+      ],
+      "antrag_bei": "BAföG-Amt (Amt für Ausbildungsförderung) beim Studierendenwerk deiner Hochschule; Online-Antrag über „BAföG Digital“",
+      "link": "https://www.bafoeg.de",
+      "quelle": { "titel": "BAföG – Informationsportal", "herausgeber": "BMFTR", "url": "https://www.bafoeg.de", "stand": "2026-11" },
+      "geprueft": false,
+      "hinweis": "992 € und Wohnpauschale 380 € für WS 2026/27 laut mehreren Sekundärquellen (Finanztip, Studis Online u. a.). Geplante Erhöhung der Wohnpauschale auf 440 € ist laut Sekundärquellen verschoben (frühestens Sommersemester 2027) und noch nicht beschlossen. Altersgrenze 45 aus Vorwissen, nicht in dieser Recherche belegt – prüfen."
+    },
+    {
+      "id": "deutschlandstipendium",
+      "name": "Deutschlandstipendium",
+      "fuer": "Studierende mit guten Leistungen und Engagement",
+      "art": "Stipendium",
+      "betrag_text": "300 € pro Monat, einkommensunabhängig; wird nicht auf BAföG angerechnet",
+      "voraussetzungen": [
+        "Du studierst an einer teilnehmenden Hochschule oder beginnst dort bald dein Studium.",
+        "Gute Leistungen in Schule oder Studium; Engagement und persönlicher Werdegang zählen ebenfalls.",
+        "Die Auswahl trifft deine Hochschule nach eigenen Kriterien."
+      ],
+      "selbstcheck": [
+        "Studierst du an einer Hochschule, die das Deutschlandstipendium anbietet?",
+        "Hast du gute Noten oder engagierst du dich z. B. im Verein oder in der Familie?"
+      ],
+      "antrag_bei": "deine Hochschule (Bewerbungszeitraum unterscheidet sich je Hochschule)",
+      "link": "https://www.deutschlandstipendium.de",
+      "quelle": { "titel": "Deutschlandstipendium", "herausgeber": "BMFTR", "url": "https://www.deutschlandstipendium.de", "stand": "2026-11" },
+      "geprueft": false,
+      "hinweis": "300 €/Monat, hälftig Bund und private Förderer, laut mehreren Hochschulseiten (2026/27). An deutschlandstipendium.de nicht gelesen."
+    },
+    {
+      "id": "kindergeld",
+      "name": "Kindergeld",
+      "fuer": "Eltern von Kindern in Schule, Ausbildung oder Studium (bis 25 Jahre)",
+      "art": "Zuschuss",
+      "betrag_text": "259 € pro Kind und Monat (seit 1. Januar 2026), einkommensunabhängig; wird an die Eltern gezahlt",
+      "voraussetzungen": [
+        "Bis 18 Jahre grundsätzlich immer.",
+        "Von 18 bis 25 Jahre, wenn du z. B. in Ausbildung oder Studium bist, einen Freiwilligendienst machst oder auf einen Ausbildungsplatz wartest.",
+        "Nach Abschluss der ersten Ausbildung gelten zusätzliche Regeln (z. B. zur Arbeitszeit)."
+      ],
+      "selbstcheck": [
+        "Bist du jünger als 25 Jahre?",
+        "Bist du in Schule, Ausbildung, Studium oder Freiwilligendienst?",
+        "Haben deine Eltern das Kindergeld bei der Familienkasse beantragt?"
+      ],
+      "antrag_bei": "Familienkasse (Antrag stellen deine Eltern)",
+      "link": "https://familienportal.de/bmbfsfj/themen/familie/familienleistungen/kindergeld/",
+      "quelle": { "titel": "Kindergeld", "herausgeber": "Familienportal (BMBFSFJ)", "url": "https://familienportal.de/bmbfsfj/themen/familie/familienleistungen/kindergeld/", "stand": "2026-01" },
+      "geprueft": false,
+      "hinweis": "259 € seit 01.01.2026 laut Suchauszug des Familienportals und Finanztip; Primärseite nicht direkt geöffnet (siehe docs/ZAHLEN-PRUEFEN.md Nr. 5)."
+    },
+    {
+      "id": "meisterpraemie",
+      "name": "Meisterprämien der Länder",
+      "fuer": "Fachkräfte, die ihre Meisterprüfung (teils auch andere Aufstiegsfortbildungen) bestanden haben",
+      "art": "Prämie",
+      "betrag_text": "je nach Bundesland unterschiedlich – nicht jedes Bundesland zahlt eine Prämie",
+      "voraussetzungen": [
+        "Bestandene Meisterprüfung oder – je nach Bundesland – eine andere Aufstiegsfortbildung.",
+        "Bezug zum Bundesland, z. B. über Wohnort, Arbeitsort oder Prüfungsort (Regeln je nach Land).",
+        "Antrag innerhalb einer Frist nach der Prüfung (je nach Land)."
+      ],
+      "selbstcheck": [
+        "Hast du eine Meisterprüfung oder vergleichbare Fortbildung bestanden oder planst du sie?",
+        "Weißt du, ob dein Bundesland eine Meister- oder Aufstiegsprämie zahlt?"
+      ],
+      "antrag_bei": "je nach Bundesland, häufig über die Handwerkskammer, IHK oder ein Landesförderinstitut",
+      "link": "https://www.deutsche-handwerks-zeitung.de/meisterbonus-co-hier-gibt-es-praemien-fuer-meisterschueler-145931/",
+      "quelle": { "titel": "Meisterbonus & Co: Hier gibt es Prämien für Meisterschüler und Gründer", "herausgeber": "Deutsche Handwerks Zeitung (Sekundärquelle)", "url": "https://www.deutsche-handwerks-zeitung.de/meisterbonus-co-hier-gibt-es-praemien-fuer-meisterschueler-145931/", "stand": "2026-01" },
+      "geprueft": false,
+      "hinweis": "Bewusst ohne Länderliste und ohne Beträge: Quellen nennen widersprüchliche Stände (Jan./Apr./Nov. 2026). Link ist eine Sekundärquelle – vor Livegang durch eine amtliche oder Kammer-Übersicht ersetzen."
+    },
+    {
+      "id": "wohngeld",
+      "name": "Wohngeld",
+      "fuer": "Haushalte mit geringem Einkommen als Zuschuss zur Miete – für Azubis und Studierende nur in Ausnahmefällen",
+      "art": "Zuschuss",
+      "betrag_text": "bedarfsabhängig (abhängig von Einkommen, Miete, Wohnort und Haushaltsgröße)",
+      "voraussetzungen": [
+        "Wichtig für Azubis: Wenn du für deine Ausbildung dem Grunde nach Anspruch auf BAB hast (Studierende: auf BAföG), bekommst du in der Regel kein Wohngeld – auch dann nicht, wenn die BAB nur wegen zu hohen Einkommens abgelehnt wurde.",
+        "Ausnahmen sind z. B. möglich, wenn deine Ausbildung grundsätzlich nicht BAB-förderfähig ist (etwa manche Zweitausbildungen) oder wenn im Haushalt jemand ohne BAB-/BAföG-Anspruch lebt (z. B. ein eigenes Kind).",
+        "Du zahlst Miete (oder trägst Kosten für selbst genutztes Wohneigentum) und dein Einkommen liegt unter bestimmten Grenzen."
+      ],
+      "selbstcheck": [
+        "Hast du keinen Anspruch auf BAB oder BAföG für deine Ausbildung bzw. dein Studium?",
+        "Lebt in deinem Haushalt jemand, der selbst keinen BAB- oder BAföG-Anspruch hat (z. B. dein Kind)?",
+        "Zahlst du Miete und ist dein Einkommen niedrig?"
+      ],
+      "antrag_bei": "Wohngeldstelle deiner Stadt oder Gemeinde",
+      "link": "https://www.gesetze-im-internet.de/wogg/__20.html",
+      "quelle": { "titel": "Wohngeldgesetz § 20 Abs. 2 (Ausschluss bei BAföG-/BAB-Anspruch dem Grunde nach)", "herausgeber": "Bundesamt für Justiz – gesetze-im-internet.de", "url": "https://www.gesetze-im-internet.de/wogg/__20.html", "stand": "2026-11" },
+      "geprueft": false,
+      "hinweis": "Einschränkung nach § 20 Abs. 2 WoGG und Verwaltungsvorschrift, bestätigt durch Merkblätter (Hamburg, Wiesbaden, NRW-FAQ) in Suchauszügen; Gesetzestext nicht direkt gelesen. Ausnahme „BAB/BAföG nur als Darlehen“ wegen Seltenheit nicht aufgenommen."
+    }
+  ]
+}

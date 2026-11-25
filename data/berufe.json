@@ -1,0 +1,2518 @@
+{
+  "stand": "2026-11",
+  "quellen": [
+    {
+      "titel": "Rangliste 2025 der Ausbildungsberufe nach Neuabschlüssen (Erhebung zum 30. September, Tabelle 67 Deutschland)",
+      "herausgeber": "BIBB",
+      "url": "https://www.bibb.de/dokumente/pdf/naa309/naa309_2025_tab067_0bund.pdf",
+      "stand": "2025-12"
+    },
+    {
+      "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+      "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+      "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+      "stand": "2025-10"
+    },
+    {
+      "titel": "Tarifliche Ausbildungsvergütungen – Übersichtsseite mit PDF/Excel-Downloads 2025",
+      "herausgeber": "BIBB",
+      "url": "https://www.bibb.de/de/12209.php",
+      "stand": "2025-10"
+    },
+    {
+      "titel": "Kaufmann/-frau für Spedition und Logistikdienstleistung – Ausbildungsvergütung (Sekundärquellen mit Verweis auf BIBB 2025)",
+      "herausgeber": "Sekundärquellen (ausbildung123.de, azubimeter.de), nicht BIBB",
+      "url": "https://www.ausbildung123.de/ausbildungsberuf/21-kaufmann-frau-fuer-spedition-und-logistikdienstleistung/",
+      "stand": "2025-10"
+    }
+  ],
+  "hinweis": "Auswahl: rund 50 der häufigsten dualen Ausbildungsberufe nach BBiG/HwO laut BIBB-Rangliste der Neuabschlüsse 2025 (Reihenfolge ist keine geprüfte Rangfolge). Schulische Ausbildungen (z. B. Pflegefachmann/-frau, Erzieher/-in) sind in der BIBB-Rangliste nicht enthalten. Alle Vergütungswerte geprueft:false – siehe docs/content/QUELLEN.md.",
+  "berufe": [
+    {
+      "id": "kfz-mechatroniker",
+      "name": "Kraftfahrzeugmechatroniker/-in",
+      "bereich": "Handwerk",
+      "kurz": "Du findest Fehler an Autos, Motorrädern oder Nutzfahrzeugen und reparierst sie. Dabei arbeitest du mit Werkzeug und mit Diagnosecomputern.",
+      "taetigkeiten": [
+        "Fahrzeuge warten und Inspektionen durchführen",
+        "Fehler mit Diagnosegeräten finden",
+        "Bauteile wie Bremsen oder Elektrik reparieren und tauschen",
+        "Fahrzeuge für die Hauptuntersuchung vorbereiten"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; Betriebe stellen oft mit mittlerem Schulabschluss oder gutem Hauptschulabschluss ein",
+      "verguetung": {
+        "jahr1": 1090,
+        "jahr2": 1148,
+        "jahr3": 1222,
+        "jahr4": 1285,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Für Industrie und Handel (IH) nennt die Tabelle einen höheren Gesamtdurchschnitt (ca. 1.311 €)."
+      },
+      "staerken": [
+        "Technisches Verständnis",
+        "Sorgfalt",
+        "Freude an Fehlersuche"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Kfz-Techniker-Meister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Betriebswirt/-in nach der Handwerksordnung – Master Professional",
+          "dqr": 7
+        }
+      ],
+      "aehnlich": [
+        "land-baumaschinenmechatroniker",
+        "mechatroniker",
+        "automobilkaufmann"
+      ]
+    },
+    {
+      "id": "kaufmann-buero",
+      "name": "Kaufmann/-frau für Büromanagement",
+      "bereich": "Kaufmännisch",
+      "kurz": "Du organisierst Abläufe im Büro, kümmerst dich um Termine, Rechnungen und Anfragen und hältst so den Betrieb am Laufen.",
+      "taetigkeiten": [
+        "E-Mails, Briefe und Anfragen bearbeiten",
+        "Termine und Besprechungen planen",
+        "Rechnungen und einfache Buchhaltung bearbeiten",
+        "Daten am Computer pflegen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; meist mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1161,
+        "jahr2": 1245,
+        "jahr3": 1342,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Weitere Werte laut Tabelle: Handwerk 1.017 / 1.108 / 1.238 €, Öffentlicher Dienst 1.270 / 1.321 / 1.371 €."
+      },
+      "staerken": [
+        "Organisationstalent",
+        "Sorgfalt",
+        "Freundlicher Umgang mit Menschen"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Fachwirt/-in (IHK), z. B. Wirtschaftsfachwirt/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Fachkaufmann/-frau für Büro- und Projektorganisation (IHK)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Geprüfte/-r Betriebswirt/-in (IHK) – Master Professional",
+          "dqr": 7
+        }
+      ],
+      "aehnlich": [
+        "industriekaufmann",
+        "verwaltungsfachangestellte",
+        "kaufmann-gesundheitswesen"
+      ]
+    },
+    {
+      "id": "verkaeufer",
+      "name": "Verkäufer/-in",
+      "bereich": "Handel",
+      "kurz": "Du berätst Kundinnen und Kunden im Geschäft, räumst Ware ein und kassierst. Die Ausbildung dauert nur zwei Jahre.",
+      "taetigkeiten": [
+        "Kundschaft beraten",
+        "Ware annehmen, einräumen und auszeichnen",
+        "An der Kasse abrechnen",
+        "Verkaufsfläche ordentlich halten"
+      ],
+      "dauer_monate": 24,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 1084,
+        "jahr2": 1195,
+        "jahr3": null,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Zweijährige Ausbildung, daher nur zwei Lehrjahre."
+      },
+      "staerken": [
+        "Kontaktfreude",
+        "Freundlichkeit",
+        "Belastbarkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Anschluss: 3. Ausbildungsjahr zum Kaufmann/zur Kauffrau im Einzelhandel",
+          "dqr": 4
+        },
+        {
+          "abschluss": "Handelsfachwirt/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "kaufmann-einzelhandel",
+        "fachverkaeufer-lebensmittelhandwerk",
+        "fachlagerist"
+      ]
+    },
+    {
+      "id": "kaufmann-einzelhandel",
+      "name": "Kaufmann/-frau im Einzelhandel",
+      "bereich": "Handel",
+      "kurz": "Du berätst Kundschaft, planst den Wareneinkauf und kümmerst dich um Preise und Werbung im Geschäft.",
+      "taetigkeiten": [
+        "Kundschaft beraten und verkaufen",
+        "Ware bestellen und Lager kontrollieren",
+        "Preise kalkulieren",
+        "Aktionen und Warenpräsentation planen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder guter Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 1087,
+        "jahr2": 1195,
+        "jahr3": 1328,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Einzelhandel ist regional sehr unterschiedlich tarifiert."
+      },
+      "staerken": [
+        "Kommunikationsstärke",
+        "Kaufmännisches Denken",
+        "Teamfähigkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Handelsfachwirt/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Geprüfte/-r Betriebswirt/-in (IHK) – Master Professional",
+          "dqr": 7
+        }
+      ],
+      "aehnlich": [
+        "verkaeufer",
+        "kaufmann-e-commerce",
+        "kaufmann-gross-aussenhandel"
+      ]
+    },
+    {
+      "id": "medizinische-fachangestellte",
+      "name": "Medizinische/-r Fachangestellte/-r",
+      "bereich": "Gesundheit/Soziales",
+      "kurz": "Du arbeitest in einer Arztpraxis, empfängst Patientinnen und Patienten, hilfst bei Untersuchungen und erledigst die Verwaltung.",
+      "taetigkeiten": [
+        "Patientinnen und Patienten empfangen und Termine vergeben",
+        "Bei Untersuchungen assistieren, z. B. Blut abnehmen",
+        "Praxisabläufe und Abrechnung organisieren",
+        "Hygiene- und Datenschutzregeln einhalten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; meist mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1023,
+        "jahr2": 1115,
+        "jahr3": 1209,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Freie Berufe (FB). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Einfühlungsvermögen",
+        "Organisationstalent",
+        "Verschwiegenheit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Fachwirt/-in im Gesundheits- und Sozialwesen (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "zahnmedizinische-fachangestellte",
+        "tiermedizinische-fachangestellte",
+        "kaufmann-gesundheitswesen"
+      ]
+    },
+    {
+      "id": "zahnmedizinische-fachangestellte",
+      "name": "Zahnmedizinische/-r Fachangestellte/-r",
+      "bereich": "Gesundheit/Soziales",
+      "kurz": "Du unterstützt in der Zahnarztpraxis bei Behandlungen, bereitest Instrumente vor und organisierst Termine und Abrechnung.",
+      "taetigkeiten": [
+        "Bei Behandlungen assistieren",
+        "Instrumente reinigen und sterilisieren",
+        "Patientinnen und Patienten betreuen",
+        "Termine und Abrechnung bearbeiten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; meist mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1021,
+        "jahr2": 1115,
+        "jahr3": 1213,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Freie Berufe (FB). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Geschick mit den Händen",
+        "Einfühlungsvermögen",
+        "Sorgfalt bei Hygiene"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Zahnmedizinische/-r Verwaltungsassistent/-in oder Prophylaxeassistent/-in (Fortbildung der Zahnärztekammer)",
+          "dqr": null
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "medizinische-fachangestellte",
+        "tiermedizinische-fachangestellte",
+        "pharmazeutisch-kaufmaennische-angestellte"
+      ]
+    },
+    {
+      "id": "fachinformatiker",
+      "name": "Fachinformatiker/-in",
+      "bereich": "IT",
+      "kurz": "Je nach Fachrichtung entwickelst du Software, richtest Netzwerke und Computer ein oder analysierst Daten.",
+      "taetigkeiten": [
+        "Programme schreiben und testen (Anwendungsentwicklung)",
+        "Server, Netzwerke und Arbeitsplätze einrichten (Systemintegration)",
+        "Fehler finden und Nutzerinnen und Nutzern helfen",
+        "IT-Sicherheit beachten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1211,
+        "jahr2": 1279,
+        "jahr3": 1356,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Logisches Denken",
+        "Geduld bei der Fehlersuche",
+        "Lust auf Technik"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Bachelor Professional in IT (IHK)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "elektroniker-geraete-systeme",
+        "kaufmann-e-commerce",
+        "mediengestalter"
+      ]
+    },
+    {
+      "id": "industriekaufmann",
+      "name": "Industriekaufmann/-frau",
+      "bereich": "Kaufmännisch",
+      "kurz": "Du arbeitest in einem Industriebetrieb in Bereichen wie Einkauf, Verkauf, Personal oder Buchhaltung und lernst den ganzen Ablauf kennen.",
+      "taetigkeiten": [
+        "Material einkaufen und Angebote vergleichen",
+        "Aufträge von Kundschaft bearbeiten",
+        "In Buchhaltung und Personalwesen mitarbeiten",
+        "Kosten berechnen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1195,
+        "jahr2": 1267,
+        "jahr3": 1362,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Zahlenverständnis",
+        "Organisationstalent",
+        "Kommunikationsstärke"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Fachwirt/-in (IHK), z. B. Wirtschaftsfachwirt/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Geprüfte/-r Betriebswirt/-in (IHK) – Master Professional",
+          "dqr": 7
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "kaufmann-buero",
+        "kaufmann-gross-aussenhandel",
+        "kaufmann-spedition"
+      ]
+    },
+    {
+      "id": "elektroniker-handwerk",
+      "name": "Elektroniker/-in (Handwerk)",
+      "bereich": "Handwerk",
+      "kurz": "Du verlegst Leitungen, installierst Licht-, Strom- und Gebäudetechnik und sorgst dafür, dass alles sicher funktioniert.",
+      "taetigkeiten": [
+        "Stromleitungen und Schalter installieren",
+        "Anlagen wie Photovoltaik oder Gebäudesteuerung einrichten",
+        "Elektrische Anlagen prüfen",
+        "Störungen finden und beheben"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder guter Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 979,
+        "jahr2": 1050,
+        "jahr3": 1125,
+        "jahr4": 1201,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Technisches Verständnis",
+        "Sorgfalt und Sicherheitsbewusstsein",
+        "Mathematisches Grundverständnis"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Elektrotechnikermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "elektroniker-betriebstechnik",
+        "anlagenmechaniker-shk",
+        "elektroniker-geraete-systeme"
+      ]
+    },
+    {
+      "id": "anlagenmechaniker-shk",
+      "name": "Anlagenmechaniker/-in für Sanitär-, Heizungs- und Klimatechnik",
+      "bereich": "Handwerk",
+      "kurz": "Du baust Bäder, Heizungen, Wärmepumpen und Lüftungen ein und hältst sie in Schuss.",
+      "taetigkeiten": [
+        "Rohre und Leitungen verlegen",
+        "Heizungen und Wärmepumpen einbauen und warten",
+        "Bäder und Sanitäranlagen installieren",
+        "Kundschaft zu Energiesparen beraten"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": null,
+        "jahr2": null,
+        "jahr3": null,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen – Übersichtsseite mit PDF/Excel-Downloads 2025",
+          "herausgeber": "BIBB",
+          "url": "https://www.bibb.de/de/12209.php",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Bundeswert der Zeile Hw in der BIBB-Gesamtübersicht 2025 in den Suchauszügen nicht eindeutig lesbar. Laut BIBB gibt es für diesen Beruf in Ostdeutschland keine Tarifvereinbarungen. Eine Sekundärquelle nennt 927 / 986 / 1.071 / 1.140 € mit Verweis auf BIBB – nicht übernommen, da nicht belegbar."
+      },
+      "staerken": [
+        "Handwerkliches Geschick",
+        "Technisches Verständnis",
+        "Freundlicher Umgang mit Kundschaft"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Installateur- und Heizungsbauermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "elektroniker-handwerk",
+        "metallbauer",
+        "industriemechaniker"
+      ]
+    },
+    {
+      "id": "industriemechaniker",
+      "name": "Industriemechaniker/-in",
+      "bereich": "Industrie/Technik",
+      "kurz": "Du baust, wartest und reparierst Maschinen und Produktionsanlagen, damit in der Fabrik alles läuft.",
+      "taetigkeiten": [
+        "Maschinenteile herstellen und montieren",
+        "Anlagen warten und reparieren",
+        "Technische Zeichnungen lesen",
+        "Messungen und Prüfungen durchführen"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1221,
+        "jahr2": 1287,
+        "jahr3": 1375,
+        "jahr4": 1452,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Technisches Verständnis",
+        "Handwerkliches Geschick",
+        "Genauigkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Industriemeister/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "zerspanungsmechaniker",
+        "mechatroniker",
+        "metallbauer"
+      ]
+    },
+    {
+      "id": "fachkraft-lagerlogistik",
+      "name": "Fachkraft für Lagerlogistik",
+      "bereich": "Logistik",
+      "kurz": "Du nimmst Waren an, lagerst sie richtig und sorgst dafür, dass Bestellungen pünktlich verschickt werden.",
+      "taetigkeiten": [
+        "Wareneingang prüfen",
+        "Waren einlagern und Bestände kontrollieren",
+        "Lieferungen zusammenstellen und verpacken",
+        "Mit Scannern, Lagersoftware und Staplern arbeiten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1171,
+        "jahr2": 1247,
+        "jahr3": 1330,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Sorgfalt",
+        "Organisationstalent",
+        "Körperliche Fitness"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Logistikmeister/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Fachwirt/-in für Logistiksysteme (IHK)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "fachlagerist",
+        "kaufmann-spedition",
+        "berufskraftfahrer"
+      ]
+    },
+    {
+      "id": "kaufmann-gross-aussenhandel",
+      "name": "Kaufmann/-frau für Groß- und Außenhandelsmanagement",
+      "bereich": "Handel",
+      "kurz": "Du kaufst Waren in großen Mengen bei Herstellern ein und verkaufst sie an Firmen weiter – manchmal auch ins Ausland.",
+      "taetigkeiten": [
+        "Waren einkaufen und Preise verhandeln",
+        "Aufträge von Geschäftskunden bearbeiten",
+        "Lieferungen und Lager planen",
+        "Bei Auslandsgeschäften Zoll und Transport beachten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1198,
+        "jahr2": 1271,
+        "jahr3": 1347,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Verhandlungsgeschick",
+        "Zahlenverständnis",
+        "Fremdsprachen hilfreich"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Fachwirt/-in (IHK), z. B. Wirtschaftsfachwirt/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Geprüfte/-r Betriebswirt/-in (IHK) – Master Professional",
+          "dqr": 7
+        }
+      ],
+      "aehnlich": [
+        "kaufmann-einzelhandel",
+        "industriekaufmann",
+        "kaufmann-spedition"
+      ]
+    },
+    {
+      "id": "steuerfachangestellte",
+      "name": "Steuerfachangestellte/-r",
+      "bereich": "Kaufmännisch",
+      "kurz": "Du arbeitest in einer Steuerkanzlei, bereitest Steuererklärungen vor und hilfst bei der Buchhaltung von Firmen und Privatpersonen.",
+      "taetigkeiten": [
+        "Belege buchen",
+        "Lohnabrechnungen erstellen",
+        "Steuererklärungen vorbereiten",
+        "Mit Mandantinnen und Mandanten kommunizieren"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": null,
+        "jahr2": null,
+        "jahr3": null,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen – Übersichtsseite mit PDF/Excel-Downloads 2025",
+          "herausgeber": "BIBB",
+          "url": "https://www.bibb.de/de/12209.php",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Laut BIBB gibt es für diesen Beruf keine Tarifverträge zur Ausbildungsvergütung, daher kein Wert in der Gesamtübersicht. Steuerberaterkammern veröffentlichen teils Empfehlungen – nicht geprüft."
+      },
+      "staerken": [
+        "Zahlenverständnis",
+        "Genauigkeit",
+        "Verschwiegenheit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Steuerfachwirt/-in (Steuerberaterkammer)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Bilanzbuchhalter/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "kaufmann-buero",
+        "bankkaufmann",
+        "rechtsanwaltsfachangestellte"
+      ]
+    },
+    {
+      "id": "bankkaufmann",
+      "name": "Bankkaufmann/-frau",
+      "bereich": "Kaufmännisch",
+      "kurz": "Du berätst Kundschaft rund um Konto, Sparen und Kredite und bearbeitest Bankgeschäfte.",
+      "taetigkeiten": [
+        "Konten eröffnen und Zahlungsverkehr bearbeiten",
+        "Kundschaft zu Sparen und Geldanlage beraten",
+        "Kreditanfragen vorbereiten",
+        "Regeln zu Datenschutz und Geldwäsche beachten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; häufig Abitur oder Fachhochschulreife",
+      "verguetung": {
+        "jahr1": 1333,
+        "jahr2": 1387,
+        "jahr3": 1455,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Kommunikationsstärke",
+        "Zahlenverständnis",
+        "Vertrauenswürdigkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Bankfachwirt/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "kaufmann-versicherungen",
+        "immobilienkaufmann",
+        "steuerfachangestellte"
+      ]
+    },
+    {
+      "id": "elektroniker-betriebstechnik",
+      "name": "Elektroniker/-in für Betriebstechnik",
+      "bereich": "Industrie/Technik",
+      "kurz": "Du installierst und wartest die elektrischen Anlagen in Industriebetrieben, z. B. Stromversorgung und Steuerungen.",
+      "taetigkeiten": [
+        "Elektrische Anlagen montieren und anschließen",
+        "Steuerungen programmieren und prüfen",
+        "Störungen finden und beheben",
+        "Sicherheitsprüfungen durchführen"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1227,
+        "jahr2": 1310,
+        "jahr3": 1401,
+        "jahr4": 1498,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Technisches Verständnis",
+        "Logisches Denken",
+        "Sicherheitsbewusstsein"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Industriemeister/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "elektroniker-automatisierungstechnik",
+        "elektroniker-handwerk",
+        "mechatroniker"
+      ]
+    },
+    {
+      "id": "mechatroniker",
+      "name": "Mechatroniker/-in",
+      "bereich": "Industrie/Technik",
+      "kurz": "Du verbindest Mechanik, Elektronik und Software und baust oder wartest automatisierte Anlagen und Roboter.",
+      "taetigkeiten": [
+        "Mechanische und elektrische Bauteile montieren",
+        "Anlagen in Betrieb nehmen und programmieren",
+        "Wartung und Fehlersuche",
+        "Mit Plänen und Schaltplänen arbeiten"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1224,
+        "jahr2": 1297,
+        "jahr3": 1387,
+        "jahr4": 1472,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Werte nur aus einer Websuche-Zusammenfassung mit Verweis auf BIBB 2025 (Sekundärquelle), nicht im Tabellenauszug selbst gesehen – besonders sorgfältig prüfen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Technisches Verständnis",
+        "Logisches Denken",
+        "Teamfähigkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Industriemeister/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "industriemechaniker",
+        "elektroniker-betriebstechnik",
+        "kfz-mechatroniker"
+      ]
+    },
+    {
+      "id": "tischler",
+      "name": "Tischler/-in",
+      "bereich": "Handwerk",
+      "kurz": "Du baust Möbel, Türen, Fenster oder ganze Inneneinrichtungen aus Holz und anderen Materialien.",
+      "taetigkeiten": [
+        "Holz auswählen und zuschneiden",
+        "Mit Maschinen und Handwerkzeug arbeiten",
+        "Möbel und Bauteile montieren",
+        "Beim Kunden einbauen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 827,
+        "jahr2": 964,
+        "jahr3": 1085,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Großer Unterschied zwischen West (833 / 970 / 1.087 €) und Ost (780 / 893 / 1.064 €) laut Ost/West-Tabelle."
+      },
+      "staerken": [
+        "Handwerkliches Geschick",
+        "Räumliches Vorstellungsvermögen",
+        "Kreativität"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Tischlermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "zimmerer",
+        "maler-lackierer",
+        "metallbauer"
+      ]
+    },
+    {
+      "id": "fachlagerist",
+      "name": "Fachlagerist/-in",
+      "bereich": "Logistik",
+      "kurz": "Du nimmst Waren an, lagerst sie ein und stellst Lieferungen zusammen. Die Ausbildung dauert zwei Jahre.",
+      "taetigkeiten": [
+        "Waren annehmen und prüfen",
+        "Waren einlagern",
+        "Bestellungen zusammenstellen und verpacken",
+        "Mit Flurförderzeugen arbeiten"
+      ],
+      "dauer_monate": 24,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 1151,
+        "jahr2": 1231,
+        "jahr3": null,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Zweijährige Ausbildung."
+      },
+      "staerken": [
+        "Zuverlässigkeit",
+        "Körperliche Fitness",
+        "Sorgfalt"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Anschluss: 3. Ausbildungsjahr zur Fachkraft für Lagerlogistik",
+          "dqr": 4
+        },
+        {
+          "abschluss": "Logistikmeister/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "fachkraft-lagerlogistik",
+        "berufskraftfahrer",
+        "verkaeufer"
+      ]
+    },
+    {
+      "id": "verwaltungsfachangestellte",
+      "name": "Verwaltungsfachangestellte/-r",
+      "bereich": "Öffentlicher Dienst",
+      "kurz": "Du arbeitest in einer Behörde, z. B. bei der Stadt oder im Landkreis, bearbeitest Anträge und berätst Bürgerinnen und Bürger.",
+      "taetigkeiten": [
+        "Anträge prüfen und bearbeiten",
+        "Bürgerinnen und Bürger beraten",
+        "Bescheide nach Gesetzen erstellen",
+        "Akten und Daten verwalten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; meist mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1286,
+        "jahr2": 1337,
+        "jahr3": 1383,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Öffentlicher Dienst (ÖD), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Genauigkeit",
+        "Freundlicher Umgang mit Menschen",
+        "Verständnis für Regeln"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Verwaltungsfachwirt/-in (Fortbildung im öffentlichen Dienst)",
+          "dqr": null
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "kaufmann-buero",
+        "rechtsanwaltsfachangestellte",
+        "steuerfachangestellte"
+      ]
+    },
+    {
+      "id": "friseur",
+      "name": "Friseur/-in",
+      "bereich": "Handwerk",
+      "kurz": "Du berätst Kundschaft zu Haarschnitt, Farbe und Pflege und setzt die Wünsche um.",
+      "taetigkeiten": [
+        "Kundschaft beraten",
+        "Haare schneiden, färben und stylen",
+        "Haut- und Haarpflege anbieten",
+        "Termine und Kasse betreuen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 623,
+        "jahr2": 723,
+        "jahr3": 857,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Laut Tabelle mit Fußnote gekennzeichnet; bei Werten unter der Mindestausbildungsvergütung gilt für Ausbildungsbeginn ab 2020 die gesetzliche Mindestvergütung – Fußnote an der Primärquelle prüfen."
+      },
+      "staerken": [
+        "Kreativität",
+        "Kontaktfreude",
+        "Geschick mit den Händen"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Friseurmeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Betriebswirt/-in nach der Handwerksordnung – Master Professional",
+          "dqr": 7
+        }
+      ],
+      "aehnlich": [
+        "augenoptiker",
+        "verkaeufer",
+        "maler-lackierer"
+      ]
+    },
+    {
+      "id": "maler-lackierer",
+      "name": "Maler/-in und Lackierer/-in",
+      "bereich": "Handwerk",
+      "kurz": "Du gestaltest Wände, Fassaden und Räume mit Farbe, Tapete und Putz und schützt Oberflächen.",
+      "taetigkeiten": [
+        "Untergründe vorbereiten",
+        "Streichen, tapezieren und lackieren",
+        "Fassaden gestalten und dämmen",
+        "Farbtöne mit Kundschaft abstimmen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 868,
+        "jahr2": 961,
+        "jahr3": 1127,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Sinn für Farben und Formen",
+        "Sorgfalt",
+        "Schwindelfreiheit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Maler- und Lackierermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "tischler",
+        "dachdecker",
+        "maurer"
+      ]
+    },
+    {
+      "id": "koch",
+      "name": "Koch/Köchin",
+      "bereich": "Gastro/Tourismus",
+      "kurz": "Du bereitest in Restaurants, Hotels oder Kantinen Speisen zu und planst Menüs.",
+      "taetigkeiten": [
+        "Zutaten vorbereiten und Gerichte kochen",
+        "Speisen anrichten",
+        "Lebensmittel bestellen und lagern",
+        "Hygieneregeln einhalten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 1120,
+        "jahr2": 1233,
+        "jahr3": 1346,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Laut BIBB liegen für Ostdeutschland keine einschlägigen Tarifvereinbarungen vor; der Bundeswert bezieht sich vor allem auf Westdeutschland."
+      },
+      "staerken": [
+        "Kreativität",
+        "Belastbarkeit",
+        "Teamfähigkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Küchenmeister/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "hotelfachmann",
+        "fachmann-systemgastronomie",
+        "fachverkaeufer-lebensmittelhandwerk"
+      ]
+    },
+    {
+      "id": "kaufmann-spedition",
+      "name": "Kaufmann/-frau für Spedition und Logistikdienstleistung",
+      "bereich": "Logistik",
+      "kurz": "Du planst, wie Waren per Lkw, Schiff, Bahn oder Flugzeug von A nach B kommen, und organisierst Preise und Papiere.",
+      "taetigkeiten": [
+        "Transporte planen und Routen wählen",
+        "Angebote erstellen",
+        "Zoll- und Versandpapiere bearbeiten",
+        "Mit Kundschaft und Fahrern kommunizieren"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1119,
+        "jahr2": 1206,
+        "jahr3": 1287,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Kaufmann/-frau für Spedition und Logistikdienstleistung – Ausbildungsvergütung (Sekundärquellen mit Verweis auf BIBB 2025)",
+          "herausgeber": "Sekundärquellen (ausbildung123.de, azubimeter.de), nicht BIBB",
+          "url": "https://www.ausbildung123.de/ausbildungsberuf/21-kaufmann-frau-fuer-spedition-und-logistikdienstleistung/",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zeile nicht im BIBB-Tabellenauszug gefunden; Werte aus Sekundärquellen, die sich auf BIBB 2025 berufen. An der BIBB-Gesamtübersicht prüfen."
+      },
+      "staerken": [
+        "Organisationstalent",
+        "Kommunikationsstärke",
+        "Fremdsprachen hilfreich"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Fachwirt/-in für Güterverkehr und Logistik (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Geprüfte/-r Betriebswirt/-in (IHK) – Master Professional",
+          "dqr": 7
+        }
+      ],
+      "aehnlich": [
+        "fachkraft-lagerlogistik",
+        "kaufmann-gross-aussenhandel",
+        "berufskraftfahrer"
+      ]
+    },
+    {
+      "id": "metallbauer",
+      "name": "Metallbauer/-in",
+      "bereich": "Handwerk",
+      "kurz": "Du stellst Konstruktionen aus Metall her, z. B. Treppen, Geländer, Tore oder Stahlbauteile, und montierst sie.",
+      "taetigkeiten": [
+        "Metall zuschneiden, biegen und schweißen",
+        "Bauteile nach Zeichnung fertigen",
+        "Konstruktionen vor Ort montieren",
+        "Anlagen warten"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 968,
+        "jahr2": 1045,
+        "jahr3": 1142,
+        "jahr4": 1204,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Handwerkliches Geschick",
+        "Technisches Verständnis",
+        "Körperliche Fitness"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Metallbauermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "industriemechaniker",
+        "zerspanungsmechaniker",
+        "anlagenmechaniker-shk"
+      ]
+    },
+    {
+      "id": "zimmerer",
+      "name": "Zimmerer/Zimmerin",
+      "bereich": "Bau",
+      "kurz": "Du baust Dachstühle, Holzhäuser und Holzkonstruktionen und arbeitest viel auf der Baustelle.",
+      "taetigkeiten": [
+        "Holzbauteile abbinden und zuschneiden",
+        "Dachstühle und Wände aufstellen",
+        "Dämmung einbauen",
+        "Altbauten sanieren"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1070,
+        "jahr2": 1281,
+        "jahr3": 1527,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Schwindelfreiheit",
+        "Räumliches Vorstellungsvermögen",
+        "Körperliche Fitness"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Zimmermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "dachdecker",
+        "tischler",
+        "maurer"
+      ]
+    },
+    {
+      "id": "hotelfachmann",
+      "name": "Hotelfachmann/-frau",
+      "bereich": "Gastro/Tourismus",
+      "kurz": "Du lernst alle Bereiche eines Hotels kennen – von der Rezeption über den Service bis zur Organisation von Veranstaltungen.",
+      "taetigkeiten": [
+        "Gäste empfangen und betreuen",
+        "Im Restaurant servieren",
+        "Zimmer und Abläufe organisieren",
+        "Reservierungen und Rechnungen bearbeiten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1112,
+        "jahr2": 1231,
+        "jahr3": 1347,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Freundlichkeit",
+        "Belastbarkeit",
+        "Fremdsprachen hilfreich"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Hotelmeister/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "koch",
+        "fachmann-systemgastronomie",
+        "kaufmann-buero"
+      ]
+    },
+    {
+      "id": "fachverkaeufer-lebensmittelhandwerk",
+      "name": "Fachverkäufer/-in im Lebensmittelhandwerk",
+      "bereich": "Handel",
+      "kurz": "Du verkaufst in einer Bäckerei, Konditorei oder Fleischerei, berätst Kundschaft und bereitest kleine Speisen zu.",
+      "taetigkeiten": [
+        "Kundschaft beraten und bedienen",
+        "Waren präsentieren",
+        "Snacks und Platten vorbereiten",
+        "Hygieneregeln einhalten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 1029,
+        "jahr2": 1104,
+        "jahr3": 1239,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw), alle Schwerpunkte. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Freundlichkeit",
+        "Sauberkeit",
+        "Belastbarkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Verkaufsleiter/-in im Lebensmittelhandwerk (Fortbildung der Handwerkskammer)",
+          "dqr": null
+        },
+        {
+          "abschluss": "Handelsfachwirt/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "verkaeufer",
+        "koch",
+        "kaufmann-einzelhandel"
+      ]
+    },
+    {
+      "id": "gaertner",
+      "name": "Gärtner/-in",
+      "bereich": "Landwirtschaft/Umwelt",
+      "kurz": "Du ziehst Pflanzen, legst Gärten und Parks an oder pflegst Grünflächen – je nach Fachrichtung.",
+      "taetigkeiten": [
+        "Pflanzen säen, pflegen und vermehren",
+        "Gärten und Grünanlagen anlegen",
+        "Maschinen bedienen",
+        "Kundschaft beraten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1118,
+        "jahr2": 1223,
+        "jahr3": 1334,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Landwirtschaft (Lw), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Freude an Natur",
+        "Körperliche Fitness",
+        "Sorgfalt"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Gärtnermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "landwirt",
+        "strassenbauer",
+        "zimmerer"
+      ]
+    },
+    {
+      "id": "elektroniker-geraete-systeme",
+      "name": "Elektroniker/-in für Geräte und Systeme",
+      "bereich": "Industrie/Technik",
+      "kurz": "Du baust und prüfst elektronische Geräte und Bauteile, z. B. für Medizintechnik, Messtechnik oder Kommunikation.",
+      "taetigkeiten": [
+        "Elektronische Baugruppen herstellen",
+        "Geräte testen und Fehler finden",
+        "Software für Geräte einspielen",
+        "Kundschaft technisch unterstützen"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1236,
+        "jahr2": 1298,
+        "jahr3": 1381,
+        "jahr4": 1451,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Feinmotorik",
+        "Logisches Denken",
+        "Technisches Verständnis"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Industriemeister/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "elektroniker-betriebstechnik",
+        "elektroniker-automatisierungstechnik",
+        "fachinformatiker"
+      ]
+    },
+    {
+      "id": "land-baumaschinenmechatroniker",
+      "name": "Land- und Baumaschinenmechatroniker/-in",
+      "bereich": "Handwerk",
+      "kurz": "Du wartest und reparierst Traktoren, Bagger, Erntemaschinen und andere große Maschinen.",
+      "taetigkeiten": [
+        "Maschinen warten und reparieren",
+        "Hydraulik und Elektronik prüfen",
+        "Fehler mit Diagnosegeräten finden",
+        "Maschinen beim Kunden vor Ort reparieren"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 927,
+        "jahr2": 1019,
+        "jahr3": 1137,
+        "jahr4": 1202,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Technisches Verständnis",
+        "Körperliche Fitness",
+        "Selbstständiges Arbeiten"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Land- und Baumaschinenmechanikermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "kfz-mechatroniker",
+        "landwirt",
+        "industriemechaniker"
+      ]
+    },
+    {
+      "id": "maurer",
+      "name": "Maurer/-in",
+      "bereich": "Bau",
+      "kurz": "Du baust Wände, Fundamente und Gebäude aus Steinen und Beton.",
+      "taetigkeiten": [
+        "Mauern aus Steinen errichten",
+        "Beton und Schalungen herstellen",
+        "Baupläne lesen",
+        "Altbauten sanieren"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 1079,
+        "jahr2": 1286,
+        "jahr3": 1533,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Körperliche Fitness",
+        "Räumliches Vorstellungsvermögen",
+        "Teamfähigkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Maurer- und Betonbauermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "zimmerer",
+        "strassenbauer",
+        "dachdecker"
+      ]
+    },
+    {
+      "id": "strassenbauer",
+      "name": "Straßenbauer/-in",
+      "bereich": "Bau",
+      "kurz": "Du baust Straßen, Radwege, Plätze und Parkflächen und reparierst sie.",
+      "taetigkeiten": [
+        "Untergrund vorbereiten",
+        "Pflaster und Asphalt verlegen",
+        "Baumaschinen bedienen",
+        "Entwässerung einbauen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 1084,
+        "jahr2": 1286,
+        "jahr3": 1522,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Für Industrie und Handel (IH) nennt die Tabelle 1.091 / 1.272 / 1.508 €."
+      },
+      "staerken": [
+        "Körperliche Fitness",
+        "Arbeit im Freien",
+        "Teamfähigkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Straßenbauermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "maurer",
+        "zimmerer",
+        "gaertner"
+      ]
+    },
+    {
+      "id": "dachdecker",
+      "name": "Dachdecker/-in",
+      "bereich": "Bau",
+      "kurz": "Du deckst und dichtest Dächer ab, baust Dämmung und Solaranlagen ein und arbeitest in der Höhe.",
+      "taetigkeiten": [
+        "Dächer mit Ziegeln oder Folien decken",
+        "Dämmung einbauen",
+        "Dachrinnen und Fenster montieren",
+        "Solaranlagen auf Dächern montieren"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 1002,
+        "jahr2": 1155,
+        "jahr3": 1403,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Schwindelfreiheit",
+        "Körperliche Fitness",
+        "Handwerkliches Geschick"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Dachdeckermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "zimmerer",
+        "maurer",
+        "maler-lackierer"
+      ]
+    },
+    {
+      "id": "kaufmann-versicherungen",
+      "name": "Kaufmann/-frau für Versicherungen und Finanzanlagen",
+      "bereich": "Kaufmännisch",
+      "kurz": "Du berätst Kundschaft zu Versicherungen und Vorsorge und bearbeitest Verträge und Schadensfälle.",
+      "taetigkeiten": [
+        "Kundschaft zu Versicherungen beraten",
+        "Verträge bearbeiten",
+        "Schadensmeldungen prüfen",
+        "Risiken einschätzen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; häufig Abitur oder Fachhochschulreife",
+      "verguetung": {
+        "jahr1": 1336,
+        "jahr2": 1407,
+        "jahr3": 1497,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Kommunikationsstärke",
+        "Zahlenverständnis",
+        "Vertrauenswürdigkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Fachwirt/-in für Versicherungen und Finanzen (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "bankkaufmann",
+        "immobilienkaufmann",
+        "kaufmann-buero"
+      ]
+    },
+    {
+      "id": "immobilienkaufmann",
+      "name": "Immobilienkaufmann/-frau",
+      "bereich": "Kaufmännisch",
+      "kurz": "Du vermietest, verwaltest oder verkaufst Wohnungen und Häuser und kümmerst dich um Mieterinnen und Mieter.",
+      "taetigkeiten": [
+        "Wohnungen vermieten und besichtigen",
+        "Mietverträge und Nebenkosten bearbeiten",
+        "Reparaturen beauftragen",
+        "Bei Kauf und Verkauf beraten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; häufig Abitur oder Fachhochschulreife",
+      "verguetung": {
+        "jahr1": 1170,
+        "jahr2": 1278,
+        "jahr3": 1390,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Kommunikationsstärke",
+        "Organisationstalent",
+        "Verhandlungsgeschick"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Immobilienfachwirt/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "kaufmann-versicherungen",
+        "bankkaufmann",
+        "kaufmann-buero"
+      ]
+    },
+    {
+      "id": "automobilkaufmann",
+      "name": "Automobilkaufmann/-frau",
+      "bereich": "Handel",
+      "kurz": "Du arbeitest im Autohaus, verkaufst Fahrzeuge und Teile und organisierst Werkstatttermine.",
+      "taetigkeiten": [
+        "Kundschaft beim Autokauf beraten",
+        "Kauf- und Leasingverträge vorbereiten",
+        "Ersatzteile und Zubehör verkaufen",
+        "Werkstattaufträge organisieren"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1101,
+        "jahr2": 1147,
+        "jahr3": 1222,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung. Für das Handwerk (Hw) nennt die Tabelle einen ähnlichen Gesamtdurchschnitt (ca. 1.152 €)."
+      },
+      "staerken": [
+        "Kommunikationsstärke",
+        "Interesse an Fahrzeugen",
+        "Kaufmännisches Denken"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Automobilverkäufer/-in bzw. Fachwirt/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Geprüfte/-r Betriebswirt/-in (IHK) – Master Professional",
+          "dqr": 7
+        }
+      ],
+      "aehnlich": [
+        "kfz-mechatroniker",
+        "kaufmann-einzelhandel",
+        "kaufmann-buero"
+      ]
+    },
+    {
+      "id": "kaufmann-e-commerce",
+      "name": "Kaufmann/-frau im E-Commerce",
+      "bereich": "Handel",
+      "kurz": "Du betreust Onlineshops, planst Werbung im Netz und wertest aus, was Kundinnen und Kunden kaufen.",
+      "taetigkeiten": [
+        "Produkte im Onlineshop einstellen",
+        "Online-Werbung planen",
+        "Bestellungen und Rücksendungen betreuen",
+        "Verkaufszahlen auswerten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1146,
+        "jahr2": 1233,
+        "jahr3": 1334,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Digitale Neugier",
+        "Kreativität",
+        "Zahlenverständnis"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Handelsfachwirt/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "kaufmann-einzelhandel",
+        "mediengestalter",
+        "fachinformatiker"
+      ]
+    },
+    {
+      "id": "landwirt",
+      "name": "Landwirt/-in",
+      "bereich": "Landwirtschaft/Umwelt",
+      "kurz": "Du baust Pflanzen wie Getreide an, versorgst Tiere und arbeitest mit großen Maschinen.",
+      "taetigkeiten": [
+        "Felder bestellen und ernten",
+        "Tiere füttern und pflegen",
+        "Maschinen bedienen und warten",
+        "Betrieb und Kosten planen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss oder mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 902,
+        "jahr2": 993,
+        "jahr3": 1091,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Landwirtschaft (Lw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Freude an Natur und Tieren",
+        "Verantwortungsbewusstsein",
+        "Technisches Verständnis"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Landwirtschaftsmeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Wirtschafter/-in bzw. Agrarbetriebswirt/-in (Fachschule)",
+          "dqr": null
+        }
+      ],
+      "aehnlich": [
+        "gaertner",
+        "land-baumaschinenmechatroniker",
+        "berufskraftfahrer"
+      ]
+    },
+    {
+      "id": "tiermedizinische-fachangestellte",
+      "name": "Tiermedizinische/-r Fachangestellte/-r",
+      "bereich": "Gesundheit/Soziales",
+      "kurz": "Du hilfst in einer Tierarztpraxis bei Behandlungen, betreust Tiere und ihre Halterinnen und Halter und erledigst Verwaltung.",
+      "taetigkeiten": [
+        "Tiere bei Untersuchungen halten und betreuen",
+        "Bei Behandlungen und Operationen assistieren",
+        "Instrumente reinigen",
+        "Termine und Abrechnung bearbeiten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; meist mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": null,
+        "jahr2": null,
+        "jahr3": null,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "In den Suchauszügen nur der Gesamtdurchschnitt über alle Lehrjahre gefunden: 1.014 € (BIBB 2025, Freie Berufe). Werte je Lehrjahr an der BIBB-Gesamtübersicht nachtragen."
+      },
+      "staerken": [
+        "Liebe zu Tieren",
+        "Ruhe und Einfühlungsvermögen",
+        "Sorgfalt"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Fortbildungen der Tierärztekammer (z. B. Praxismanagement)",
+          "dqr": null
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "medizinische-fachangestellte",
+        "zahnmedizinische-fachangestellte",
+        "landwirt"
+      ]
+    },
+    {
+      "id": "pharmazeutisch-kaufmaennische-angestellte",
+      "name": "Pharmazeutisch-kaufmännische/-r Angestellte/-r",
+      "bereich": "Gesundheit/Soziales",
+      "kurz": "Du arbeitest in einer Apotheke, bestellst Arzneimittel, prüfst Lieferungen und kümmerst dich um Kasse und Abrechnung.",
+      "taetigkeiten": [
+        "Arzneimittel bestellen und einlagern",
+        "Lieferungen prüfen",
+        "Rezepte abrechnen",
+        "Freiverkäufliche Produkte verkaufen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": null,
+        "jahr2": null,
+        "jahr3": null,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "In den Suchauszügen nur der Gesamtdurchschnitt über alle Lehrjahre gefunden: 925 € (BIBB 2025, Freie Berufe). Werte je Lehrjahr an der BIBB-Gesamtübersicht nachtragen."
+      },
+      "staerken": [
+        "Sorgfalt",
+        "Organisationstalent",
+        "Freundlichkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Handelsfachwirt/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Ausbildung zur/zum Pharmazeutisch-technischen Assistent/-in (schulisch)",
+          "dqr": null
+        }
+      ],
+      "aehnlich": [
+        "medizinische-fachangestellte",
+        "kaufmann-einzelhandel",
+        "kaufmann-gesundheitswesen"
+      ]
+    },
+    {
+      "id": "rechtsanwaltsfachangestellte",
+      "name": "Rechtsanwaltsfachangestellte/-r",
+      "bereich": "Kaufmännisch",
+      "kurz": "Du organisierst den Ablauf in einer Anwaltskanzlei, bereitest Schriftstücke vor und achtest auf Fristen.",
+      "taetigkeiten": [
+        "Schriftsätze vorbereiten",
+        "Fristen und Termine überwachen",
+        "Mandantinnen und Mandanten betreuen",
+        "Gebühren abrechnen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": null,
+        "jahr2": null,
+        "jahr3": null,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen – Übersichtsseite mit PDF/Excel-Downloads 2025",
+          "herausgeber": "BIBB",
+          "url": "https://www.bibb.de/de/12209.php",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Laut BIBB gibt es für diesen Beruf keine Tarifverträge zur Ausbildungsvergütung, daher kein Wert in der Gesamtübersicht. Rechtsanwaltskammern veröffentlichen teils Empfehlungen – nicht geprüft."
+      },
+      "staerken": [
+        "Sprachgefühl",
+        "Genauigkeit",
+        "Verschwiegenheit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Geprüfte/-r Rechtsfachwirt/-in (Rechtsanwaltskammer)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "steuerfachangestellte",
+        "kaufmann-buero",
+        "verwaltungsfachangestellte"
+      ]
+    },
+    {
+      "id": "berufskraftfahrer",
+      "name": "Berufskraftfahrer/-in",
+      "bereich": "Logistik",
+      "kurz": "Du fährst Lkw oder Bus, transportierst Waren oder Menschen sicher und kümmerst dich um dein Fahrzeug.",
+      "taetigkeiten": [
+        "Lkw oder Bus fahren",
+        "Ladung sichern",
+        "Fahrzeug kontrollieren und pflegen",
+        "Lenk- und Ruhezeiten einhalten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 1114,
+        "jahr2": 1200,
+        "jahr3": 1290,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Verantwortungsbewusstsein",
+        "Konzentration",
+        "Orientierungssinn"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Meister/-in für Kraftverkehr (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Fachwirt/-in für Güterverkehr und Logistik (IHK)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "fachkraft-lagerlogistik",
+        "kaufmann-spedition",
+        "fachlagerist"
+      ]
+    },
+    {
+      "id": "mediengestalter",
+      "name": "Mediengestalter/-in Digital und Print",
+      "bereich": "Medien/Gestaltung",
+      "kurz": "Du gestaltest Plakate, Flyer, Webseiten oder Social-Media-Inhalte und bereitest sie für Druck oder Bildschirm vor.",
+      "taetigkeiten": [
+        "Layouts und Grafiken entwerfen",
+        "Texte und Bilder zusammenstellen",
+        "Dateien für Druck oder Web vorbereiten",
+        "Mit Kundschaft Entwürfe abstimmen"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; häufig mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1156,
+        "jahr2": 1227,
+        "jahr3": 1305,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH), alle Fachrichtungen. Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Kreativität",
+        "Sinn für Gestaltung",
+        "Umgang mit Software"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Medienfachwirt/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "kaufmann-e-commerce",
+        "fachinformatiker",
+        "maler-lackierer"
+      ]
+    },
+    {
+      "id": "augenoptiker",
+      "name": "Augenoptiker/-in",
+      "bereich": "Handwerk",
+      "kurz": "Du berätst Kundschaft zu Brillen und Kontaktlinsen, misst die Sehstärke und passt Brillen an.",
+      "taetigkeiten": [
+        "Sehstärke messen",
+        "Kundschaft zu Brillenfassungen beraten",
+        "Brillengläser einschleifen und anpassen",
+        "Brillen reparieren"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 915,
+        "jahr2": 990,
+        "jahr3": 1062,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Handwerk (Hw). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Feinmotorik",
+        "Freundlichkeit",
+        "Genauigkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Augenoptikermeister/-in – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "friseur",
+        "verkaeufer",
+        "medizinische-fachangestellte"
+      ]
+    },
+    {
+      "id": "kaufmann-gesundheitswesen",
+      "name": "Kaufmann/-frau im Gesundheitswesen",
+      "bereich": "Kaufmännisch",
+      "kurz": "Du arbeitest in Krankenhäusern, Pflegeeinrichtungen oder Krankenkassen und kümmerst dich um Verwaltung und Abrechnung.",
+      "taetigkeiten": [
+        "Patientenaufnahme und Verwaltung",
+        "Leistungen mit Krankenkassen abrechnen",
+        "Einkauf und Personalverwaltung unterstützen",
+        "Qualitäts- und Datenschutzregeln beachten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1244,
+        "jahr2": 1317,
+        "jahr3": 1380,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Organisationstalent",
+        "Zahlenverständnis",
+        "Interesse an Gesundheit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Fachwirt/-in im Gesundheits- und Sozialwesen (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "medizinische-fachangestellte",
+        "kaufmann-buero",
+        "kaufmann-versicherungen"
+      ]
+    },
+    {
+      "id": "chemikant",
+      "name": "Chemikant/-in",
+      "bereich": "Industrie/Technik",
+      "kurz": "Du steuerst und überwachst Anlagen, in denen chemische Produkte wie Kunststoffe, Farben oder Arzneistoffe hergestellt werden.",
+      "taetigkeiten": [
+        "Produktionsanlagen steuern",
+        "Proben nehmen und prüfen",
+        "Anlagen warten",
+        "Sicherheits- und Umweltregeln einhalten"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss",
+      "verguetung": {
+        "jahr1": 1185,
+        "jahr2": 1274,
+        "jahr3": 1345,
+        "jahr4": 1447,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Interesse an Chemie",
+        "Verantwortungsbewusstsein",
+        "Bereitschaft zu Schichtarbeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Industriemeister/-in Fachrichtung Chemie (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "industriemechaniker",
+        "elektroniker-automatisierungstechnik",
+        "zerspanungsmechaniker"
+      ]
+    },
+    {
+      "id": "zerspanungsmechaniker",
+      "name": "Zerspanungsmechaniker/-in",
+      "bereich": "Industrie/Technik",
+      "kurz": "Du stellst Präzisionsteile aus Metall her, indem du an computergesteuerten Maschinen drehst, fräst oder schleifst.",
+      "taetigkeiten": [
+        "CNC-Maschinen einrichten und programmieren",
+        "Werkstücke drehen, fräsen und schleifen",
+        "Maße genau prüfen",
+        "Werkzeuge auswählen"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder guter Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": 1224,
+        "jahr2": 1284,
+        "jahr3": 1371,
+        "jahr4": 1447,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Genauigkeit",
+        "Technisches Verständnis",
+        "Konzentration"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Industriemeister/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "industriemechaniker",
+        "metallbauer",
+        "mechatroniker"
+      ]
+    },
+    {
+      "id": "elektroniker-automatisierungstechnik",
+      "name": "Elektroniker/-in für Automatisierungstechnik",
+      "bereich": "Industrie/Technik",
+      "kurz": "Du planst und programmierst Steuerungen, damit Maschinen und Produktionsanlagen automatisch arbeiten.",
+      "taetigkeiten": [
+        "Steuerungen programmieren",
+        "Sensoren und Antriebe anschließen",
+        "Anlagen in Betrieb nehmen",
+        "Fehler in automatisierten Anlagen finden"
+      ],
+      "dauer_monate": 42,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Abitur",
+      "verguetung": {
+        "jahr1": 1211,
+        "jahr2": 1283,
+        "jahr3": 1380,
+        "jahr4": 1475,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen in dualen Ausbildungsberufen nach BBiG bzw. HwO in Deutschland 2025 – Gesamtübersicht Bundesgebiet",
+          "herausgeber": "BIBB, Datenbank Tarifliche Ausbildungsvergütungen",
+          "url": "https://www.bibb.de/dokumente/pdf/2025_Dav-Gesamt%C3%BCbersicht_Ausbildungsverg%C3%BCtungen_Bundesgebiet.pdf",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zuständigkeitsbereich Industrie und Handel (IH). Wert aus einem Websuche-Auszug der BIBB-Gesamtübersicht 2025 übernommen (bibb.de war in der Agentenumgebung gesperrt); Spaltenzuordnung zu den Lehrjahren nicht am Tabellenkopf geprüft. Tarifliche Durchschnittswerte – Betriebe ohne Tarifbindung dürfen bis zu 20 % darunter liegen, aber nicht unter der Mindestausbildungsvergütung."
+      },
+      "staerken": [
+        "Logisches Denken",
+        "Technisches Verständnis",
+        "Geduld bei der Fehlersuche"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Industriemeister/-in (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Staatlich geprüfte/-r Techniker/-in (Fachschule)",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Studium, z. B. Bachelor (mit Hochschulzugang, auch über berufliche Qualifikation möglich)",
+          "dqr": 6
+        }
+      ],
+      "aehnlich": [
+        "elektroniker-betriebstechnik",
+        "mechatroniker",
+        "elektroniker-geraete-systeme"
+      ]
+    },
+    {
+      "id": "fachmann-systemgastronomie",
+      "name": "Fachmann/-frau für Systemgastronomie",
+      "bereich": "Gastro/Tourismus",
+      "kurz": "Du arbeitest in Restaurantketten mit festen Abläufen, organisierst Service, Küche und Personal und achtest auf Qualität.",
+      "taetigkeiten": [
+        "Gäste bedienen und Abläufe steuern",
+        "Schichten und Personal planen",
+        "Waren bestellen und Kosten kontrollieren",
+        "Hygiene- und Qualitätsstandards einhalten"
+      ],
+      "dauer_monate": 36,
+      "schulabschluss_typisch": "rechtlich kein bestimmter Abschluss vorgeschrieben; oft mittlerer Schulabschluss oder Hauptschulabschluss",
+      "verguetung": {
+        "jahr1": null,
+        "jahr2": null,
+        "jahr3": null,
+        "jahr4": null,
+        "einheit": "EUR brutto/Monat, tariflicher Durchschnitt",
+        "quelle": {
+          "titel": "Tarifliche Ausbildungsvergütungen – Übersichtsseite mit PDF/Excel-Downloads 2025",
+          "herausgeber": "BIBB",
+          "url": "https://www.bibb.de/de/12209.php",
+          "stand": "2025-10"
+        },
+        "geprueft": false,
+        "hinweis": "Zeile in den Suchauszügen der BIBB-Gesamtübersicht 2025 nicht gefunden. An der Primärquelle nachtragen."
+      },
+      "staerken": [
+        "Organisationstalent",
+        "Belastbarkeit",
+        "Teamfähigkeit"
+      ],
+      "aufstieg": [
+        {
+          "abschluss": "Fachwirt/-in im Gastgewerbe (IHK) – Bachelor Professional",
+          "dqr": 6
+        },
+        {
+          "abschluss": "Geprüfte/-r Betriebswirt/-in (IHK) – Master Professional",
+          "dqr": 7
+        }
+      ],
+      "aehnlich": [
+        "koch",
+        "hotelfachmann",
+        "kaufmann-einzelhandel"
+      ]
+    }
+  ]
+}
