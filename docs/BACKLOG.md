@@ -8,6 +8,7 @@ Bereiche: S = Schüler & Content, F = Förderverein, U = Unternehmen, G = Gemein
 ## Aktueller Sprint
 Sprint 1 (2026-11-25) — Ziel: Förderverein-Onboarding Ende-zu-Ende + Landingpage launchfähig (technisch/a11y)
 - [ ] F-001 | F | P0 | Förderverein-Onboarding Ende-zu-Ende lauffähig inkl. Bestätigungsseite — Akzeptanz: Registrierung legt Profil in Supabase an, Nutzer sieht nächste Schritte — Quelle: Marcus — Owner: edufy-dev-foerderverein (+ Freigabe `js/supabase-config.js`, `js/supabase-client.js`)
+- [ ] F-001b | F | P1 | Nachbesserung F-001 aus Testrunde: Bestätigungsseite im Fehlerfall konsistent, Dubletten-Prüfung schon in Schritt 1 (unscharf), Metadaten bei Fehler aufräumen, Erneut-senden/Anmelden geräteübergreifend, Passwort vergessen, Datenschutz Abschnitt Registrierung (Entwurf) — Quelle: feedback/foerderverein/2026-11-25-onboarding.md — Owner: edufy-dev-foerderverein (+ Freigabe Abschnitt Förderverein-Registrierung in `datenschutz.html`)
 - [ ] G-002 | G | P0 | Landingpage: Wartelisten-Formular funktionsfähig, Impressum/Datenschutz-Seiten (Gerüst), mobile Navigation, Kontraste/Labels/Fokus (WCAG AA), Google Fonts lokal statt Google-Server, reduced-motion, SEO-Basis (OG, Canonical, Favicon) — Akzeptanz: keine leeren `href="#"`-Pflichtlinks, Formular speichert in Supabase-Tabelle `waitlist` (RLS: nur insert für anon), validate.sh grün, kein Request an Google beim Laden — Quelle: Audits 2026-11-25 — Owner: edufy-dev-landing (Sprint-Freigabe für `index.html`, `impressum.html`, `datenschutz.html`, `fonts/`, `sql/landing_waitlist.sql`)
 
 ## Offene Entscheidungen für Marcus
@@ -18,6 +19,7 @@ Sprint 1 (2026-11-25) — Ziel: Förderverein-Onboarding Ende-zu-Ende + Landingp
 - [ ] Markenname: Landingpage heißt „EduConnect“ (Kontakt hallo@edu-connect.com), CLAUDE.md/Domain „Edufy“ (edufy.world) — was gilt?
 - [ ] Impressumsangaben (Rechtsträger, Anschrift, Vertretung, Register, USt-IdNr.) und Inhalt der Datenschutzerklärung (ggf. Anwalt/Generator)
 - [ ] Werbeaussagen mit Rechtsrisiko auf der Landingpage: „Rechtssicher in allen 16 Bundesländern“, „Meister verdient mehr als Bachelor“, unbelegte Statistiken, Förderbeträge (Kindergeld 250 € veraltet), „SAP“ im Mockup, „Spendennennung“ vs. Sponsoring (Gemeinnützigkeit Förderverein!)
+- [ ] Förderverein-Kommunikation: Höhe/Herkunft der Beteiligung öffentlich nennen? (Landingpage nennt 25–30 %, Registrierung nicht), Gemeinnützigkeit/Steuer-Hinweis (Sponsoring = wirtschaftl. Geschäftsbetrieb?), Rolle der Schulleitung, welche Schülerdaten Unternehmen sehen, Austritt — Quelle: feedback/foerderverein/2026-11-25-onboarding.md
 - [ ] Supabase-Projekt-URL + Anon-Key für `js/supabase-config.js`
 
 ## Backlog
