@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kostenloses Schülerkonto anlegen – Edufy</title>
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <meta name="description" content="Leg dir dein kostenloses Edufy-Konto an: Berufe, Studium und Förderungen entdecken und eine Merkliste führen. In etwa 2 Minuten erledigt." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:," />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F3A; --teal: #0B7A70; --teal-dark: #08625A; --teall: #5EEAD4;
+      --white: #FFFFFF; --off: #F8FAFC;
+      --text: #1E293B; --muted: #475569; --on-dark: #94A3B8; --border: #CBD5E1;
+      --error: #B91C1C; --error-bg: #FEF2F2; --ok-bg: #ECFDF5; --info-bg: #F0FDFA; --warn-bg: #FFFBEB;
+      --font: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-head: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+    }
+    [hidden] { display: none !important; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font); background: var(--off); color: var(--text); font-size: 1.0625rem; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: var(--teal); }
+    a:hover { color: var(--teal-dark); }
+    :focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; border-radius: 4px; }
+    .skip { position: absolute; left: -9999px; top: 0; background: var(--white); color: var(--navy); padding: .75rem 1rem; z-index: 100; }
+    .skip:focus { left: 1rem; top: 1rem; }
+
+    .site-header { background: var(--navy); padding: 0 1rem; }
+    .site-header-inner { max-width: 960px; margin: 0 auto; min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: .5rem 1rem; flex-wrap: wrap; }
+    .logo { font-family: var(--font-head); font-size: 1.5rem; color: var(--white); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+    .logo span { color: var(--teall); }
+    .site-header a.header-link { color: var(--on-dark); text-decoration: none; font-size: .9375rem; display: inline-flex; align-items: center; min-height: 44px; padding: 0 .25rem; }
+    .site-header a.header-link:hover { color: var(--white); text-decoration: underline; }
+    .site-header :focus-visible { outline-color: var(--teall); }
+
+    main { flex: 1; width: 100%; max-width: 680px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    h1 { font-family: var(--font-head); font-weight: 400; font-size: clamp(1.75rem, 6vw, 2.4rem); line-height: 1.15; color: var(--navy); margin-bottom: .75rem; }
+    .lead { color: var(--muted); margin-bottom: 1.25rem; }
+    .trust { list-style: none; display: grid; gap: .5rem; margin-bottom: 1.5rem; }
+    .trust li { display: flex; gap: .6rem; align-items: flex-start; }
+    .trust li::before { content: '✓'; color: var(--teal); font-weight: 700; flex: 0 0 auto; }
+
+    .notice { border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: 1.25rem; border: 1px solid; }
+    .notice:focus { outline: none; }
+    .notice:focus-visible { outline: 3px solid var(--teal); }
+    .notice-warn { background: var(--warn-bg); border-color: #F59E0B; color: #713F12; }
+    .notice-error { background: var(--error-bg); border-color: #FCA5A5; color: #7F1D1D; }
+    .notice-info { background: var(--info-bg); border-color: #99F6E4; color: #134E4A; }
+    .notice strong { display: block; margin-bottom: .25rem; }
+    .notice ul, .notice ol { margin: .4rem 0 0 1.2rem; }
+    .notice li { margin-bottom: .25rem; }
+    .notice p { margin-top: .5rem; }
+    .notice a { color: inherit; font-weight: 600; }
+
+    .progress { margin-bottom: 1.25rem; }
+    .progress-label { font-weight: 600; color: var(--navy); margin-bottom: .5rem; }
+    .progress-bar { height: 8px; background: var(--border); border-radius: 100px; overflow: hidden; }
+    .progress-bar span { display: block; height: 100%; background: var(--teal); border-radius: 100px; width: 25%; }
+
+    .card { background: var(--white); border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 18px rgba(11, 31, 58, .05); }
+    .step h2 { font-size: 1.375rem; color: var(--navy); margin-bottom: .35rem; line-height: 1.3; }
+    .step h2:focus { outline: none; }
+    .step h2:focus-visible { outline: 3px solid var(--teal); }
+    .step-intro { color: var(--muted); margin-bottom: 1.25rem; }
+    .field { margin-bottom: 1.1rem; }
+    .field > label, .field legend { display: block; font-weight: 600; margin-bottom: .3rem; color: var(--text); }
+    .opt { font-weight: 400; color: var(--muted); }
+    .hint { display: block; font-size: .9375rem; color: var(--muted); margin-bottom: .35rem; }
+    input[type="text"], input[type="email"], input[type="password"], select {
+      width: 100%; min-height: 48px; padding: .6rem .8rem; font: inherit; color: var(--text);
+      background: var(--white); border: 2px solid #64748B; border-radius: 8px;
+    }
+    select { appearance: auto; }
+    input:focus-visible, select:focus-visible { outline: 3px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+    input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--error); }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+    .row-plz { display: grid; grid-template-columns: 2fr 1fr; gap: 0 1rem; }
+    fieldset { border: 0; min-width: 0; }
+    .choice { display: flex; align-items: flex-start; gap: .7rem; min-height: 44px; padding: .5rem 0; cursor: pointer; font-weight: 400; }
+    .choice input { width: 24px; height: 24px; margin-top: .15rem; flex: 0 0 auto; accent-color: var(--teal); cursor: pointer; }
+    .err { display: block; color: var(--error); font-weight: 600; font-size: .9375rem; margin-top: .3rem; }
+    .err:empty { display: none; }
+    .err::before { content: '⚠ '; }
+    .err:empty::before { content: ''; }
+    .ds-hinweis { background: var(--off); border: 1px solid #E2E8F0; border-radius: 10px; padding: .9rem 1rem; font-size: .9375rem; }
+    .ds-hinweis strong { color: var(--navy); }
+    .ds-hinweis ul { margin: .35rem 0 .35rem 1.2rem; }
+
+    .actions { display: flex; gap: .75rem; justify-content: space-between; flex-wrap: wrap; margin-top: 1.5rem; }
+    .btn { font: inherit; font-weight: 600; font-size: 1rem; min-height: 48px; padding: .7rem 1.5rem; border-radius: 8px; cursor: pointer; border: 2px solid transparent; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+    .btn-primary { background: var(--teal); color: var(--white); }
+    .btn-primary:hover { background: var(--teal-dark); color: var(--white); }
+    .btn-primary[disabled] { background: #64748B; cursor: wait; }
+    .btn-secondary { background: var(--white); color: var(--navy); border-color: #64748B; }
+    .btn-secondary:hover { border-color: var(--navy); }
+    .btn-link { background: none; border: 0; color: inherit; text-decoration: underline; font: inherit; font-weight: 600; cursor: pointer; min-height: 44px; padding: 0; }
+    .actions .spacer { flex: 1; }
+
+    footer { background: var(--navy); color: var(--on-dark); padding: 1.5rem 1rem; }
+    .footer-inner { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; align-items: center; font-size: .9375rem; }
+    footer nav { display: flex; gap: .25rem 1.25rem; flex-wrap: wrap; }
+    footer a { color: var(--on-dark); display: inline-flex; align-items: center; min-height: 44px; }
+    footer a:hover { color: var(--white); }
+    footer :focus-visible { outline-color: var(--teall); }
+
+    @media (max-width: 560px) {
+      main { padding-top: 1.25rem; }
+      .card { padding: 1.1rem; }
+      .row-2, .row-plz { grid-template-columns: 1fr; }
+      .actions .btn { flex: 1 1 100%; }
+      .actions .spacer { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="logo" aria-label="Edufy – zur Startseite">Edu<span>fy</span></a>
+      <a href="dashboard-schueler.html#anmelden" class="header-link">Schon dabei? Anmelden</a>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <h1>Dein kostenloses Edufy-Konto</h1>
+    <p class="lead">Entdecke Berufe, Studiengänge und Förderungen und merk dir, was dich interessiert. Das Anlegen dauert etwa 2 Minuten.</p>
+    <ul class="trust">
+      <li><span><strong>Kostenlos:</strong> Für Schülerinnen und Schüler kostet Edufy nichts.</span></li>
+      <li><span><strong>Wenig Daten:</strong> Wir fragen nur deinen Vornamen, Geburtsmonat und -jahr, Klasse und Schulform. Keinen Nachnamen, keine Adresse.</span></li>
+      <li><span><strong>Deine Daten bleiben bei dir:</strong> Unternehmen sehen nur anonyme Zahlen pro Schule. Deine Angaben bekommt ein Unternehmen nur, wenn du selbst Kontakt aufnimmst.</span></li>
+      <li><span><strong>Unter 16?</strong> Dann fragen wir deine Eltern kurz per E-Mail, ob sie einverstanden sind.</span></li>
+    </ul>
+
+    <div id="config-warning" class="notice notice-warn" role="status" hidden>
+      <strong>Hinweis: Das Anlegen von Konten ist gerade noch nicht freigeschaltet.</strong>
+      Du kannst das Formular schon ansehen, aber noch nicht absenden. Fragen? Schreib uns: <a href="mailto:hallo@edufy.world">hallo@edufy.world</a>.
+    </div>
+
+    <div class="progress" role="group" aria-label="Fortschritt">
+      <p class="progress-label" id="progress-label" aria-live="polite">Schritt 1 von 3: Über dich</p>
+      <div class="progress-bar" aria-hidden="true"><span id="progress-fill"></span></div>
+    </div>
+
+    <form id="wizard" class="card" novalidate>
+      <div id="error-summary" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
+
+      <!-- Schritt: Über dich -->
+      <section class="step" data-step="ich" aria-labelledby="h-ich">
+        <h2 id="h-ich" tabindex="-1">Erzähl uns kurz von dir</h2>
+        <p class="step-intro">Deinen Vornamen brauchen wir für die Begrüßung. Dein Alter brauchen wir, weil bei unter 16-Jährigen die Eltern zustimmen müssen.</p>
+        <div id="too-young" class="notice notice-info" role="alert" tabindex="-1" hidden>
+          <strong>Ein eigenes Konto gibt es ab 13 Jahren.</strong>
+          Schön, dass du dich schon für Berufe interessierst! Ohne Konto kannst du dir trotzdem alles ansehen:
+          <ul>
+            <li><a href="berufe.html">Berufe entdecken</a></li>
+            <li><a href="studium.html">Studiengänge ansehen</a></li>
+            <li><a href="navigator.html">Bildungswege ausprobieren</a></li>
+          </ul>
+        </div>
+        <div class="field">
+          <label for="vorname">Vorname</label>
+          <input type="text" id="vorname" name="vorname" autocomplete="given-name" maxlength="50" required aria-describedby="vorname-err" />
+          <span class="err" id="vorname-err"></span>
+        </div>
+        <fieldset class="field" aria-describedby="geburt-hint geburt-err">
+          <legend>Wann bist du geboren?</legend>
+          <span class="hint" id="geburt-hint">Monat und Jahr reichen – den Tag brauchen wir nicht.</span>
+          <div class="row-2">
+            <div class="field">
+              <label for="geburtsmonat">Monat</label>
+              <select id="geburtsmonat" name="geburtsmonat" autocomplete="bday-month" required>
+                <option value="">Bitte wählen</option>
+                <option value="1">Januar</option><option value="2">Februar</option><option value="3">März</option>
+                <option value="4">April</option><option value="5">Mai</option><option value="6">Juni</option>
+                <option value="7">Juli</option><option value="8">August</option><option value="9">September</option>
+                <option value="10">Oktober</option><option value="11">November</option><option value="12">Dezember</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="geburtsjahr">Jahr</label>
+              <select id="geburtsjahr" name="geburtsjahr" autocomplete="bday-year" required>
+                <option value="">Bitte wählen</option>
+              </select>
+            </div>
+          </div>
+          <span class="err" id="geburt-err"></span>
+        </fieldset>
+      </section>
+
+      <!-- Schritt: Schule -->
+      <section class="step" data-step="schule" aria-labelledby="h-schule" hidden>
+        <h2 id="h-schule" tabindex="-1">Deine Schule</h2>
+        <p class="step-intro">Damit wir dir passende Inhalte zeigen können, zum Beispiel Bildungswege für deine Schulform.</p>
+        <div class="row-2">
+          <div class="field">
+            <label for="klassenstufe">Klasse</label>
+            <select id="klassenstufe" name="klassenstufe" autocomplete="off" required aria-describedby="klassenstufe-err">
+              <option value="">Bitte wählen</option>
+              <option value="5">5</option><option value="6">6</option><option value="7">7</option>
+              <option value="8">8</option><option value="9">9</option><option value="10">10</option>
+              <option value="11">11</option><option value="12">12</option><option value="13">13</option>
+            </select>
+            <span class="err" id="klassenstufe-err"></span>
+          </div>
+          <div class="field">
+            <label for="schulform">Schulform</label>
+            <select id="schulform" name="schulform" autocomplete="off" required aria-describedby="schulform-err">
+              <option value="">Bitte wählen</option>
+              <option value="hauptschule">Hauptschule / Mittelschule</option>
+              <option value="realschule">Realschule</option>
+              <option value="gymnasium">Gymnasium</option>
+              <option value="gesamtschule">Gesamtschule</option>
+              <option value="oberschule">Oberschule / Sekundarschule</option>
+              <option value="gemeinschaftsschule">Gemeinschaftsschule / Stadtteilschule</option>
+              <option value="foerderschule">Förderschule</option>
+              <option value="berufsbildende_schule">Berufsschule / Berufskolleg</option>
+              <option value="sonstige">Andere Schulform</option>
+            </select>
+            <span class="err" id="schulform-err"></span>
+          </div>
+        </div>
+        <div class="row-plz">
+          <div class="field">
+            <label for="schule_name">Name deiner Schule <span class="opt">(freiwillig)</span></label>
+            <input type="text" id="schule_name" name="schule_name" autocomplete="off" maxlength="200" aria-describedby="schule-hint schule_name-err" />
+            <span class="err" id="schule_name-err"></span>
+          </div>
+          <div class="field">
+            <label for="plz">PLZ der Schule <span class="opt">(freiwillig)</span></label>
+            <input type="text" id="plz" name="plz" inputmode="numeric" autocomplete="off" maxlength="5" aria-describedby="schule-hint plz-err" />
+            <span class="err" id="plz-err"></span>
+          </div>
+        </div>
+        <p class="hint" id="schule-hint">Freiwillig. Hilft uns, dich später deiner Schule zuzuordnen, wenn der Förderverein deiner Schule bei Edufy mitmacht.</p>
+      </section>
+
+      <!-- Schritt: Eltern (nur unter 16) -->
+      <section class="step" data-step="eltern" aria-labelledby="h-eltern" hidden>
+        <h2 id="h-eltern" tabindex="-1">Deine Eltern fragen</h2>
+        <div class="notice notice-info">
+          <strong>Warum deine Eltern?</strong>
+          Du bist jünger als 16. Dann sagt das Datenschutz-Gesetz: Deine Eltern müssen einverstanden sein. So geht es:
+          <ol>
+            <li>Du gibst die E-Mail-Adresse von deiner Mutter, deinem Vater oder einer anderen Person ein, die für dich sorgt.</li>
+            <li>Wir schicken ihr eine E-Mail mit einem Link. Dort steht, was Edufy ist und was du angelegt hast.</li>
+            <li>Sie gibt dein Konto frei – oder lehnt ab.</li>
+          </ol>
+          <p>Bis dahin kannst du schon alles ansehen und dir eine Merkliste anlegen. Nur Kontakt zu Unternehmen geht erst nach der Freigabe.</p>
+        </div>
+        <div class="field">
+          <label for="eltern_email">E-Mail-Adresse deiner Mutter oder deines Vaters</label>
+          <span class="hint" id="eltern-hint">Bitte nicht deine eigene Adresse. Sag deinen Eltern am besten gleich Bescheid, dass eine E-Mail von Edufy kommt.</span>
+          <input type="email" id="eltern_email" name="eltern_email" autocomplete="off" maxlength="254" required aria-describedby="eltern-hint eltern_email-err" />
+          <span class="err" id="eltern_email-err"></span>
+        </div>
+      </section>
+
+      <!-- Schritt: Zugang -->
+      <section class="step" data-step="zugang" aria-labelledby="h-zugang" hidden>
+        <h2 id="h-zugang" tabindex="-1">Dein Zugang</h2>
+        <p class="step-intro">Mit deiner E-Mail-Adresse und deinem Passwort meldest du dich später an.</p>
+        <div class="field">
+          <label for="email">Deine E-Mail-Adresse</label>
+          <span class="hint" id="email-hint">Hierhin schicken wir dir einen Link zum Bestätigen.</span>
+          <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required aria-describedby="email-hint email-err" />
+          <span class="err" id="email-err"></span>
+        </div>
+        <div class="field">
+          <label for="passwort">Passwort wählen</label>
+          <span class="hint" id="passwort-hint">Mindestens 8 Zeichen. Tipp: ein kurzer Satz lässt sich gut merken.</span>
+          <input type="password" id="passwort" name="passwort" autocomplete="new-password" minlength="8" maxlength="72" required aria-describedby="passwort-hint passwort-err" />
+          <label class="choice"><input type="checkbox" id="passwort-zeigen" /> Passwort anzeigen</label>
+          <span class="err" id="passwort-err"></span>
+        </div>
+        <div class="ds-hinweis" id="datenschutz-hinweis">
+          <strong>Kurz zum Datenschutz</strong>
+          <ul>
+            <li>Wir speichern nur, was du hier eingibst – und deine Merkliste, wenn du eine anlegst.</li>
+            <li>Wir verkaufen keine Daten. Unternehmen bekommen deine Angaben nur, wenn du selbst Kontakt aufnimmst<span id="ds-u16"> – und erst, wenn deine Eltern zugestimmt haben</span>.</li>
+            <li>Du kannst dein Konto jederzeit selbst löschen. Dann ist alles weg.</li>
+          </ul>
+          Alles ganz genau steht in der <a href="datenschutz.html#minderjaehrige" target="_blank" rel="noopener">Datenschutzerklärung (öffnet in neuem Tab)</a>. Fragen? <a href="mailto:hallo@edufy.world">hallo@edufy.world</a>
+        </div>
+        <div id="submit-error" class="notice notice-error" role="alert" tabindex="-1" hidden style="margin-top:1rem"></div>
+      </section>
+
+      <div class="actions">
+        <button type="button" class="btn btn-secondary" id="btn-back" hidden>Zurück</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn btn-primary" id="btn-next">Weiter</button>
+        <button type="submit" class="btn btn-primary" id="btn-submit" hidden>Konto kostenlos anlegen</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Edufy</span>
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="mailto:hallo@edufy.world">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/vendor/supabase-js-2.45.4.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    var KONTAKT = 'hallo@edufy.world';
+    var MINDESTALTER = 13;
+    var FREIGABE_ALTER = 16;
+    var TITLES = { ich: 'Über dich', schule: 'Deine Schule', eltern: 'Deine Eltern', zugang: 'Dein Zugang' };
+
+    var form = document.getElementById('wizard');
+    var btnBack = document.getElementById('btn-back');
+    var btnNext = document.getElementById('btn-next');
+    var btnSubmit = document.getElementById('btn-submit');
+    var errorSummary = document.getElementById('error-summary');
+    var submitError = document.getElementById('submit-error');
+    var current = 'ich';
+    var busy = false;
+
+    // ---------- Hilfsfunktionen (bewusst ohne Regex in Template-Literals) ----------
+    function $(id) { return document.getElementById(id); }
+    function val(id) { var el = $(id); return el ? String(el.value || '').trim() : ''; }
+    function isDigits(s) {
+      if (!s) return false;
+      for (var i = 0; i < s.length; i++) { var c = s.charCodeAt(i); if (c < 48 || c > 57) return false; }
+      return true;
+    }
+    function isEmail(s) {
+      if (!s || s.indexOf(' ') !== -1) return false;
+      var at = s.indexOf('@');
+      if (at < 1 || at !== s.lastIndexOf('@')) return false;
+      var domain = s.slice(at + 1);
+      var dot = domain.lastIndexOf('.');
+      return dot > 0 && dot < domain.length - 2;
+    }
+    // Volle Monate seit dem Ersten des Geburtsmonats
+    function monthsSince(year, month) {
+      var now = new Date();
+      return (now.getFullYear() * 12 + now.getMonth() + 1) - (year * 12 + month);
+    }
+    // Wie auf dem Server: „sicher 16“ erst im Monat nach dem Geburtsmonat
+    function ageSafe(year, month) { return Math.floor((monthsSince(year, month) - 1) / 12); }
+    function ageMax(year, month) { return Math.floor(monthsSince(year, month) / 12); }
+    function birth() {
+      var y = Number(val('geburtsjahr')), m = Number(val('geburtsmonat'));
+      return (y && m) ? { y: y, m: m } : null;
+    }
+    function isUnder16() {
+      var b = birth();
+      return b ? ageSafe(b.y, b.m) < FREIGABE_ALTER : false;
+    }
+    function steps() { return isUnder16() ? ['ich', 'schule', 'eltern', 'zugang'] : ['ich', 'schule', 'zugang']; }
+
+    // Jahresauswahl: von „jetzt minus 10“ bis „jetzt minus 30“
+    (function fillYears() {
+      var sel = $('geburtsjahr');
+      var y = new Date().getFullYear();
+      for (var i = y - 10; i >= y - 30; i--) {
+        var o = document.createElement('option');
+        o.value = String(i); o.textContent = String(i);
+        sel.appendChild(o);
+      }
+    })();
+
+    function setFieldError(id, msg) {
+      var err = $(id + '-err');
+      if (err) err.textContent = msg || '';
+      var ids = id === 'geburt' ? ['geburtsmonat', 'geburtsjahr'] : [id];
+      ids.forEach(function (fid) {
+        var input = $(fid);
+        if (!input) return;
+        if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+      });
+    }
+
+    // ---------- Validierung je Schritt ----------
+    function validateStep(step) {
+      var errors = [];
+      function check(id, ok, msg, focusId) {
+        setFieldError(id, ok ? '' : msg);
+        if (!ok) errors.push({ id: focusId || id, msg: msg });
+      }
+      if (step === 'ich') {
+        check('vorname', val('vorname').length >= 1, 'Bitte gib deinen Vornamen ein.');
+        var b = birth();
+        var bOk = !!b && monthsSince(b.y, b.m) >= 0;
+        check('geburt', bOk, 'Bitte wähle deinen Geburtsmonat und dein Geburtsjahr.', val('geburtsmonat') ? 'geburtsjahr' : 'geburtsmonat');
+      } else if (step === 'schule') {
+        check('klassenstufe', val('klassenstufe') !== '', 'Bitte wähle deine Klasse.');
+        check('schulform', val('schulform') !== '', 'Bitte wähle deine Schulform.');
+        var sn = val('schule_name');
+        check('schule_name', sn === '' || sn.length >= 2, 'Der Schulname ist zu kurz. Du kannst das Feld auch leer lassen.');
+        var plz = val('plz');
+        check('plz', plz === '' || (plz.length === 5 && isDigits(plz)), 'Die Postleitzahl hat genau 5 Ziffern. Du kannst das Feld auch leer lassen.');
+      } else if (step === 'eltern') {
+        var em = val('eltern_email').toLowerCase();
+        var own = val('email').toLowerCase();
+        var msg = '';
+        if (!em) msg = 'Bitte gib die E-Mail-Adresse deiner Mutter oder deines Vaters ein.';
+        else if (!isEmail(em)) msg = 'Die E-Mail-Adresse sieht unvollständig aus. Beispiel: name@beispiel.de';
+        else if (own && em === own) msg = 'Das ist deine eigene E-Mail-Adresse. Bitte gib die Adresse deiner Eltern ein.';
+        check('eltern_email', msg === '', msg);
+      } else if (step === 'zugang') {
+        var mail = val('email').toLowerCase();
+        var mailMsg = '';
+        if (!mail) mailMsg = 'Bitte gib deine E-Mail-Adresse ein.';
+        else if (!isEmail(mail)) mailMsg = 'Die E-Mail-Adresse sieht unvollständig aus. Beispiel: name@beispiel.de';
+        else if (isUnder16() && mail === val('eltern_email').toLowerCase()) mailMsg = 'Das ist dieselbe Adresse wie die deiner Eltern. Bitte nimm deine eigene E-Mail-Adresse oder ändere im Schritt davor die Adresse deiner Eltern.';
+        check('email', mailMsg === '', mailMsg);
+        var pw = $('passwort').value || '';
+        check('passwort', pw.length >= 8, pw ? 'Das Passwort ist zu kurz – bitte mindestens 8 Zeichen.' : 'Bitte wähle ein Passwort (mindestens 8 Zeichen).');
+      }
+      return errors;
+    }
+
+    function showErrorSummary(errors) {
+      errorSummary.textContent = '';
+      if (!errors.length) { errorSummary.hidden = true; return; }
+      var strong = document.createElement('strong');
+      strong.textContent = errors.length === 1 ? 'Bitte prüf noch eine Angabe:' : 'Bitte prüf noch ' + errors.length + ' Angaben:';
+      var ul = document.createElement('ul');
+      errors.forEach(function (e) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + e.id;
+        a.textContent = e.msg;
+        a.addEventListener('click', function (ev) { ev.preventDefault(); var t = $(e.id); if (t) t.focus(); });
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      errorSummary.appendChild(strong);
+      errorSummary.appendChild(ul);
+      errorSummary.hidden = false;
+      errorSummary.focus();
+    }
+
+    // ---------- Navigation ----------
+    function showStep(step, moveFocus) {
+      current = step;
+      var list = steps();
+      var idx = list.indexOf(step);
+      var all = form.querySelectorAll('.step');
+      for (var i = 0; i < all.length; i++) all[i].hidden = all[i].getAttribute('data-step') !== step;
+      $('progress-label').textContent = 'Schritt ' + (idx + 1) + ' von ' + list.length + ': ' + TITLES[step];
+      $('progress-fill').style.width = Math.round(((idx + 1) / list.length) * 100) + '%';
+      var last = idx === list.length - 1;
+      btnBack.hidden = idx === 0;
+      btnNext.hidden = last;
+      btnSubmit.hidden = !last;
+      errorSummary.hidden = true;
+      $('ds-u16').hidden = !isUnder16();
+      document.title = TITLES[step] + ' (Schritt ' + (idx + 1) + ' von ' + list.length + ') – Schülerkonto anlegen – Edufy';
+      if (moveFocus) {
+        var h = $('h-' + step);
+        if (h) h.focus();
+        var top = form.getBoundingClientRect().top + window.pageYOffset - 16;
+        if (window.pageYOffset > top) window.scrollTo(0, top);
+      }
+    }
+
+    function next() {
+      var errors = validateStep(current);
+      if (errors.length) { showErrorSummary(errors); return; }
+      if (current === 'ich') {
+        var b = birth();
+        if (ageMax(b.y, b.m) < MINDESTALTER) {
+          $('too-young').hidden = false;
+          $('too-young').focus();
+          return;
+        }
+        $('too-young').hidden = true;
+      }
+      var list = steps();
+      showStep(list[list.indexOf(current) + 1], true);
+    }
+
+    btnNext.addEventListener('click', next);
+    btnBack.addEventListener('click', function () {
+      var list = steps();
+      var idx = list.indexOf(current);
+      if (idx > 0) showStep(list[idx - 1], true);
+    });
+    form.addEventListener('keydown', function (ev) {
+      // Enter in einem Textfeld soll „Weiter“ auslösen statt abzusenden
+      var list = steps();
+      if (ev.key === 'Enter' && ev.target.tagName === 'INPUT' && ev.target.type !== 'checkbox' && list.indexOf(current) < list.length - 1) {
+        ev.preventDefault();
+        next();
+      }
+    });
+    $('passwort-zeigen').addEventListener('change', function () { $('passwort').type = this.checked ? 'text' : 'password'; });
+
+    function clearOnEdit(ev) {
+      var id = ev.target.id;
+      if (id === 'geburtsmonat' || id === 'geburtsjahr') { id = 'geburt'; $('too-young').hidden = true; }
+      var err = $(id + '-err');
+      if (err && err.textContent) setFieldError(id, '');
+    }
+    form.addEventListener('input', clearOnEdit);
+    form.addEventListener('change', clearOnEdit);
+
+    // ---------- Daten sammeln (explizite Feldzuordnung, kein Spread) ----------
+    function collect() {
+      var u16 = isUnder16();
+      return {
+        vorname: val('vorname'),
+        geburtsjahr: Number(val('geburtsjahr')),
+        geburtsmonat: Number(val('geburtsmonat')),
+        klassenstufe: Number(val('klassenstufe')),
+        schulform: val('schulform'),
+        schule_name: val('schule_name'),
+        plz: val('plz'),
+        // Ab 16 wird keine Eltern-Adresse übertragen (Datensparsamkeit)
+        eltern_email: u16 ? val('eltern_email').toLowerCase() : '',
+        email: val('email').toLowerCase()
+      };
+    }
+
+    // Was in user_metadata.registrierung landet (für das Nachholen nach E-Mail-Bestätigung)
+    function buildRegistrierung(d) {
+      return {
+        vorname: d.vorname,
+        geburtsjahr: d.geburtsjahr,
+        geburtsmonat: d.geburtsmonat,
+        klassenstufe: d.klassenstufe,
+        schulform: d.schulform,
+        schule_name: d.schule_name,
+        plz: d.plz,
+        eltern_email: d.eltern_email
+      };
+    }
+
+    // Parameter für die RPC register_student (identisch in dashboard-schueler.html)
+    function buildRpcParams(r) {
+      return {
+        p_vorname: r.vorname,
+        p_geburtsjahr: Number(r.geburtsjahr),
+        p_geburtsmonat: Number(r.geburtsmonat),
+        p_klassenstufe: Number(r.klassenstufe),
+        p_schulform: r.schulform,
+        p_schule_name: r.schule_name || null,
+        p_plz: r.plz || null,
+        p_eltern_email: r.eltern_email || null
+      };
+    }
+
+    // ---------- Fehlermeldungen ----------
+    function errText(err) { return String((err && (err.message || err.error_description || err.msg)) || err || '').toLowerCase(); }
+    function isExistingAccount(err) {
+      var m = errText(err);
+      return m.indexOf('already registered') !== -1 || m.indexOf('already been registered') !== -1 || m.indexOf('already exists') !== -1;
+    }
+    function translateError(err) {
+      var m = errText(err);
+      if (isExistingAccount(err)) return 'Mit dieser E-Mail-Adresse gibt es schon ein Konto. Melde dich an oder nimm eine andere Adresse.';
+      if (m.indexOf('password') !== -1 && (m.indexOf('at least') !== -1 || m.indexOf('short') !== -1 || m.indexOf('weak') !== -1)) return 'Das Passwort ist zu kurz oder zu einfach. Bitte nimm mindestens 8 Zeichen.';
+      if (m.indexOf('invalid') !== -1 && m.indexOf('email') !== -1) return 'Die E-Mail-Adresse wurde nicht angenommen. Bitte prüf die Schreibweise.';
+      if (m.indexOf('rate limit') !== -1 || m.indexOf('security purposes') !== -1 || m.indexOf('too many') !== -1) return 'Zu viele Versuche in kurzer Zeit. Bitte warte ein paar Minuten und versuch es dann noch einmal.';
+      if (m.indexOf('signups not allowed') !== -1 || m.indexOf('signup is disabled') !== -1) return 'Neue Konten sind gerade nicht möglich. Schreib uns an ' + KONTAKT + '.';
+      if (m.indexOf('failed to fetch') !== -1 || m.indexOf('network') !== -1 || m.indexOf('load failed') !== -1) return 'Keine Verbindung. Bitte prüf dein Internet und versuch es noch einmal.';
+      return 'Leider hat etwas nicht geklappt. Bitte versuch es in ein paar Minuten noch einmal oder schreib uns an ' + KONTAKT + '.';
+    }
+
+    function showSubmitError(msg, loginLinks) {
+      submitError.textContent = '';
+      var strong = document.createElement('strong');
+      strong.textContent = 'Dein Konto wurde noch nicht angelegt.';
+      submitError.appendChild(strong);
+      submitError.appendChild(document.createTextNode(msg));
+      if (loginLinks) {
+        var p = document.createElement('p');
+        var a = document.createElement('a');
+        a.href = 'dashboard-schueler.html#anmelden'; a.textContent = 'Zur Anmeldung';
+        p.appendChild(a);
+        submitError.appendChild(p);
+      }
+      submitError.hidden = false;
+      submitError.focus();
+    }
+
+    function setBusy(state) {
+      busy = state;
+      btnSubmit.disabled = state;
+      btnBack.disabled = state;
+      btnSubmit.setAttribute('aria-busy', state ? 'true' : 'false');
+      btnSubmit.textContent = state ? 'Wird angelegt …' : 'Konto kostenlos anlegen';
+    }
+
+    function rememberEmail(email) {
+      try { sessionStorage.setItem('edufy_s_email', email); } catch (e) { /* egal */ }
+    }
+
+    // ---------- Absenden ----------
+    async function submitRegistration() {
+      if (busy) return;
+      var list = steps();
+      for (var s = 0; s < list.length; s++) {
+        var errs = validateStep(list[s]);
+        if (errs.length) { showStep(list[s], true); showErrorSummary(errs); return; }
+      }
+      var b = birth();
+      if (ageMax(b.y, b.m) < MINDESTALTER) { showStep('ich', true); next(); return; }
+      submitError.hidden = true;
+      if (!window.edufyDbReady || !window.edufyDb) {
+        showSubmitError('Das Anlegen von Konten ist technisch noch nicht freigeschaltet. Deine Angaben wurden nicht gespeichert.');
+        return;
+      }
+      setBusy(true);
+      var db = window.edufyDb;
+      var d = collect();
+      var reg = buildRegistrierung(d);
+      try {
+        // 1) Konto anlegen – Registrierungsdaten als Metadaten mitgeben
+        var res = await db.auth.signUp({
+          email: d.email,
+          password: $('passwort').value,
+          options: {
+            emailRedirectTo: new URL('dashboard-schueler.html', window.location.href).href,
+            data: { rolle: 'schueler', registrierung: reg }
+          }
+        });
+        if (res.error) { setBusy(false); showSubmitError(translateError(res.error), isExistingAccount(res.error)); return; }
+        var user = res.data && res.data.user;
+        // Bei aktivierter E-Mail-Bestätigung meldet Supabase vorhandene Adressen nicht als Fehler
+        if (user && Array.isArray(user.identities) && user.identities.length === 0) {
+          setBusy(false);
+          showSubmitError(translateError('already registered'), true);
+          return;
+        }
+        rememberEmail(d.email);
+
+        // 2) Session vorhanden → Profil sofort anlegen, bei unter 16 Eltern-Mail anstoßen
+        if (res.data && res.data.session) {
+          var rpc = await db.rpc('register_student', buildRpcParams(reg));
+          if (rpc.error) {
+            // Dashboard versucht es erneut und zeigt den Fehler verständlich an
+            window.location.href = 'dashboard-schueler.html?status=nachholen';
+            return;
+          }
+          try { await db.auth.updateUser({ data: { registrierung: null } }); } catch (e) { /* nicht kritisch */ }
+          if (rpc.data && rpc.data.eltern_mail_ausstehend) {
+            try { await db.functions.invoke('schueler-eltern-freigabe', { body: {} }); } catch (e) { /* Dashboard bietet „erneut senden“ */ }
+          }
+          window.location.href = 'dashboard-schueler.html?status=neu';
+          return;
+        }
+        // 3) Keine Session → E-Mail-Bestätigung abwarten, der Rest läuft im Dashboard
+        window.location.href = 'dashboard-schueler.html?status=email';
+      } catch (e) {
+        setBusy(false);
+        showSubmitError(translateError(e));
+      }
+    }
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var list = steps();
+      if (list.indexOf(current) !== list.length - 1) { next(); return; }
+      submitRegistration();
+    });
+
+    // ---------- Start ----------
+    if (!window.edufyDbReady) $('config-warning').hidden = false;
+    showStep('ich', false);
+  })();
+  </script>
+</body>
+</html>

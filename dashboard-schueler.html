@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mein Edufy – Schülerkonto</title>
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <meta name="description" content="Dein Edufy-Konto: Merkliste, Freigabe durch deine Eltern und Kontoeinstellungen." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:," />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F3A; --teal: #0B7A70; --teal-dark: #08625A; --teall: #5EEAD4;
+      --white: #FFFFFF; --off: #F8FAFC;
+      --text: #1E293B; --muted: #475569; --on-dark: #94A3B8; --border: #CBD5E1;
+      --error: #B91C1C; --error-bg: #FEF2F2; --ok-bg: #ECFDF5; --info-bg: #F0FDFA; --warn-bg: #FFFBEB;
+      --font: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-head: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+    }
+    [hidden] { display: none !important; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font); background: var(--off); color: var(--text); font-size: 1.0625rem; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: var(--teal); }
+    a:hover { color: var(--teal-dark); }
+    :focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; border-radius: 4px; }
+    .skip { position: absolute; left: -9999px; top: 0; background: var(--white); color: var(--navy); padding: .75rem 1rem; z-index: 100; }
+    .skip:focus { left: 1rem; top: 1rem; }
+    .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    .site-header { background: var(--navy); padding: 0 1rem; }
+    .site-header-inner { max-width: 960px; margin: 0 auto; min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: .5rem 1rem; flex-wrap: wrap; }
+    .logo { font-family: var(--font-head); font-size: 1.5rem; color: var(--white); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+    .logo span { color: var(--teall); }
+    .site-header :focus-visible { outline-color: var(--teall); }
+    .header-btn { background: none; border: 1px solid rgba(148, 163, 184, .6); color: var(--white); font: inherit; font-size: .9375rem; min-height: 44px; padding: 0 1rem; border-radius: 8px; cursor: pointer; }
+    .header-btn:hover { border-color: var(--white); }
+
+    main { flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    h1 { font-family: var(--font-head); font-weight: 400; font-size: clamp(1.75rem, 6vw, 2.4rem); line-height: 1.15; color: var(--navy); margin-bottom: .75rem; }
+    h1:focus { outline: none; }
+    h2 { font-size: 1.3rem; color: var(--navy); margin-bottom: .75rem; line-height: 1.3; }
+    h3 { font-size: 1.0625rem; color: var(--navy); margin-bottom: .3rem; }
+    .lead { color: var(--muted); margin-bottom: 1.5rem; }
+
+    .notice { border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: 1.25rem; border: 1px solid; }
+    .notice:focus { outline: none; }
+    .notice:focus-visible { outline: 3px solid var(--teal); }
+    .notice-warn { background: var(--warn-bg); border-color: #F59E0B; color: #713F12; }
+    .notice-error { background: var(--error-bg); border-color: #FCA5A5; color: #7F1D1D; }
+    .notice-info { background: var(--info-bg); border-color: #99F6E4; color: #134E4A; }
+    .notice-ok { background: var(--ok-bg); border-color: #6EE7B7; color: #064E3B; }
+    .notice strong { display: block; margin-bottom: .25rem; }
+    .notice p { margin-top: .5rem; }
+    .notice a { color: inherit; font-weight: 600; }
+    .notice .btn-row { margin-top: .75rem; }
+
+    .card { background: var(--white); border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 18px rgba(11, 31, 58, .05); margin-bottom: 1.5rem; }
+    .card > p { margin-bottom: 1rem; }
+    .field { margin-bottom: 1rem; }
+    .field > label { display: block; font-weight: 600; margin-bottom: .3rem; }
+    .hint { display: block; font-size: .9375rem; color: var(--muted); margin-bottom: .35rem; }
+    input[type="email"], input[type="password"], input[type="text"] { width: 100%; min-height: 48px; padding: .6rem .8rem; font: inherit; color: var(--text); background: var(--white); border: 2px solid #64748B; border-radius: 8px; }
+    input:focus-visible { outline: 3px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+    input[aria-invalid="true"] { border-color: var(--error); }
+    .choice { display: flex; align-items: flex-start; gap: .7rem; min-height: 44px; padding: .5rem 0; cursor: pointer; font-weight: 400; }
+    .choice input { width: 24px; height: 24px; margin-top: .15rem; flex: 0 0 auto; accent-color: var(--teal); cursor: pointer; }
+
+    .btn { font: inherit; font-weight: 600; font-size: 1rem; min-height: 48px; padding: .7rem 1.4rem; border-radius: 8px; cursor: pointer; border: 2px solid transparent; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+    .btn-primary { background: var(--teal); color: var(--white); }
+    .btn-primary:hover { background: var(--teal-dark); color: var(--white); }
+    .btn[disabled] { background: #64748B; color: var(--white); border-color: #64748B; cursor: wait; }
+    .btn-secondary { background: var(--white); color: var(--navy); border-color: #64748B; }
+    .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+    .btn-danger { background: var(--error); color: var(--white); }
+    .btn-danger:hover { background: #991B1B; color: var(--white); }
+    .btn-row { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .btn-link { background: none; border: 0; color: var(--teal); text-decoration: underline; font: inherit; font-weight: 600; cursor: pointer; min-height: 44px; padding: 0 .25rem; }
+    .btn-link:hover { color: var(--teal-dark); }
+    .notice .btn-link { color: inherit; padding: 0; }
+    .subbox { border-top: 1px solid #E2E8F0; margin-top: 1rem; padding-top: 1rem; }
+    .subbox p { margin-bottom: .75rem; }
+    form .notice { margin: 1rem 0 0; }
+
+    .entdecken { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .75rem; }
+    .entdecken a { display: flex; align-items: center; min-height: 56px; padding: .75rem 1rem; border: 2px solid #E2E8F0; border-radius: 10px; text-decoration: none; color: var(--navy); font-weight: 600; background: var(--off); }
+    .entdecken a:hover { border-color: var(--teal); }
+
+    .merkliste { list-style: none; }
+    .merkliste li { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .6rem 0; border-bottom: 1px solid #E2E8F0; flex-wrap: wrap; }
+    .merkliste li:last-child { border-bottom: 0; }
+    .merkliste a { font-weight: 600; overflow-wrap: anywhere; display: inline-flex; align-items: center; min-height: 44px; }
+    .badge { display: inline-block; font-size: .8125rem; font-weight: 700; background: #E2E8F0; color: var(--navy); border-radius: 100px; padding: .05rem .6rem; margin-right: .5rem; }
+    .merk-main { display: flex; align-items: center; flex-wrap: wrap; flex: 1 1 200px; }
+
+    dl.daten { display: grid; grid-template-columns: minmax(140px, 38%) 1fr; gap: .35rem 1rem; }
+    dl.daten dt { color: var(--muted); }
+    dl.daten dd { overflow-wrap: anywhere; }
+
+    footer { background: var(--navy); color: var(--on-dark); padding: 1.5rem 1rem; }
+    .footer-inner { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; align-items: center; font-size: .9375rem; }
+    footer nav { display: flex; gap: .25rem 1.25rem; flex-wrap: wrap; }
+    footer a { color: var(--on-dark); display: inline-flex; align-items: center; min-height: 44px; }
+    footer a:hover { color: var(--white); }
+    footer :focus-visible { outline-color: var(--teall); }
+
+    @media (max-width: 560px) {
+      main { padding-top: 1.25rem; }
+      .card { padding: 1.1rem; }
+      .btn-row .btn { flex: 1 1 100%; }
+      dl.daten { grid-template-columns: 1fr; gap: 0; }
+      dl.daten dd { margin-bottom: .5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="logo" aria-label="Edufy – zur Startseite">Edu<span>fy</span></a>
+      <button type="button" class="header-btn" id="btn-logout" hidden>Abmelden</button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <h1 id="title" tabindex="-1">Mein Edufy</h1>
+    <p class="lead" id="lead">Einen Moment bitte …</p>
+
+    <div id="status" class="notice notice-info" role="status" aria-live="polite" tabindex="-1">
+      <strong>Einen Moment bitte …</strong>
+      Wir laden dein Konto.
+    </div>
+
+    <!-- ===== Angemeldet: Konto ===== -->
+    <div id="konto" hidden>
+      <section class="card" id="freigabe" aria-labelledby="h-freigabe">
+        <h2 id="h-freigabe">Dein Konto</h2>
+        <div id="freigabe-box"></div>
+        <div id="freigabe-feedback" class="notice" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        <div id="eltern-aendern" class="subbox" hidden>
+          <form id="eltern-form" novalidate>
+            <div class="field">
+              <label for="neue-eltern-email">Andere E-Mail-Adresse deiner Eltern</label>
+              <span class="hint" id="neue-eltern-hint">Zum Beispiel, wenn du dich vertippt hast. Wir schicken die E-Mail dann an diese Adresse.</span>
+              <input type="email" id="neue-eltern-email" autocomplete="off" maxlength="254" aria-describedby="neue-eltern-hint" />
+            </div>
+            <button type="submit" class="btn btn-secondary" id="btn-eltern-neu">An diese Adresse senden</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="h-entdecken">
+        <h2 id="h-entdecken">Entdecken</h2>
+        <ul class="entdecken">
+          <li><a href="berufe.html">Berufe</a></li>
+          <li><a href="studium.html">Studium</a></li>
+          <li><a href="foerderungen.html">Förderungen</a></li>
+          <li><a href="navigator.html">Bildungswege</a></li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="h-merkliste">
+        <h2 id="h-merkliste">Deine Merkliste</h2>
+        <p id="merkliste-leer" hidden>Du hast dir noch nichts gemerkt. Auf den Seiten zu Berufen, Studium und Förderungen kannst du Einträge auf deine Merkliste setzen.</p>
+        <ul class="merkliste" id="merkliste"></ul>
+        <p id="merkliste-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card" aria-labelledby="h-daten">
+        <h2 id="h-daten">Deine Daten bei Edufy</h2>
+        <p>Das haben wir von dir gespeichert – mehr nicht:</p>
+        <dl class="daten" id="daten"></dl>
+        <p style="margin-top:1rem">Außerdem deine E-Mail-Adresse und dein Passwort (verschlüsselt) für die Anmeldung. Etwas stimmt nicht? Schreib uns an <a href="mailto:hallo@edufy.world">hallo@edufy.world</a>. Mehr dazu in der <a href="datenschutz.html#minderjaehrige">Datenschutzerklärung</a>.</p>
+      </section>
+
+      <section class="card" aria-labelledby="h-loeschen">
+        <h2 id="h-loeschen">Konto löschen</h2>
+        <p>Wenn du dein Konto löschst, löschen wir sofort alles: dein Profil, deine Merkliste, die Anfragen an deine Eltern und deinen Zugang. Das lässt sich nicht rückgängig machen.</p>
+        <form id="loeschen-form" novalidate>
+          <label class="choice"><input type="checkbox" id="loeschen-ok" /> <span>Ja, ich möchte mein Edufy-Konto mit allen Daten löschen.</span></label>
+          <div class="btn-row" style="margin-top:.5rem"><button type="submit" class="btn btn-danger" id="btn-loeschen">Konto endgültig löschen</button></div>
+          <div id="loeschen-error" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
+        </form>
+      </section>
+    </div>
+
+    <!-- ===== Neues Passwort festlegen ===== -->
+    <section class="card" id="neues-passwort" aria-labelledby="h-neues-passwort" hidden>
+      <h2 id="h-neues-passwort">Neues Passwort festlegen</h2>
+      <form id="recovery-form" novalidate>
+        <div class="field">
+          <label for="neues-passwort-feld">Neues Passwort</label>
+          <span class="hint" id="neues-passwort-hint">Mindestens 8 Zeichen.</span>
+          <input type="password" id="neues-passwort-feld" autocomplete="new-password" minlength="8" maxlength="72" required aria-describedby="neues-passwort-hint" />
+          <label class="choice"><input type="checkbox" id="neues-passwort-zeigen" /> Passwort anzeigen</label>
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-recovery">Passwort speichern</button>
+        <div id="recovery-error" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
+      </form>
+    </section>
+
+    <!-- ===== Anmelden ===== -->
+    <section class="card" id="anmelden" aria-labelledby="h-login" hidden>
+      <h2 id="h-login">Anmelden</h2>
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="login-email">E-Mail-Adresse</label>
+          <input type="email" id="login-email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="login-passwort">Passwort</label>
+          <input type="password" id="login-passwort" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-login">Anmelden</button>
+        <div id="login-error" class="notice notice-error" role="alert" tabindex="-1" hidden></div>
+      </form>
+      <p style="margin-top:.75rem"><button type="button" class="btn-link" id="btn-forgot-toggle" aria-expanded="false" aria-controls="passwort-vergessen">Passwort vergessen?</button></p>
+      <div id="passwort-vergessen" class="subbox" hidden>
+        <h3>Passwort zurücksetzen</h3>
+        <p>Gib deine E-Mail-Adresse ein. Wir schicken dir einen Link für ein neues Passwort.</p>
+        <form id="reset-form" novalidate>
+          <div class="field">
+            <label for="reset-email">E-Mail-Adresse</label>
+            <input type="email" id="reset-email" autocomplete="email" required />
+          </div>
+          <button type="submit" class="btn btn-secondary" id="btn-reset">Link schicken</button>
+          <div id="reset-status" class="notice" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        </form>
+      </div>
+      <p style="margin-top:.75rem">Noch kein Konto? <a href="registrierung-schueler.html">Kostenlos anlegen</a></p>
+    </section>
+
+    <!-- ===== Bestätigungs-Mail erneut senden ===== -->
+    <section class="card" id="erneut-senden" aria-labelledby="h-resend" hidden>
+      <h2 id="h-resend">Keine Bestätigungs-E-Mail bekommen?</h2>
+      <p>Schau auch im Spam-Ordner nach. Oder gib deine E-Mail-Adresse ein, dann schicken wir den Link noch einmal.</p>
+      <form id="resend-form" novalidate>
+        <div class="field">
+          <label for="resend-email">E-Mail-Adresse</label>
+          <input type="email" id="resend-email" autocomplete="email" required />
+        </div>
+        <button type="submit" class="btn btn-secondary" id="btn-resend">Bestätigungs-E-Mail erneut senden</button>
+        <div id="resend-status" class="notice" role="status" aria-live="polite" tabindex="-1" hidden></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Edufy</span>
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="mailto:hallo@edufy.world">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/vendor/supabase-js-2.45.4.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    var KONTAKT = 'hallo@edufy.world';
+    var FUNCTION_NAME = 'schueler-eltern-freigabe';
+    var db = window.edufyDbReady ? window.edufyDb : null;
+    var params = new URLSearchParams(window.location.search);
+    var hashParams = new URLSearchParams(window.location.hash.length > 1 ? window.location.hash.substring(1) : '');
+    var urlStatus = params.get('status') || '';
+    var wantsLogin = window.location.hash === '#anmelden';
+    var recoveryMode = params.get('modus') === 'passwort' || hashParams.get('type') === 'recovery';
+    var PAGE_URL = new URL('dashboard-schueler.html', window.location.href).href;
+    var statusEl = document.getElementById('status');
+
+    var MONATE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+    var SCHULFORMEN = { hauptschule: 'Hauptschule / Mittelschule', realschule: 'Realschule', gymnasium: 'Gymnasium', gesamtschule: 'Gesamtschule', oberschule: 'Oberschule / Sekundarschule', gemeinschaftsschule: 'Gemeinschaftsschule / Stadtteilschule', foerderschule: 'Förderschule', berufsbildende_schule: 'Berufsschule / Berufskolleg', sonstige: 'Andere Schulform' };
+    var TYPEN = {
+      beruf: { label: 'Beruf', seite: 'berufe.html', datei: 'data/berufe.json', liste: 'berufe' },
+      studium: { label: 'Studium', seite: 'studium.html', datei: 'data/studium.json', liste: 'studiengaenge' },
+      foerderung: { label: 'Förderung', seite: 'foerderungen.html', datei: 'data/foerderungen.json', liste: 'foerderungen' }
+    };
+
+    function $(id) { return document.getElementById(id); }
+    function show(id, on) { $(id).hidden = !on; }
+    function isEmail(s) {
+      if (!s || s.indexOf(' ') !== -1) return false;
+      var at = s.indexOf('@');
+      if (at < 1 || at !== s.lastIndexOf('@')) return false;
+      var domain = s.slice(at + 1);
+      var dot = domain.lastIndexOf('.');
+      return dot > 0 && dot < domain.length - 2;
+    }
+    function storedEmail() { try { return sessionStorage.getItem('edufy_s_email') || ''; } catch (e) { return ''; } }
+    function datum(iso) {
+      if (!iso) return '';
+      try { return new Date(iso).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return ''; }
+    }
+    function el(tag, text, cls) {
+      var e = document.createElement(tag);
+      if (text) e.textContent = text;
+      if (cls) e.className = cls;
+      return e;
+    }
+    function mailtoHref(subject, body) {
+      return 'mailto:' + KONTAKT + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+
+    function setHeading(title, lead) { $('title').textContent = title; $('lead').textContent = lead || ''; $('lead').hidden = !lead; }
+    function setStatus(type, title, text, focus) {
+      statusEl.hidden = false;
+      statusEl.className = 'notice notice-' + type;
+      statusEl.setAttribute('role', type === 'error' ? 'alert' : 'status');
+      statusEl.textContent = '';
+      statusEl.appendChild(el('strong', title));
+      if (text) statusEl.appendChild(document.createTextNode(text));
+      if (focus) statusEl.focus();
+    }
+    function hideStatus() { statusEl.hidden = true; }
+    function addStatusLink(href, label, primary) {
+      var p = el('p');
+      var a = el('a', label, primary ? 'btn btn-primary' : '');
+      if (primary) a.style.color = 'var(--white)';
+      a.href = href;
+      p.appendChild(a);
+      statusEl.appendChild(p);
+    }
+    function setBox(id, type, text) {
+      var box = $(id);
+      box.className = 'notice notice-' + type;
+      box.setAttribute('role', type === 'error' ? 'alert' : 'status');
+      box.textContent = text;
+      box.hidden = false;
+    }
+    function showCards(list) {
+      ['konto', 'anmelden', 'erneut-senden', 'neues-passwort'].forEach(function (id) { show(id, list.indexOf(id) !== -1); });
+    }
+    function prefillEmail(email) {
+      if (!email) return;
+      ['login-email', 'resend-email', 'reset-email'].forEach(function (id) { if (!$(id).value) $(id).value = email; });
+    }
+
+    function errText(err) { return String((err && (err.message || err.error_description || err.msg)) || err || '').toLowerCase(); }
+    function isFinalError(err) { var m = errText(err); return m.indexOf('edufy:') !== -1 && m.indexOf('edufy:nicht_angemeldet') === -1; }
+
+    // Übersetzt Codes aus SQL (EDUFY:...) und der Edge Function
+    function translateError(err) {
+      var m = errText(err);
+      if (m.indexOf('edufy:nicht_angemeldet') !== -1) return 'Du bist nicht mehr angemeldet. Bitte melde dich neu an.';
+      if (m.indexOf('edufy:zu_jung') !== -1) return 'Ein eigenes Edufy-Konto gibt es ab 13 Jahren. Ohne Konto kannst du dir aber alle Berufe, Studiengänge und Förderungen ansehen.';
+      if (m.indexOf('edufy:andere_rolle') !== -1) return 'Mit dieser E-Mail-Adresse gibt es schon ein Edufy-Konto für einen Förderverein. Für ein Schülerkonto nimm bitte eine andere Adresse.';
+      if (m.indexOf('edufy:eltern_email_gleich') !== -1) return 'Die E-Mail-Adresse deiner Eltern darf nicht deine eigene sein.';
+      if (m.indexOf('edufy:eltern_email') !== -1) return 'Die E-Mail-Adresse deiner Eltern fehlt oder sieht falsch aus.';
+      if (m.indexOf('edufy:limit_erreicht') !== -1) return 'Du hast in den letzten 24 Stunden schon 3 E-Mails an deine Eltern geschickt. Bitte warte bis morgen und frag deine Eltern, ob die E-Mail im Spam-Ordner gelandet ist.';
+      if (m.indexOf('edufy:mail_nicht_konfiguriert') !== -1) return 'Der E-Mail-Versand an Eltern ist bei Edufy noch nicht eingerichtet. Dein Konto ist trotzdem angelegt. Versuch es bitte später noch einmal.';
+      if (m.indexOf('edufy:mail_versand_fehlgeschlagen') !== -1) return 'Die E-Mail an deine Eltern konnte nicht verschickt werden. Prüf die Adresse und versuch es noch einmal.';
+      if (m.indexOf('edufy:nicht_erreichbar') !== -1) return 'Der E-Mail-Dienst ist gerade nicht erreichbar. Versuch es bitte später noch einmal.';
+      if (m.indexOf('edufy:keine_freigabe_noetig') !== -1) return 'Dein Konto braucht keine Freigabe (mehr).';
+      if (m.indexOf('edufy:gesperrt') !== -1) return 'Dein Konto ist gesperrt. Bitte schreib uns an ' + KONTAKT + '.';
+      if (m.indexOf('edufy:noch_nicht_16') !== -1) return 'Laut deinen Angaben bist du noch nicht sicher 16. Dafür brauchst du die Freigabe deiner Eltern.';
+      if (m.indexOf('edufy:') !== -1) return 'Einige Angaben aus deiner Anmeldung sind unvollständig. Bitte schreib uns an ' + KONTAKT + '.';
+      if (m.indexOf('invalid login credentials') !== -1) return 'E-Mail-Adresse oder Passwort stimmen nicht.';
+      if (m.indexOf('email not confirmed') !== -1) return 'Du hast deine E-Mail-Adresse noch nicht bestätigt. Klick zuerst auf den Link in unserer E-Mail – oder lass sie dir unten noch einmal schicken.';
+      if (m.indexOf('should be different') !== -1) return 'Das neue Passwort muss anders sein als das alte.';
+      if (m.indexOf('password') !== -1 && (m.indexOf('at least') !== -1 || m.indexOf('short') !== -1 || m.indexOf('weak') !== -1)) return 'Das Passwort ist zu kurz oder zu einfach. Bitte nimm mindestens 8 Zeichen.';
+      if (m.indexOf('rate limit') !== -1 || m.indexOf('security purposes') !== -1 || m.indexOf('too many') !== -1) return 'Zu viele Versuche in kurzer Zeit. Bitte warte ein paar Minuten.';
+      if (m.indexOf('could not find the function') !== -1 || m.indexOf('does not exist') !== -1 || m.indexOf('schema cache') !== -1) return 'Edufy ist auf unserer Seite noch nicht fertig eingerichtet. Bitte versuch es später noch einmal.';
+      if (m.indexOf('failed to fetch') !== -1 || m.indexOf('network') !== -1 || m.indexOf('load failed') !== -1) return 'Keine Verbindung. Bitte prüf dein Internet und lade die Seite neu.';
+      return 'Leider hat etwas nicht geklappt. Bitte lade die Seite neu oder schreib uns an ' + KONTAKT + '.';
+    }
+
+    // Parameter für register_student – identisch zu registrierung-schueler.html (explizite Zuordnung)
+    function buildRpcParams(r) {
+      return {
+        p_vorname: r.vorname,
+        p_geburtsjahr: Number(r.geburtsjahr),
+        p_geburtsmonat: Number(r.geburtsmonat),
+        p_klassenstufe: Number(r.klassenstufe),
+        p_schulform: r.schulform,
+        p_schule_name: r.schule_name || null,
+        p_plz: r.plz || null,
+        p_eltern_email: r.eltern_email || null
+      };
+    }
+
+    // ---------- Edge Function: E-Mail an die Eltern ----------
+    async function invokeElternMail(elternEmail) {
+      var body = {};
+      if (elternEmail) body.eltern_email = elternEmail;
+      try {
+        var r = await db.functions.invoke(FUNCTION_NAME, { body: body });
+        if (!r.error) return { ok: true, data: r.data };
+        var code = '';
+        try {
+          if (r.error.context && typeof r.error.context.json === 'function') {
+            var j = await r.error.context.json();
+            code = (j && j.error) || '';
+          }
+        } catch (e) { code = ''; }
+        return { ok: false, code: code || 'EDUFY:NICHT_ERREICHBAR' };
+      } catch (e) {
+        return { ok: false, code: 'EDUFY:NICHT_ERREICHBAR' };
+      }
+    }
+
+    // ---------- Konto laden ----------
+    var account = null;
+    var loading = false;
+    var attempted = false;
+    var autoSent = false;
+
+    async function loadAccount(user, focus) {
+      if (loading) return;
+      loading = true;
+      attempted = true;
+      $('btn-logout').hidden = false;
+      try {
+        var r = await db.rpc('get_my_student_account');
+        if (r.error) throw r.error;
+        if (!r.data) { await nachholen(user); return; }
+        account = r.data;
+        renderAccount(focus);
+        if (account.status === 'wartet_auf_eltern' && account.eltern && account.eltern.zustand === 'nicht_gesendet' && !autoSent) {
+          autoSent = true;
+          await sendElternMail('');
+        }
+      } catch (e) {
+        showCards([]);
+        setHeading('Mein Edufy', '');
+        setStatus('error', 'Dein Konto konnte nicht geladen werden.', ' ' + translateError(e), true);
+        addStatusLink(window.location.pathname, 'Seite neu laden', true);
+      } finally {
+        loading = false;
+      }
+    }
+
+    async function clearRegistrierung() {
+      try { var r = await db.auth.updateUser({ data: { registrierung: null } }); return !r.error; } catch (e) { return false; }
+    }
+
+    // Registrierung nach der E-Mail-Bestätigung abschließen
+    async function nachholen(user) {
+      var meta = (user && user.user_metadata) || {};
+      var reg = meta.registrierung && typeof meta.registrierung === 'object' ? meta.registrierung : null;
+      showCards([]);
+      if (!reg) {
+        setHeading('Mein Edufy', '');
+        if (meta.rolle !== 'schueler') {
+          setStatus('warn', 'Das ist kein Schülerkonto.', ' Mit diesem Zugang kannst du dich hier nicht anmelden. Für ein Schülerkonto nimm bitte eine andere E-Mail-Adresse.', true);
+          addStatusLink('registrierung-schueler.html', 'Schülerkonto anlegen', false);
+        } else {
+          setStatus('warn', 'Zu deinem Konto fehlen Angaben.', ' Bitte schreib uns, dann helfen wir dir weiter. Du kannst das Konto auch löschen und neu anlegen.', true);
+          addStatusLink(mailtoHref('Schülerkonto ohne Angaben', 'Hallo Edufy-Team,\n\nbei meinem Schülerkonto fehlen Angaben.\n\nViele Grüße'), 'E-Mail an ' + KONTAKT, false);
+          showDeleteOnly();
+        }
+        return;
+      }
+      setHeading('Mein Edufy', 'Einen Moment bitte – wir legen dein Konto fertig an.');
+      setStatus('info', 'Einen Moment bitte …', ' Wir legen dein Konto fertig an.');
+      var r = await db.rpc('register_student', buildRpcParams(reg));
+      if (r.error) {
+        if (isFinalError(r.error)) {
+          await clearRegistrierung();   // Daten werden nicht mehr gebraucht (Datensparsamkeit)
+          setHeading('Dein Konto konnte nicht fertig angelegt werden', '');
+          setStatus('error', 'Das hat leider nicht geklappt.', ' ' + translateError(r.error), true);
+          showDeleteOnly();
+        } else {
+          setHeading('Dein Konto ist noch nicht fertig', '');
+          setStatus('error', 'Das hat leider nicht geklappt.', ' ' + translateError(r.error), true);
+          addStatusLink(window.location.pathname, 'Seite neu laden und erneut versuchen', true);
+        }
+        return;
+      }
+      await clearRegistrierung();
+      autoSent = false;
+      loading = false;
+      await loadAccount(user, true);
+    }
+
+    // Nur „Konto löschen“ anzeigen (z. B. bei endgültigem Fehler)
+    function showDeleteOnly() {
+      show('konto', true);
+      ['freigabe', 'h-entdecken', 'h-merkliste', 'h-daten'].forEach(function (id) {
+        var sec = $(id).closest('section');
+        if (sec) sec.hidden = true;
+      });
+    }
+
+    // ---------- Anzeige ----------
+    function renderAccount(focus) {
+      var a = account;
+      showCards(['konto']);
+      ['freigabe', 'h-entdecken', 'h-merkliste', 'h-daten'].forEach(function (id) { var s = $(id).closest('section'); if (s) s.hidden = false; });
+      hideStatus();
+      var neu = urlStatus === 'neu' || urlStatus === 'nachholen' || urlStatus === 'email';
+      setHeading('Hallo, ' + a.vorname + '!', neu ? 'Schön, dass du da bist. Dein Konto ist angelegt.' : 'Hier findest du deine Merkliste und alles zu deinem Konto.');
+      renderFreigabe();
+      renderDaten();
+      loadMerkliste();
+      if (focus) $('title').focus();
+    }
+
+    function addP(box, text) { var p = el('p', text); box.appendChild(p); return p; }
+    function addBtn(row, label, cls, onClick) {
+      var b = el('button', label, 'btn ' + cls);
+      b.type = 'button';
+      b.addEventListener('click', onClick);
+      row.appendChild(b);
+      return b;
+    }
+
+    function renderFreigabe() {
+      var a = account;
+      var box = $('freigabe-box');
+      box.textContent = '';
+      show('eltern-aendern', false);
+      var n = el('div', '', 'notice');
+      box.appendChild(n);
+      if (a.status === 'aktiv') {
+        n.className = 'notice notice-ok';
+        n.appendChild(el('strong', 'Dein Konto ist freigeschaltet.'));
+        if (a.freigabe_art === 'eltern') n.appendChild(document.createTextNode('Deine Eltern haben dein Konto ' + (a.aktiviert_am ? 'am ' + datum(a.aktiviert_am) + ' ' : '') + 'freigegeben.'));
+        else n.appendChild(document.createTextNode('Du kannst Edufy ohne Einschränkungen nutzen.'));
+        addP(n, 'Bald kannst du hier auch selbst Kontakt zu Unternehmen aufnehmen, zum Beispiel für ein Praktikum. Unternehmen bekommen deine Angaben nur, wenn du das selbst willst.');
+        return;
+      }
+      if (a.status === 'gesperrt') {
+        n.className = 'notice notice-error';
+        n.appendChild(el('strong', 'Dein Konto ist gesperrt.'));
+        n.appendChild(document.createTextNode('Bitte schreib uns an ' + KONTAKT + ', dann klären wir das.'));
+        return;
+      }
+      // wartet_auf_eltern
+      var e = a.eltern || {};
+      var z = e.zustand || 'nicht_gesendet';
+      var row = el('div', '', 'btn-row');
+      n.className = 'notice notice-warn';
+      if (z === 'gesendet' || z === 'wird_gesendet') {
+        n.appendChild(el('strong', 'Warte auf die Freigabe deiner Eltern.'));
+        n.appendChild(document.createTextNode('Wir haben ' + (e.mail_gesendet_am ? 'am ' + datum(e.mail_gesendet_am) + ' ' : '') + 'eine E-Mail an ' + e.eltern_email + ' geschickt. Sag deinen Eltern Bescheid – vielleicht ist die E-Mail im Spam-Ordner gelandet.'));
+      } else if (z === 'abgelaufen') {
+        n.appendChild(el('strong', 'Der Link für deine Eltern ist abgelaufen.'));
+        n.appendChild(document.createTextNode('Der Link in der E-Mail an ' + e.eltern_email + ' war 14 Tage gültig. Schick deinen Eltern einfach eine neue E-Mail.'));
+      } else if (z === 'abgelehnt') {
+        n.appendChild(el('strong', 'Deine Eltern haben die Freigabe abgelehnt.'));
+        n.appendChild(document.createTextNode('Dein Konto bleibt eingeschränkt. Sprich am besten mit ihnen. Wenn sie es sich anders überlegen, kannst du eine neue E-Mail schicken.'));
+      } else if (z === 'widerrufen') {
+        n.appendChild(el('strong', 'Deine Eltern haben die Freigabe zurückgenommen.'));
+        n.appendChild(document.createTextNode('Dein Konto ist wieder eingeschränkt. Sprich am besten mit ihnen. Wenn sie es sich anders überlegen, kannst du eine neue E-Mail schicken.'));
+      } else if (z === 'fehlgeschlagen') {
+        n.appendChild(el('strong', 'Die E-Mail an deine Eltern konnte nicht verschickt werden.'));
+        n.appendChild(document.createTextNode('Prüf die Adresse ' + (e.eltern_email || '') + ' und versuch es noch einmal.'));
+      } else {
+        n.appendChild(el('strong', 'Die E-Mail an deine Eltern ist noch nicht verschickt.'));
+        n.appendChild(document.createTextNode('Erst wenn deine Eltern zustimmen, ist dein Konto ganz freigeschaltet.'));
+      }
+      addP(n, 'Bis dahin kannst du alles ansehen und dir eine Merkliste anlegen. Nur Kontakt zu Unternehmen geht erst nach der Freigabe.');
+      var left = typeof e.anfragen_moeglich === 'number' ? e.anfragen_moeglich : 3;
+      var label = (z === 'nicht_gesendet') ? 'E-Mail an meine Eltern senden' : 'E-Mail erneut senden';
+      var sendBtn = addBtn(row, label, 'btn-primary', function () { sendElternMail(''); });
+      sendBtn.id = 'btn-eltern-senden';
+      var changeBtn = addBtn(row, 'Andere Adresse angeben', 'btn-secondary', function () {
+        show('eltern-aendern', true);
+        $('neue-eltern-email').focus();
+      });
+      changeBtn.setAttribute('aria-controls', 'eltern-aendern');
+      if (left <= 0) {
+        sendBtn.disabled = true; sendBtn.style.cursor = 'not-allowed';
+        changeBtn.disabled = true; changeBtn.style.cursor = 'not-allowed';
+        addP(n, 'Du hast heute schon 3 E-Mails geschickt. Morgen kannst du es wieder versuchen.');
+      } else if (left < 3) {
+        addP(n, 'Du kannst heute noch ' + (left === 1 ? 'eine E-Mail' : left + ' E-Mails') + ' an deine Eltern schicken.');
+      }
+      n.appendChild(row);
+
+      if (a.kann_selbst_freigeben) {
+        var n2 = el('div', '', 'notice notice-info');
+        n2.appendChild(el('strong', 'Du bist inzwischen 16 – du kannst dein Konto selbst freischalten.'));
+        n2.appendChild(document.createTextNode('Ab 16 darfst du selbst entscheiden. Deine Eltern müssen dann nicht mehr zustimmen.'));
+        var row2 = el('div', '', 'btn-row');
+        addBtn(row2, 'Konto selbst freischalten', 'btn-primary', selbstFreischalten);
+        n2.appendChild(row2);
+        box.appendChild(n2);
+      }
+    }
+
+    function renderDaten() {
+      var a = account;
+      var dl = $('daten');
+      dl.textContent = '';
+      function row(k, v) { dl.appendChild(el('dt', k)); dl.appendChild(el('dd', v || '–')); }
+      row('Vorname', a.vorname);
+      row('Geburtsmonat und -jahr', (MONATE[a.geburtsmonat - 1] || '') + ' ' + a.geburtsjahr);
+      row('Klasse', String(a.klassenstufe));
+      row('Schulform', SCHULFORMEN[a.schulform] || a.schulform);
+      row('Schule', a.schule_name || 'nicht angegeben');
+      row('PLZ der Schule', a.plz || 'nicht angegeben');
+      if (a.eltern && a.status !== 'aktiv') row('E-Mail deiner Eltern', a.eltern.eltern_email);
+      row('Konto angelegt am', datum(a.created_at));
+    }
+
+    // ---------- Eltern-Mail senden ----------
+    var sending = false;
+    async function sendElternMail(elternEmail) {
+      if (sending) return;
+      sending = true;
+      var fb = $('freigabe-feedback');
+      setBox('freigabe-feedback', 'info', 'Die E-Mail an deine Eltern wird verschickt …');
+      var btn = $('btn-eltern-senden');
+      if (btn) btn.disabled = true;
+      var res = await invokeElternMail(elternEmail);
+      sending = false;
+      if (res.ok) {
+        setBox('freigabe-feedback', 'ok', 'Erledigt: Wir haben eine E-Mail an ' + ((res.data && res.data.eltern_email) || 'deine Eltern') + ' geschickt. Sag ihnen Bescheid!');
+      } else {
+        setBox('freigabe-feedback', 'error', translateError(res.code));
+      }
+      $('neue-eltern-email').value = '';
+      try {
+        var r = await db.rpc('get_my_student_account');
+        if (!r.error && r.data) { account = r.data; renderFreigabe(); renderDaten(); }
+      } catch (e) { /* Anzeige bleibt */ }
+      fb.focus();
+    }
+
+    $('eltern-form').addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var input = $('neue-eltern-email');
+      var v = input.value.trim().toLowerCase();
+      input.removeAttribute('aria-invalid');
+      if (!isEmail(v)) {
+        input.setAttribute('aria-invalid', 'true');
+        setBox('freigabe-feedback', 'error', 'Bitte gib eine gültige E-Mail-Adresse ein, z. B. name@beispiel.de');
+        input.focus();
+        return;
+      }
+      sendElternMail(v);
+    });
+
+    async function selbstFreischalten() {
+      var r = await db.rpc('self_activate_student_at_16');
+      if (r.error) { setBox('freigabe-feedback', 'error', translateError(r.error)); $('freigabe-feedback').focus(); return; }
+      var a = await db.rpc('get_my_student_account');
+      if (!a.error && a.data) { account = a.data; renderFreigabe(); }
+      setBox('freigabe-feedback', 'ok', 'Dein Konto ist jetzt freigeschaltet.');
+      $('freigabe-feedback').focus();
+    }
+
+    // ---------- Merkliste ----------
+    var titelCache = {};
+    async function titel(typ) {
+      if (titelCache[typ]) return titelCache[typ];
+      var map = {};
+      try {
+        var res = await fetch(TYPEN[typ].datei, { credentials: 'same-origin' });
+        if (res.ok) {
+          var j = await res.json();
+          var list = (j && j[TYPEN[typ].liste]) || [];
+          for (var i = 0; i < list.length; i++) { if (list[i] && list[i].id) map[list[i].id] = list[i].name; }
+        }
+      } catch (e) { /* Titel sind nur Komfort */ }
+      titelCache[typ] = map;
+      return map;
+    }
+    function lesbar(refId) {
+      var s = refId.split('-').join(' ');
+      return s.charAt(0).toUpperCase() + s.slice(1);
+    }
+
+    async function loadMerkliste() {
+      var ul = $('merkliste');
+      ul.textContent = '';
+      $('merkliste-status').textContent = '';
+      var r = await db.from('student_favorites').select('id, typ, ref_id, created_at').order('created_at', { ascending: false });
+      if (r.error) { $('merkliste-status').textContent = 'Deine Merkliste konnte nicht geladen werden.'; return; }
+      var rows = r.data || [];
+      show('merkliste-leer', rows.length === 0);
+      var needed = {};
+      rows.forEach(function (f) { if (TYPEN[f.typ]) needed[f.typ] = true; });
+      var maps = {};
+      for (var t in needed) { maps[t] = await titel(t); }
+      rows.forEach(function (f) {
+        var info = TYPEN[f.typ];
+        if (!info) return;
+        var name = (maps[f.typ] && maps[f.typ][f.ref_id]) || lesbar(f.ref_id);
+        var li = el('li');
+        var main = el('span', '', 'merk-main');
+        main.appendChild(el('span', info.label, 'badge'));
+        var a = el('a', name);
+        a.href = info.seite + '#' + encodeURIComponent(f.ref_id);
+        main.appendChild(a);
+        li.appendChild(main);
+        var b = el('button', 'Entfernen', 'btn-link');
+        b.type = 'button';
+        b.appendChild(el('span', ' (' + name + ')', 'visually-hidden'));
+        b.addEventListener('click', function () { removeFavorite(f.id, name, b); });
+        li.appendChild(b);
+        ul.appendChild(li);
+      });
+    }
+
+    async function removeFavorite(id, name, btn) {
+      btn.disabled = true;
+      var r = await db.from('student_favorites').delete().eq('id', id);
+      if (r.error) { btn.disabled = false; $('merkliste-status').textContent = '„' + name + '“ konnte nicht entfernt werden.'; return; }
+      await loadMerkliste();
+      $('merkliste-status').textContent = '„' + name + '“ wurde von deiner Merkliste entfernt.';
+      $('h-merkliste').setAttribute('tabindex', '-1');
+      $('h-merkliste').focus();
+    }
+
+    // ---------- Konto löschen ----------
+    var deleting = false;
+    $('loeschen-form').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      if (deleting) return;
+      var box = $('loeschen-error');
+      box.hidden = true;
+      if (!$('loeschen-ok').checked) {
+        box.textContent = 'Bitte bestätige zuerst mit dem Häkchen, dass du dein Konto wirklich löschen möchtest.';
+        box.hidden = false; box.focus();
+        return;
+      }
+      deleting = true;
+      $('btn-loeschen').disabled = true; $('btn-loeschen').textContent = 'Wird gelöscht …';
+      var r = null;
+      try { r = await db.rpc('delete_my_student_account'); } catch (e) { r = { error: e }; }
+      if (r.error) {
+        deleting = false;
+        $('btn-loeschen').disabled = false; $('btn-loeschen').textContent = 'Konto endgültig löschen';
+        box.textContent = 'Das Löschen hat nicht geklappt. ' + translateError(r.error) + ' Du kannst uns auch schreiben: ';
+        var a = el('a', KONTAKT);
+        a.href = mailtoHref('Schülerkonto löschen', 'Hallo Edufy-Team,\n\nbitte löscht mein Schülerkonto mit allen Daten.\n\nViele Grüße');
+        box.appendChild(a);
+        box.hidden = false; box.focus();
+        return;
+      }
+      try { await db.auth.signOut({ scope: 'local' }); } catch (e) { /* Konto ist schon weg */ }
+      account = null;
+      showCards([]);
+      $('btn-logout').hidden = true;
+      setHeading('Dein Konto ist gelöscht', '');
+      setStatus('ok', 'Alles gelöscht.', ' Dein Profil, deine Merkliste und die Anfragen an deine Eltern sind gelöscht. Du kannst jederzeit ein neues Konto anlegen.', true);
+      addStatusLink('index.html', 'Zur Startseite', true);
+    });
+
+    // ---------- Anmelden ----------
+    var loginBusy = false;
+    $('login-form').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      if (loginBusy) return;
+      var errBox = $('login-error');
+      errBox.hidden = true;
+      var email = $('login-email').value.trim();
+      var pw = $('login-passwort').value;
+      $('login-email').removeAttribute('aria-invalid');
+      $('login-passwort').removeAttribute('aria-invalid');
+      if (!email || !pw) {
+        errBox.textContent = 'Bitte gib E-Mail-Adresse und Passwort ein.';
+        if (!email) $('login-email').setAttribute('aria-invalid', 'true');
+        if (!pw) $('login-passwort').setAttribute('aria-invalid', 'true');
+        errBox.hidden = false; errBox.focus();
+        return;
+      }
+      if (!db) {
+        errBox.textContent = 'Die Anmeldung ist technisch noch nicht freigeschaltet.';
+        errBox.hidden = false; errBox.focus();
+        return;
+      }
+      loginBusy = true; $('btn-login').disabled = true; $('btn-login').textContent = 'Anmeldung läuft …';
+      try {
+        var r = await db.auth.signInWithPassword({ email: email, password: pw });
+        if (r.error) throw r.error;
+        $('login-passwort').value = '';
+        await loadAccount(r.data.user, true);
+      } catch (e) {
+        errBox.textContent = translateError(e);
+        if (errText(e).indexOf('email not confirmed') !== -1) {
+          show('erneut-senden', true);
+          $('resend-email').value = email.toLowerCase();
+        }
+        errBox.hidden = false; errBox.focus();
+      } finally {
+        loginBusy = false; $('btn-login').disabled = false; $('btn-login').textContent = 'Anmelden';
+      }
+    });
+
+    // ---------- Bestätigungs-E-Mail erneut senden ----------
+    var resendBusy = false;
+    $('resend-form').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      if (resendBusy) return;
+      var input = $('resend-email');
+      var email = input.value.trim().toLowerCase();
+      input.removeAttribute('aria-invalid');
+      if (!isEmail(email)) {
+        input.setAttribute('aria-invalid', 'true');
+        setBox('resend-status', 'error', 'Bitte gib eine gültige E-Mail-Adresse ein, z. B. name@beispiel.de');
+        input.focus();
+        return;
+      }
+      if (!db) { setBox('resend-status', 'error', 'Das ist technisch gerade noch nicht möglich.'); return; }
+      resendBusy = true; $('btn-resend').disabled = true;
+      try {
+        var r = await db.auth.resend({ type: 'signup', email: email, options: { emailRedirectTo: PAGE_URL } });
+        if (r.error) throw r.error;
+        setBox('resend-status', 'ok', 'Wir haben den Link noch einmal an ' + email + ' geschickt (falls es dazu ein unbestätigtes Konto gibt). Schau auch im Spam-Ordner nach.');
+      } catch (e) {
+        setBox('resend-status', 'error', 'Das hat nicht geklappt. ' + translateError(e));
+      } finally {
+        resendBusy = false; $('btn-resend').disabled = false;
+        $('resend-status').focus();
+      }
+    });
+
+    // ---------- Passwort vergessen / neues Passwort ----------
+    function openForgot(focus) {
+      show('passwort-vergessen', true);
+      $('btn-forgot-toggle').setAttribute('aria-expanded', 'true');
+      var login = $('login-email').value.trim();
+      if (login && !$('reset-email').value) $('reset-email').value = login;
+      if (focus) $('reset-email').focus();
+    }
+    $('btn-forgot-toggle').addEventListener('click', function () {
+      if ($('passwort-vergessen').hidden) openForgot(true);
+      else { show('passwort-vergessen', false); this.setAttribute('aria-expanded', 'false'); }
+    });
+    var resetBusy = false;
+    $('reset-form').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      if (resetBusy) return;
+      var input = $('reset-email');
+      var email = input.value.trim().toLowerCase();
+      input.removeAttribute('aria-invalid');
+      if (!isEmail(email)) {
+        input.setAttribute('aria-invalid', 'true');
+        setBox('reset-status', 'error', 'Bitte gib eine gültige E-Mail-Adresse ein, z. B. name@beispiel.de');
+        input.focus();
+        return;
+      }
+      if (!db) { setBox('reset-status', 'error', 'Das ist technisch gerade noch nicht möglich.'); return; }
+      resetBusy = true; $('btn-reset').disabled = true;
+      try {
+        var r = await db.auth.resetPasswordForEmail(email, { redirectTo: PAGE_URL + '?modus=passwort' });
+        if (r.error) throw r.error;
+        setBox('reset-status', 'ok', 'Falls es zu ' + email + ' ein Konto gibt, haben wir dir einen Link geschickt. Schau auch im Spam-Ordner nach.');
+      } catch (e) {
+        setBox('reset-status', 'error', 'Das hat nicht geklappt. ' + translateError(e));
+      } finally {
+        resetBusy = false; $('btn-reset').disabled = false;
+        $('reset-status').focus();
+      }
+    });
+    function showRecovery() {
+      setHeading('Neues Passwort festlegen', 'Wähle ein neues Passwort für dein Edufy-Konto.');
+      showCards(['neues-passwort']);
+      hideStatus();
+      $('neues-passwort-feld').focus();
+    }
+    $('neues-passwort-zeigen').addEventListener('change', function () { $('neues-passwort-feld').type = this.checked ? 'text' : 'password'; });
+    var recoveryBusy = false;
+    $('recovery-form').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      if (recoveryBusy) return;
+      var box = $('recovery-error');
+      var input = $('neues-passwort-feld');
+      box.hidden = true;
+      input.removeAttribute('aria-invalid');
+      var pw = input.value || '';
+      if (pw.length < 8) {
+        box.textContent = pw ? 'Das Passwort ist zu kurz – bitte mindestens 8 Zeichen.' : 'Bitte gib ein neues Passwort ein (mindestens 8 Zeichen).';
+        input.setAttribute('aria-invalid', 'true');
+        box.hidden = false; box.focus();
+        return;
+      }
+      recoveryBusy = true; $('btn-recovery').disabled = true;
+      try {
+        var r = await db.auth.updateUser({ password: pw });
+        if (r.error) throw r.error;
+        recoveryMode = false;
+        input.value = '';
+        await loadAccount(r.data.user, true);
+        setBox('freigabe-feedback', 'ok', 'Dein neues Passwort ist gespeichert.');
+      } catch (e) {
+        box.textContent = translateError(e);
+        box.hidden = false; box.focus();
+      } finally {
+        recoveryBusy = false; $('btn-recovery').disabled = false;
+      }
+    });
+
+    $('btn-logout').addEventListener('click', async function () {
+      if (db) { try { await db.auth.signOut(); } catch (e) { /* ignorieren */ } }
+      window.location.href = 'index.html';
+    });
+
+    // ---------- Ansicht „nicht angemeldet“ ----------
+    function showLoginView(title, lead) {
+      setHeading(title || 'Anmelden', lead || 'Melde dich mit deiner E-Mail-Adresse und deinem Passwort an.');
+      prefillEmail(storedEmail());
+      showCards(['anmelden', 'erneut-senden']);
+      hideStatus();
+    }
+
+    // ---------- Start ----------
+    async function init() {
+      if (!db) {
+        setHeading('Mein Edufy', '');
+        setStatus('warn', 'Hinweis: Die Anmeldung ist gerade noch nicht freigeschaltet.', ' Fragen? Schreib uns an ' + KONTAKT + '.');
+        showCards([]);
+        return;
+      }
+      var linkError = hashParams.get('error_code') || hashParams.get('error') || params.get('error_code') || params.get('error');
+      if (linkError) {
+        var desc = (hashParams.get('error_description') || params.get('error_description') || '').toLowerCase();
+        var expired = linkError.indexOf('expired') !== -1 || desc.indexOf('expired') !== -1;
+        showLoginView(expired ? 'Der Link ist abgelaufen' : 'Der Link hat nicht funktioniert',
+          'Wenn du deine E-Mail-Adresse schon bestätigt hast, melde dich einfach an. Sonst lass dir unten einen neuen Link schicken.');
+        if (recoveryMode) { recoveryMode = false; openForgot(false); }
+        setStatus('error', expired ? 'Der Link ist abgelaufen oder wurde schon benutzt.' : 'Der Link hat nicht funktioniert.', '', true);
+        return;
+      }
+      try {
+        var s = await db.auth.getSession();
+        var session = s.data && s.data.session;
+        if (session && session.user) {
+          if (recoveryMode) { $('btn-logout').hidden = false; showRecovery(); return; }
+          await loadAccount(session.user, false);
+          return;
+        }
+      } catch (e) {
+        showLoginView();
+        setStatus('error', 'Dein Anmeldestatus konnte nicht geprüft werden.', ' ' + translateError(e), true);
+        return;
+      }
+      var email = storedEmail();
+      if (urlStatus === 'email') {
+        showLoginView('Fast geschafft! Schau in dein Postfach.',
+          'Wir haben dir eine E-Mail' + (email ? ' an ' + email : '') + ' mit einem Link geschickt. Klick darauf, um deine E-Mail-Adresse zu bestätigen. Danach geht es hier weiter.');
+        setStatus('info', 'Noch ein Schritt: E-Mail-Adresse bestätigen.', ' Keine E-Mail bekommen? Schau im Spam-Ordner nach oder lass sie dir unten noch einmal schicken.');
+      } else {
+        showLoginView();
+        if (wantsLogin) $('login-email').focus();
+      }
+    }
+
+    if (db) {
+      db.auth.onAuthStateChange(function (event, session) {
+        if (event === 'PASSWORD_RECOVERY') { recoveryMode = true; setTimeout(showRecovery, 0); return; }
+        if (event === 'SIGNED_IN' && session && session.user && !attempted && !recoveryMode && !loading) {
+          setTimeout(function () { if (!attempted && !recoveryMode) loadAccount(session.user, false); }, 0);
+        }
+      });
+    }
+    init();
+  })();
+  </script>
+</body>
+</html>
