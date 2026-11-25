@@ -26,6 +26,12 @@ Status: abgeschlossen 2026-11-25 – siehe Erledigt. Nächster Sprint: vom PM na
 - [ ] Impressumsangaben ausfüllen, Datenschutzerklärung finalisieren (nach Legal-Vorprüfung, mit Anwalt)
 - [ ] Supabase-Projekt-URL + Anon-Key für `js/supabase-config.js`
 - [ ] Postfach hallo@edufy.world einrichten
+- [ ] Anwalt beauftragen: Vorprüfung docs/legal/2026-11-25-… bestätigen lassen (A1–A13), vorrangig A1 (§ 331 StGB Schulleitung/Förderverein) und A2 (zulässige Bundesländer, Bayern Art. 84 BayEUG, NRW § 99 SchulG)
+- [ ] Rechtsträger und Sitz von Edufy festlegen (Voraussetzung Impressum, Verträge)
+- [ ] Nachwirkung der Förderverein-Beteiligung nach Vertragsende
+- [ ] Stimmt „Erste Pilotschulen registrieren sich gerade“? Sonst streichen
+- [ ] Datenschutzbeauftragten benennen (DSFA für Daten Minderjähriger voraussichtlich Pflicht → § 38 BDSG)
+- [ ] Auftragsverarbeitungsverträge mit Vercel und Supabase abschließen
 - [ ] Steuerberater beauftragen: Vorprüfung docs/steuer/2026-11-25-vorpruefung-foerdervereinsmodell.md bestätigen lassen (20 Fragen)
 - [ ] Dauer der kostenlosen Pilotphase und Zahl der Pilotunternehmen
 
@@ -43,13 +49,15 @@ Status: abgeschlossen 2026-11-25 – siehe Erledigt. Nächster Sprint: vom PM na
 - [ ] F-003 | F | P1 | Mehrere Ansprechpersonen pro Förderverein (Einladung in bestehenden Verein statt Fehlermeldung bei zweiter Registrierung) — Quelle: Bericht edufy-dev-foerderverein 2026-11-25
 - [ ] F-004 | F | P2 | Aufräumen unbestätigter/verwaister Konten und Metadaten (Edge-/Cron-Function mit Service-Role, Frist laut Datenschutz) — Quelle: Bericht F-001b
 - [ ] F-005 | F | P2 | Schulauswahl über amtliche Schulnummer statt Freitext (robuste Dublettenerkennung) + Rate-Limit für check_school_registered — Quelle: Bericht F-001b
-- [ ] L-001 | G | P0 | Rechtliche Vorprüfung Landingpage (Werbeaussagen, Statistiken, Förderbeträge, Marken, Schulrecht), Datenschutz-Entwurf, Förderverein-Seiten — Owner: edufy-legal → docs/legal/
+- [x] L-001 | G | P0 | Rechtliche Vorprüfung Landingpage (Werbeaussagen, Statistiken, Förderbeträge, Marken, Schulrecht), Datenschutz-Entwurf, Förderverein-Seiten — Owner: edufy-legal → docs/legal/2026-11-25-vorpruefung-landingpage-und-onboarding.md — Vorprüfung erledigt 2026-11-25; Ersetzungstexte E-1..E-18, E-F1..E-F6, E-DS-1..E-DS-8; Fragen A1–A13 an Anwalt
 - [x] T-001 | G | P0 | Steuerliche Vorprüfung Fördervereinsmodell (30 % Beteiligung, Sponsoring, wirtschaftl. Geschäftsbetrieb, USt, Gutschriften) inkl. Fragenkatalog Steuerberater — Owner: edufy-steuer → docs/steuer/2026-11-25-vorpruefung-foerdervereinsmodell.md — Vorprüfung erledigt 2026-11-25; Ergebnis: wirtschaftl. Geschäftsbetrieb beim Verein wahrscheinlich, 19 % USt bzw. Kleinunternehmer, Gutschriften mit USt-Status; 20 Fragen an Steuerberater
-- [ ] G-007 | G | P1 | Rebranding Landingpage, Impressum, Datenschutz auf „Edufy“, Kontakt hallo@edufy.world; Prozentsatz der Beteiligung von der Landingpage entfernen; Preis-Tiers durch „Pilotphase kostenlos“ ersetzen — blockiert durch L-001 (gemeinsam mit G-003 umsetzen)
+- [ ] G-007 | G | P0 | Rebranding Landingpage, Impressum, Datenschutz auf „Edufy“, Kontakt hallo@edufy.world; Prozentsatz der Beteiligung von der Landingpage entfernen; Preis-Tiers durch „Pilotphase kostenlos“ ersetzen — Ersetzungstexte aus docs/legal/2026-11-25-… (E-1..E-18, E-DS-1..8) und docs/steuer/2026-11-25-…; gemeinsam mit G-003 umsetzen
 - [ ] F-006 | F | P1 | Formale Zustimmung der Schulleitung (Einladungslink an Schulleitung, Status „wartet auf Schulleitung“, Verein erst danach aktiv) — Quelle: Entscheidung Marcus
 - [ ] F-007 | F | P1 | Förderverein-Jahresvertrag bei Aktivierung (Vertragstext von edufy-legal, Annahme im Dashboard, Laufzeit/Kündigung im Schema) — blockiert durch L-001/T-001
 - [ ] S-002 | S | P1 | Eltern-Freigabe für Schüler unter 16 per E-Mail-Link, eingeschränktes Konto bis zur Freigabe — Quelle: Entscheidung Marcus
 - [ ] U-003 | U | P2 | Stripe-Integration (Billing/SEPA/Rechnung) nach Pilotphase, Gutschriften an Fördervereine — Quelle: Entscheidung Marcus
+
+- [ ] F-008 | F | P1 | Förderverein-Seiten nach Legal E-F1..E-F6: Jahresvertrag + Schulleitungszustimmung vor Absenden nennen, Datenschutz-Checkbox → Hinweis (Art. 6 Abs. 1 lit. b), Pilotphase ohne Vergütung, Kontakt hallo@edufy.world; RPC anpassen — Quelle: docs/legal/2026-11-25-…
 
 ## Erledigt
 - [x] F-001 | F | P0 | Förderverein-Onboarding Ende-zu-Ende lauffähig inkl. Bestätigungsseite — Akzeptanz: Registrierung legt Profil in Supabase an, Nutzer sieht nächste Schritte — Quelle: Marcus — Owner: edufy-dev-foerderverein (+ Freigabe `js/supabase-config.js`, `js/supabase-client.js`) — erledigt 2026-11-25 (live ungetestet: Supabase noch nicht konfiguriert)
