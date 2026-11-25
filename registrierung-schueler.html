@@ -404,12 +404,11 @@
         var plz = val('plz');
         check('plz', plz === '' || (plz.length === 5 && isDigits(plz)), 'Die Postleitzahl hat genau 5 Ziffern. Du kannst das Feld auch leer lassen.');
       } else if (step === 'eltern') {
+        // Vergleich mit der eigenen Adresse erst im Schritt „Zugang“ (dort wird sie eingegeben)
         var em = val('eltern_email').toLowerCase();
-        var own = val('email').toLowerCase();
         var msg = '';
         if (!em) msg = 'Bitte gib die E-Mail-Adresse deiner Mutter oder deines Vaters ein.';
         else if (!isEmail(em)) msg = 'Die E-Mail-Adresse sieht unvollständig aus. Beispiel: name@beispiel.de';
-        else if (own && em === own) msg = 'Das ist deine eigene E-Mail-Adresse. Bitte gib die Adresse deiner Eltern ein.';
         check('eltern_email', msg === '', msg);
       } else if (step === 'zugang') {
         var mail = val('email').toLowerCase();

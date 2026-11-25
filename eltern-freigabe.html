@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freigabe für das Edufy-Konto Ihres Kindes – Edufy</title>
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <meta name="description" content="Eltern-Freigabe für ein Edufy-Schülerkonto: freigeben, ablehnen oder widerrufen." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <link rel="icon" href="data:," />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F3A; --teal: #0B7A70; --teal-dark: #08625A; --teall: #5EEAD4;
+      --white: #FFFFFF; --off: #F8FAFC;
+      --text: #1E293B; --muted: #475569; --on-dark: #94A3B8; --border: #CBD5E1;
+      --error: #B91C1C; --error-bg: #FEF2F2; --ok-bg: #ECFDF5; --info-bg: #F0FDFA; --warn-bg: #FFFBEB;
+      --font: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-head: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+    }
+    [hidden] { display: none !important; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font); background: var(--off); color: var(--text); font-size: 1.0625rem; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: var(--teal); }
+    a:hover { color: var(--teal-dark); }
+    :focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; border-radius: 4px; }
+    .skip { position: absolute; left: -9999px; top: 0; background: var(--white); color: var(--navy); padding: .75rem 1rem; z-index: 100; }
+    .skip:focus { left: 1rem; top: 1rem; }
+
+    .site-header { background: var(--navy); padding: 0 1rem; }
+    .site-header-inner { max-width: 960px; margin: 0 auto; min-height: 64px; display: flex; align-items: center; }
+    .logo { font-family: var(--font-head); font-size: 1.5rem; color: var(--white); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+    .logo span { color: var(--teall); }
+    .site-header :focus-visible { outline-color: var(--teall); }
+
+    main { flex: 1; width: 100%; max-width: 720px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    h1 { font-family: var(--font-head); font-weight: 400; font-size: clamp(1.75rem, 6vw, 2.3rem); line-height: 1.15; color: var(--navy); margin-bottom: .75rem; }
+    h2 { font-size: 1.25rem; color: var(--navy); margin-bottom: .6rem; line-height: 1.3; }
+    .lead { color: var(--muted); margin-bottom: 1.5rem; }
+
+    .notice { border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: 1.25rem; border: 1px solid; }
+    .notice:focus { outline: none; }
+    .notice:focus-visible { outline: 3px solid var(--teal); }
+    .notice-warn { background: var(--warn-bg); border-color: #F59E0B; color: #713F12; }
+    .notice-error { background: var(--error-bg); border-color: #FCA5A5; color: #7F1D1D; }
+    .notice-info { background: var(--info-bg); border-color: #99F6E4; color: #134E4A; }
+    .notice-ok { background: var(--ok-bg); border-color: #6EE7B7; color: #064E3B; }
+    .notice strong { display: block; margin-bottom: .25rem; }
+    .notice p { margin-top: .5rem; }
+    .notice a { color: inherit; font-weight: 600; }
+
+    .card { background: var(--white); border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 18px rgba(11, 31, 58, .05); margin-bottom: 1.5rem; }
+    .card p + p, .card p + ul, .card ul + p { margin-top: .6rem; }
+    .card ul { margin-left: 1.25rem; }
+    .card li { margin-bottom: .3rem; }
+    dl.daten { display: grid; grid-template-columns: minmax(150px, 40%) 1fr; gap: .35rem 1rem; }
+    dl.daten dt { color: var(--muted); }
+    dl.daten dd { overflow-wrap: anywhere; }
+
+    .field { margin-bottom: 1rem; }
+    .field > label { display: block; font-weight: 600; margin-bottom: .3rem; }
+    .hint { display: block; font-size: .9375rem; color: var(--muted); margin-bottom: .35rem; }
+    input[type="text"] { width: 100%; min-height: 48px; padding: .6rem .8rem; font: inherit; color: var(--text); background: var(--white); border: 2px solid #64748B; border-radius: 8px; }
+    input:focus-visible { outline: 3px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+    input[aria-invalid="true"] { border-color: var(--error); }
+    .choice { display: flex; align-items: flex-start; gap: .7rem; min-height: 44px; padding: .5rem 0; cursor: pointer; font-weight: 400; }
+    .choice input { width: 24px; height: 24px; margin-top: .15rem; flex: 0 0 auto; accent-color: var(--teal); cursor: pointer; }
+    .err { display: block; color: var(--error); font-weight: 600; font-size: .9375rem; margin-top: .3rem; }
+    .err:empty { display: none; }
+
+    .btn { font: inherit; font-weight: 600; font-size: 1rem; min-height: 48px; padding: .7rem 1.4rem; border-radius: 8px; cursor: pointer; border: 2px solid transparent; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+    .btn-primary { background: var(--teal); color: var(--white); }
+    .btn-primary:hover { background: var(--teal-dark); color: var(--white); }
+    .btn[disabled] { background: #64748B; color: var(--white); border-color: #64748B; cursor: wait; }
+    .btn-secondary { background: var(--white); color: var(--navy); border-color: #64748B; }
+    .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+    .btn-danger { background: var(--error); color: var(--white); }
+    .btn-danger:hover { background: #991B1B; color: var(--white); }
+    .btn-row { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .subbox { border-top: 1px solid #E2E8F0; margin-top: 1.25rem; padding-top: 1.25rem; }
+    .small { font-size: .9375rem; color: var(--muted); }
+
+    footer { background: var(--navy); color: var(--on-dark); padding: 1.5rem 1rem; }
+    .footer-inner { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; align-items: center; font-size: .9375rem; }
+    footer nav { display: flex; gap: .25rem 1.25rem; flex-wrap: wrap; }
+    footer a { color: var(--on-dark); display: inline-flex; align-items: center; min-height: 44px; }
+    footer a:hover { color: var(--white); }
+    footer :focus-visible { outline-color: var(--teall); }
+
+    @media (max-width: 560px) {
+      main { padding-top: 1.25rem; }
+      .card { padding: 1.1rem; }
+      .btn-row .btn { flex: 1 1 100%; }
+      dl.daten { grid-template-columns: 1fr; gap: 0; }
+      dl.daten dd { margin-bottom: .5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="logo" aria-label="Edufy – zur Startseite">Edu<span>fy</span></a>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <h1 id="title">Freigabe für das Edufy-Konto Ihres Kindes</h1>
+    <p class="lead" id="lead">Einen Moment bitte – wir prüfen Ihren Link.</p>
+
+    <div id="status" class="notice notice-info" role="status" aria-live="polite" tabindex="-1">
+      <strong>Einen Moment bitte …</strong>
+      Wir prüfen Ihren Link.
+    </div>
+
+    <!-- Was wurde angelegt? -->
+    <section class="card" id="kind-card" aria-labelledby="h-kind" hidden>
+      <h2 id="h-kind">Diese Angaben hat <span class="js-vorname">Ihr Kind</span> gespeichert</h2>
+      <dl class="daten" id="kind-daten"></dl>
+      <p class="small" style="margin-top:.75rem">Dazu kommen das Passwort (verschlüsselt) und – falls angelegt – eine Merkliste mit Berufen, Studiengängen und Förderungen. Nachname, Adresse oder Noten fragen wir nicht ab.</p>
+    </section>
+
+    <!-- Erklärung: immer sichtbar -->
+    <section class="card" id="info-card" aria-labelledby="h-info">
+      <h2 id="h-info">Was ist Edufy?</h2>
+      <p>Edufy hilft Schülerinnen und Schülern bei der Berufs- und Studienorientierung: Berufe und Ausbildungsvergütungen, Studiengänge, Förderungen und Bildungswege. Für Schülerinnen und Schüler ist Edufy kostenlos.</p>
+      <h2 style="margin-top:1.25rem">Warum fragen wir Sie?</h2>
+      <p>Ihr Kind ist laut eigener Angabe jünger als 16 Jahre. Dann brauchen wir nach der Datenschutz-Grundverordnung (Art. 8 DSGVO) die Zustimmung eines Elternteils.</p>
+      <h2 style="margin-top:1.25rem">Was ändert sich mit Ihrer Freigabe?</h2>
+      <ul>
+        <li><strong>Ohne Freigabe:</strong> Ihr Kind kann Inhalte ansehen und sich eine Merkliste anlegen. Kontakt zu Unternehmen ist nicht möglich.</li>
+        <li><strong>Mit Freigabe:</strong> Ihr Kind darf später auch selbst Kontakt zu Unternehmen aufnehmen, zum Beispiel für ein Praktikum. Diese Funktion ist noch in Vorbereitung.</li>
+        <li><strong>Unternehmen</strong> sehen nur anonyme Statistiken je Schule. Persönliche Angaben bekommt ein Unternehmen nur, wenn Ihr Kind selbst Kontakt aufnimmt.</li>
+        <li><strong>Jederzeit widerrufbar:</strong> Über den Link in Ihrer E-Mail können Sie die Freigabe widerrufen oder das Konto löschen lassen.</li>
+      </ul>
+      <h2 style="margin-top:1.25rem">Datenschutz</h2>
+      <p>Als Nachweis speichern wir den Zeitpunkt Ihrer Entscheidung, Ihre E-Mail-Adresse, Ihren Namen und die Version dieses Textes. Ihre IP-Adresse speichern wir dabei nicht. Mehr in der <a href="datenschutz.html#minderjaehrige" target="_blank" rel="noopener">Datenschutzerklärung (öffnet in neuem Tab)</a>. Fragen beantworten wir gerne unter <a href="mailto:hallo@edufy.world">hallo@edufy.world</a>.</p>
+    </section>
+
+    <!-- Freigeben / Ablehnen (Link offen) -->
+    <section class="card" id="entscheiden" aria-labelledby="h-entscheiden" hidden>
+      <h2 id="h-entscheiden">Ihre Entscheidung</h2>
+      <p>Mit Ihrer Freigabe wird das Konto von <span class="js-vorname">Ihrem Kind</span> ganz freigeschaltet. Sie können die Freigabe später jederzeit über den Link in Ihrer E-Mail widerrufen.</p>
+      <form id="freigabe-form" novalidate style="margin-top:1rem">
+        <div class="field">
+          <label for="eltern-name">Ihr Vor- und Nachname</label>
+          <span class="hint" id="eltern-name-hint">Wir speichern Ihren Namen als Nachweis der Freigabe.</span>
+          <input type="text" id="eltern-name" name="eltern-name" autocomplete="name" maxlength="100" required aria-describedby="eltern-name-hint eltern-name-err" />
+          <span class="err" id="eltern-name-err"></span>
+        </div>
+        <label class="choice"><input type="checkbox" id="sorgeberechtigt" aria-describedby="sorgeberechtigt-err" /> <span>Ich bin für <span class="js-vorname">dieses Kind</span> sorgeberechtigt (zum Beispiel Mutter, Vater oder Vormund) und bin mit der Nutzung von Edufy wie oben beschrieben einverstanden.</span></label>
+        <span class="err" id="sorgeberechtigt-err"></span>
+        <div class="btn-row">
+          <button type="submit" class="btn btn-primary" id="btn-freigeben">Konto freigeben</button>
+          <button type="button" class="btn btn-secondary" id="btn-ablehnen-oeffnen" aria-expanded="false" aria-controls="ablehnen">Nicht freigeben</button>
+        </div>
+        <div id="freigabe-error" class="notice notice-error" role="alert" tabindex="-1" hidden style="margin-top:1rem"></div>
+      </form>
+    </section>
+
+    <!-- Ablehnen / Widerrufen / Konto löschen -->
+    <section class="card" id="ablehnen" aria-labelledby="h-ablehnen" hidden>
+      <h2 id="h-ablehnen">Nicht freigeben</h2>
+      <p id="ablehnen-text">Wenn Sie nicht freigeben, bleibt das Konto eingeschränkt: Ihr Kind kann Inhalte ansehen und eine Merkliste führen, aber keinen Kontakt zu Unternehmen aufnehmen.</p>
+      <form id="ablehnen-form" novalidate style="margin-top:.75rem">
+        <label class="choice" id="loeschen-label"><input type="checkbox" id="konto-loeschen" /> <span>Außerdem das Konto von <span class="js-vorname">meinem Kind</span> mit allen Angaben löschen.</span></label>
+        <div class="btn-row">
+          <button type="submit" class="btn btn-danger" id="btn-ablehnen">Ablehnung absenden</button>
+        </div>
+        <div id="ablehnen-error" class="notice notice-error" role="alert" tabindex="-1" hidden style="margin-top:1rem"></div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Edufy</span>
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="mailto:hallo@edufy.world">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/vendor/supabase-js-2.45.4.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    // Versionsstand dieses Freigabetexts – wird mit der Freigabe gespeichert (Nachweis).
+    // Bei inhaltlichen Textänderungen hochzählen.
+    var TEXT_VERSION = 'eltern-freigabe-2026-11-25';
+    var KONTAKT = 'hallo@edufy.world';
+    var STORE_KEY = 'edufy_eltern_token';
+    var db = window.edufyDbReady ? window.edufyDb : null;
+    var statusEl = document.getElementById('status');
+    var MONATE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+    var SCHULFORMEN = { hauptschule: 'Hauptschule / Mittelschule', realschule: 'Realschule', gymnasium: 'Gymnasium', gesamtschule: 'Gesamtschule', oberschule: 'Oberschule / Sekundarschule', gemeinschaftsschule: 'Gemeinschaftsschule / Stadtteilschule', foerderschule: 'Förderschule', berufsbildende_schule: 'Berufsschule / Berufskolleg', sonstige: 'andere Schulform' };
+
+    function $(id) { return document.getElementById(id); }
+    function show(id, on) { $(id).hidden = !on; }
+    function el(tag, text) { var e = document.createElement(tag); if (text) e.textContent = text; return e; }
+    function datum(iso) {
+      if (!iso) return '';
+      try { return new Date(iso).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return ''; }
+    }
+
+    // ---------- Token aus dem URL-Fragment (#token=…) ----------
+    // Das Fragment wird nicht an Server übertragen. Wir entfernen es zusätzlich aus der
+    // Adresszeile und merken es nur für diesen Tab (sessionStorage), damit „Neu laden“ geht.
+    function readToken() {
+      var t = '';
+      var h = window.location.hash;
+      if (h && h.length > 1) {
+        var hp = new URLSearchParams(h.substring(1));
+        t = (hp.get('token') || '').trim();
+      }
+      if (t) {
+        try { sessionStorage.setItem(STORE_KEY, t); } catch (e) { /* egal */ }
+        try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) { /* egal */ }
+        return t;
+      }
+      try { return sessionStorage.getItem(STORE_KEY) || ''; } catch (e) { return ''; }
+    }
+    var token = readToken();
+
+    function setHeading(title, lead) { $('title').textContent = title; $('lead').textContent = lead || ''; $('lead').hidden = !lead; }
+    function setStatus(type, title, text, focus) {
+      statusEl.hidden = false;
+      statusEl.className = 'notice notice-' + type;
+      statusEl.setAttribute('role', type === 'error' ? 'alert' : 'status');
+      statusEl.textContent = '';
+      statusEl.appendChild(el('strong', title));
+      if (text) statusEl.appendChild(document.createTextNode(text));
+      if (focus) statusEl.focus();
+    }
+    function addStatusLink(href, label) {
+      var p = el('p'); var a = el('a', label); a.href = href; p.appendChild(a); statusEl.appendChild(p);
+    }
+    function setVorname(v) {
+      var nodes = document.querySelectorAll('.js-vorname');
+      for (var i = 0; i < nodes.length; i++) if (v) nodes[i].textContent = v;
+    }
+
+    function errText(err) { return String((err && (err.message || err.error_description || err.msg)) || err || '').toLowerCase(); }
+    function translateError(err) {
+      var m = errText(err);
+      if (m.indexOf('edufy:token_ungueltig') !== -1) return 'Dieser Link ist ungültig. Bitte öffnen Sie den Link direkt aus der E-Mail. Wurde das Konto inzwischen gelöscht, ist der Link ebenfalls ungültig.';
+      if (m.indexOf('edufy:token_abgelaufen') !== -1) return 'Der Link ist abgelaufen. Zum Freigeben ist er 14 Tage gültig. Ihr Kind kann in seinem Konto eine neue E-Mail anfordern.';
+      if (m.indexOf('edufy:token_ersetzt') !== -1) return 'Es wurde inzwischen ein neuerer Link verschickt. Bitte verwenden Sie den Link aus der neuesten E-Mail.';
+      if (m.indexOf('edufy:link_geschlossen') !== -1) return 'Über diesen Link wurde bereits abgelehnt oder widerrufen. Für eine neue Freigabe kann Ihr Kind eine neue E-Mail anfordern.';
+      if (m.indexOf('edufy:name_fehlt') !== -1) return 'Bitte geben Sie Ihren Vor- und Nachnamen ein.';
+      if (m.indexOf('edufy:sorgeberechtigung_fehlt') !== -1) return 'Bitte bestätigen Sie, dass Sie sorgeberechtigt sind.';
+      if (m.indexOf('edufy:gesperrt') !== -1) return 'Dieses Konto ist gesperrt. Bitte schreiben Sie uns an ' + KONTAKT + '.';
+      if (m.indexOf('failed to fetch') !== -1 || m.indexOf('network') !== -1 || m.indexOf('load failed') !== -1) return 'Es konnte keine Verbindung hergestellt werden. Bitte prüfen Sie Ihre Internetverbindung und laden Sie die Seite neu.';
+      return 'Leider hat etwas nicht geklappt. Bitte laden Sie die Seite neu oder schreiben Sie uns an ' + KONTAKT + '.';
+    }
+
+    // ---------- Anzeige je Zustand ----------
+    var info = null;
+    var mode = '';   // 'ablehnen' | 'widerrufen' | 'loeschen'
+
+    function renderKind(k) {
+      var dl = $('kind-daten');
+      dl.textContent = '';
+      function row(a, b) { dl.appendChild(el('dt', a)); dl.appendChild(el('dd', b || 'nicht angegeben')); }
+      row('Vorname', k.vorname);
+      if (k.geburtsmonat) row('Geburtsmonat und -jahr', (MONATE[k.geburtsmonat - 1] || '') + ' ' + k.geburtsjahr);
+      if (k.klassenstufe) row('Klasse', String(k.klassenstufe));
+      if (k.schulform) row('Schulform', SCHULFORMEN[k.schulform] || k.schulform);
+      if (k.geburtsmonat) row('Schule (eigene Angabe)', k.schule_name);
+      if (k.geburtsmonat) row('PLZ der Schule', k.plz);
+      if (k.email_maskiert) row('E-Mail-Adresse für die Anmeldung', k.email_maskiert);
+      if (k.konto_seit) row('Konto angelegt am', datum(k.konto_seit));
+    }
+
+    function setAblehnenMode(m, vorname) {
+      mode = m;
+      var h = $('h-ablehnen'), t = $('ablehnen-text'), b = $('btn-ablehnen');
+      var cb = $('konto-loeschen');
+      cb.checked = false;
+      show('loeschen-label', true);
+      var wer = vorname || 'Ihr Kind';
+      if (m === 'widerrufen') {
+        h.textContent = 'Freigabe widerrufen';
+        t.textContent = 'Wenn Sie widerrufen, ist das Konto wieder eingeschränkt: ' + wer + ' kann Inhalte ansehen und eine Merkliste führen, aber keinen Kontakt zu Unternehmen aufnehmen.';
+        b.textContent = 'Freigabe widerrufen';
+      } else if (m === 'loeschen') {
+        h.textContent = 'Konto löschen lassen';
+        t.textContent = 'Sie können das Konto von ' + wer + ' mit allen Angaben löschen lassen. Das lässt sich nicht rückgängig machen.';
+        cb.checked = true;
+        show('loeschen-label', false);
+        b.textContent = 'Konto endgültig löschen';
+      } else {
+        h.textContent = 'Nicht freigeben';
+        t.textContent = 'Wenn Sie nicht freigeben, bleibt das Konto eingeschränkt: ' + wer + ' kann Inhalte ansehen und eine Merkliste führen, aber keinen Kontakt zu Unternehmen aufnehmen. Kennen Sie das Kind nicht, lassen Sie das Konto am besten löschen.';
+        b.textContent = 'Ablehnung absenden';
+      }
+    }
+
+    function render() {
+      var z = info.zustand;
+      var k = info.kind || null;
+      var vorname = k && k.vorname ? k.vorname : '';
+      setVorname(vorname);
+      show('kind-card', !!(k && k.geburtsmonat));
+      if (k && k.geburtsmonat) renderKind(k);
+      show('entscheiden', false);
+      show('ablehnen', false);
+      $('btn-ablehnen-oeffnen').setAttribute('aria-expanded', 'false');
+
+      if (z === 'offen') {
+        setHeading(vorname ? vorname + ' möchte Edufy nutzen' : 'Ihr Kind möchte Edufy nutzen',
+          'Bitte lesen Sie kurz, was Edufy ist und was Ihre Freigabe bedeutet. Zum Freigeben ist der Link bis ' + datum(info.ablauf_am) + ' gültig.');
+        statusEl.hidden = true;
+        show('entscheiden', true);
+        setAblehnenMode('ablehnen', vorname);
+      } else if (z === 'bestaetigt') {
+        setHeading('Sie haben das Konto freigegeben', 'Vielen Dank. Hier können Sie die Freigabe jederzeit widerrufen.');
+        setStatus('ok', 'Freigabe erteilt' + (info.bestaetigt_am ? ' am ' + datum(info.bestaetigt_am) : '') + '.',
+          ' Das Konto von ' + (vorname || 'Ihrem Kind') + ' ist freigeschaltet. Bitte heben Sie die E-Mail mit dem Link auf – darüber können Sie die Freigabe später widerrufen.');
+        show('ablehnen', true);
+        setAblehnenMode('widerrufen', vorname);
+      } else if (z === 'abgelehnt' || z === 'widerrufen') {
+        setHeading(z === 'abgelehnt' ? 'Sie haben die Freigabe abgelehnt' : 'Sie haben die Freigabe widerrufen', '');
+        setStatus('info', (z === 'abgelehnt' ? 'Abgelehnt' : 'Widerrufen') + (info.abgelehnt_am || info.widerrufen_am ? ' am ' + datum(info.widerrufen_am || info.abgelehnt_am) : '') + '.',
+          ' Das Konto von ' + (vorname || 'Ihrem Kind') + ' ist eingeschränkt. Möchten Sie später doch freigeben, kann Ihr Kind eine neue E-Mail anfordern.');
+        show('ablehnen', true);
+        setAblehnenMode('loeschen', vorname);
+      } else if (z === 'abgelaufen') {
+        setHeading('Der Link ist abgelaufen', '');
+        setStatus('warn', 'Zum Freigeben ist der Link nur 14 Tage gültig.',
+          ' ' + (vorname || 'Ihr Kind') + ' kann im eigenen Edufy-Konto eine neue E-Mail an Sie anfordern. Ablehnen oder das Konto löschen lassen können Sie aber weiterhin hier.');
+        show('ablehnen', true);
+        setAblehnenMode('ablehnen', vorname);
+      } else if (z === 'ersetzt') {
+        setHeading('Es gibt einen neueren Link', '');
+        setStatus('warn', 'Für dieses Konto wurde inzwischen eine neuere E-Mail verschickt.',
+          ' Bitte verwenden Sie den Link aus der neuesten E-Mail. Sie haben keine neuere E-Mail bekommen und kennen das Kind nicht? Dann können Sie hier ablehnen.');
+        show('ablehnen', true);
+        setAblehnenMode('ablehnen', '');
+      }
+    }
+
+    function showInvalid(msg) {
+      setHeading('Dieser Link funktioniert nicht', '');
+      show('kind-card', false); show('entscheiden', false); show('ablehnen', false);
+      setStatus('error', 'Der Link ist ungültig.', ' ' + msg, true);
+      addStatusLink('mailto:' + KONTAKT + '?subject=' + encodeURIComponent('Eltern-Freigabe: Link funktioniert nicht'), 'E-Mail an ' + KONTAKT + ' schreiben');
+    }
+
+    async function load(focus) {
+      var r = await db.rpc('get_parental_consent_info', { p_token: token });
+      if (r.error) {
+        if (errText(r.error).indexOf('edufy:token_ungueltig') !== -1) showInvalid(translateError(r.error));
+        else { setStatus('error', 'Der Link konnte nicht geprüft werden.', ' ' + translateError(r.error), true); }
+        return false;
+      }
+      info = r.data;
+      render();
+      if (focus) $('title').focus();
+      return true;
+    }
+
+    // ---------- Freigeben ----------
+    var busy = false;
+    $('freigabe-form').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      if (busy) return;
+      var name = $('eltern-name').value.trim();
+      var ok = true;
+      var errBox = $('freigabe-error');
+      errBox.hidden = true;
+      $('eltern-name-err').textContent = ''; $('eltern-name').removeAttribute('aria-invalid');
+      $('sorgeberechtigt-err').textContent = ''; $('sorgeberechtigt').removeAttribute('aria-invalid');
+      if (name.length < 2) {
+        $('eltern-name-err').textContent = 'Bitte geben Sie Ihren Vor- und Nachnamen ein.';
+        $('eltern-name').setAttribute('aria-invalid', 'true');
+        ok = false;
+      }
+      if (!$('sorgeberechtigt').checked) {
+        $('sorgeberechtigt-err').textContent = 'Bitte bestätigen Sie, dass Sie sorgeberechtigt sind.';
+        $('sorgeberechtigt').setAttribute('aria-invalid', 'true');
+        ok = false;
+      }
+      if (!ok) { (name.length < 2 ? $('eltern-name') : $('sorgeberechtigt')).focus(); return; }
+      busy = true; $('btn-freigeben').disabled = true; $('btn-freigeben').textContent = 'Wird gespeichert …';
+      try {
+        var r = await db.rpc('confirm_parental_consent', { p_token: token, p_eltern_name: name, p_sorgeberechtigt: true, p_text_version: TEXT_VERSION });
+        if (r.error) throw r.error;
+        await load(false);
+        setStatus('ok', 'Vielen Dank – Sie haben das Konto freigegeben.',
+          ' ' + ((r.data && r.data.vorname) || 'Ihr Kind') + ' kann Edufy jetzt ohne Einschränkungen nutzen. Über den Link in Ihrer E-Mail können Sie die Freigabe jederzeit widerrufen.', true);
+      } catch (e) {
+        errBox.textContent = translateError(e);
+        errBox.hidden = false; errBox.focus();
+      } finally {
+        busy = false; $('btn-freigeben').disabled = false; $('btn-freigeben').textContent = 'Konto freigeben';
+      }
+    });
+
+    $('btn-ablehnen-oeffnen').addEventListener('click', function () {
+      var open = $('ablehnen').hidden;
+      show('ablehnen', open);
+      this.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        $('h-ablehnen').setAttribute('tabindex', '-1');
+        $('h-ablehnen').focus();
+      }
+    });
+
+    // ---------- Ablehnen / Widerrufen / Löschen ----------
+    $('ablehnen-form').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      if (busy) return;
+      var loeschen = $('konto-loeschen').checked;
+      var errBox = $('ablehnen-error');
+      errBox.hidden = true;
+      busy = true; $('btn-ablehnen').disabled = true;
+      try {
+        var r = await db.rpc('revoke_parental_consent', { p_token: token, p_konto_loeschen: loeschen });
+        if (r.error) throw r.error;
+        var z = r.data && r.data.zustand;
+        if (z === 'konto_geloescht') {
+          try { sessionStorage.removeItem(STORE_KEY); } catch (e) { /* egal */ }
+          setHeading('Das Konto wurde gelöscht', '');
+          show('kind-card', false); show('entscheiden', false); show('ablehnen', false);
+          setStatus('ok', 'Erledigt.', ' Das Konto und alle Angaben dazu sind gelöscht. Der Link in Ihrer E-Mail funktioniert nicht mehr. Sie müssen nichts weiter tun.', true);
+          return;
+        }
+        await load(false);
+        var title = z === 'widerrufen' ? 'Sie haben die Freigabe widerrufen.' : (z === 'abgelehnt' ? 'Sie haben die Freigabe abgelehnt.' : 'Ihre Entscheidung ist gespeichert.');
+        setStatus('ok', title, ' Das Konto ist eingeschränkt: kein Kontakt zu Unternehmen. Sie können das Konto hier auch löschen lassen.', true);
+      } catch (e) {
+        errBox.textContent = translateError(e);
+        errBox.hidden = false; errBox.focus();
+      } finally {
+        busy = false; $('btn-ablehnen').disabled = false;
+      }
+    });
+
+    // ---------- Start ----------
+    async function init() {
+      if (!db) {
+        setHeading('Freigabe für das Edufy-Konto Ihres Kindes', '');
+        setStatus('warn', 'Die Freigabe ist gerade technisch noch nicht möglich.', ' Bitte versuchen Sie es später noch einmal oder schreiben Sie uns an ' + KONTAKT + '.');
+        return;
+      }
+      if (!token) {
+        showInvalid('Der Link ist unvollständig. Bitte klicken Sie direkt auf den Link in der E-Mail oder kopieren Sie ihn vollständig in die Adresszeile.');
+        return;
+      }
+      try { await load(false); } catch (e) { setStatus('error', 'Der Link konnte nicht geprüft werden.', ' ' + translateError(e), true); }
+    }
+    // Neuer Link im selben Tab geöffnet (nur das Fragment ändert sich, die Seite lädt nicht neu)
+    window.addEventListener('hashchange', function () {
+      if (window.location.hash.indexOf('token=') === -1) return;
+      token = readToken();
+      $('freigabe-form').reset();
+      init();
+    });
+    init();
+  })();
+  </script>
+</body>
+</html>
